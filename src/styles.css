@@ -57,3 +57,9 @@ table, tr, td, th {
 td:empty:after {
   content: "\00a0"; /* HTML entity of &nbsp; */
 }
+
+input {
+  margin: 10px;
+}
+
+

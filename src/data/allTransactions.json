@@ -2,7 +2,7 @@
     "transactions": [
       {
         "from": {
-          "name": "name 1",
+          "name": "name1",
           "country": "country1",
           "occupation": "unemployed1"
         },
@@ -41,6 +41,20 @@
             },
             "amount": 200,
             "date": "27.10.2023"
-      }
+      }, 
+      {
+        "from": {
+            "name": "name3",
+            "country": "country3",
+            "occupation": "unemployed3"
+          },
+          "to": {
+            "name": "name3",
+            "country": "country3",
+            "occupation": "prime minister3"
+          },
+          "amount": 200,
+          "date": "27.10.2023"
+    }
     ]
   }
