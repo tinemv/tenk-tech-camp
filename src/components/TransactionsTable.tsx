@@ -20,19 +20,45 @@ const transactionsMap = transactions.map((transaction) => (
   </tr>
 ));
 
+function filterTable(parameter: Parameter): string {
+  transactions.filter((transaction) => {
+    switch (parameter) {
+    }
+  });
+
+  return "hei";
+}
+
+enum Parameter {
+  FROM_NAME,
+  FROM_OCCUPATION,
+  FROM_COUNTRY,
+  TO_NAME,
+  TO_OCCUPATION,
+  TO_COUNTRY,
+  AMOUNT,
+  DATE,
+}
+
 export const TransactionsTable = () => {
   return (
     <>
-      <table className="table-auto border">
+      <table>
         <thead>
-          <th>From</th>
-          <th>Country</th>
-          <th>Occupation</th>
-          <th>To</th>
-          <th>Country</th>
-          <th>COccupation</th>
-          <th>Amount</th>
-          <th>Date</th>
+          <tr>
+            <th colSpan={3}>From</th>
+            <th colSpan={3}>To</th>
+            <th rowSpan={2}>Amount</th>
+            <th rowSpan={2}>Date</th>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <th>Occupation</th>
+            <th>Country</th>
+            <th>Name</th>
+            <th>Occupation</th>
+            <th>Country</th>
+          </tr>
         </thead>
         <tbody>{transactionsMap}</tbody>
       </table>

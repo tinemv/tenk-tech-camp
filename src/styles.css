@@ -39,3 +39,21 @@
   text-align: center;
   margin-top: 200px;
 }
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table, tr, td, th {
+  border: 3px solid #007272;
+  padding: 10px;
+}
+
+
+td:empty:after {
+  content: "\00a0"; /* HTML entity of &nbsp; */
+}
