@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles.css";
-import Kunde from "./Kunde";
+import Kunde from "./Customer";
 import Transaksjoner from "./Transaksjoner";
 
 export default function App() {
