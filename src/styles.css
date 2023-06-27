@@ -53,7 +53,6 @@ table, tr, td, th {
   padding: 10px;
 }
 
-
 td:empty:after {
   content: "\00a0"; /* HTML entity of &nbsp; */
 }
@@ -62,4 +61,10 @@ input {
   margin: 10px;
 }
 
-
+.CustomerTab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}

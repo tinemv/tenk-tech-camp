@@ -1,14 +1,15 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import "@dnb/eufemia/style";
 
 import App from "./components/App";
+import Footer from "./components/Footer";
 
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
-
-root.render(
+ReactDOM.render(
   <StrictMode>
     <App />
-  </StrictMode>
+    <Footer />
+  </StrictMode>,
+  document.getElementById("root")
 );
