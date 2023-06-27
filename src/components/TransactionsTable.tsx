@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../styles.css";
 import data from "../data/allTransactions.json";
 import { Transaction, Person } from "../model/Transactions";
+import Provider from "@dnb/eufemia/shared/Provider";
+import { H2, NumberFormat, Table, Dropdown, Td, Th, Tr } from "@dnb/eufemia";
 
 let transactions: Transaction[] = data.transactions;
 
@@ -68,58 +70,74 @@ function filterTable(parameter: Parameter, value: string): Transaction[] {
 }
 
 enum Parameter {
-  FROM_NAME,
-  FROM_OCCUPATION,
-  FROM_COUNTRY,
-  TO_NAME,
-  TO_OCCUPATION,
-  TO_COUNTRY,
-  AMOUNT,
-  DATE,
-}
-
-function useInput({ type /*...*/ }) {
-  const [value, setValue] = useState("");
-  const input = (
-    <input
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-      type={type}
-    />
-  );
-  return [value, input];
+  FROM_NAME = "Avsenders navn",
+  FROM_OCCUPATION = "Avsenders yrke",
+  FROM_COUNTRY = "Avsenders land",
+  TO_NAME = "Mottakers navn",
+  TO_OCCUPATION = "Mottakers yrke",
+  TO_COUNTRY = "Mottakers land",
+  AMOUNT = "Beløp",
+  DATE = "Dato",
 }
 
 export const TransactionsTable = () => {
-  const [inputValue, setInputValue] = React.useState("");
-  const onChangeHandler = (event) => {
-    setInputValue(event.target.value);
+  const [inputText, setInputText] = React.useState("");
+  const handleInputText = (event) => {
+    setInputText(event.target.value);
   };
+
+  const [inputParameter, setInputParameter] = React.useState(
+    Parameter.FROM_NAME
+  );
 
   return (
     <>
-      <input type="text" onChange={onChangeHandler} value={inputValue} />
-      <table>
-        <thead>
-          <tr>
-            <th colSpan={3}>Fra</th>
-            <th colSpan={3}>Til</th>
-            <th rowSpan={2}>Beløp</th>
-            <th rowSpan={2}>Dato</th>
-          </tr>
-          <tr>
-            <th>Navn</th>
-            <th>Yrke</th>
-            <th>Land</th>
-            <th>Navn</th>
-            <th>Yrke</th>
-            <th>Land</th>
-          </tr>
-        </thead>
-        <tbody>
-          {transactionsMap(filterTable(Parameter.FROM_NAME, inputValue))}
-        </tbody>
-      </table>
+      <Dropdown
+        data={[
+          Parameter.TO_NAME,
+          Parameter.TO_OCCUPATION,
+          Parameter.TO_COUNTRY,
+          Parameter.FROM_NAME,
+          Parameter.FROM_OCCUPATION,
+          Parameter.FROM_COUNTRY,
+          Parameter.AMOUNT,
+          Parameter.DATE,
+        ]}
+        label="Velg parameter som skal filtreres på:"
+        title="Velg parameter"
+        on_change={({data}) => setInputParameter(data)}
+      />
+      <input type="text" onChange={handleInputText} value={inputText} />
+      <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
+        <Table.ScrollView
+          style={{
+            maxHeight: "54rem",
+            width: "70rem",
+          }}
+        >
+          <Table sticky="css-position">
+            <thead>
+              <Tr>
+                <Th colSpan={3}>Avsender (Sendt fra)</Th>
+                <Th colSpan={3}>Mottaker (Sendt til)</Th>
+                <Th rowSpan={2}>Beløp</Th>
+                <Th rowSpan={2}>Dato</Th>
+              </Tr>
+              <Tr>
+                <Th>Navn</Th>
+                <Th>Yrke</Th>
+                <Th>Land</Th>
+                <Th>Navn</Th>
+                <Th>Yrke</Th>
+                <Th>Land</Th>
+              </Tr>
+            </thead>
+            <tbody>
+              {transactionsMap(filterTable(inputParameter, inputText))}
+            </tbody>
+          </Table>
+        </Table.ScrollView>
+      </Provider>
     </>
   );
 };
