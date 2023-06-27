@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../styles.css";
 import data from "../data/allTransactions.json";
 import { Transaction, Person } from "../model/Transactions";
-import Provider from "@dnb/eufemia/shared/Provider";
-import { H2, NumberFormat, Table, Dropdown, Td, Th, Tr } from "@dnb/eufemia";
+import { Dropdown, Input, Section } from "@dnb/eufemia";
+import { TransactionsTableReusable } from "./TransactionTableReusable";
 
 let transactions: Transaction[] = data.transactions;
 
@@ -86,58 +86,39 @@ export const TransactionsTable = () => {
     setInputText(event.target.value);
   };
 
-  const [inputParameter, setInputParameter] = React.useState(
-    Parameter.FROM_NAME
-  );
+  const [inputParameter, setInputParameter] = React.useState(undefined);
 
   return (
-    <>
-      <Dropdown
-        data={[
-          Parameter.TO_NAME,
-          Parameter.TO_OCCUPATION,
-          Parameter.TO_COUNTRY,
-          Parameter.FROM_NAME,
-          Parameter.FROM_OCCUPATION,
-          Parameter.FROM_COUNTRY,
-          Parameter.AMOUNT,
-          Parameter.DATE,
-        ]}
-        label="Velg parameter som skal filtreres på:"
-        title="Velg parameter"
-        on_change={({data}) => setInputParameter(data)}
+    <Section style_type="white">
+      <Section spacing>
+        <Dropdown
+          data={[
+            Parameter.TO_NAME,
+            Parameter.TO_OCCUPATION,
+            Parameter.TO_COUNTRY,
+            Parameter.FROM_NAME,
+            Parameter.FROM_OCCUPATION,
+            Parameter.FROM_COUNTRY,
+            Parameter.AMOUNT,
+            Parameter.DATE,
+          ]}
+          label="Velg parameter som skal filtreres på:"
+          title="Velg parameter"
+          on_change={({ data }) => setInputParameter(data)}
+        />
+        <Input
+          space
+          type="text"
+          onChange={handleInputText}
+          value={inputText}
+          placeholder={`Parameter`}
+        />
+      </Section>{" "}
+      <TransactionsTableReusable
+        listOfTransactions={transactionsMap(
+          filterTable(inputParameter, inputText)
+        )}
       />
-      <input type="text" onChange={handleInputText} value={inputText} />
-      <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
-        <Table.ScrollView
-          style={{
-            maxHeight: "54rem",
-            width: "70rem",
-          }}
-        >
-          <Table sticky="css-position">
-            <thead>
-              <Tr>
-                <Th colSpan={3}>Avsender (Sendt fra)</Th>
-                <Th colSpan={3}>Mottaker (Sendt til)</Th>
-                <Th rowSpan={2}>Beløp</Th>
-                <Th rowSpan={2}>Dato</Th>
-              </Tr>
-              <Tr>
-                <Th>Navn</Th>
-                <Th>Yrke</Th>
-                <Th>Land</Th>
-                <Th>Navn</Th>
-                <Th>Yrke</Th>
-                <Th>Land</Th>
-              </Tr>
-            </thead>
-            <tbody>
-              {transactionsMap(filterTable(inputParameter, inputText))}
-            </tbody>
-          </Table>
-        </Table.ScrollView>
-      </Provider>
-    </>
+    </Section>
   );
 };
