@@ -13,7 +13,8 @@ export default function Customer() {
         <Img
           src={profile_picture}
           alt="User Picture"
-          width="250"
+          width="250rem"
+          height="250rem"
           style={{ borderRadius: "50%" }}
         />
         <AccountTable customer={customers[0]} />
