@@ -2,6 +2,7 @@ import React from "react";
 import Customer from "./Customer";
 import Transactions from "./Transactions";
 import { H2, Section, Tabs } from "@dnb/eufemia";
+import DropDownTask from "./DropDownButton";
 
 export default function App() {
   return (
@@ -11,6 +12,9 @@ export default function App() {
       content_style="black-3"
       style={{ marginLeft: "1rem", marginRight: "1rem" }}
     >
+      <Tabs.Content title="Oppgave">
+        <DropDownTask />
+      </Tabs.Content>
       <Tabs.Content title="Kunde">
         <Customer />
       </Tabs.Content>
