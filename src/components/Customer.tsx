@@ -1,42 +1,23 @@
 import React from "react";
 import AccountTable from "./AccountTable";
-import { customers } from "../data/Customers";
-import UserProfileIcon from "../assets/profile_icon.png";
-import { Avatar, Button, Logo } from "@dnb/eufemia";
-import "@dnb/eufemia/components/button/style";
-import "@dnb/eufemia/components/button/style/themes/ui";
+import { customers } from "../data/CustomerList";
+import profile_picture from "../assets/Kjersti_Braathen.jpg";
+import { H1, Img, Section } from "@dnb/eufemia";
+import "../styles.css";
 
-export const overfør = (
-  fra_konto: String,
-  til_konto: String,
-  beløp: Number,
-  valuta: String
-) => {};
-
-export const betal = (
-  fra_konto: String,
-  til_konto: String,
-  kid: String,
-  beløp: Number,
-  valuta: String
-) => {};
-
-export default function Customer(path) {
+export default function Customer() {
   return (
-    <>
-      <div className="Kunde">
-        <h1>Velkommen {customers[0].name}!</h1>
-        <Avatar src={UserProfileIcon} alt="Icon" size="large" />
-        <span
-          style={{
-            fontSize: "4rem",
-          }}
-        >
-          <Logo size="inherit" brand="ui" />
-        </span>
-        {/* <div id="circle">Bilde</div> */}
+    <Section spacing="small" left right style_type="white">
+      <div className="CustomerTab">
+        <H1>Velkommen {customers[0].name}!</H1>
+        <Img
+          src={profile_picture}
+          alt="User Picture"
+          width="250"
+          style={{ borderRadius: "50%" }}
+        />
         <AccountTable customer={customers[0]} />
       </div>
-    </>
+    </Section>
   );
 }

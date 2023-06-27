@@ -4,14 +4,12 @@ import { StrictMode } from "react";
 import "@dnb/eufemia/style";
 
 import App from "./components/App";
-import { Anchor, Logo, P, Section } from "@dnb/eufemia";
+import Footer from "./components/Footer";
 
 ReactDOM.render(
   <StrictMode>
     <App />
-    <Section spacing="large" style_type="sea-green">
-      <P space={0}>DNB</P>
-    </Section>
+    <Footer />
   </StrictMode>,
   document.getElementById("root")
 );
