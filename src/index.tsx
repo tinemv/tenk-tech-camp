@@ -15,17 +15,3 @@ ReactDOM.render(
   </StrictMode>,
   document.getElementById("root")
 );
-  
-  {/*  <P space={0}>
-     
-   </P> */}
-  {/* Visual DNB Section: <Anchor href="#">sea-green</Anchor> */}
-/* 
-<span
-  style={{
-    fontSize: "4rem",
-  }}
->
-<Logo size="inherit" brand="sbanken"  />
-</span>
-*/
