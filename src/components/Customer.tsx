@@ -1,6 +1,6 @@
 import React from "react";
 
-interface Kunde {
+interface Customer {
   fornavn: String;
   etternavn: String;
   personnummer: String;
@@ -21,9 +21,9 @@ export const betal = (
   valuta: String
 ) => {};
 
-export default function Kunde() {
+export default function Customer() {
   return (
-    <div className="Kunde">
+    <div className="Customer">
       <h1>Dette er en kunde!</h1>
     </div>
   );

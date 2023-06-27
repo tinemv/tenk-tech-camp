@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles.css";
-import Kunde from "./Kunde";
-import Transaksjoner from "./Transaksjoner";
+import Kunde from "./Customer";
+import Transaksjoner from "./Transactions";
 
 export default function App() {
   const [clickedButton, setClickedButton] = useState("Kunde");

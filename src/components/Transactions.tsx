@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Transaksjoner() {
+export default function Transactions() {
   return (
-    <div className="Transaksjoner">
+    <div className="Transactions">
       <h1>Dette er en Transaksjoner!</h1>
     </div>
   );
