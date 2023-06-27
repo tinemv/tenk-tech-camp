@@ -2,7 +2,7 @@ import React from "react";
 import AccountTable from "./AccountTable";
 import { customers } from "../data/Customers";
 import UserProfileIcon from "../assets/profile_icon.png";
-import { Button } from "@dnb/eufemia";
+import { Avatar, Button, Logo } from "@dnb/eufemia";
 import "@dnb/eufemia/components/button/style";
 import "@dnb/eufemia/components/button/style/themes/ui";
 
@@ -21,21 +21,20 @@ export const betal = (
   valuta: String
 ) => {};
 
-export default function Kunde() {
+export default function Customer(path) {
   return (
     <>
       <div className="Kunde">
-        <div className="dnb-core-style">
-          <Button
-            text="Default button"
-            on_click={() => {
-              console.log("on_click");
-            }}
-          />
-        </div>
         <h1>Velkommen {customers[0].name}!</h1>
-        <div id="circle">Bilde</div>
-        <img src={UserProfileIcon} alt="Image" />
+        <Avatar src={UserProfileIcon} alt="Icon" size="large" />
+        <span
+          style={{
+            fontSize: "4rem",
+          }}
+        >
+          <Logo size="inherit" brand="ui" />
+        </span>
+        {/* <div id="circle">Bilde</div> */}
         <AccountTable customer={customers[0]} />
       </div>
     </>

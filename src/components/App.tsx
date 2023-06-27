@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "../styles.css";
-import Kunde from "./Customer";
+import Customer from "./Customer";
 import Transaksjoner from "./Transaksjoner";
+import { Logo, Tabs } from "@dnb/eufemia";
+import { Router, useLocation } from "react-router-dom";
 
 export default function App() {
   const [clickedButton, setClickedButton] = useState("Kunde");
@@ -21,7 +23,33 @@ export default function App() {
           Transaksjoner
         </button>
       </div>
-      {clickedButton == "Kunde" ? <Kunde /> : <Transaksjoner />}
+      {clickedButton == "Kunde" ? <Customer /> : <Transaksjoner />}
     </>
   );
+
+  /* const { pathname } = useLocation();
+  return (
+    <Tabs
+      data={[
+        {
+          title: "Home",
+          key: "/",
+        },
+        {
+          title: "About",
+          key: "/about",
+        },
+      ]}
+      selected_key={pathname}
+      on_change={({ key }) => navigate(key)}
+      tabs_style="mint-green"
+    >
+      <React.Suspense fallback={<em>Loading ...</em>}>
+        <Router location={""} navigator={undefined}>
+          <Customer path="/" default />
+          <Transaksjoner path="/about" />
+        </Router>
+      </React.Suspense>
+    </Tabs>
+  ); */
 }
