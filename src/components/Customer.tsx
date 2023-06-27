@@ -22,9 +22,5 @@ export const betal = (
 ) => {};
 
 export default function Customer() {
-  return (
-    <div className="Customer">
-      <h1>Dette er en kunde!</h1>
-    </div>
-  );
+  return <h1>Dette er en Kunde!</h1>;
 }
