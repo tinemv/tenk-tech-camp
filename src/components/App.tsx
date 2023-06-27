@@ -2,6 +2,7 @@ import React from "react";
 import Customer from "./Customer";
 import Transactions from "./Transactions";
 import { H2, Section, Tabs } from "@dnb/eufemia";
+import Oppgave3 from "./Oppgave3";
 
 export default function App() {
   return (
@@ -20,6 +21,9 @@ export default function App() {
             <Transactions />
           </H2>
         </Section>
+      </Tabs.Content>
+      <Tabs.Content title="Oppgave 3">
+        <Oppgave3/>
       </Tabs.Content>
     </Tabs>
   );
