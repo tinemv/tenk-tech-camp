@@ -1,14 +1,15 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
-import { Customer } from "../model/Customer";
+import { Account } from "../model/Customer";
 import { H2, NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
 
 export interface AccountTableProps {
-  customer: Customer;
+  accountList: Account[];
+  setAccountClicked: Function;
 }
 
 export default function AccountTable(props: AccountTableProps) {
-  const { customer } = props;
+  const { accountList, setAccountClicked } = props;
 
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
@@ -28,9 +29,18 @@ export default function AccountTable(props: AccountTableProps) {
             </Tr>
           </thead>
           <tbody>
-            {customer.accounts.map((item) => (
+            {accountList.map((item) => (
               <Tr key={item.id}>
-                <Td>{item.name}</Td>
+                <Td>
+                  <button
+                    className="dnb-anchor"
+                    onClick={() => {
+                      setAccountClicked(item.name);
+                    }}
+                  >
+                    {item.name}
+                  </button>
+                </Td>
                 <Td>{item.accountNumber}</Td>
                 <Td>
                   <NumberFormat>{item.balance}</NumberFormat>

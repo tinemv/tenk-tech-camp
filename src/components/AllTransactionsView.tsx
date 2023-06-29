@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "../styles.css";
-import data from "../data/allTransactions.json";
+import { allTransactions } from "../data/allTransactions";
 import { Transaction, Person } from "../model/Transactions";
 import { Dropdown, Input, Section } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
 
-let transactions: Transaction[] = data.transactions;
+let transactions: Transaction[] = allTransactions;
 
-const transactionsMap = (wantedTransactions: Transaction[]) => {
+export const transactionsMap = (wantedTransactions: Transaction[]) => {
   return wantedTransactions.map((transaction) => (
     <tr>
       <td>{transaction.from.name}</td>
@@ -24,7 +24,10 @@ const transactionsMap = (wantedTransactions: Transaction[]) => {
   ));
 };
 
-function filterTable(parameter: Parameter, value: string): Transaction[] {
+export function filterTable(
+  parameter: Parameter,
+  value: string
+): Transaction[] {
   const filteredTransactions = [];
   if (value === "") {
     return transactions;
