@@ -3,12 +3,12 @@ import "../styles.css";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Table, Th, Tr } from "@dnb/eufemia";
 
-export type TransactionsTableReuseableProps = {
-    listOfTransactions: any
-}
+export type TransactionTableProps = {
+  listOfTransactions: any;
+};
 
-export const TransactionsTableReusable = (props: TransactionsTableReuseableProps) => {
-    const {listOfTransactions} = props
+export const TransactionTable = (props: TransactionTableProps) => {
+  const { listOfTransactions } = props;
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <Table.ScrollView
@@ -34,9 +34,7 @@ export const TransactionsTableReusable = (props: TransactionsTableReuseableProps
               <Th>Land</Th>
             </Tr>
           </thead>
-          <tbody>
-          {listOfTransactions}
-          </tbody>
+          <tbody>{listOfTransactions}</tbody>
         </Table>
       </Table.ScrollView>
     </Provider>

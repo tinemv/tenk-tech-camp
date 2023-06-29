@@ -3,7 +3,7 @@ import "../styles.css";
 import data from "../data/allTransactions.json";
 import { Transaction, Person } from "../model/Transactions";
 import { Dropdown, Input, Section } from "@dnb/eufemia";
-import { TransactionsTableReusable } from "./TransactionTableReusable";
+import { TransactionTable } from "./TransactionTable";
 
 let transactions: Transaction[] = data.transactions;
 
@@ -80,7 +80,7 @@ enum Parameter {
   DATE = "Dato",
 }
 
-export const TransactionsTable = () => {
+export const AllTransactionsView = () => {
   const [inputText, setInputText] = React.useState("");
   const handleInputText = (event) => {
     setInputText(event.target.value);
@@ -114,7 +114,7 @@ export const TransactionsTable = () => {
           placeholder={`Parameter`}
         />
       </Section>{" "}
-      <TransactionsTableReusable
+      <TransactionTable
         listOfTransactions={transactionsMap(
           filterTable(inputParameter, inputText)
         )}

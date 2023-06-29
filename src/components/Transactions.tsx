@@ -1,5 +1,5 @@
 import React from "react";
-import { TransactionsTable } from "./TransactionsTable";
+import { AllTransactionsView } from "./AllTransactionsView";
 import { H1, Img, Section } from "@dnb/eufemia";
 
 export default function Transactions() {
@@ -7,7 +7,7 @@ export default function Transactions() {
     <Section spacing="small" left right style_type="white">
       <div className="TransactionsTab">
         <H1>Oversikt over alle transaksjoner i DNB</H1>
-        <TransactionsTable/>
+        <AllTransactionsView />
       </div>
     </Section>
   );
