@@ -1,7 +1,20 @@
+
 .CustomerTab {
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     flex-direction: column;
+}
+
+#rectangle {
+    justify-content: 'center';
+    height:50px;
+    background: #c09ede;
+    margin: auto;
+    width: 72%;
+    /*padding: 10px;
+    background: #fff8e7;
+    position: absolute;
+    bottom: 30;*/
 }
