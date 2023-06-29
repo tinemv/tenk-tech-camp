@@ -1,5 +1,14 @@
 import React from "react";
+import { AllTransactionsView } from "./AllTransactionsView";
+import { H1, Img, Section } from "@dnb/eufemia";
 
 export default function Transactions() {
-  return <h1>Dette er en Transaksjoner!</h1>;
+  return (
+    <Section spacing="small" left right style_type="white">
+      <div className="TransactionsTab">
+        <H1>Oversikt over alle transaksjoner i DNB</H1>
+        <AllTransactionsView />
+      </div>
+    </Section>
+  );
 }
