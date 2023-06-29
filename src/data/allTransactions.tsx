@@ -1,5 +1,6 @@
 export var allTransactions = [
   {
+    id: "1",
     from: {
       name: "name1",
       country: "country1",
@@ -14,6 +15,7 @@ export var allTransactions = [
     date: "27.10.2023",
   },
   {
+    id: "2",
     from: {
       name: "name2",
       country: "country2",
@@ -28,6 +30,7 @@ export var allTransactions = [
     date: "27.10.2023",
   },
   {
+    id: "3",
     from: {
       name: "name3",
       country: "country3",
@@ -42,6 +45,7 @@ export var allTransactions = [
     date: "27.10.2023",
   },
   {
+    id: "4",
     from: {
       name: "name3",
       country: "country3",
