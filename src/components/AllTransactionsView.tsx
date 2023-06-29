@@ -5,11 +5,11 @@ import { Transaction, Person } from "../model/Transactions";
 import { Dropdown, Input, Section } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
 
-let transactions: Transaction[] = data.transactions;
+const transactions: Transaction[] = data.transactions;
 
 const transactionsMap = (wantedTransactions: Transaction[]) => {
   return wantedTransactions.map((transaction) => (
-    <tr>
+    <tr key={`${transaction.id}`}>
       <td>{transaction.from.name}</td>
       <td>{transaction.from.country}</td>
       <td>{transaction.from.occupation}</td>

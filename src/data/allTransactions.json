@@ -1,6 +1,7 @@
 {
     "transactions": [
       {
+        "id": "1",
         "from": {
           "name": "name1",
           "country": "country1",
@@ -15,7 +16,8 @@
         "date": "27.10.2023"
       },
       {
-          "from": {
+        "id": "2",  
+        "from": {
               "name": "name2",
               "country": "country2",
               "occupation": "unemployed2"
@@ -29,7 +31,8 @@
             "date": "27.10.2023" 
       },
       {
-          "from": {
+        "id": "3",  
+        "from": {
               "name": "name3",
               "country": "country3",
               "occupation": "unemployed3"
@@ -43,6 +46,7 @@
             "date": "27.10.2023"
       }, 
       {
+        "id": "4",
         "from": {
             "name": "name3",
             "country": "country3",
