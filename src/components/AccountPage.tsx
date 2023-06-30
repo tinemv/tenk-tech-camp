@@ -2,8 +2,6 @@ import React from "react";
 import { Breadcrumb, Button, H2, Section } from "@dnb/eufemia";
 import { Account } from "../Models";
 import { TransactionTable } from "./TransactionTable";
-import { allTransactions } from "../data/allTransactions";
-import { transactionsMap } from "./AllTransactionsView";
 
 export type AccountProps = {
   account: Account;
@@ -36,9 +34,7 @@ export default function AccountPage(props: AccountProps) {
         Back
       </Button>
       <H2>Transaksjoner for {account.name}</H2>
-      <TransactionTable
-        listOfTransactions={transactionsMap(account.transactions)}
-      />
+      <TransactionTable listOfTransactions={account.transactions} />
     </Section>
   );
 }
