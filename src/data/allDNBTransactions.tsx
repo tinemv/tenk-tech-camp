@@ -1,4 +1,4 @@
-export var allTransactions = [
+export var allDNBTransactions = [
   {
     id: "1",
     from: {
@@ -14,7 +14,7 @@ export var allTransactions = [
     amount: 200,
     date: "27.10.2023",
     description: "Kort",
-    risk: 1
+    risk: 1,
   },
   {
     id: "2",
@@ -31,7 +31,7 @@ export var allTransactions = [
     amount: 200,
     date: "27.10.2023",
     description: "Kort",
-    risk: 1
+    risk: 1,
   },
   {
     id: "3",
@@ -48,7 +48,7 @@ export var allTransactions = [
     amount: 200,
     date: "27.10.2023",
     description: "Kort",
-    risk: 1
+    risk: 1,
   },
   {
     id: "4",
@@ -65,6 +65,6 @@ export var allTransactions = [
     amount: 200,
     date: "27.10.2023",
     description: "Kort",
-    risk: 1
+    risk: 1,
   },
 ];

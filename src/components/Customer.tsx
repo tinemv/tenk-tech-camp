@@ -4,7 +4,7 @@ import { customer } from "../data/customerData";
 import profile_picture from "../assets/Kjersti_Braathen.jpg";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../styles.css";
-import AccountPage from "./AccountPage";
+import AccountPage from "./Account";
 
 export default function Customer() {
   const [accountClicked, setAccountClicked] = useState("Customer");

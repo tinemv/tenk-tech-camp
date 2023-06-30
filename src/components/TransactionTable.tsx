@@ -7,10 +7,6 @@ export type TransactionTableProps = {
   listOfTransactions: any;
 };
 
-function findSuspectTransaction(): void {
-
-};
-
 export const TransactionTable = (props: TransactionTableProps) => {
   const { listOfTransactions } = props;
   return (
