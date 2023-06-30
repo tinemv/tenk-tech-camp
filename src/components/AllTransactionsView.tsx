@@ -1,28 +1,11 @@
 import React, { useState } from "react";
 import "../styles.css";
-import data from "../data/allTransactions.json";
+import { allTransactions } from "../data/allTransactions";
 import { Transaction, Person } from "../model/Transactions";
 import { Dropdown, Input, Section } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
 
-const transactions: Transaction[] = data.transactions;
-
-const transactionsMap = (wantedTransactions: Transaction[]) => {
-  return wantedTransactions.map((transaction) => (
-    <tr key={`${transaction.id}`}>
-      <td>{transaction.from.name}</td>
-      <td>{transaction.from.country}</td>
-      <td>{transaction.from.occupation}</td>
-
-      <td>{transaction.to.name}</td>
-      <td>{transaction.to.country}</td>
-      <td>{transaction.to.occupation}</td>
-
-      <td>{transaction.amount}</td>
-      <td>{transaction.date}</td>
-    </tr>
-  ));
-};
+const transactions: Transaction[] = allTransactions.transactions;
 
 function filterTable(parameter: Parameter, value: string): Transaction[] {
   const filteredTransactions = [];
@@ -115,9 +98,9 @@ export const AllTransactionsView = () => {
         />
       </Section>{" "}
       <TransactionTable
-        listOfTransactions={transactionsMap(
+        listOfTransactions={
           filterTable(inputParameter, inputText)
-        )}
+        }
       />
     </Section>
   );
