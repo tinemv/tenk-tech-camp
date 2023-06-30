@@ -1,6 +1,6 @@
 import React from "react";
-import { Breadcrumb, H1, H2, Section } from "@dnb/eufemia";
-import { Account } from "../model/Customer";
+import { Breadcrumb, Button, H2, Section } from "@dnb/eufemia";
+import { Account } from "../Models";
 import { TransactionTable } from "./TransactionTable";
 import { allTransactions } from "../data/allTransactions";
 import { transactionsMap } from "./AllTransactionsView";
@@ -26,8 +26,19 @@ export default function AccountPage(props: AccountProps) {
         <Breadcrumb.Item text="Konto" variant="previous" />
         <Breadcrumb.Item text={account.name} variant="current" />
       </Breadcrumb>
+      <Button
+        icon_position="left"
+        icon="chevron_left"
+        onClick={() => {
+          setAccountClicked("Customer");
+        }}
+      >
+        Back
+      </Button>
       <H2>Transaksjoner for {account.name}</H2>
-      <TransactionTable listOfTransactions={transactionsMap(allTransactions)} />
+      <TransactionTable
+        listOfTransactions={transactionsMap(account.transactions)}
+      />
     </Section>
   );
 }

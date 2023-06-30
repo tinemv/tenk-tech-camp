@@ -1,6 +1,6 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
-import { Account } from "../model/Customer";
+import { Account } from "../Models";
 import { H2, NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
 
 export interface AccountTableProps {
@@ -41,9 +41,11 @@ export default function AccountTable(props: AccountTableProps) {
                     {item.name}
                   </button>
                 </Td>
-                <Td>{item.accountNumber}</Td>
                 <Td>
-                  <NumberFormat>{item.balance}</NumberFormat>
+                  <NumberFormat ban>{item.accountNumber}</NumberFormat>
+                </Td>
+                <Td>
+                  <NumberFormat currency>{item.balance}</NumberFormat>
                 </Td>
               </Tr>
             ))}

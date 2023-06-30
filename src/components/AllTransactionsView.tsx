@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles.css";
 import { allTransactions } from "../data/allTransactions";
-import { Transaction } from "../model/Transactions";
-import { Dropdown, Input, Section } from "@dnb/eufemia";
+import { Transaction } from "../Models";
+import { Dropdown, Input, NumberFormat, Section } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
 
 export const transactionsMap = (wantedTransactions: Transaction[]) => {
@@ -16,7 +16,9 @@ export const transactionsMap = (wantedTransactions: Transaction[]) => {
       <td>{transaction.to.country}</td>
       <td>{transaction.to.occupation}</td>
 
-      <td>{transaction.amount}</td>
+      <td>
+        <NumberFormat>{transaction.amount}</NumberFormat>
+      </td>
       <td>{transaction.date}</td>
     </tr>
   ));
