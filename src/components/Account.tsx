@@ -25,7 +25,7 @@ export const findBalance = (transactions: Transaction[]) => {
   );
 };
 
-export default function AccountPage(props: AccountProps) {
+export default function Account(props: AccountProps) {
   const { account, setAccountClicked } = props;
 
   return (

@@ -4,7 +4,7 @@ import { customer } from "../data/customerData";
 import profile_picture from "../assets/Kjersti_Braathen.jpg";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../styles.css";
-import AccountPage from "./Account";
+import Account from "./Account";
 
 export default function Customer() {
   const [accountClicked, setAccountClicked] = useState("Customer");
@@ -36,7 +36,7 @@ export default function Customer() {
 
         {accountClicked !== "Customer" && (
           <>
-            <AccountPage
+            <Account
               account={customer.accounts.find(
                 (account) => account.name === accountClicked
               )}
