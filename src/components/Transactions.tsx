@@ -1,14 +1,17 @@
 import React from "react";
 import { AllTransactionsView } from "./AllTransactionsView";
-import { H1, Section } from "@dnb/eufemia";
+import { H1, P, Section, Tabs } from "@dnb/eufemia";
 
 export default function Transactions() {
   return (
-    <Section spacing="small" left right style_type="white">
-      <div className="TransactionsTab">
-        <H1>Oversikt over alle transaksjoner i DNB</H1>
-        <AllTransactionsView />
-      </div>
-    </Section>
+    <Tabs>
+      <Tabs.Content title="Dashboard">Et dashboard</Tabs.Content>
+      <Tabs.Content title="Transaksjoner">
+        <div className="TransactionsTab">
+          <H1>Oversikt over alle transaksjoner i DNB</H1>
+          <AllTransactionsView />
+        </div>
+      </Tabs.Content>
+    </Tabs>
   );
 }
