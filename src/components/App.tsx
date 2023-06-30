@@ -15,10 +15,10 @@ export default function App() {
       <Tabs.Content title="Velkommen">
         <Welcome/>
       </Tabs.Content>
-      <Tabs.Content title="Kunde">
+      <Tabs.Content title="Logg inn som kunde">
         <Customer />
       </Tabs.Content>
-      <Tabs.Content title="Transaksjoner">
+      <Tabs.Content title="Logg inn som etterforsker">
         <Section spacing top bottom style_type="white">
           <H2 top={0} bottom>
             <Transactions />
