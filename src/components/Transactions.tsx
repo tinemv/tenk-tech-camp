@@ -113,7 +113,6 @@ export default function Transactions() {
             listOfTransactions={filterTable(inputParameter, inputText)}
           />
         </Section>
-        );
       </div>
     </Section>
   );

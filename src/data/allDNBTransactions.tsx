@@ -1,6 +1,6 @@
 export var allDNBTransactions = [
   {
-    id: "1",
+    id: "100",
     from: {
       name: "name1",
       country: "country1",
@@ -17,7 +17,7 @@ export var allDNBTransactions = [
     risk: 1,
   },
   {
-    id: "2",
+    id: "200",
     from: {
       name: "name2",
       country: "country2",
@@ -34,7 +34,7 @@ export var allDNBTransactions = [
     risk: 1,
   },
   {
-    id: "3",
+    id: "300",
     from: {
       name: "name3",
       country: "country3",
@@ -51,7 +51,7 @@ export var allDNBTransactions = [
     risk: 1,
   },
   {
-    id: "4",
+    id: "400",
     from: {
       name: "name3",
       country: "country3",
