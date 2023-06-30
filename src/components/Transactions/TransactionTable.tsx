@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles.css";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Table, Th, Tr, Td } from "@dnb/eufemia";
 

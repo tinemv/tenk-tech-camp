@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import AccountTable from "./AccountTable";
-import { customer } from "../data/customerData";
-import profile_picture from "../assets/Kjersti_Braathen.jpg";
+import { customer } from "../../data/customerData";
+import profile_picture from "../../assets/Kjersti_Braathen.jpg";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
-import "../styles.css";
-import Account from "./Account";
+import "../../styles.css";
+import AccountPage from "./AccountPage";
 
-export default function Customer() {
+export default function CustomerPage() {
   const [accountClicked, setAccountClicked] = useState("Customer");
 
   return (
@@ -36,7 +36,7 @@ export default function Customer() {
 
         {accountClicked !== "Customer" && (
           <>
-            <Account
+            <AccountPage
               account={customer.accounts.find(
                 (account) => account.name === accountClicked
               )}

@@ -1,9 +1,10 @@
 import React from "react";
 import { Dropdown, H1, Input, Section } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
-import { allDNBTransactions } from "../data/allDNBTransactions";
-import { customer } from "../data/customerData";
-import { Transaction } from "../Models";
+import { allDNBTransactions } from "../../data/allDNBTransactions";
+import { customer } from "../../data/customerData";
+import { Transaction } from "../../Models";
+import "../../styles.css";
 
 const getAllTransactions = () => {
   const allCustomerTransactions = customer.accounts.flatMap(
@@ -72,7 +73,7 @@ enum Parameter {
   DATE = "Dato",
 }
 
-export default function Transactions() {
+export default function TransactionsPage() {
   const [inputText, setInputText] = React.useState("");
   const handleInputText = (event) => {
     setInputText(event.target.value);

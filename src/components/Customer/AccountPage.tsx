@@ -9,8 +9,8 @@ import {
   Section,
   Space,
 } from "@dnb/eufemia";
-import { Account, Transaction } from "../Models";
-import { TransactionTable } from "./TransactionTable";
+import { Account, Transaction } from "../../Models";
+import { TransactionTable } from "../Transactions/TransactionTable";
 import { transfer_to, pay_from } from "@dnb/eufemia/icons";
 
 export type AccountProps = {
@@ -25,7 +25,7 @@ export const findBalance = (transactions: Transaction[]) => {
   );
 };
 
-export default function Account(props: AccountProps) {
+export default function AccountPage(props: AccountProps) {
   const { account, setAccountClicked } = props;
 
   return (

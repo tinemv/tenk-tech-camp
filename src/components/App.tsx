@@ -1,6 +1,6 @@
 import React from "react";
-import Customer from "./Customer";
-import Transactions from "./Transactions";
+import CustomerPage from "./Customer/CustomerPage";
+import TransactionsPage from "./Transactions/TransactionsPage";
 import { Tabs } from "@dnb/eufemia";
 
 export default function App() {
@@ -12,10 +12,10 @@ export default function App() {
       style={{ marginLeft: "1rem", marginRight: "1rem" }}
     >
       <Tabs.Content title="Privatkunde">
-        <Customer />
+        <CustomerPage />
       </Tabs.Content>
       <Tabs.Content title="DNB">
-        <Transactions />
+        <TransactionsPage />
       </Tabs.Content>
     </Tabs>
   );
