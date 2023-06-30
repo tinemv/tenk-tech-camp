@@ -7,7 +7,6 @@ export type Account = {
   id: number;
   name: string;
   accountNumber: string;
-  balance: number;
   transactions: Transaction[];
 };
 

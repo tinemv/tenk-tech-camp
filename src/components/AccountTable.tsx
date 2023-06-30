@@ -2,6 +2,7 @@ import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Account } from "../Models";
 import { H2, NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
+import { findBalance } from "./AccountPage";
 
 export interface AccountTableProps {
   accountList: Account[];
@@ -13,10 +14,9 @@ export default function AccountTable(props: AccountTableProps) {
 
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
-      <H2>Kontoer</H2>
       <Table.ScrollView
         style={{
-          maxHeight: "24rem",
+          maxHeight: "50rem",
           width: "40rem",
         }}
       >
@@ -29,23 +29,25 @@ export default function AccountTable(props: AccountTableProps) {
             </Tr>
           </thead>
           <tbody>
-            {accountList.map((item) => (
-              <Tr key={item.id}>
+            {accountList.map((account) => (
+              <Tr key={account.id}>
                 <Td>
                   <button
                     className="dnb-anchor"
                     onClick={() => {
-                      setAccountClicked(item.name);
+                      setAccountClicked(account.name);
                     }}
                   >
-                    {item.name}
+                    {account.name}
                   </button>
                 </Td>
                 <Td>
-                  <NumberFormat ban>{item.accountNumber}</NumberFormat>
+                  <NumberFormat ban>{account.accountNumber}</NumberFormat>
                 </Td>
                 <Td>
-                  <NumberFormat currency>{item.balance}</NumberFormat>
+                  <NumberFormat currency>
+                    {findBalance(account.transactions)}
+                  </NumberFormat>
                 </Td>
               </Tr>
             ))}

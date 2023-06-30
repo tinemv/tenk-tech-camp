@@ -5,7 +5,6 @@ export var customer = {
       id: 1,
       name: "Brukskonto",
       accountNumber: "1592.33.12123",
-      balance: 2500,
       transactions: [
         {
           id: "1",
@@ -47,7 +46,6 @@ export var customer = {
       id: 2,
       name: "Sparekonto",
       accountNumber: "9411.05.96614",
-      balance: 27800,
       transactions: [
         {
           id: "3",
@@ -72,7 +70,6 @@ export var customer = {
       id: 3,
       name: "BSU",
       accountNumber: "2344.90.41249",
-      balance: 14020,
       transactions: [
         {
           id: "4",
@@ -131,7 +128,6 @@ export var customer = {
       id: 4,
       name: "Sparekonto 2",
       accountNumber: "9421.23.41211",
-      balance: 5212,
       transactions: [
         {
           id: "7",
@@ -156,7 +152,6 @@ export var customer = {
       id: 5,
       name: "BSU Ekstra",
       accountNumber: "2344.90.22113",
-      balance: 1000,
       transactions: [
         {
           id: "8",
@@ -181,7 +176,6 @@ export var customer = {
       id: 6,
       name: "Kredittkort",
       accountNumber: "9231.21.21442",
-      balance: -522,
       transactions: [
         {
           id: "9",
@@ -206,7 +200,6 @@ export var customer = {
       id: 7,
       name: "Buffer",
       accountNumber: "2234.22.74361",
-      balance: 40000,
       transactions: [
         {
           id: "10",
