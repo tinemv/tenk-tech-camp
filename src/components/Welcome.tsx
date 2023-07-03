@@ -20,7 +20,7 @@ export default function Welcome() {
             style={{
               color: "white",
               margin: 25,
-              marginRight: 200,
+              marginRight: 100,
               fontSize: "large",
             }}
           >
@@ -32,11 +32,11 @@ export default function Welcome() {
           style_type="white"
         >
           <P style={{ margin: 20}}>Mer tekst om workshoppen og hvordan de skal gå gjennom oppgavene</P>
-          <InfoCard
-            style={{fontSize: "large" }}
+        </Section>
+        <InfoCard
+            style={{fontSize: "large", bottom: '0px'}}
             text="Har du spørsmål eller trenger hjelp? Spør oss! "
           />
-        </Section>
       </div>
     </Section>
   );
