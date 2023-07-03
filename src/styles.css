@@ -19,6 +19,14 @@ input {
   margin: 10px;
 }
 
+.WelcomeTab {
+display: flex;
+justify-content: center;
+align-items: center;
+align-content: center;
+flex-direction: column;
+}
+
 .TransactionsTab {
   display: flex;
   justify-content: center;
