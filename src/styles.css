@@ -15,10 +15,15 @@
     display: flex;
 }
 
-.WelcomeTab {
+input {
+  margin: 10px;
+}
+
+.TransactionsTab {
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   flex-direction: column;
+  font-weight: lighter;
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import Customer from "./Customer";
-import Transactions from "./Transactions";
 import { H2, Section, Tabs } from "@dnb/eufemia";
 import Welcome from "./Welcome";
+import CustomerPage from "./Customer/CustomerPage";
+import TransactionsPage from "./Transactions/TransactionsPage";
 
 export default function App() {
   return (
@@ -16,12 +16,12 @@ export default function App() {
         <Welcome/>
       </Tabs.Content>
       <Tabs.Content title="Logg inn som kunde">
-        <Customer />
+        <CustomerPage />
       </Tabs.Content>
       <Tabs.Content title="Logg inn som etterforsker">
         <Section spacing top bottom style_type="white">
           <H2 top={0} bottom>
-            <Transactions />
+            <TransactionsPage />
           </H2>
         </Section>
       </Tabs.Content>
