@@ -1,5 +1,5 @@
 import React from "react";
-import { Dropdown, H1, Input, Section } from "@dnb/eufemia";
+import { Dropdown, H1, Input, Section, Tabs } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
 import { allDNBTransactions } from "../../data/allDNBTransactions";
 import { customer } from "../../data/customerData";
@@ -81,40 +81,48 @@ export default function TransactionsPage() {
   const [inputParameter, setInputParameter] = React.useState(undefined);
 
   return (
-    <Section spacing="small" left right style_type="white">
-      <div className="TransactionsTab">
-        <H1>Oversikt over alle transaksjoner i DNB</H1>
-        {/* <AllTransactionsView /> */}
-        <Section style_type="white">
-          <Section spacing>
-            <Dropdown
-              data={[
-                Parameter.TO_NAME,
-                Parameter.TO_OCCUPATION,
-                Parameter.TO_COUNTRY,
-                Parameter.FROM_NAME,
-                Parameter.FROM_OCCUPATION,
-                Parameter.FROM_COUNTRY,
-                Parameter.AMOUNT,
-                Parameter.DATE,
-              ]}
-              label="Velg parameter som skal filtreres på:"
-              title="Velg parameter"
-              on_change={({ data }) => setInputParameter(data)}
-            />
-            <Input
-              space
-              type="text"
-              onChange={handleInputText}
-              value={inputText}
-              placeholder={`Parameter`}
-            />
-          </Section>{" "}
-          <TransactionTable
-            listOfTransactions={filterTable(inputParameter, inputText)}
-          />
-        </Section>
-      </div>
-    </Section>
+    <Tabs>
+      <Tabs.Content title="Dashboard">Et dashboard</Tabs.Content>
+      <Tabs.Content title="Transaksjoner">
+        <div className="TransactionsTab">
+          <Section spacing="small" left right style_type="white">
+            <div className="TransactionsTab">
+              <H1>Oversikt over alle transaksjoner i DNB</H1>
+              {/* <AllTransactionsView /> */}
+              <Section style_type="white">
+                <Section spacing>
+                  <Dropdown
+                    data={[
+                      Parameter.TO_NAME,
+                      Parameter.TO_OCCUPATION,
+                      Parameter.TO_COUNTRY,
+                      Parameter.FROM_NAME,
+                      Parameter.FROM_OCCUPATION,
+                      Parameter.FROM_COUNTRY,
+                      Parameter.AMOUNT,
+                      Parameter.DATE,
+                    ]}
+                    label="Velg parameter som skal filtreres på:"
+                    title="Velg parameter"
+                    on_change={({ data }) => setInputParameter(data)}
+                  />
+                  <Input
+                    space
+                    type="text"
+                    onChange={handleInputText}
+                    value={inputText}
+                    placeholder={`Parameter`}
+                  />
+                </Section>{" "}
+                <TransactionTable
+                  listOfTransactions={filterTable(inputParameter, inputText)}
+                />
+              </Section>
+            </div>
+          </Section>
+        </div>
+      </Tabs.Content>
+    </Tabs>
+    
   );
 }
