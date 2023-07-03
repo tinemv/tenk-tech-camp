@@ -1,6 +1,6 @@
 import React from "react";
 import { AllTransactionsView } from "./AllTransactionsView";
-import { H1, P, Section, Tabs } from "@dnb/eufemia";
+import { H1, Tabs } from "@dnb/eufemia";
 
 export default function Transactions() {
   return (
