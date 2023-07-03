@@ -1,7 +1,8 @@
 import React from "react";
+import { H2, Section, Tabs } from "@dnb/eufemia";
+import Welcome from "./Welcome";
 import CustomerPage from "./Customer/CustomerPage";
 import TransactionsPage from "./Transactions/TransactionsPage";
-import { Tabs } from "@dnb/eufemia";
 
 export default function App() {
   return (
@@ -11,11 +12,18 @@ export default function App() {
       content_style="black-3"
       style={{ marginLeft: "1rem", marginRight: "1rem" }}
     >
-      <Tabs.Content title="Privatkunde">
+      <Tabs.Content title="Velkommen">
+        <Welcome/>
+      </Tabs.Content>
+      <Tabs.Content title="Logg inn som kunde">
         <CustomerPage />
       </Tabs.Content>
-      <Tabs.Content title="DNB">
-        <TransactionsPage />
+      <Tabs.Content title="Logg inn som etterforsker">
+        <Section spacing top bottom style_type="white">
+          <H2 top={0} bottom>
+            <TransactionsPage />
+          </H2>
+        </Section>
       </Tabs.Content>
     </Tabs>
   );
