@@ -1,6 +1,6 @@
 import React from "react";
-import Customer from "./Customer";
-import Transactions from "./Transactions";
+import CustomerPage from "./Customer/CustomerPage";
+import TransactionsPage from "./Transactions/TransactionsPage";
 import { Tabs } from "@dnb/eufemia";
 
 export default function App() {
@@ -11,11 +11,11 @@ export default function App() {
       content_style="black-3"
       style={{ marginLeft: "1rem", marginRight: "1rem" }}
     >
-      <Tabs.Content title="Logg inn som kunde">
-        <Customer />
+      <Tabs.Content title="Privatkunde">
+        <CustomerPage />
       </Tabs.Content>
-      <Tabs.Content title="Logg in som etterforsker">
-        <Transactions />
+      <Tabs.Content title="DNB">
+        <TransactionsPage />
       </Tabs.Content>
     </Tabs>
   );

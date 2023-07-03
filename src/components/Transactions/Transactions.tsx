@@ -1,35 +1,27 @@
 import React from "react";
-import "../styles.css";
-import data from "../data/allTransactions.json";
-import { Transaction } from "../model/Transactions";
-import { Dropdown, Input, Section } from "@dnb/eufemia";
+import { Dropdown, H1, Input, Section } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
+import { allDNBTransactions } from "../../data/allDNBTransactions";
+import { customer } from "../../data/customerData";
+import { Transaction } from "../../Models";
 
-const transactions: Transaction[] = data.transactions;
-
-const transactionsMap = (wantedTransactions: Transaction[]) => {
-  return wantedTransactions.map((transaction) => (
-    <tr key={`${transaction.id}`}>
-      <td>{transaction.from.name}</td>
-      <td>{transaction.from.country}</td>
-      <td>{transaction.from.occupation}</td>
-
-      <td>{transaction.to.name}</td>
-      <td>{transaction.to.country}</td>
-      <td>{transaction.to.occupation}</td>
-
-      <td>{transaction.amount}</td>
-      <td>{transaction.date}</td>
-    </tr>
-  ));
+const getAllTransactions = () => {
+  const allCustomerTransactions = customer.accounts.flatMap(
+    (account) => account.transactions
+  );
+  return allDNBTransactions.concat(allCustomerTransactions);
 };
 
-function filterTable(parameter: Parameter, value: string): Transaction[] {
+export function filterTable(
+  parameter: Parameter,
+  value: string
+): Transaction[] {
   const filteredTransactions = [];
+  const allTransactions = getAllTransactions();
   if (value === "") {
-    return transactions;
+    return allTransactions;
   }
-  transactions.map((transaction) => {
+  allTransactions.map((transaction) => {
     switch (parameter) {
       case Parameter.FROM_NAME:
         return transaction.from.name === value
@@ -80,45 +72,48 @@ enum Parameter {
   DATE = "Dato",
 }
 
-export const AllTransactionsView = () => {
+export default function Transactions() {
   const [inputText, setInputText] = React.useState("");
   const handleInputText = (event) => {
     setInputText(event.target.value);
   };
-
   const [inputParameter, setInputParameter] = React.useState(undefined);
 
   return (
-    <Section style_type="white">
-      <Section spacing>
-        <Dropdown
-          data={[
-            Parameter.TO_NAME,
-            Parameter.TO_OCCUPATION,
-            Parameter.TO_COUNTRY,
-            Parameter.FROM_NAME,
-            Parameter.FROM_OCCUPATION,
-            Parameter.FROM_COUNTRY,
-            Parameter.AMOUNT,
-            Parameter.DATE,
-          ]}
-          label="Velg parameter som skal filtreres på:"
-          title="Velg parameter"
-          on_change={({ data }) => setInputParameter(data)}
-        />
-        <Input
-          space
-          type="text"
-          onChange={handleInputText}
-          value={inputText}
-          placeholder={`Parameter`}
-        />
-      </Section>{" "}
-      <TransactionTable
-        listOfTransactions={transactionsMap(
-          filterTable(inputParameter, inputText)
-        )}
-      />
+    <Section spacing="small" left right style_type="white">
+      <div className="TransactionsTab">
+        <H1>Oversikt over alle transaksjoner i DNB</H1>
+        {/* <AllTransactionsView /> */}
+        <Section style_type="white">
+          <Section spacing>
+            <Dropdown
+              data={[
+                Parameter.TO_NAME,
+                Parameter.TO_OCCUPATION,
+                Parameter.TO_COUNTRY,
+                Parameter.FROM_NAME,
+                Parameter.FROM_OCCUPATION,
+                Parameter.FROM_COUNTRY,
+                Parameter.AMOUNT,
+                Parameter.DATE,
+              ]}
+              label="Velg parameter som skal filtreres på:"
+              title="Velg parameter"
+              on_change={({ data }) => setInputParameter(data)}
+            />
+            <Input
+              space
+              type="text"
+              onChange={handleInputText}
+              value={inputText}
+              placeholder={`Parameter`}
+            />
+          </Section>{" "}
+          <TransactionTable
+            listOfTransactions={filterTable(inputParameter, inputText)}
+          />
+        </Section>
+      </div>
     </Section>
   );
-};
+}

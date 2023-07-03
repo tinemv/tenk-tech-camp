@@ -1,15 +1,15 @@
 import React from "react";
-import { AllTransactionsView } from "./AllTransactionsView";
-import { H1, Tabs } from "@dnb/eufemia";
+import { Tabs } from "@dnb/eufemia";
+import "../../styles.css";
+import Transactions from "./Transactions";
 
-export default function Transactions() {
+export default function TransactionsPage() {
   return (
     <Tabs>
       <Tabs.Content title="Dashboard">Et dashboard</Tabs.Content>
       <Tabs.Content title="Transaksjoner">
         <div className="TransactionsTab">
-          <H1>Oversikt over alle transaksjoner i DNB</H1>
-          <AllTransactionsView />
+          <Transactions />
         </div>
       </Tabs.Content>
     </Tabs>
