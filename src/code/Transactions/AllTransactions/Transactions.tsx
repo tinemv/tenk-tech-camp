@@ -1,16 +1,8 @@
 import React from "react";
 import { Dropdown, H1, Input, Section } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
-import { allDNBTransactions } from "../../data/allDNBTransactions";
-import { customer } from "../../data/customerData";
-import { Transaction } from "../../Models";
-
-const getAllTransactions = () => {
-  const allCustomerTransactions = customer.accounts.flatMap(
-    (account) => account.transactions
-  );
-  return allDNBTransactions.concat(allCustomerTransactions);
-};
+import { Transaction } from "../../../ignore/Models";
+import { getAllTransactions } from "../../../ignore/codeDump";
 
 export function filterTable(
   parameter: Parameter,
@@ -83,7 +75,6 @@ export default function Transactions() {
     <Section spacing="small" left right style_type="white">
       <div className="TransactionsTab">
         <H1>Oversikt over alle transaksjoner i DNB</H1>
-        {/* <AllTransactionsView /> */}
         <Section style_type="white">
           <Section spacing>
             <Dropdown

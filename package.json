@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "main": "src/index.js",
+  "main": "code/index.js",
   "dependencies": {
     "@dnb/eufemia": "^10.2.0",
     "loader-utils": "3.2.1",

@@ -1,7 +1,7 @@
 import React from "react";
-import jente_koder from "../assets/jente_koder.jpg";
+import jente_koder from "./jente_koder.jpg";
 import { Section, H1, P, InfoCard } from "@dnb/eufemia";
-import "../styles.css";
+import "./styles.css";
 
 export default function Welcome() {
   return (
@@ -28,15 +28,22 @@ export default function Welcome() {
           </P>
         </div>
         <Section
-          style={{ marginLeft: 30, marginTop: 20, fontSize: "large" , display:"flex"}}
+          style={{
+            marginLeft: 30,
+            marginTop: 20,
+            fontSize: "large",
+            display: "flex",
+          }}
           style_type="white"
         >
-          <P style={{ margin: 20}}>Mer tekst om workshoppen og hvordan de skal gå gjennom oppgavene</P>
+          <P style={{ margin: 20 }}>
+            Mer tekst om workshoppen og hvordan de skal gå gjennom oppgavene
+          </P>
         </Section>
         <InfoCard
-            style={{fontSize: "large", bottom: '0px'}}
-            text="Har du spørsmål eller trenger hjelp? Spør oss! "
-          />
+          style={{ fontSize: "large", bottom: "0px" }}
+          text="Har du spørsmål eller trenger hjelp? Spør oss! "
+        />
       </div>
     </Section>
   );

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import AccountTable from "./AccountTable";
-import { customer } from "../../data/customerData";
-import profile_picture from "../../assets/Kjersti_Braathen.jpg";
+import { customer } from "../../../data/customer";
+import profile_picture from "../../../profile_pictures/Kjersti_Braathen.jpg";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
-import "../../styles.css";
-import AccountPage from "./AccountPage";
+import "../../../ignore/styles.css";
+import AccountPage from "../Account/AccountPage";
 
 export default function CustomerPage() {
   const [accountClicked, setAccountClicked] = useState("Customer");

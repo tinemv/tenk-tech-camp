@@ -1,8 +1,8 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
-import { Account } from "../../Models";
+import { Account } from "../../../ignore/Models";
 import { NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
-import { findBalance } from "./AccountPage";
+import { findBalance } from "../Account/AccountPage";
 
 export interface AccountTableProps {
   accountList: Account[];
