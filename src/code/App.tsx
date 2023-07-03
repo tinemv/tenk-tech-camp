@@ -1,6 +1,6 @@
 import React from "react";
 import { H2, Section, Tabs } from "@dnb/eufemia";
-import Welcome from "../ignore/Welcome";
+import Welcome from "./Welcome";
 import CustomerPage from "./Customer/Profile/CustomerPage";
 import { TransactionsPage } from "../ignore/codeDump";
 

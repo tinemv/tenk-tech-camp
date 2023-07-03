@@ -1,12 +1,13 @@
 import React from "react";
-import jente_koder from "./jente_koder.jpg";
-import { Section, H1, P, InfoCard } from "@dnb/eufemia";
-import "./styles.css";
+import jente_koder from "../ignore/jente_koder.jpg";
+import { Section, H1, H2, P, InfoCard } from "@dnb/eufemia";
+import "../ignore/styles.css";
 
 export default function Welcome() {
   return (
     <Section spacing="small" left right="0.25" style_type="white">
       <div className="WelcomeTab">
+        {/* INTRO OPPGAVE: Her har du funnet overskriften :D */}
         <H1 style={{ margin: 20 }}>Velkommen til workshop!</H1>
         <div className="GreenSection">
           <img

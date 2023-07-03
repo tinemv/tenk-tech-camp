@@ -1,16 +1,24 @@
 export var tasks = [
   {
-    id: "1",
-    title: "title 1",
-    description: "description 1",
+    id: "0",
+    title: "Intro oppgave",
+    description:
+      "I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi skal navigere oss til riktig fil og endre på nettsiden fra denne fila. Fila vi skal jobbe i heter Welcome.tsx og ligger i mappa som heter code",
     subtask: {
       a: {
-        description: "",
-        hint: "",
+        description:
+          "Finn der hvor overskriften står. Endre overskriften til Velkommen til Workshop!",
+        hint: "Se linje X . Prøv å endre på teksten på linja og se hva som skjer på nettsiden.",
       },
       b: {
-        description: "",
-        hint: "",
+        description:
+          "Endre farge på overskriften til en farge du ønsker, for eksempel rosa (pink) eller blå (blue).",
+        hint: "Her må vi endre på overskriftens Style og legge til <code class=“dnb-code”>color:'pink'</code> eller color:'blue'. ",
+      },
+      c: {
+        description:
+          "Lag en ny linje under overskriften og legg til en underoverskrift med elementet H2. Velg selv hva underoverskriften skal være, for eksempel navnet ditt.",
+        hint: "Her skal du skrive en nesten lik linje som på overskriften, bare at du skal bytte ut <H1> med <H2>. I style kan du velge farge og plassering slik du ønsker.",
       },
     },
   },
@@ -24,11 +32,13 @@ export var tasks = [
         hint: "",
       },
       b: {
-        description: "Legg til en kolonne for en egen kommentar i tabellen og skriv en kommentar på en transaksjon som virker mistenkelig.",
+        description:
+          "Legg til en kolonne for en egen kommentar i tabellen og skriv en kommentar på en transaksjon som virker mistenkelig.",
         hint: "",
       },
       c: {
-        description: "Prøv å filtrere tabellen med valgmenyen øverst. Filtrering på beløp fungerer ikke som det skal, prøv å fikse det så det fungere likt som de andre.",
+        description:
+          "Prøv å filtrere tabellen med valgmenyen øverst. Filtrering på beløp fungerer ikke som det skal, prøv å fikse det så det fungere likt som de andre.",
         hint: "",
       },
       d: {
