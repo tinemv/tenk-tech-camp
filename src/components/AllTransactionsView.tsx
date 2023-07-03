@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles.css";
 import data from "../data/allTransactions.json";
-import { Transaction, Person } from "../model/Transactions";
+import { Transaction } from "../model/Transactions";
 import { Dropdown, Input, Section } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
 
