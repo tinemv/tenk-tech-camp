@@ -10,7 +10,6 @@ export var allDNBTransactions = [
       country: "country1",
     },
     amount: 200,
-    date: "27.10.2023",
   },
   {
     id: "200",
@@ -23,7 +22,6 @@ export var allDNBTransactions = [
       country: "country2",
     },
     amount: 200,
-    date: "27.10.2023",
   },
   {
     id: "300",
@@ -36,7 +34,6 @@ export var allDNBTransactions = [
       country: "country3",
     },
     amount: 200,
-    date: "27.10.2023",
   },
   {
     id: "400",
@@ -49,6 +46,5 @@ export var allDNBTransactions = [
       country: "country3",
     },
     amount: 200,
-    date: "27.10.2023",
   },
 ];

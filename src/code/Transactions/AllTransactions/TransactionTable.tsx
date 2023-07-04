@@ -1,6 +1,6 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
-import { Table, Th, Tr, Td } from "@dnb/eufemia";
+import { Table, Th, Tr, Td, NumberFormat } from "@dnb/eufemia";
 
 export type TransactionTableProps = {
   listOfTransactions: any;
@@ -42,7 +42,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
               <Tr key={transaction.id}>
                 <Td>{transaction.from.name}</Td>
                 <Td>{transaction.to.name}</Td>
-                <Td>{transaction.amount},-</Td>
+                <Td><NumberFormat>{transaction.amount}</NumberFormat></Td>
                 <Td
                   style={{
                     color: setColorForHighRisk(

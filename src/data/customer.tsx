@@ -17,7 +17,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "17.05.2023",
         },
         {
           id: "2",
@@ -30,7 +29,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 150,
-          date: "30.06.2023",
         },
       ],
     },
@@ -50,7 +48,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 200,
-          date: "27.10.2023",
         },
       ],
     },
@@ -70,7 +67,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 27500,
-          date: "01.01.2022",
         },
         {
           id: "5",
@@ -83,7 +79,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 27500,
-          date: "01.01.2023",
         },
         {
           id: "6",
@@ -96,7 +91,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 3020,
-          date: "10.10.2023",
         },
       ],
     },
@@ -116,7 +110,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 40000,
-          date: "14.03.2023",
         },
       ],
     },
@@ -136,7 +129,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 100,
-          date: "05.01.2023",
         },
       ],
     },
@@ -156,7 +148,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 850,
-          date: "05.07.2023",
         },
       ],
     },
@@ -176,7 +167,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "07.07.2023",
         },
         {
           id: "11",
@@ -189,7 +179,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "08.07.2023",
         },
         {
           id: "12",
@@ -202,7 +191,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "09.07.2023",
         },
         {
           id: "13",
@@ -215,7 +203,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "10.07.2023",
         },
         {
           id: "14",
@@ -228,7 +215,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "11.07.2023",
         },
         {
           id: "15",
@@ -241,7 +227,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "12.07.2023",
         },
         {
           id: "16",
@@ -254,7 +239,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "13.07.2023",
         },
         {
           id: "17",
@@ -267,7 +251,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "14.07.2023",
         },
         {
           id: "18",
@@ -280,7 +263,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "15.07.2023",
         },
         {
           id: "19",
@@ -293,7 +275,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "16.07.2023",
         },
         {
           id: "20",
@@ -306,7 +287,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "17.07.2023",
         },
         {
           id: "21",
@@ -319,7 +299,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "18.07.2023",
         },
         {
           id: "22",
@@ -332,7 +311,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "19.07.2023",
         },
         {
           id: "23",
@@ -345,7 +323,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "20.07.2023",
         },
         {
           id: "24",
@@ -358,7 +335,6 @@ export var customer = {
             country: "Norge",
           },
           amount: 1000,
-          date: "21.07.2023",
         },
       ],
     },
