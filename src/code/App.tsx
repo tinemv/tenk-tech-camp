@@ -7,6 +7,8 @@ import TaskNavigator from "../ignore/TaskNavigator";
 import { tasks } from "../ignore/tasks";
 
 export default function App() {
+  const [currTaskTab, setCurrTaskTab] = useState(0);
+
   const [progressValue, setProgressValue] = useState(0);
   const [checkedTasks, setCheckedTasks] = useState<boolean[]>(() => {
     if (window.sessionStorage.getItem("checkedTasks") == null) {
@@ -39,6 +41,8 @@ export default function App() {
           setProgressValue={setProgressValue}
           checkedTasks={checkedTasks}
           setCheckedTasks={setCheckedTasks}
+          currTaskTab={currTaskTab}
+          setCurrTaskTab={setCurrTaskTab}
         />
         <Welcome />
       </Tabs.Content>

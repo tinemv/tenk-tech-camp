@@ -19,10 +19,13 @@ export interface TaskNavigatorProps {
   setProgressValue: Function;
   checkedTasks: boolean[];
   setCheckedTasks: Function;
+  currTaskTab: number;
+  setCurrTaskTab: Function;
 }
 
 interface TaskTab {
     title: String,
+<<<<<<< HEAD
     key: String,
     content: String,
     subTask: { id: number; name: string; description: string; hint: string; }[]
@@ -90,11 +93,22 @@ function getDataElements(props: any ): any {
   })
 
   return data;
+=======
+    key: String
+}
+
+function getTaskTabs() : TaskTab[] {
+    let data: TaskTab[] = []
+    tasks.map((item) => 
+        data.push({title: item.title, key: item.id})    
+    )
+    return data
+>>>>>>> 3e4dbc6 (merged progress bar)
 }
 
 
 export default function TaskNavigator(props: TaskNavigatorProps) {
-  const { progressValue, setProgressValue, checkedTasks, setCheckedTasks } =
+  const { progressValue, setProgressValue, checkedTasks, setCheckedTasks, currTaskTab, setCurrTaskTab } =
     props;
 
   useEffect(() => {
@@ -107,7 +121,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
       "checkedTasks:",
       window.sessionStorage.getItem("checkedTasks").split(",")
     );
-  }, [checkedTasks]);
+  }, [checkedTasks, currTaskTab]);
 
   return (
     <Drawer title="Oppgaver">
@@ -119,6 +133,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         <Progress progressValue={progressValue}/>
         <Tabs
             id="unique-linked-id"
+<<<<<<< HEAD
             data={getDataElements(props)
             }
             on_click={({ selected_key }) => {
@@ -127,6 +142,49 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         />
       </Drawer.Header>
 
+=======
+            data = {getTaskTabs()}  
+        />
+      </Drawer.Header>
+      <Drawer.Body>
+        <Tabs.Content id="unique-linked-id" >
+          {tasks.map((item) => (
+            <>
+              <H2>{item.title}</H2>
+              <P top>{item.description}</P>
+              <Ol type={item.id.toString()}>
+                {item.subtask.map((sub) => (
+                  <FormRow>
+                    <Checkbox
+                      right="large"
+                      title="Kryss av når du er ferdig med oppgaven"
+                      on_change={({ checked }) => {
+                        setCheckedTasks(
+                          checkedTasks.map((task, i) => {
+                            if (i == sub.id) {
+                              return (task = checked);
+                            } else {
+                              return (task = task);
+                            }
+                          })
+                        );
+                      }}
+                      checked={checkedTasks[sub.id]}
+                    />
+                    <FormRow direction="vertical">
+                      <Li>{sub.description}</Li>
+                      <Modal>
+                        <p style={{ backgroundColor: "white" }}>{sub.hint}</p>
+                      </Modal>
+                    </FormRow>
+                  </FormRow>
+                ))}
+              </Ol>
+            </>
+          ))}
+        </Tabs.Content>
+      </Drawer.Body>
+>>>>>>> 3e4dbc6 (merged progress bar)
     </Drawer>
   );
 }
