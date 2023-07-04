@@ -7,7 +7,7 @@ import TaskNavigator from "../ignore/TaskNavigator";
 import { tasks } from "../ignore/tasks";
 
 export default function App() {
-  const [currTaskTab, setCurrTaskTab] = useState(0);
+  const [currTaskTab, setCurrTaskTab] = useState("0");
 
   const [progressValue, setProgressValue] = useState(0);
   const [checkedTasks, setCheckedTasks] = useState<boolean[]>(() => {

@@ -69,4 +69,17 @@ export var tasks = [
       },
     ],
   },
+  {
+    id: "y",
+    title: "Oppgave y",
+    description: "Oppgave om transaksjoner i banken",
+    subtask: [
+      {
+        id: 3,
+        name: "a",
+        description: "[Beskrivelse av oppgave]",
+        hint: "",
+      }
+    ],
+  },
 ];
