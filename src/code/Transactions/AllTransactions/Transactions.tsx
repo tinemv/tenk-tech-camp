@@ -23,7 +23,6 @@ export default function Transactions() {
     <Section spacing="small" left right style_type="white">
       <div className="TransactionsTab">
         <H1>Oversikt over alle transaksjoner i DNB</H1>
-        <P>Her er et paragraf med mass etekst</P>
         <Section style_type="white">
           <Section spacing>
             <Dropdown
