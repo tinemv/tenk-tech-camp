@@ -35,3 +35,24 @@ flex-direction: column;
   flex-direction: column;
   font-weight: lighter;
 }
+
+.DashboardTab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DashboardTop {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+.DashboardBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2rem;
+}
