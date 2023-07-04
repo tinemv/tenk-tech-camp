@@ -8,8 +8,7 @@ export var tasks = [
       {
         id: 0,
         name: "A",
-        description:
-          "Finn der hvor overskriften står. Endre overskriften til 'Velkommen til Workshop!'",
+        description: "I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi skal navigere oss til riktig fil og endre på nettsiden fra denne fila. Fila vi skal jobbe i heter Welcome.tsx og ligger i mappa som heter code",
         hint: "Se linje X . Prøv å endre på teksten på linja og se hva som skjer på nettsiden.",
       },
       {
