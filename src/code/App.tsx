@@ -3,6 +3,7 @@ import { H2, Section, Tabs } from "@dnb/eufemia";
 import Welcome from "./Welcome";
 import CustomerPage from "./Customer/Profile/CustomerPage";
 import { TransactionsPage } from "../ignore/codeDump";
+import TaskNavigator from "../ignore/TaskNavigator";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       style={{ marginLeft: "1rem", marginRight: "1rem" }}
     >
       <Tabs.Content title="Velkommen">
+        <TaskNavigator/>
         <Welcome />
       </Tabs.Content>
       <Tabs.Content title="Logg inn som kunde">
