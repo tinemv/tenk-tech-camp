@@ -2,9 +2,11 @@ import React from "react";
 import {
   Breadcrumb,
   Button,
+  Dialog,
   H1,
   H2,
   H3,
+  Modal,
   NumberFormat,
   Section,
   Space,
@@ -47,20 +49,37 @@ export default function AccountPage(props: AccountProps) {
         </NumberFormat>
       </H2>
       <Space top bottom>
-        <Button
-          icon={transfer_to}
-          icon_position="left"
-          size="large"
-          text="Betal"
-        ></Button>
-        <Button
-          variant="secondary"
-          icon={pay_from}
-          icon_position="left"
-          size="large"
-          left
-          text="Overfør"
-        ></Button>
+        <Dialog
+          title="Betal"
+          trigger={(props) => (
+            <Button
+              {...props}
+              icon={transfer_to}
+              icon_position="left"
+              size="large"
+              text="Betal"
+              variant="primary"
+            ></Button>
+          )}
+        >
+          Si hvem du vil betale penger til.
+        </Dialog>
+        <Dialog
+          title="Overfør"
+          trigger={(props) => (
+            <Button
+              {...props}
+              icon={pay_from}
+              icon_position="left"
+              size="large"
+              text="Overfør"
+              variant="secondary"
+              left
+            ></Button>
+          )}
+        >
+          Si hvem du vil overføre penger til.
+        </Dialog>
       </Space>
       <Section style_type="lavender" spacing>
         <TransactionTable listOfTransactions={account.transactions} />
