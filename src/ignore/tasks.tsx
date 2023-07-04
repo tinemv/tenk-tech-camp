@@ -30,9 +30,14 @@ export var tasks = [
   },
   {
     id: "x",
+<<<<<<< HEAD
     title: "Oppgave x",
     description:
       "I denne oppgaven skal du lage funksjonalitet på nettsiden som hjelper DNB med å oppdage økonomisk kriminalitet. Oppgavene hører til siden som heter 'Logg inn som etterforsker' og i tabellen under siden 'Transaksjoner' ser du en oversikt over alle transaksjonene i banken. Koden for denne siden ligger under 'Transactions' i mappa 'code' og består av flere filer.",
+=======
+    title: "Oppgave 1",
+    description: "Oppgave om transaksjoner i banken",
+>>>>>>> 31692a7 (viser kun intro oppgave lmao)
     subtask: [
       {
         id: 3,
@@ -72,6 +77,19 @@ export var tasks = [
           "Til slutt ønsker DNB å gjøre det enda lettere for etterforskerene å se hvilke transaksjoner som har høy risiko for kriminalitet. Selv om vi allerede har markert de som har høy risiko i en annen farge ønsker vi å kunne filtrere vekk de som ikke har høy risiko. Som du ser over tabellen kan vi allerede filtrere på for eksempel 'Avsenders navn'. Test ut dette for å gjøre deg kjent med funksjonaliteten. Som du også ser finnes det ikke noen filtrering for 'Risiko'. Din oppgave blir å fikse dette så den fungerer likt som de andre parameterene. Se i fila 'Transactions.tsx' og let etter hvor det er definert hva som er i rullgardinmenyen (drop down på engelsk.",
         hint: "Funskjonalitet for selve filtreringen er allerede lagt inn men rullgardinmenyen mangler et valg for risiko. Her må vi finne komponenten som heter 'DropDown' og legge til data i denne. Se på 'Parameter' linje X og se om du finner den som mangler i rullgardinen så du kan legge til denne.",
       },
+    ],
+  },
+  {
+    id: "y",
+    title: "Oppgave y",
+    description: "Oppgave om transaksjoner i banken",
+    subtask: [
+      {
+        id: 3,
+        name: "a",
+        description: "[Beskrivelse av oppgave]",
+        hint: "",
+      }
     ],
   },
 ];
