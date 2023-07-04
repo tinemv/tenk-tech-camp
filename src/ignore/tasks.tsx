@@ -30,7 +30,7 @@ export var tasks = [
   },
   {
     id: "x",
-    title: "Oppgave x",
+    title: "Oppgave 1",
     description: "Oppgave om transaksjoner i banken",
     subtask: [
       {
@@ -60,6 +60,19 @@ export var tasks = [
           "Finn den påbegynte funksjonen som heter findSuspectTransaction() i filen TransactionTable.tsx. Implementer en metode for å markere en rad rødt hvis transaksjonen kommer fra eller til et land med høy risiko (level 3).",
         hint: "",
       },
+    ],
+  },
+  {
+    id: "y",
+    title: "Oppgave y",
+    description: "Oppgave om transaksjoner i banken",
+    subtask: [
+      {
+        id: 3,
+        name: "a",
+        description: "[Beskrivelse av oppgave]",
+        hint: "",
+      }
     ],
   },
 ];

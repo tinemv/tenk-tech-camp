@@ -19,7 +19,7 @@ export interface TaskNavigatorProps {
   setProgressValue: Function;
   checkedTasks: boolean[];
   setCheckedTasks: Function;
-  currTaskTab: number;
+  currTaskTab: String;
   setCurrTaskTab: Function;
 }
 
@@ -66,44 +66,58 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
             data = {getTaskTabs()}  
         />
       </Drawer.Header>
-      <Drawer.Body>
-        <Tabs.Content id="unique-linked-id" >
-          {tasks.map((item) => (
-            <>
-              <H2>{item.title}</H2>
-              <P top>{item.description}</P>
-              <Ol type={item.id.toString()}>
-                {item.subtask.map((sub) => (
-                  <FormRow>
-                    <Checkbox
-                      right="large"
-                      title="Kryss av når du er ferdig med oppgaven"
-                      on_change={({ checked }) => {
-                        setCheckedTasks(
-                          checkedTasks.map((task, i) => {
-                            if (i == sub.id) {
-                              return (task = checked);
-                            } else {
-                              return (task = task);
-                            }
-                          })
-                        );
-                      }}
-                      checked={checkedTasks[sub.id]}
-                    />
-                    <FormRow direction="vertical">
-                      <Li>{sub.description}</Li>
-                      <Modal>
-                        <p style={{ backgroundColor: "white" }}>{sub.hint}</p>
-                      </Modal>
-                    </FormRow>
-                  </FormRow>
-                ))}
-              </Ol>
-            </>
-          ))}
-        </Tabs.Content>
-      </Drawer.Body>
+      <Drawer.Body id="root">
+                <>
+                {({key}) => { setCurrTaskTab(key)}}
+                    {tasks.map((obj) => (
+                        <>
+                        {(() => {
+                        if (obj.id === currTaskTab){
+                            console.log("kommer inn")
+
+                            return (
+                                <Tabs.Content id="unique-linked-id">
+                                    <>
+                                        <H2>{obj.title}</H2>
+                                        <P top>{obj.description}</P>
+                                        <Ol type={obj.id}>
+                                            {obj.subtask.map((sub => (
+                                                 <FormRow>
+                                                 <Checkbox
+                                                   right="large"
+                                                   title="Kryss av når du er ferdig med oppgaven"
+                                                   on_change={({ checked }) => {
+                                                     setCheckedTasks(
+                                                       checkedTasks.map((task, i) => {
+                                                         if (i == sub.id) {
+                                                           return (task = checked);
+                                                         } else {
+                                                           return (task = task);
+                                                         }
+                                                       })
+                                                     );
+                                                   }}
+                                                   checked={checkedTasks[sub.id]}
+                                                 />
+                                                 <FormRow direction="vertical">
+                                                   <Li>{sub.description}</Li>
+                                                   <Modal>
+                                                     <p style={{ backgroundColor: "white" }}>{sub.hint}</p>
+                                                   </Modal>
+                                                 </FormRow>
+                                               </FormRow>
+                                            )))}
+                                        </Ol>
+                                    </>        
+                                </Tabs.Content>
+                            )
+                        }})()}
+                        </>
+                    ))}
+                </>
+            </Drawer.Body>
     </Drawer>
   );
 }
+
+
