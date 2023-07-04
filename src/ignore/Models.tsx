@@ -16,12 +16,9 @@ export type Transaction = {
   to: Person;
   amount: number;
   date: String;
-  description: String;
-  risk: number;
 };
 
 export type Person = {
   name: String;
   country: String;
-  occupation: String;
 };
