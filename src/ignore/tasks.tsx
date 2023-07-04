@@ -37,8 +37,13 @@ export var tasks = [
       {
         id: 3,
         name: "a",
+<<<<<<< HEAD
         description: "Det første vi skal gjøre er å lage en beskrivelse av tabellen for at den skal være enklere for etterforskere å forstå. Det gjøres i fila 'Transactions.tsx'. Vi bruker elementet <P> for å legge til et paragraf og fyller inn teksten vi vil ha. Teksten kan for eksempel være 'Denne tabellen viser oversikt over alle transaksjonene i DNB. Den kan brukes til å finne mistengelige transaksjoner og oppdage kriminalitet', eller du kan finne på din egen. Legg inn paragrafet under overskriften, og hvis du vil kan du legge til farge, endre størrelse eller liknende ved å legge til 'style' som tidligere.",
         hint: "Her må vi finne overskriften i koden først. Se om du finner overskriften og legg til en ny linje under. Her legger du til elementet <P> </P> og fyller inn teksten din i mellom P'ene.",
+=======
+        description: "[Beskrivelse av oppgave]",
+        hint: "",
+>>>>>>> 3e4dbc6 (merged progress bar)
       },
       {
         id: 4,

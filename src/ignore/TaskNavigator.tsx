@@ -30,7 +30,7 @@ interface TaskTab {
 
 function getTaskTabs() : TaskTab[] {
   let data: TaskTab[] = []
-  tasks.map((item) => 
+  tasks.map((item) =>
     data.push({title: item.title, key: item.id, content: item.description, subTask: item.subtask})
   )
   console.log(data)
@@ -64,7 +64,7 @@ function getTaskTabContent(item: TaskTab, props: any) {
                     />
                     <FormRow direction="vertical">
                       <Li>{sub.description}</Li>
-                      <Dialog 
+                      <Dialog
                         triggerAttributes={{
                           text: "Hint " + sub.name,
                         }}
@@ -84,11 +84,11 @@ function getTaskTabContent(item: TaskTab, props: any) {
 
 function getDataElements(props: any ): any {
   let data = [];
-  
+
   getTaskTabs().map((item) => {
     data.push({title: item.title, key: item.key, content: getTaskTabContent(item, props)})
   })
-  
+
   return data;
 }
 
@@ -126,7 +126,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
             }}
         />
       </Drawer.Header>
-       
+
     </Drawer>
   );
 }
