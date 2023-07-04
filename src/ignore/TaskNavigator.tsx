@@ -126,7 +126,6 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
             }}
         />
       </Drawer.Header>
-
     </Drawer>
   );
 }
