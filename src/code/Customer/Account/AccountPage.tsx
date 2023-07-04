@@ -1,19 +1,16 @@
 import React from "react";
 import {
   Breadcrumb,
-  Button,
-  Dialog,
   H1,
   H2,
   H3,
-  Modal,
   NumberFormat,
   Section,
   Space,
 } from "@dnb/eufemia";
 import { Account, Transaction } from "../../../ignore/Models";
 import { TransactionTable } from "../../Transactions/AllTransactions/TransactionTable";
-import { transfer_to, pay_from } from "@dnb/eufemia/icons";
+import PayOrTransferMoney from "./PayOrTransferMoney";
 
 export type AccountProps = {
   account: Account;
@@ -49,37 +46,7 @@ export default function AccountPage(props: AccountProps) {
         </NumberFormat>
       </H2>
       <Space top bottom>
-        <Dialog
-          title="Betal"
-          trigger={(props) => (
-            <Button
-              {...props}
-              icon={transfer_to}
-              icon_position="left"
-              size="large"
-              text="Betal"
-              variant="primary"
-            ></Button>
-          )}
-        >
-          Si hvem du vil betale penger til.
-        </Dialog>
-        <Dialog
-          title="Overfør"
-          trigger={(props) => (
-            <Button
-              {...props}
-              icon={pay_from}
-              icon_position="left"
-              size="large"
-              text="Overfør"
-              variant="secondary"
-              left
-            ></Button>
-          )}
-        >
-          Si hvem du vil overføre penger til.
-        </Dialog>
+        <PayOrTransferMoney />
       </Space>
       <Section style_type="lavender" spacing>
         <TransactionTable listOfTransactions={account.transactions} />
