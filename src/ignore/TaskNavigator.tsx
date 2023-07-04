@@ -51,6 +51,10 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
       "checkedTasks:",
       window.sessionStorage.getItem("checkedTasks").split(",")
     );
+
+    console.log(
+        "current tab: " + currTaskTab
+    );
   }, [checkedTasks, currTaskTab]);
 
   return (
@@ -73,8 +77,6 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                         <>
                         {(() => {
                         if (obj.id === currTaskTab){
-                            console.log("kommer inn")
-
                             return (
                                 <Tabs.Content id="unique-linked-id">
                                     <>
