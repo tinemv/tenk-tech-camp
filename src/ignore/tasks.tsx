@@ -36,7 +36,7 @@ export var tasks = [
       {
         id: 3,
         name: "a",
-        description: "",
+        description: "[Beskrivelse av oppgave]",
         hint: "",
       },
       {

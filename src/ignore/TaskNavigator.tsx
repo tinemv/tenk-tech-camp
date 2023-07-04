@@ -19,10 +19,26 @@ export interface TaskNavigatorProps {
   setProgressValue: Function;
   checkedTasks: boolean[];
   setCheckedTasks: Function;
+  currTaskTab: number;
+  setCurrTaskTab: Function;
 }
 
+interface TaskTab {
+    title: String,
+    key: String
+}
+
+function getTaskTabs() : TaskTab[] {
+    let data: TaskTab[] = []
+    tasks.map((item) => 
+        data.push({title: item.title, key: item.id})    
+    )
+    return data
+}
+
+
 export default function TaskNavigator(props: TaskNavigatorProps) {
-  const { progressValue, setProgressValue, checkedTasks, setCheckedTasks } =
+  const { progressValue, setProgressValue, checkedTasks, setCheckedTasks, currTaskTab, setCurrTaskTab } =
     props;
 
   useEffect(() => {
@@ -35,7 +51,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
       "checkedTasks:",
       window.sessionStorage.getItem("checkedTasks").split(",")
     );
-  }, [checkedTasks]);
+  }, [checkedTasks, currTaskTab]);
 
   return (
     <Drawer title="Oppgaver">
@@ -46,34 +62,12 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         </FormStatus>
         <Progress progressValue={progressValue}/>
         <Tabs
-          id="unique-linked-id"
-          data={[
-            {
-              title: "Oppgave 1",
-              key: "one",
-            },
-            {
-              title: "Oppgave 2",
-              key: "two",
-            },
-            {
-              title: "Oppgave 3",
-              key: "three",
-            },
-            {
-              title: "Oppgave 4",
-              key: "four",
-            },
-            ,
-            {
-              title: "Oppgave 5",
-              key: "five",
-            },
-          ]}
+            id="unique-linked-id"
+            data = {getTaskTabs()}  
         />
       </Drawer.Header>
       <Drawer.Body>
-        <Tabs.Content id="unique-linked-id">
+        <Tabs.Content id="unique-linked-id" >
           {tasks.map((item) => (
             <>
               <H2>{item.title}</H2>
