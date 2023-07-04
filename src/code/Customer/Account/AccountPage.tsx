@@ -10,8 +10,8 @@ import {
   Space,
 } from "@dnb/eufemia";
 import { Account, Transaction } from "../../../ignore/Models";
-import { TransactionTable } from "../../Transactions/AllTransactions/TransactionTable";
 import { transfer_to, pay_from } from "@dnb/eufemia/icons";
+import { TransactionTableForAccounts } from "./TransactionTableForAccounts";
 
 export type AccountProps = {
   account: Account;
@@ -63,7 +63,8 @@ export default function AccountPage(props: AccountProps) {
         ></Button>
       </Space>
       <Section style_type="lavender" spacing>
-        <TransactionTable listOfTransactions={account.transactions} />
+
+        <TransactionTableForAccounts listOfTransactions={account.transactions} />
       </Section>
     </Section>
   );
