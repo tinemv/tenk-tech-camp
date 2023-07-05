@@ -1,20 +1,11 @@
 import React from "react";
-import {
-  Breadcrumb,
-  Button,
-  H1,
-  H2,
-  H3,
-  NumberFormat,
-  Section,
-  Space,
-} from "@dnb/eufemia";
+import { Breadcrumb, H1, H2, H3, NumberFormat, Section } from "@dnb/eufemia";
 import { Account, Transaction } from "../../../ignore/Models";
 import { transfer_to, pay_from } from "@dnb/eufemia/icons";
 import { TransactionTableForAccounts } from "./TransactionTableForAccounts";
 
 export type AccountProps = {
-  account: Account;
+  account: Account | undefined;
   setAccountClicked: Function;
 };
 
@@ -27,6 +18,9 @@ export const findBalance = (transactions: Transaction[]) => {
 
 export default function AccountPage(props: AccountProps) {
   const { account, setAccountClicked } = props;
+  if (account == undefined) {
+    return;
+  }
 
   return (
     <Section spacing top bottom style_type="white">
@@ -46,25 +40,10 @@ export default function AccountPage(props: AccountProps) {
           {findBalance(account.transactions)}
         </NumberFormat>
       </H2>
-      <Space top bottom>
-        <Button
-          icon={transfer_to}
-          icon_position="left"
-          size="large"
-          text="Betal"
-        ></Button>
-        <Button
-          variant="secondary"
-          icon={pay_from}
-          icon_position="left"
-          size="large"
-          left
-          text="Overfør"
-        ></Button>
-      </Space>
-      <Section style_type="lavender" spacing>
-
-        <TransactionTableForAccounts listOfTransactions={account.transactions} />
+      <Section top style_type="lavender" spacing>
+        <TransactionTableForAccounts
+          listOfTransactions={account.transactions}
+        />
       </Section>
     </Section>
   );
