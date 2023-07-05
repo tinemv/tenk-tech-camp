@@ -2,21 +2,11 @@ import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Table, Th, Tr, Td, NumberFormat } from "@dnb/eufemia";
 
-export type TransactionTableProps = {
+export type TransactionTableForAccountsProps = {
   listOfTransactions: any;
 };
 
-export function detectRiskCountry(fromCountry, toCountry): String | undefined {
-  {/** OPPGAVE X */}
-  return 'Ukjent';
-}
-
-function setColorForHighRisk(risk): any {
-  {/** OPPGAVE X */}
-  return 'black';
-}
-
-export const TransactionTable = (props: TransactionTableProps) => {
+export const TransactionTableForAccounts = (props: TransactionTableForAccountsProps) => {
   const { listOfTransactions } = props;
 
   return (
@@ -32,32 +22,20 @@ export const TransactionTable = (props: TransactionTableProps) => {
           <thead>
             <Tr>
               <Th>Avsenders navn</Th>
+              <Th>Avsender land</Th>
               <Th>Mottakers navn</Th>
+              <Th>Mottakers land</Th>
               <Th>Beløp</Th>
-              <Th>Risiko</Th>
             </Tr>
           </thead>
           <tbody>
             {listOfTransactions.map((transaction) => (
               <Tr key={transaction.id}>
                 <Td>{transaction.from.name}</Td>
+                <Td>{transaction.from.country}</Td>
                 <Td>{transaction.to.name}</Td>
+                <Td>{transaction.to.country}</Td>
                 <Td><NumberFormat>{transaction.amount}</NumberFormat></Td>
-                <Td
-                  style={{
-                    color: setColorForHighRisk(
-                      detectRiskCountry(
-                        transaction.from.country,
-                        transaction.to.country
-                      )
-                    ),
-                  }}
-                >
-                  {detectRiskCountry(
-                    transaction.from.country,
-                    transaction.to.country
-                  )}
-                </Td>
               </Tr>
             ))}
           </tbody>

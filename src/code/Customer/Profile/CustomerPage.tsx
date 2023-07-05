@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AccountTable from "./AccountTable";
 import { customer } from "../../../data/customer";
-import profile_picture from "../../../profile_pictures/Kjersti_Braathen.jpg";
+import profile_picture from "../../../profile_pictures/Kjerstin_Braathen.jpg";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../../../ignore/styles.css";
 import AccountPage from "../Account/AccountPage";

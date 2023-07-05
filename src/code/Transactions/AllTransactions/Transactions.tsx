@@ -1,67 +1,15 @@
 import React from "react";
-import { Dropdown, H1, Input, Section } from "@dnb/eufemia";
+import { Dropdown, H1, Input, Section, P } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
-import { Transaction } from "../../../ignore/Models";
-import { getAllTransactions } from "../../../ignore/codeDump";
+import { filterTable } from "../../../ignore/codeDump";
 
-export function filterTable(
-  parameter: Parameter,
-  value: string
-): Transaction[] {
-  const filteredTransactions = [];
-  const allTransactions = getAllTransactions();
-  if (value === "") {
-    return allTransactions;
-  }
-  allTransactions.map((transaction) => {
-    switch (parameter) {
-      case Parameter.FROM_NAME:
-        return transaction.from.name === value
-          ? filteredTransactions.push(transaction)
-          : undefined;
-      case Parameter.FROM_OCCUPATION:
-        return transaction.from.occupation === value
-          ? filteredTransactions.push(transaction)
-          : undefined;
-      case Parameter.FROM_COUNTRY:
-        return transaction.from.country == value
-          ? filteredTransactions.push(transaction)
-          : undefined;
-      case Parameter.TO_NAME:
-        return transaction.to.name == value
-          ? filteredTransactions.push(transaction)
-          : undefined;
-      case Parameter.TO_OCCUPATION:
-        return transaction.to.occupation == value
-          ? filteredTransactions.push(transaction)
-          : undefined;
-      case Parameter.TO_COUNTRY:
-        return transaction.to.country == value
-          ? filteredTransactions.push(transaction)
-          : undefined;
-      case Parameter.AMOUNT:
-        return transaction.amount == +value
-          ? filteredTransactions.push(transaction)
-          : undefined;
-      case Parameter.DATE:
-        return transaction.date == value
-          ? filteredTransactions.push(transaction)
-          : undefined;
-    }
-  });
-  console.log(filteredTransactions);
-  return filteredTransactions;
-}
-
-enum Parameter {
+export enum Parameter {
   FROM_NAME = "Avsenders navn",
-  FROM_OCCUPATION = "Avsenders yrke",
   FROM_COUNTRY = "Avsenders land",
   TO_NAME = "Mottakers navn",
-  TO_OCCUPATION = "Mottakers yrke",
   TO_COUNTRY = "Mottakers land",
   AMOUNT = "Beløp",
-  DATE = "Dato",
+  RISK = 'Risiko'
 }
 
 export default function Transactions() {
@@ -80,15 +28,12 @@ export default function Transactions() {
             <Dropdown
               data={[
                 Parameter.TO_NAME,
-                Parameter.TO_OCCUPATION,
                 Parameter.TO_COUNTRY,
                 Parameter.FROM_NAME,
-                Parameter.FROM_OCCUPATION,
                 Parameter.FROM_COUNTRY,
                 Parameter.AMOUNT,
-                Parameter.DATE,
               ]}
-              label="Velg parameter som skal filtreres på:"
+              label="Parameter som skal filtreres på:"
               title="Velg parameter"
               on_change={({ data }) => setInputParameter(data)}
             />

@@ -1,7 +1,8 @@
 import React from "react";
 import { Breadcrumb, H1, H2, H3, NumberFormat, Section } from "@dnb/eufemia";
 import { Account, Transaction } from "../../../ignore/Models";
-import { TransactionTable } from "../../Transactions/AllTransactions/TransactionTable";
+import { transfer_to, pay_from } from "@dnb/eufemia/icons";
+import { TransactionTableForAccounts } from "./TransactionTableForAccounts";
 
 export type AccountProps = {
   account: Account;
@@ -37,7 +38,9 @@ export default function AccountPage(props: AccountProps) {
         </NumberFormat>
       </H2>
       <Section top style_type="lavender" spacing>
-        <TransactionTable listOfTransactions={account.transactions} />
+        <TransactionTableForAccounts
+          listOfTransactions={account.transactions}
+        />
       </Section>
     </Section>
   );
