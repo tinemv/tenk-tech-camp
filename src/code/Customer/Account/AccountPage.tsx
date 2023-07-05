@@ -1,16 +1,7 @@
 import React from "react";
-import {
-  Breadcrumb,
-  H1,
-  H2,
-  H3,
-  NumberFormat,
-  Section,
-  Space,
-} from "@dnb/eufemia";
+import { Breadcrumb, H1, H2, H3, NumberFormat, Section } from "@dnb/eufemia";
 import { Account, Transaction } from "../../../ignore/Models";
 import { TransactionTable } from "../../Transactions/AllTransactions/TransactionTable";
-import PayOrTransferMoney from "./PayOrTransferMoney";
 
 export type AccountProps = {
   account: Account;
@@ -45,10 +36,7 @@ export default function AccountPage(props: AccountProps) {
           {findBalance(account.transactions)}
         </NumberFormat>
       </H2>
-      <Space top bottom>
-        <PayOrTransferMoney />
-      </Space>
-      <Section style_type="lavender" spacing>
+      <Section top style_type="lavender" spacing>
         <TransactionTable listOfTransactions={account.transactions} />
       </Section>
     </Section>
