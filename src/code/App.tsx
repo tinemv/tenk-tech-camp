@@ -8,15 +8,13 @@ import styled from "styled-components";
 const FlexWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 `;
 const LeftArea = styled.div`
-  flex-shrink: 1;
-  overflow: hidden;
-  background-color: yellow;
+  flex-shrink: 0;
 `;
 const RightArea = styled.div`
   overflow: hidden;
-  background-color: blue;
 `;
 
 export default function App() {
@@ -32,7 +30,6 @@ export default function App() {
             style={{
               marginLeft: "1rem",
               marginRight: "1rem",
-              backgroundColor: "red",
             }}
             data={[
               {
@@ -48,7 +45,6 @@ export default function App() {
                 key: "Etterforsker",
               },
             ]}
-            selected_key="Velkommen"
           />
         </LeftArea>
 
@@ -61,15 +57,17 @@ export default function App() {
             style={{
               marginLeft: "1rem",
               marginRight: "1rem",
-              backgroundColor: "pink",
             }}
             data={[
               {
                 title: "Teori",
                 key: "Teori",
               },
+              {
+                title: "Oppgaver",
+                key: "Oppgaver",
+              },
             ]}
-            selected_key="Velkommen"
           />
         </RightArea>
       </FlexWrapper>
@@ -83,6 +81,8 @@ export default function App() {
             return <TransactionsPage />;
           } else if (key == "Teori") {
             return <TheoryPage />;
+          } else if (key == "Oppgaver") {
+            return <H1>Oppgaver</H1>;
           }
         }}
       </Tabs.Content>
