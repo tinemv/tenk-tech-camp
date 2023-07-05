@@ -1,9 +1,9 @@
 import React from "react";
 import PieChart from "./PieChart";
-import { H1, H2 } from "@dnb/eufemia";
+import { H1, H2, InfoCard } from "@dnb/eufemia";
 import BarChart from "./BarChart";
 import "../../../ignore/styles.css";
-import StatCard from "./StatCard";
+import { card_in, card_in_medium, hand_money, hand_money_medium, profile, profile_medium } from "@dnb/eufemia/icons";
 
 
 export default function Dashboard() {
@@ -13,19 +13,33 @@ export default function Dashboard() {
         <div className="DashboardTab">
             <H1 space={{ top: "small" }}>Stats</H1>
             <div className="DashboardTop">
-                <div style={{ flex: 1, minWidth: "300px"}}>
-                    <PieChart />
+                <div style={{ flex: 1, minWidth: "300px", padding: "1rem"}}>
+                    <PieChart title={"Kake"}/>
                 </div>
-                <div style={{ flex: 1, minWidth: "300px" }}>
-                    <BarChart />
+                <div style={{ flex: 1, minWidth: "300px", padding: "1rem"}}>
+                    <BarChart title={"Søyle"} />
                 </div>
             </div>
             <div className="DashboardBottom">
-                <StatCard title={"Antall kunder"} data={"4"} />
-                <StatCard title={"Antall transaksjoner"} data={"100"} />
-                <StatCard title={"Penger i omløp"} data={"19 milliarder"} />
+                <InfoCard 
+                    title="Antall kunder"
+                    text="4"
+                    icon={profile_medium}                    
+                />
+                <InfoCard 
+                    title="Antall transaksjoner"
+                    text="100"
+                    icon={card_in_medium}
+                />
+                <InfoCard 
+                    title="Penger i omløp"
+                    text="19 milliarder"
+                    icon={hand_money_medium}
+                />
             </div>
             
         </div>
     )
 }
+
+

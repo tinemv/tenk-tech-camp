@@ -1,8 +1,9 @@
 import React from 'react';
 import 'chart.js/auto';
 import { Pie } from 'react-chartjs-2';
+import { P } from '@dnb/eufemia';
 
-export default function PieChart() {
+export default function PieChart({title}) {
     const data = {
       labels: ['Red', 'Blue', 'Yellow'],
       datasets: [
@@ -15,9 +16,19 @@ export default function PieChart() {
     };
   
     return (
-        <Pie style={{
-            maxHeight: "10rem", 
-            width: "10rem"}}
+        <div style={{
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            backgroundColor: "violet"
+        }}>
+            <P space="x-small">{title}</P>
+            <Pie 
+            style={{
+                maxHeight: "100%", 
+                maxWidth: "100%",
+            }}
             data={data}
             options={{
                 plugins: {
@@ -27,6 +38,8 @@ export default function PieChart() {
                 }
             }} 
         />
+        </div>
+        
     );
   };
   
