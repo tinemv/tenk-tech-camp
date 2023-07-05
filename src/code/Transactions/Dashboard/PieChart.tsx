@@ -16,7 +16,7 @@ export default function PieChart({title, data}) {
     }
   
     return (
-        <div style={{ marginRight:"2.5rem"}}>
+        <div style={{ marginRight:"2.5rem", marginBottom:"1rem"}}>
             <P space="x-small" style={{ textAlign: "center" }}>{title}</P>
             <Pie data={data} options={options} height={250} width={250} style={{ marginTop:"1rem" }} />
         </div>    
