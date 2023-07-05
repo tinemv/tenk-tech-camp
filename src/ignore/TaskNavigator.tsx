@@ -36,6 +36,20 @@ function getTaskTabs() : TaskTab[] {
     return data
 }
 
+function tabOnClick() {
+    return (
+        <>
+    
+            <Tabs.Content id="unique-linked-id">               
+            <H2>{"rip"}</H2>
+            <P top>{"meg"}</P>
+            </Tabs.Content>
+                            
+        </>
+    
+    )
+}
+
 
 export default function TaskNavigator(props: TaskNavigatorProps) {
   const { progressValue, setProgressValue, checkedTasks, setCheckedTasks, currTaskTab, setCurrTaskTab } =
@@ -67,17 +81,18 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         <Progress progressValue={progressValue}/>
         <Tabs
             id="unique-linked-id"
-            data = {getTaskTabs()}  
+            data = {getTaskTabs()}
+            onClick={tabOnClick}
         />
       </Drawer.Header>
       <Drawer.Body id="root">
-                <>
-                {({key}) => { setCurrTaskTab(key)}}
+            <>
+                {({key}) =>{ console.log(key) , setCurrTaskTab(key)}}
                     {tasks.map((obj) => (
                         <>
                         {(() => {
                         if (obj.id === currTaskTab){
-                            return (
+                            return ( 
                                 <Tabs.Content id="unique-linked-id">
                                     <>
                                         <H2>{obj.title}</H2>
