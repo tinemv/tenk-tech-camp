@@ -1,11 +1,11 @@
 import React from "react";
 import { allDNBTransactions } from "../data/transactions";
 import { customer } from "../data/customer";
-import { Tabs } from "@dnb/eufemia";
+import { H1, H2, Section, Tabs } from "@dnb/eufemia";
 import Transactions from "../code/Transactions/AllTransactions/Transactions";
-import { Transaction } from '../ignore/Models';
-import { Parameter } from '../code/Transactions/AllTransactions/Transactions'
-import { detectRiskCountry } from '../code/Transactions/AllTransactions/TransactionTable'
+import { Transaction } from "../ignore/Models";
+import { Parameter } from "../code/Transactions/AllTransactions/Transactions";
+import { detectRiskCountry } from "../code/Transactions/AllTransactions/TransactionTable";
 
 export const getAllTransactions = () => {
   const allCustomerTransactions = customer.accounts.flatMap(
@@ -16,14 +16,18 @@ export const getAllTransactions = () => {
 
 export function TransactionsPage() {
   return (
-    <Tabs>
-      <Tabs.Content title="Dashboard">Et dashboard</Tabs.Content>
-      <Tabs.Content title="Transaksjoner">
-        <div className="TransactionsTab">
-          <Transactions />
-        </div>
-      </Tabs.Content>
-    </Tabs>
+    <Section spacing top bottom style_type="white">
+      <H2 top={0} bottom>
+        <Tabs>
+          <Tabs.Content title="Dashboard">Et dashboard</Tabs.Content>
+          <Tabs.Content title="Transaksjoner">
+            <div className="TransactionsTab">
+              <Transactions />
+            </div>
+          </Tabs.Content>
+        </Tabs>
+      </H2>
+    </Section>
   );
 }
 
@@ -68,4 +72,9 @@ export function filterTable(
     }
   });
   return filteredTransactions;
+}
+
+
+export function TheoryPage() {
+  return <H1>Teori</H1>;
 }
