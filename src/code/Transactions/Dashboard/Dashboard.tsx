@@ -34,7 +34,7 @@ const pieChartData = {
 export default function Dashboard() {
     return (
         <div className="DashboardTab">
-            <H1 space={{ top: "x-small" }}>Dashboard</H1>
+            <H1 top= "x-small">Dashboard</H1>
             <div className="chart-container">
                 <div>
                     <PieChart title={"Land"} data={pieChartData}/>
