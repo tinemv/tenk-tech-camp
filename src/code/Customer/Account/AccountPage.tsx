@@ -5,7 +5,7 @@ import { transfer_to, pay_from } from "@dnb/eufemia/icons";
 import { TransactionTableForAccounts } from "./TransactionTableForAccounts";
 
 export type AccountProps = {
-  account: Account;
+  account: Account | undefined;
   setAccountClicked: Function;
 };
 
@@ -18,6 +18,9 @@ export const findBalance = (transactions: Transaction[]) => {
 
 export default function AccountPage(props: AccountProps) {
   const { account, setAccountClicked } = props;
+  if (account == undefined) {
+    return;
+  }
 
   return (
     <Section spacing top bottom style_type="white">
