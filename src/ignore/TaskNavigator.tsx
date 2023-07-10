@@ -84,7 +84,6 @@ function getTaskTabContent(item: TaskTab, props: any) {
 
 function getDataElements(props: any ): any {
   let data = [];
-
   getTaskTabs().map((item) => {
     data.push({title: item.title, key: item.key, content: getTaskTabContent(item, props)})
   })
