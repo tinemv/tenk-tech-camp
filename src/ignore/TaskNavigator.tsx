@@ -10,9 +10,11 @@ import {
   Li,
   Checkbox,
   FormRow,
+  Dialog,
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
+import { bell_medium } from "@dnb/eufemia/icons";
 
 export interface TaskNavigatorProps {
   progressValue: number;
@@ -25,34 +27,80 @@ export interface TaskNavigatorProps {
 
 interface TaskTab {
     title: String,
-    key: String
+    key: String,
+    content: String,
+    subTask: { id: number; name: string; description: string; hint: string; }[]
 }
 
 function getTaskTabs() : TaskTab[] {
-    let data: TaskTab[] = []
-    tasks.map((item) => 
-        data.push({title: item.title, key: item.id})    
-    )
-    return data
+  let data: TaskTab[] = []
+  tasks.map((item) => 
+    data.push({title: item.title, key: item.id, content: item.description, subTask: item.subtask})
+    //data.push({title: item.title, key: item.id, content: item.description, subTask: item.subtask})
+  )
+  console.log(data)
+  return data
 }
 
-function tabOnClick() {
-    return (
-        <>
-    
-            <Tabs.Content id="unique-linked-id">               
-            <H2>{"rip"}</H2>
-            <P top>{"meg"}</P>
-            </Tabs.Content>
-                            
-        </>
-    
-    )
+function getTaskTabContent(item: TaskTab, props: any) {
+  return (
+    <Drawer.Body id="root">
+      <Tabs.Content id="unique-linked-id">
+        <H2>{item.title}</H2>
+        <P top>{item.content}</P>
+        <Ol type={item.key.toString()}>
+          {item.subTask.map((sub => (
+                    <FormRow>
+                    <Checkbox
+                      right="large"
+                      title="Kryss av når du er ferdig med oppgaven"
+                      on_change={({ checked }) => {
+                        props.setCheckedTasks(
+                          props.checkedTasks.map((task, i) => {
+                            if (i == sub.id) {
+                              return (task = checked);
+                            } else {
+                              return (task = task);
+                            }
+                          })
+                        );
+                      }}
+                      checked={props.checkedTasks[sub.id]}
+                    />
+                    <FormRow direction="vertical">
+                      <Li>{sub.description}</Li>
+                      <Dialog
+                        variant="confirmation"
+                        title="Dialog confirmation title"
+                        icon={bell_medium}
+                        description="Some content describing the situation."
+                        onConfirm={({ close }) => close()}
+                        triggerAttributes={{
+                          text: 'Trigger button',
+                        }}
+                      />
+                    </FormRow>
+                  </FormRow>
+               )))}
+           </Ol>
+        </Tabs.Content>
+      </Drawer.Body>
+  )
+}
+
+function getDataElements(props: any ): any {
+  let data = [{}];
+  
+  getTaskTabs().map((item) => {
+    data.push({title: item.title, key: item.key, content: getTaskTabContent(item, props)})
+  })
+  
+  return data;
 }
 
 
 export default function TaskNavigator(props: TaskNavigatorProps) {
-  const { progressValue, setProgressValue, checkedTasks, setCheckedTasks, currTaskTab, setCurrTaskTab } =
+  const { progressValue, setProgressValue, checkedTasks, setCheckedTasks } =
     props;
 
   useEffect(() => {
@@ -65,11 +113,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
       "checkedTasks:",
       window.sessionStorage.getItem("checkedTasks").split(",")
     );
-
-    console.log(
-        "current tab: " + currTaskTab
-    );
-  }, [checkedTasks, currTaskTab]);
+  }, [checkedTasks]);
 
   return (
     <Drawer title="Oppgaver">
@@ -81,18 +125,29 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         <Progress progressValue={progressValue}/>
         <Tabs
             id="unique-linked-id"
-            data = {getTaskTabs()}
-            onClick={tabOnClick}
+            data={[
+              ...getDataElements(props)
+            ]}
+            on_click={({ selected_key }) => {
+              console.log('on_click', selected_key)
+            }}
         />
       </Drawer.Header>
-      <Drawer.Body id="root">
+       
+    </Drawer>
+  );
+}
+
+
+
+/*
+return (
+                <Drawer.Body id="root">
             <>
-                {({key}) =>{ console.log(key) , setCurrTaskTab(key)}}
                     {tasks.map((obj) => (
                         <>
                         {(() => {
-                        if (obj.id === currTaskTab){
-                            return ( 
+                        if (obj.id === selected_key){
                                 <Tabs.Content id="unique-linked-id">
                                     <>
                                         <H2>{obj.title}</H2>
@@ -127,14 +182,12 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                                         </Ol>
                                     </>        
                                 </Tabs.Content>
-                            )
+                            
                         }})()}
                         </>
                     ))}
                 </>
-            </Drawer.Body>
-    </Drawer>
-  );
-}
+            </Drawer.Body> 
+              )
 
-
+*/

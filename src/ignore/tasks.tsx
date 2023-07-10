@@ -31,7 +31,7 @@ export var tasks = [
   {
     id: "x",
     title: "Oppgave 1",
-    description: "Oppgave om transaksjoner i banken",
+    description: "Oppgave om transaksjoner i banken A",
     subtask: [
       {
         id: 3,
@@ -65,7 +65,7 @@ export var tasks = [
   {
     id: "y",
     title: "Oppgave y",
-    description: "Oppgave om transaksjoner i banken",
+    description: "Oppgave om transaksjoner i banken B",
     subtask: [
       {
         id: 3,
