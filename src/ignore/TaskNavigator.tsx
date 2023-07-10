@@ -92,20 +92,6 @@ function getDataElements(props: any ): any {
   return data;
 }
 
-function tabOnClick() {
-    return (
-        <>
-    
-            <Tabs.Content id="unique-linked-id">               
-            <H2>{"rip"}</H2>
-            <P top>{"meg"}</P>
-            </Tabs.Content>
-                            
-        </>
-    
-    )
-}
-
 
 export default function TaskNavigator(props: TaskNavigatorProps) {
   const { progressValue, setProgressValue, checkedTasks, setCheckedTasks } =
