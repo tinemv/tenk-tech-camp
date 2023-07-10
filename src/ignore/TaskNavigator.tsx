@@ -13,7 +13,6 @@ import {
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
-import { bell_medium } from "@dnb/eufemia/icons";
 
 export interface TaskNavigatorProps {
   progressValue: number;
@@ -85,7 +84,6 @@ function getTaskTabContent(item: TaskTab, props: any) {
 
 function getDataElements(props: any ): any {
   let data = [];
-
   getTaskTabs().map((item) => {
     data.push({title: item.title, key: item.key, content: getTaskTabContent(item, props)})
   })
