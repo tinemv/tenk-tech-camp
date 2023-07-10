@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import {
   Drawer,
   P,
   FormStatus,
   Tabs,
   H2,
-  Modal,
   Ol,
   Li,
   Checkbox,
@@ -14,15 +13,12 @@ import {
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
-import { bell_medium } from "@dnb/eufemia/icons";
 
 export interface TaskNavigatorProps {
   progressValue: number;
   setProgressValue: Function;
   checkedTasks: boolean[];
   setCheckedTasks: Function;
-  currTaskTab: String;
-  setCurrTaskTab: Function;
 }
 
 interface TaskTab {
@@ -36,7 +32,6 @@ function getTaskTabs() : TaskTab[] {
   let data: TaskTab[] = []
   tasks.map((item) => 
     data.push({title: item.title, key: item.id, content: item.description, subTask: item.subtask})
-    //data.push({title: item.title, key: item.id, content: item.description, subTask: item.subtask})
   )
   console.log(data)
   return data
@@ -56,7 +51,7 @@ function getTaskTabContent(item: TaskTab, props: any) {
                       title="Kryss av når du er ferdig med oppgaven"
                       on_change={({ checked }) => {
                         props.setCheckedTasks(
-                          props.checkedTasks.map((task, i) => {
+                          props.checkedTasks.map((task: any, i: number) => {
                             if (i == sub.id) {
                               return (task = checked);
                             } else {
@@ -69,16 +64,15 @@ function getTaskTabContent(item: TaskTab, props: any) {
                     />
                     <FormRow direction="vertical">
                       <Li>{sub.description}</Li>
-                      <Dialog
-                        variant="confirmation"
-                        title="Dialog confirmation title"
-                        icon={bell_medium}
-                        description="Some content describing the situation."
-                        onConfirm={({ close }) => close()}
+                      <Dialog 
                         triggerAttributes={{
-                          text: 'Trigger button',
+                          text: "Hint " + sub.name,
                         }}
-                      />
+                        title={"Hint " + sub.name}>
+                        <P>
+                          {sub.hint}
+                        </P>
+                      </Dialog>
                     </FormRow>
                   </FormRow>
                )))}
@@ -89,7 +83,7 @@ function getTaskTabContent(item: TaskTab, props: any) {
 }
 
 function getDataElements(props: any ): any {
-  let data = [{}];
+  let data = [];
   
   getTaskTabs().map((item) => {
     data.push({title: item.title, key: item.key, content: getTaskTabContent(item, props)})
@@ -125,9 +119,8 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         <Progress progressValue={progressValue}/>
         <Tabs
             id="unique-linked-id"
-            data={[
-              ...getDataElements(props)
-            ]}
+            data={getDataElements(props)
+            }
             on_click={({ selected_key }) => {
               console.log('on_click', selected_key)
             }}

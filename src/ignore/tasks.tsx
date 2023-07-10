@@ -7,21 +7,21 @@ export var tasks = [
     subtask: [
       {
         id: 0,
-        name: "a",
+        name: "A",
         description:
           "Finn der hvor overskriften står. Endre overskriften til Velkommen til Workshop!",
         hint: "Se linje X . Prøv å endre på teksten på linja og se hva som skjer på nettsiden.",
       },
       {
         id: 1,
-        name: "b",
+        name: "B",
         description:
           "Endre farge på overskriften til en farge du ønsker, for eksempel rosa (pink) eller blå (blue).",
-        hint: "Her må vi endre på overskriftens Style og legge til <code class=“dnb-code”>color:'pink'</code> eller color:'blue'. ",
+        hint: "Her må vi endre på overskriftens Style og legge til <code class=“dnb-code”>color:'pink'</code> eller color:'blue'. "
       },
       {
         id: 2,
-        name: "c",
+        name: "C",
         description:
           "Lag en ny linje under overskriften og legg til en underoverskrift med elementet H2. Velg selv hva underoverskriften skal være, for eksempel navnet ditt.",
         hint: "Her skal du skrive en nesten lik linje som på overskriften, bare at du skal bytte ut <H1> med <H2>. I style kan du velge farge og plassering slik du ønsker.",
@@ -35,27 +35,27 @@ export var tasks = [
     subtask: [
       {
         id: 3,
-        name: "a",
+        name: "A",
         description: "[Beskrivelse av oppgave]",
         hint: "",
       },
       {
         id: 4,
-        name: "b",
+        name: "B",
         description:
           "Legg til en kolonne for en egen kommentar i tabellen og skriv en kommentar på en transaksjon som virker mistenkelig.",
         hint: "",
       },
       {
         id: 5,
-        name: "c",
+        name: "C",
         description:
           "Prøv å filtrere tabellen med valgmenyen øverst. Filtrering på beløp fungerer ikke som det skal, prøv å fikse det så det fungere likt som de andre.",
         hint: "",
       },
       {
         id: 6,
-        name: "d",
+        name: "D",
         description:
           "Finn den påbegynte funksjonen som heter findSuspectTransaction() i filen TransactionTable.tsx. Implementer en metode for å markere en rad rødt hvis transaksjonen kommer fra eller til et land med høy risiko (level 3).",
         hint: "",
@@ -68,8 +68,8 @@ export var tasks = [
     description: "Oppgave om transaksjoner i banken B",
     subtask: [
       {
-        id: 3,
-        name: "a",
+        id: 7,
+        name: "A",
         description: "[Beskrivelse av oppgave]",
         hint: "",
       }
