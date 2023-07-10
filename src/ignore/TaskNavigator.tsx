@@ -64,7 +64,11 @@ function getTaskTabContent(item: TaskTab, props: any) {
                     />
                     <FormRow direction="vertical">
                       <Li>{sub.description}</Li>
+<<<<<<< HEAD
                       <Dialog
+=======
+                      <Dialog 
+>>>>>>> beb6eb1 (task navigation works)
                         triggerAttributes={{
                           text: "Hint " + sub.name,
                         }}
@@ -84,7 +88,11 @@ function getTaskTabContent(item: TaskTab, props: any) {
 
 function getDataElements(props: any ): any {
   let data = [];
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> beb6eb1 (task navigation works)
   getTaskTabs().map((item) => {
     data.push({title: item.title, key: item.key, content: getTaskTabContent(item, props)})
   })
