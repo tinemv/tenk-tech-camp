@@ -30,44 +30,15 @@ export var tasks = [
   },
   {
     id: "x",
-<<<<<<< HEAD
-<<<<<<< HEAD
     title: "Oppgave x",
     description:
       "I denne oppgaven skal du lage funksjonalitet på nettsiden som hjelper DNB med å oppdage økonomisk kriminalitet. Oppgavene hører til siden som heter 'Logg inn som etterforsker' og i tabellen under siden 'Transaksjoner' ser du en oversikt over alle transaksjonene i banken. Koden for denne siden ligger under 'Transactions' i mappa 'code' og består av flere filer.",
-=======
-    title: "Oppgave 1",
-<<<<<<< HEAD
-    description: "Oppgave om transaksjoner i banken",
->>>>>>> 31692a7 (viser kun intro oppgave lmao)
-=======
-    description: "Oppgave om transaksjoner i banken A",
->>>>>>> 386c445 (works better then before)
-=======
-    title: "Oppgave x",
-    description:
-      "I denne oppgaven skal du lage funksjonalitet på nettsiden som hjelper DNB med å oppdage økonomisk kriminalitet. Oppgavene hører til siden som heter 'Logg inn som etterforsker' og i tabellen under siden 'Transaksjoner' ser du en oversikt over alle transaksjonene i banken. Koden for denne siden ligger under 'Transactions' i mappa 'code' og består av flere filer.",
->>>>>>> 80e4437 (updates tasks file)
     subtask: [
       {
         id: 3,
-<<<<<<< HEAD
-        name: "a",
-<<<<<<< HEAD
-        description: "Det første vi skal gjøre er å lage en beskrivelse av tabellen for at den skal være enklere for etterforskere å forstå. Det gjøres i fila 'Transactions.tsx'. Vi bruker elementet <P> for å legge til et paragraf og fyller inn teksten vi vil ha. Teksten kan for eksempel være 'Denne tabellen viser oversikt over alle transaksjonene i DNB. Den kan brukes til å finne mistengelige transaksjoner og oppdage kriminalitet', eller du kan finne på din egen. Legg inn paragrafet under overskriften, og hvis du vil kan du legge til farge, endre størrelse eller liknende ved å legge til 'style' som tidligere.",
-        hint: "Her må vi finne overskriften i koden først. Se om du finner overskriften og legg til en ny linje under. Her legger du til elementet <P> </P> og fyller inn teksten din i mellom P'ene.",
-=======
-=======
         name: "A",
-<<<<<<< HEAD
->>>>>>> beb6eb1 (task navigation works)
-        description: "[Beskrivelse av oppgave]",
-        hint: "",
->>>>>>> 3e4dbc6 (merged progress bar)
-=======
         description: "Det første vi skal gjøre er å lage en beskrivelse av tabellen for at den skal være enklere for etterforskere å forstå. Det gjøres i fila 'Transactions.tsx'. Vi bruker elementet <P> for å legge til et paragraf og fyller inn teksten vi vil ha. Teksten kan for eksempel være 'Denne tabellen viser oversikt over alle transaksjonene i DNB. Den kan brukes til å finne mistengelige transaksjoner og oppdage kriminalitet', eller du kan finne på din egen. Legg inn paragrafet under overskriften, og hvis du vil kan du legge til farge, endre størrelse eller liknende ved å legge til 'style' som tidligere.",
         hint: "Her må vi finne overskriften i koden først. Se om du finner overskriften og legg til en ny linje under. Her legger du til elementet <P> </P> og fyller inn teksten din i mellom P'ene.",
->>>>>>> 80e4437 (updates tasks file)
       },
       {
         id: 4,
@@ -90,14 +61,9 @@ export var tasks = [
           "For å gjøre transaksjonene med høy risiko for kriminalitet mer synlig ønsker vi at de skal ha en annen farge enn de med lav. Se på funksjonen som heter 'setColorForHighRisk' og implementer denne på samme måte som i forrige oppgave. Hvis risikoen er høy kan du returnere fargen rød for eksempel, mens hvis den er lav kan du returnere svart eller grønn. ",
         hint: "Her må vi på samme måte som i forrige oppgave bruke en if-setning. Husk at 'Hvis' i kode skrives 'if{}' og, 'er lik' skrives '===' og 'eller' skrives '||'. Ellers kan du herme etter den forrige if-setningen du laget men endre betingelsene så de heller sjekker om 'risk' er lik 'HØY' eller ikke.",
       },
-<<<<<<< HEAD
-      e: {
-        id: 7,
-=======
       {
         id: 7,
         name: "E",
->>>>>>> 80e4437 (updates tasks file)
         description:
           "Til slutt ønsker DNB å gjøre det enda lettere for etterforskerene å se hvilke transaksjoner som har høy risiko for kriminalitet. Selv om vi allerede har markert de som har høy risiko i en annen farge ønsker vi å kunne filtrere vekk de som ikke har høy risiko. Som du ser over tabellen kan vi allerede filtrere på for eksempel 'Avsenders navn'. Test ut dette for å gjøre deg kjent med funksjonaliteten. Som du også ser finnes det ikke noen filtrering for 'Risiko'. Din oppgave blir å fikse dette så den fungerer likt som de andre parameterene. Se i fila 'Transactions.tsx' og let etter hvor det er definert hva som er i rullgardinmenyen (drop down på engelsk.",
         hint: "Funskjonalitet for selve filtreringen er allerede lagt inn men rullgardinmenyen mangler et valg for risiko. Her må vi finne komponenten som heter 'DropDown' og legge til data i denne. Se på 'Parameter' linje X og se om du finner den som mangler i rullgardinen så du kan legge til denne.",
