@@ -16,7 +16,7 @@ export var tasks = [
         name: "B",
         description:
           "Endre farge på overskriften til en farge du ønsker, for eksempel rosa (pink) eller blå (blue).",
-        hint: "Her må vi endre på overskriftens Style og legge til <code class=“dnb-code”>color:'pink'</code> eller color:'blue'. "
+        hint: "Her må vi endre på overskriftens Style og legge til <code class=“dnb-code”>color:'pink'</code> eller color:'blue'. ",
       },
       {
         id: 2,
