@@ -13,6 +13,7 @@ import {
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
+import { bell_medium } from "@dnb/eufemia/icons";
 
 export interface TaskNavigatorProps {
   progressValue: number;
@@ -126,7 +127,6 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
             }}
         />
       </Drawer.Header>
-
     </Drawer>
   );
 }
