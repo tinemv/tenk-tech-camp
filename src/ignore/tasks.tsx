@@ -36,8 +36,12 @@ export var tasks = [
       "I denne oppgaven skal du lage funksjonalitet på nettsiden som hjelper DNB med å oppdage økonomisk kriminalitet. Oppgavene hører til siden som heter 'Logg inn som etterforsker' og i tabellen under siden 'Transaksjoner' ser du en oversikt over alle transaksjonene i banken. Koden for denne siden ligger under 'Transactions' i mappa 'code' og består av flere filer.",
 =======
     title: "Oppgave 1",
+<<<<<<< HEAD
     description: "Oppgave om transaksjoner i banken",
 >>>>>>> 31692a7 (viser kun intro oppgave lmao)
+=======
+    description: "Oppgave om transaksjoner i banken A",
+>>>>>>> 386c445 (works better then before)
     subtask: [
       {
         id: 3,
@@ -82,7 +86,7 @@ export var tasks = [
   {
     id: "y",
     title: "Oppgave y",
-    description: "Oppgave om transaksjoner i banken",
+    description: "Oppgave om transaksjoner i banken B",
     subtask: [
       {
         id: 3,
