@@ -76,7 +76,3 @@ export function filterTable(
   return filteredTransactions;
 }
 
-
-export function TheoryPage() {
-  return  <H1>Teori</H1>
-}

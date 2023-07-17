@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Button, H1, H2, Section, Tabs } from "@dnb/eufemia";
+import { Tabs } from "@dnb/eufemia";
 import Welcome from "./Welcome";
 import CustomerPage from "./Customer/Profile/CustomerPage";
-import { TheoryPage, TransactionsPage } from "../ignore/codeDump";
-import TaskNavigator  from "../ignore/TaskNavigator";
+import { TransactionsPage } from "../ignore/codeDump";
+import TaskNavigator from "../ignore/TaskNavigator";
 import styled from "styled-components";
 import { tasks } from "../ignore/tasks";
-
 
 const FlexWrapper = styled.div`
   display: flex;
@@ -18,7 +17,6 @@ const LeftArea = styled.div`
 `;
 const RightArea = styled.div`
   overflow: hidden;
-  background-color: red
 `;
 
 export default function App() {
@@ -48,7 +46,7 @@ export default function App() {
           <Tabs
             id="tabs"
             tabs_spacing
-            tabs_style="mint-green"
+            /* tabs_style="mint-green" */
             content_style="black-3"
             style={{
               marginLeft: "1rem",
@@ -72,88 +70,25 @@ export default function App() {
         </LeftArea>
 
         <RightArea>
-          <Tabs
-            id="tabs"
-            tabs_spacing
-            tabs_style="mint-green"
-            content_style="black-3"
-            style={{
-              marginLeft: "1rem",
-              marginRight: "1rem",
-            }}
-            data={[
-              {
-                title: "Teori",
-                key: "Teori",
-              },
-              {
-                title: "Oppgaver",
-                key: "Oppgaver",
-              },
-            ]}
+          <TaskNavigator
+            progressValue={progressValue}
+            setProgressValue={setProgressValue}
+            checkedTasks={checkedTasks}
+            setCheckedTasks={setCheckedTasks}
           />
         </RightArea>
       </FlexWrapper>
       <Tabs.Content id="tabs">
         {({ key }) => {
           if (key == "Velkommen") {
-            return (
-              <>
-                <TaskNavigator
-                  progressValue={progressValue}
-                  setProgressValue={setProgressValue}
-                  checkedTasks={checkedTasks}
-                  setCheckedTasks={setCheckedTasks}
-                />
-                <Welcome />;
-              </>
-            );
+            return <Welcome />;
           } else if (key == "Kunde") {
             return <CustomerPage />;
           } else if (key == "Etterforsker") {
             return <TransactionsPage />;
-          } else if (key == "Teori") {
-            return <TheoryPage />;
-          } else if (key == "Oppgaver") {
-            return (
-              <TaskNavigator
-                progressValue={progressValue}
-                setProgressValue={setProgressValue}
-                checkedTasks={checkedTasks}
-                setCheckedTasks={setCheckedTasks}
-              />
-            );
           }
         }}
       </Tabs.Content>
     </>
   );
 }
-
-
-/* Dette er gammel måte å skrive tabs på:
-<Tabs
-  tabs_spacing
-  tabs_style="mint-green"
-  content_style="black-3"
-  style={{
-    marginLeft: "1rem",
-    marginRight: "1rem",
-  }}
-  width="100%"
->
-  <Tabs.Content title="Velkommen">
-    <Welcome />
-  </Tabs.Content>
-  <Tabs.Content title="Logg inn som kunde">
-    <CustomerPage />
-  </Tabs.Content>
-  <Tabs.Content title="Logg inn som etterforsker">
-    <Section spacing top bottom style_type="white">
-      <H2 top={0} bottom>
-        <TransactionsPage />
-      </H2>
-    </Section>
-  </Tabs.Content>
-</Tabs> 
-*/

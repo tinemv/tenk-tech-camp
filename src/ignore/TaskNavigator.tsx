@@ -15,6 +15,7 @@ import {
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
+import { title } from "process";
 
 export interface TaskNavigatorProps {
   progressValue: number;
@@ -46,7 +47,6 @@ function getTaskTabs(): TaskTab[] {
       subTask: item.subtask,
     })
   );
-  console.log(data);
   return data;
 }
 
@@ -86,7 +86,7 @@ function getTaskTabContent(item: TaskTab, props: any) {
                   >
                     <P>{sub.hint}</P>
                   </Dialog>
-                  <Tag text={sub.level} space='0.5'/>
+                  <Tag text={sub.level} space="0.5" />
                 </Section>
               </FormRow>
             </FormRow>
@@ -119,28 +119,21 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
       (checkedTasks.filter((x) => x == true).length * 100) / checkedTasks.length
     );
     window.sessionStorage.setItem("checkedTasks", checkedTasks.toString());
-
-    /* console.log(
-      "checkedTasks:",
-      window.sessionStorage.getItem("checkedTasks").split(",")
-    ); */
   }, [checkedTasks]);
 
   return (
-    <Drawer title="Oppgaver">
+    <Drawer
+      title="Oppgaver"
+      space
+      triggerAttributes={{ text: "Oppgaver", variant: "secondary" }}
+    >
       <Drawer.Header>
         <P bottom>Her finner du oppgaver relatert til en spesifikk Kunde!</P>
         <FormStatus state="info">
           Spør oss om det skulle være noe du lurer på!
         </FormStatus>
         <Progress progressValue={progressValue} />
-        <Tabs
-          id="unique-linked-id"
-          data={getDataElements(props)}
-          on_click={({ selected_key }) => {
-            console.log("on_click", selected_key);
-          }}
-        />
+        <Tabs id="unique-linked-id" data={getDataElements(props)} />
       </Drawer.Header>
     </Drawer>
   );
