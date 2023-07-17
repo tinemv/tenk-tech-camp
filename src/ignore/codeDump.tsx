@@ -6,6 +6,7 @@ import Transactions from "../code/Transactions/AllTransactions/Transactions";
 import { Transaction } from "../ignore/Models";
 import { Parameter } from "../code/Transactions/AllTransactions/Transactions";
 import { detectRiskCountry } from "../code/Transactions/AllTransactions/TransactionTable";
+import Dashboard from "../code/Transactions/Dashboard/Dashboard";
 
 export const getAllTransactions = () => {
   const allCustomerTransactions = customer.accounts.flatMap(
@@ -16,18 +17,19 @@ export const getAllTransactions = () => {
 
 export function TransactionsPage() {
   return (
-    <Section spacing top bottom style_type="white">
-      <H2 top={0} bottom>
-        <Tabs>
-          <Tabs.Content title="Dashboard">Et dashboard</Tabs.Content>
-          <Tabs.Content title="Transaksjoner">
-            <div className="TransactionsTab">
-              <Transactions />
-            </div>
-          </Tabs.Content>
-        </Tabs>
-      </H2>
-    </Section>
+    <Tabs left>
+      <Tabs.Content title="Dashboard">
+        <div className="DashboardTab">
+          <Dashboard />
+        </div>
+      </Tabs.Content>
+      <Tabs.Content title="Transaksjoner">
+        <div className="TransactionsTab">
+          <Transactions />
+        </div>
+      </Tabs.Content>
+    </Tabs>
+     
   );
 }
 
@@ -76,5 +78,5 @@ export function filterTable(
 
 
 export function TheoryPage() {
-  return <H1>Teori</H1>;
+  return  <H1>Teori</H1>
 }

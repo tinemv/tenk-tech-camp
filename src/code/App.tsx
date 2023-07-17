@@ -1,9 +1,12 @@
-import React from "react";
-import { H1, H2, Section, Tabs } from "@dnb/eufemia";
+import React, { useState } from "react";
+import { Button, H1, H2, Section, Tabs } from "@dnb/eufemia";
 import Welcome from "./Welcome";
 import CustomerPage from "./Customer/Profile/CustomerPage";
 import { TheoryPage, TransactionsPage } from "../ignore/codeDump";
+import TaskNavigator  from "../ignore/TaskNavigator";
 import styled from "styled-components";
+import { tasks } from "../ignore/tasks";
+
 
 const FlexWrapper = styled.div`
   display: flex;
@@ -15,9 +18,29 @@ const LeftArea = styled.div`
 `;
 const RightArea = styled.div`
   overflow: hidden;
+  background-color: red
 `;
 
 export default function App() {
+  const [progressValue, setProgressValue] = useState(0);
+  const [checkedTasks, setCheckedTasks] = useState<boolean[]>(() => {
+    if (window.sessionStorage.getItem("checkedTasks") == null) {
+      return new Array<boolean>(tasks.flatMap((x) => x.subtask).length).fill(
+        false
+      );
+    }
+    return window.sessionStorage
+      .getItem("checkedTasks")
+      .split(",")
+      .map((x) => {
+        if (x == "false") {
+          return false;
+        } else {
+          return true;
+        }
+      });
+  });
+
   return (
     <>
       <FlexWrapper>
@@ -74,7 +97,17 @@ export default function App() {
       <Tabs.Content id="tabs">
         {({ key }) => {
           if (key == "Velkommen") {
-            return <Welcome />;
+            return (
+              <>
+                <TaskNavigator
+                  progressValue={progressValue}
+                  setProgressValue={setProgressValue}
+                  checkedTasks={checkedTasks}
+                  setCheckedTasks={setCheckedTasks}
+                />
+                <Welcome />;
+              </>
+            );
           } else if (key == "Kunde") {
             return <CustomerPage />;
           } else if (key == "Etterforsker") {
@@ -82,7 +115,14 @@ export default function App() {
           } else if (key == "Teori") {
             return <TheoryPage />;
           } else if (key == "Oppgaver") {
-            return <H1>Oppgaver</H1>;
+            return (
+              <TaskNavigator
+                progressValue={progressValue}
+                setProgressValue={setProgressValue}
+                checkedTasks={checkedTasks}
+                setCheckedTasks={setCheckedTasks}
+              />
+            );
           }
         }}
       </Tabs.Content>
