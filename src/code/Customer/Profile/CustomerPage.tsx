@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import AccountTable from "./AccountTable";
 import { customer } from "../../../data/customer";
-import profile_picture from "../../../profile_pictures/Kjerstin_Braathen.png";
+{/** OPPGAVE Y */}
+import profile_picture from "../../../profile_pictures/default.png";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../../../ignore/styles.css";
 import AccountPage from "../Account/AccountPage";
@@ -38,7 +39,7 @@ export default function CustomerPage() {
           <>
             <AccountPage
               account={customer.accounts.find(
-                (account) => account.name === accountClicked
+                (account) => account.name || account.accountNumber === accountClicked
               )}
               setAccountClicked={setAccountClicked}
             />

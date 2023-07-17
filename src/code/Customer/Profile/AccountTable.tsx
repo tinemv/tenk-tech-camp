@@ -32,16 +32,10 @@ export default function AccountTable(props: AccountTableProps) {
             {accountList.map((account) => (
               <Tr key={account.id}>
                 <Td>
-                  <button
-                    className="dnb-anchor"
-                    onClick={() => {
-                      setAccountClicked(account.name);
-                    }}
-                  >
-                    {account.name}
-                  </button>
+                    {getTransactionLink(account.name)}
                 </Td>
                 <Td>
+                    {/** OPPGAVE Y*/}
                   <NumberFormat ban>{account.accountNumber}</NumberFormat>
                 </Td>
                 <Td>
@@ -56,4 +50,17 @@ export default function AccountTable(props: AccountTableProps) {
       </Table.ScrollView>
     </Provider>
   );
+    {/** En funksjon som returnerer ett knappelement med link til transaksjonslisten til en konto.
+     Tar kontoattributtet som skal være klikkbart som argument */}
+    function getTransactionLink(attribute) {
+        return  (<button
+            className="dnb-anchor"
+            onClick={() => {
+                setAccountClicked(attribute);
+            }}
+        >
+            {attribute}
+        </button>);
+    }
 }
+
