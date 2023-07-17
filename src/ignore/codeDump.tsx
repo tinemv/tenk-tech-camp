@@ -8,7 +8,7 @@ import { Parameter } from '../code/Transactions/AllTransactions/Transactions'
 import { detectRiskCountry } from '../code/Transactions/AllTransactions/TransactionTable'
 import Dashboard from "../code/Transactions/Dashboard/Dashboard";
 
-export const getAllTransactions = () => {
+export function getAllTransactions () {
   const allCustomerTransactions = customer.accounts.flatMap(
     (account) => account.transactions
   );
