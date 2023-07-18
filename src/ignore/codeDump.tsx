@@ -1,11 +1,11 @@
 import React from "react";
 import { allDNBTransactions } from "../data/transactions";
 import { customer } from "../data/customer";
-import { Tabs } from "@dnb/eufemia";
+import { H1, H2, Section, Tabs } from "@dnb/eufemia";
 import Transactions from "../code/Transactions/AllTransactions/Transactions";
-import { Transaction } from '../ignore/Models';
-import { Parameter } from '../code/Transactions/AllTransactions/Transactions'
-import { detectRiskCountry } from '../code/Transactions/AllTransactions/TransactionTable'
+import { Transaction } from "../ignore/Models";
+import { Parameter } from "../code/Transactions/AllTransactions/Transactions";
+import { detectRiskCountry } from "../code/Transactions/AllTransactions/TransactionTable";
 import Dashboard from "../code/Transactions/Dashboard/Dashboard";
 
 export function getAllTransactions () {
@@ -17,7 +17,7 @@ export function getAllTransactions () {
 
 export function TransactionsPage() {
   return (
-    <Tabs>
+    <Tabs left>
       <Tabs.Content title="Dashboard">
         <div className="DashboardTab">
           <Dashboard />
@@ -29,6 +29,7 @@ export function TransactionsPage() {
         </div>
       </Tabs.Content>
     </Tabs>
+     
   );
 }
 
@@ -74,3 +75,4 @@ export function filterTable(
   });
   return filteredTransactions;
 }
+

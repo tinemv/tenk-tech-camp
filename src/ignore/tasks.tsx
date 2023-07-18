@@ -9,7 +9,8 @@ export var tasks = [
         id: 0,
         name: "A",
         level: "EASY",
-        description: "I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi skal navigere oss til riktig fil og endre på nettsiden fra denne fila. Fila vi skal jobbe i heter Welcome.tsx og ligger i mappa som heter code",
+        description:
+          "I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi skal navigere oss til riktig fil og endre på nettsiden fra denne fila. Fila vi skal jobbe i heter Welcome.tsx og ligger i mappa som heter code",
         hint: "Se linje X . Prøv å endre på teksten på linja og se hva som skjer på nettsiden.",
       },
       {
@@ -32,7 +33,7 @@ export var tasks = [
   },
   {
     id: "x",
-    title: "Oppgave x",
+    title: "Oppgave X",
     description:
       "I denne oppgaven skal du lage funksjonalitet på nettsiden som hjelper DNB med å oppdage økonomisk kriminalitet. Oppgavene hører til siden som heter 'Logg inn som etterforsker' og i tabellen under siden 'Transaksjoner' ser du en oversikt over alle transaksjonene i banken. Koden for denne siden ligger under 'Transactions' i mappa 'code' og består av flere filer.",
     subtask: [
@@ -40,7 +41,8 @@ export var tasks = [
         id: 3,
         name: "A",
         level: "EASY",
-        description: "Det første vi skal gjøre er å lage en beskrivelse av tabellen for at den skal være enklere for etterforskere å forstå. Det gjøres i fila 'Transactions.tsx'. Vi bruker elementet <P> for å legge til et paragraf og fyller inn teksten vi vil ha. Teksten kan for eksempel være 'Denne tabellen viser oversikt over alle transaksjonene i DNB. Den kan brukes til å finne mistengelige transaksjoner og oppdage kriminalitet', eller du kan finne på din egen. Legg inn paragrafet under overskriften, og hvis du vil kan du legge til farge, endre størrelse eller liknende ved å legge til 'style' som tidligere.",
+        description:
+          "Det første vi skal gjøre er å lage en beskrivelse av tabellen for at den skal være enklere for etterforskere å forstå. Det gjøres i fila 'Transactions.tsx'. Vi bruker elementet <P> for å legge til et paragraf og fyller inn teksten vi vil ha. Teksten kan for eksempel være 'Denne tabellen viser oversikt over alle transaksjonene i DNB. Den kan brukes til å finne mistengelige transaksjoner og oppdage kriminalitet', eller du kan finne på din egen. Legg inn paragrafet under overskriften, og hvis du vil kan du legge til farge, endre størrelse eller liknende ved å legge til 'style' som tidligere.",
         hint: "Her må vi finne overskriften i koden først. Se om du finner overskriften og legg til en ny linje under. Her legger du til elementet <P> </P> og fyller inn teksten din i mellom P'ene.",
       },
       {
@@ -74,6 +76,38 @@ export var tasks = [
         description:
           "Til slutt ønsker DNB å gjøre det enda lettere for etterforskerene å se hvilke transaksjoner som har høy risiko for kriminalitet. Selv om vi allerede har markert de som har høy risiko i en annen farge ønsker vi å kunne filtrere vekk de som ikke har høy risiko. Som du ser over tabellen kan vi allerede filtrere på for eksempel 'Avsenders navn'. Test ut dette for å gjøre deg kjent med funksjonaliteten. Som du også ser finnes det ikke noen filtrering for 'Risiko'. Din oppgave blir å fikse dette så den fungerer likt som de andre parameterene. Se i fila 'Transactions.tsx' og let etter hvor det er definert hva som er i rullgardinmenyen (drop down på engelsk.",
         hint: "Funskjonalitet for selve filtreringen er allerede lagt inn men rullgardinmenyen mangler et valg for risiko. Her må vi finne komponenten som heter 'DropDown' og legge til data i denne. Se på 'Parameter' linje X og se om du finner den som mangler i rullgardinen så du kan legge til denne.",
+      },
+    ],
+  },
+  {
+    id: "y",
+    title: "Oppgave Y",
+    description:
+      "For å bli litt bedre kjent med kodebasen som tilhører kundeprofilen, skal vi begynne med å gjøre små forbedringer slik at kundene våre blir mer fornøyd",
+    subtask: [
+      {
+        id: 8,
+        name: "A",
+        level: "EASY",
+        description:
+          "Vi skal begynne med å gjøre noen enkle forbedringer på profilsiden vår. For øyeblikket er det et generisk profilbilde(kalt default.png) for brukeren vår. For å gjøre siden mer personlig kan vi endre profilbilde. Dette kan du gjøre ved å navigere til Customer/Profile/CustomerPage.tsx. Se på bildene i profile_pictures og velg et du liker.",
+        hint: 'Se på listen over importer i CustomerPage.tsx. "default.png" er navnet på bildefilen til profilbildet. Endre dette til navnet på et av bildene i profile_pictures mappen (for eksempel Kjerstin_Braathen.png).',
+      },
+      {
+        id: 9,
+        name: "B",
+        level: "EASY",
+        description:
+          "Dersom du klikker på et kontonavn vil vi navigeres inn på en liste over transaksjoner fra denne kontoen. Siden kontonummeret også fungerer som et id til kontoen, gir det mening at vi kan forvente det samme til å skje når vi klikker her. Vi ønsker derfor å legge til en link fra brukerens hovedside til kontotransaksjoner via kontonummeret, lignende slik det er gjort med kontonavn. For å gjøre dette må vi endre HTML elementet som inneholder kontonummeret fra et NumberElement til en link. Ta en titt i AccountTable.tsx. Her er en funksjon, getTransactionLink som gjør nettopp dette. Funksjonen tar et argument som heter attribute som er den kolonnen vi ønsker å gjøre til et link element. Prøv å bruke getTransactionLink funksjonen til å lage kontonummer kolonnen linket til kontotransaksjonsiden. For inspirasjon, se hvordan funksjonen er brukt med kontonavn.",
+        hint: "Bruk account.accountNumber som et attributt i funksjonen på følgende vis: getTransactionsLink(account.accountNumber). Husk å fjerne numberFormat elementet og å legge til {} rundt alt.",
+      },
+      {
+        id: 10,
+        name: "C",
+        level: "EASY",
+        description:
+          "Økonomisk kriminalitet hvor noen har overtatt kontrollen på en konto de ikke har eierskap til , er kjennetegnet av en mengde mindre transaksjoner tatt over en kort periode. Gå gjennom de forskjellige kontoene og se om du kan finne noe som kan være økonomisk kriminalitet, noter deg navn, kontonummer og land transaksjonen går til.",
+        hint: "Se ekstra nøye på transaksjonene i ......",
       },
     ],
   },
