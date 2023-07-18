@@ -15,7 +15,6 @@ import {
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
-import { title } from "process";
 
 export interface TaskNavigatorProps {
   progressValue: number;
