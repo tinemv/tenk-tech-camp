@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { ReactNode, useEffect } from "react";
 import {
   Drawer,
   P,
@@ -26,35 +26,30 @@ export interface TaskNavigatorProps {
 interface TaskTab {
   title: String;
   key: String;
-  content: String;
+  content: ReactNode;
   subTask: {
     id: number;
     name: string;
     level: string;
-    description: string;
-    hint: string;
+    description: ReactNode;
+    hint: ReactNode;
   }[];
 }
 
 function getTaskTabs(): TaskTab[] {
-  let data: TaskTab[] = [];
-  tasks.map((item) =>
-    data.push({
-      title: item.title,
-      key: item.id,
-      content: item.description,
-      subTask: item.subtask,
-    })
-  );
-  return data;
+  return tasks.map((item) => ({
+    title: item.title,
+    key: item.id,
+    content: item.description,
+    subTask: item.subtask,
+  }));
 }
 
 function getTaskTabContent(item: TaskTab, props: any) {
   return (
     <Drawer.Body id="root">
       <Tabs.Content id="unique-linked-id">
-        <H2>{item.title}</H2>
-        <P top>{item.content}</P>
+        {item.content}
         <Ol type={item.key.toString()}>
           {item.subTask.map((sub) => (
             <FormRow>
@@ -76,7 +71,7 @@ function getTaskTabContent(item: TaskTab, props: any) {
               />
               <FormRow direction="vertical">
                 <Li>{sub.description}</Li>
-                <Section>
+                <FormRow bottom direction="horizontal">
                   <Dialog
                     triggerAttributes={{
                       text: "Hint " + sub.name,
@@ -86,7 +81,7 @@ function getTaskTabContent(item: TaskTab, props: any) {
                     <P>{sub.hint}</P>
                   </Dialog>
                   <Tag text={sub.level} space="0.5" />
-                </Section>
+                </FormRow>
               </FormRow>
             </FormRow>
           ))}
@@ -97,16 +92,13 @@ function getTaskTabContent(item: TaskTab, props: any) {
 }
 
 function getDataElements(props: any): any {
-  let data = [];
-  getTaskTabs().map((item) => {
-    data.push({
+  return getTaskTabs().map((item) => {
+    return {
       title: item.title,
       key: item.key,
       content: getTaskTabContent(item, props),
-    });
+    };
   });
-
-  return data;
 }
 
 export default function TaskNavigator(props: TaskNavigatorProps) {
