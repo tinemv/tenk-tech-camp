@@ -75,7 +75,7 @@ function getTaskTabContent(item: TaskTab, props: any) {
                 checked={props.checkedTasks[sub.id]}
               />
               <FormRow direction="vertical">
-                <Li>{sub.description}</Li>
+                <Li id="">{sub.description}</Li>
                 <Section>
                   <Dialog
                     triggerAttributes={{
