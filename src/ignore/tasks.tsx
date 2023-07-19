@@ -231,7 +231,7 @@ export var tasks = [
               <b>Avsenders navn</b>. Test ut dette for å gjøre deg kjent med
               funksjonaliteten.
             </p>
-            <p>
+            <p className="dnb-p">
               Som du også ser finnes det ikke noen filtrering for <b>Risiko</b>.
               Din oppgave blir å fikse dette så den fungerer likt som de andre
               parameterene. Se i fila{" "}
@@ -354,6 +354,92 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">Se ekstra nøye på transaksjonene i ......</p>
+        ),
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Oppgave Z",
+    description: (
+      <>
+        <p className="dnb-p">
+          Det er veldig mange transaksjoner i banken og vanskelig å se gjennom
+          alle for å finne kriminalitet. Derfor har vi laget en oversikt over
+          hvilke land penger sendes mellom så man enkelt kan se om noe virker
+          mistengelig. I denne oppgaven skal du gjøre ferdig oversikten den er
+          til hjelp i etterforskningen.
+        </p>
+        <p className="dnb-p">
+          Oppgavene her skal løses i fila{" "}
+          <code className="dnb-code">Dashboard.tsx</code> i mappen{" "}
+          <code className="dnb-code">Transactions</code> og du ser endringene i
+          Dashboard når du er logget inn som etterforsker.
+        </p>
+      </>
+    ),
+    subtask: [
+      {
+        id: 11,
+        name: "Oppgave A",
+        level: "EASY",
+        description: (
+          <p className="dnb-p">
+            Overskriften på siden, der det står <b>Dashboard</b>, er veldig
+            liten. Endre overskriften til å være en mer passende størrelse.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            Her må vi endre stilen (style) på{" "}
+            <code className="dnb-code">H1</code> på X i fila. Man kan enten
+            skrive inn noe annet enn small, eller man kan bare fjerne det helt
+            så den går tilbake til orginal størrelse for H1.
+          </p>
+        ),
+      },
+      {
+        id: 12,
+        name: "Oppgave B",
+        level: "EASY",
+        description: (
+          <p className="dnb-p">
+            Først må vi sørge for at figurene viser riktig data. Hvis du holder
+            musa over kakediagrammet ser du at den viser antall innenlands og
+            utenlands transaksjoner. Hvis du holder musa over søylediagrammet
+            får man heller opp spørsmålstegn. Endre koden slik at det også står
+            <b> Antall</b> på søylediagrammet.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            Se på linje X så finner du label for kakediagrammet (pie chart på
+            engelsk). Finner du det samme for søylediagrammet på linje X?
+          </p>
+        ),
+      },
+      {
+        id: 13,
+        name: "Oppgave C",
+        level: "EASY",
+        description: (
+          <p className="dnb-p">
+            For å se om det er noen transaksjoner til russland blant alle uten å
+            bla gjennom ønsker vi å ha Russland som et av landene i
+            søylediagrammet. Legg til en ny søyle som viser antall transaksjoner
+            til Russland slik som vises for de andre landene.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            På samme måte som er gjort på linje X og X for alle de andre landene
+            må vi legge til både en ny label og ny data. Vi må bruke metoden
+            <code className="dnb-code">countTargetCountries()</code> og bruke
+            Russland som input og legge til en ny linje under Italia på både
+            linje X og linje X og skriv{" "}
+            <code className="dnb-code">countTargetCountries('Russland')</code>
+            og <b>Russland</b>.
+          </p>
         ),
       },
     ],

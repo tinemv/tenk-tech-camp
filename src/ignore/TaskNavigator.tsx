@@ -57,20 +57,12 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         <Progress progressValue={progressValue} />
         <Tabs
           id="tasks-tab"
-          data={[
-            {
-              title: tasks[0].title,
-              key: tasks[0].id,
-            },
-            {
-              title: tasks[1].title,
-              key: tasks[1].id,
-            },
-            {
-              title: tasks[2].title,
-              key: tasks[2].id,
-            },
-          ]}
+          data={tasks.map((task) => {
+            return {
+                title: task.title,
+                key: task.id,
+              }
+            })}
         />
       </Drawer.Header>
       <Drawer.Body>

@@ -1,14 +1,14 @@
 import React from "react";
 import { allDNBTransactions } from "../data/transactions";
 import { customer } from "../data/customer";
-import { H1, H2, Section, Tabs } from "@dnb/eufemia";
+import { H1, H2, Section, Tabs, NumberFormat } from "@dnb/eufemia";
 import Transactions from "../code/Transactions/AllTransactions/Transactions";
 import { Transaction } from "../ignore/Models";
 import { Parameter } from "../code/Transactions/AllTransactions/Transactions";
 import { detectRiskCountry } from "../code/Transactions/AllTransactions/TransactionTable";
 import Dashboard from "../code/Transactions/Dashboard/Dashboard";
 
-export const getAllTransactions = () => {
+export function getAllTransactions () {
   const allCustomerTransactions = customer.accounts.flatMap(
     (account) => account.transactions
   );
@@ -74,5 +74,34 @@ export function filterTable(
     }
   });
   return filteredTransactions;
+}
+
+export function sumTransactions() {
+  var sum = 0;
+  getAllTransactions().map((transaction) => {
+    sum += transaction.amount;
+  });
+  return <NumberFormat>{sum}</NumberFormat>;
+}
+
+export function countCrossBorderTransactions() {
+  var innenlandsCounter = 0;
+  getAllTransactions().map((transaction) => {
+    if (transaction.from.country === transaction.to.country) {
+      innenlandsCounter += 1;
+    }
+  });
+  const utenlandsCounter = getAllTransactions().length - innenlandsCounter;
+  return [innenlandsCounter, utenlandsCounter];
+}
+
+export function countTargetCountries(country: String) {
+  var counter = 0;
+  getAllTransactions().map((transaction) => {
+    if (transaction.to.country === country) {
+      counter += 1;
+    }
+  });
+  return counter;
 }
 
