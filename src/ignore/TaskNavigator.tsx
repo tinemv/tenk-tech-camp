@@ -11,7 +11,6 @@ import {
   FormRow,
   Dialog,
   Tag,
-  Section,
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
@@ -63,15 +62,15 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
           data={[
             {
               title: tasks[0].title,
-              key: 0,
+              key: tasks[0].id,
             },
             {
               title: tasks[1].title,
-              key: 1,
+              key: tasks[1].id,
             },
             {
               title: tasks[2].title,
-              key: 2,
+              key: tasks[2].id,
             },
           ]}
         />
