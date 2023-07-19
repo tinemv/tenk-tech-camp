@@ -2,49 +2,50 @@ export var allDNBTransactions = [
   {
     id: "100",
     from: {
-      name: "name1",
+      name: "Andre Skaug Amundsen",
       country: "Norge",
     },
     to: {
-      name: "name1",
-      country: "Norge",
+      name: "Mathilda Djerf",
+      country: "Sverige",
     },
-    amount: 200,
+    amount: 1133,
   },
   {
     id: "200",
     from: {
-      name: "name2",
-      country: "Sverige",
+      name: "Erling Fjeldberg",
+      country: "Norge",
     },
     to: {
-      name: "name2",
-      country: "Sverige",
+      name: "Victoria Fritz",
+      country: "Norge",
     },
     amount: 200,
   },
   {
     id: "300",
     from: {
-      name: "name3",
+      name: "Louise Angelica Riise",
       country: "Norge",
     },
     to: {
-      name: "name3",
-      country: "Sverige",
+      name: "David Eriksen",
+      country: "Norge",
     },
-    amount: 200,
+    amount: 823,
   },
   {
     id: "400",
     from: {
-      name: "name3",
-      country: "country3",
+      name: "Therese Vinje",
+      country: "Norge",
     },
     to: {
-      name: "name3",
-      country: "country3",
+      name: "Martine Lunde",
+      country: "Norge",
     },
-    amount: 200,
+    amount: 7210,
   },
 ];
+
