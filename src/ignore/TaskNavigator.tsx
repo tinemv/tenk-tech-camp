@@ -23,82 +23,17 @@ export interface TaskNavigatorProps {
   setCheckedTasks: Function;
 }
 
-interface TaskTab {
+interface Task {
+  id: number;
   title: String;
-  key: String;
-  content: ReactNode;
-  subTask: {
+  description: ReactNode;
+  subtask: {
     id: number;
     name: string;
     level: string;
     description: ReactNode;
     hint: ReactNode;
   }[];
-}
-
-function getTaskTabs(): TaskTab[] {
-  return tasks.map((item) => ({
-    title: item.title,
-    key: item.id,
-    content: item.description,
-    subTask: item.subtask,
-  }));
-}
-
-function getTaskTabContent(item: TaskTab, props: any) {
-  return (
-    <Drawer.Body id="root">
-      <Tabs.Content id="unique-linked-id">
-        {item.content}
-        <Ol type={item.key.toString()}>
-          {item.subTask.map((sub) => (
-            <FormRow>
-              <Checkbox
-                right="large"
-                title="Kryss av når du er ferdig med oppgaven"
-                on_change={({ checked }) => {
-                  props.setCheckedTasks(
-                    props.checkedTasks.map((task: any, i: number) => {
-                      if (i == sub.id) {
-                        return (task = checked);
-                      } else {
-                        return (task = task);
-                      }
-                    })
-                  );
-                }}
-                checked={props.checkedTasks[sub.id]}
-              />
-              <FormRow direction="vertical">
-                <Li>{sub.description}</Li>
-                <FormRow bottom direction="horizontal">
-                  <Dialog
-                    triggerAttributes={{
-                      text: "Hint " + sub.name,
-                    }}
-                    title={"Hint " + sub.name}
-                  >
-                    <P>{sub.hint}</P>
-                  </Dialog>
-                  <Tag text={sub.level} space="0.5" />
-                </FormRow>
-              </FormRow>
-            </FormRow>
-          ))}
-        </Ol>
-      </Tabs.Content>
-    </Drawer.Body>
-  );
-}
-
-function getDataElements(props: any): any {
-  return getTaskTabs().map((item) => {
-    return {
-      title: item.title,
-      key: item.key,
-      content: getTaskTabContent(item, props),
-    };
-  });
 }
 
 export default function TaskNavigator(props: TaskNavigatorProps) {
@@ -119,13 +54,76 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
       triggerAttributes={{ text: "Oppgaver", variant: "secondary" }}
     >
       <Drawer.Header>
-        <P bottom>Her finner du oppgaver relatert til en spesifikk Kunde!</P>
         <FormStatus state="info">
           Spør oss om det skulle være noe du lurer på!
         </FormStatus>
         <Progress progressValue={progressValue} />
-        <Tabs id="unique-linked-id" data={getDataElements(props)} />
+        <Tabs
+          id="tasks-tab"
+          data={[
+            {
+              title: tasks[0].title,
+              key: 0,
+            },
+            {
+              title: tasks[1].title,
+              key: 1,
+            },
+            {
+              title: tasks[2].title,
+              key: 2,
+            },
+          ]}
+        />
       </Drawer.Header>
+      <Drawer.Body>
+        <Tabs.Content id="tasks-tab">
+          {({ key }) => {
+            const task: Task = tasks[key];
+            return (
+              <>
+                {task.description}
+                <Ol>
+                  {task.subtask.map((sub) => (
+                    <FormRow key={sub.id}>
+                      <Checkbox
+                        right="large"
+                        title="Kryss av når du er ferdig med oppgaven"
+                        on_change={({ checked }) => {
+                          setCheckedTasks(
+                            checkedTasks.map((task: any, i: number) => {
+                              if (i == sub.id) {
+                                return (task = checked);
+                              } else {
+                                return (task = task);
+                              }
+                            })
+                          );
+                        }}
+                        checked={checkedTasks[sub.id]}
+                      />
+                      <FormRow direction="vertical">
+                        <Li>{sub.description}</Li>
+                        <FormRow bottom direction="horizontal">
+                          <Dialog
+                            triggerAttributes={{
+                              text: "Hint " + sub.name,
+                            }}
+                            title={"Hint " + sub.name}
+                          >
+                            <P>{sub.hint}</P>
+                          </Dialog>
+                          <Tag text={sub.level} space="0.5" />
+                        </FormRow>
+                      </FormRow>
+                    </FormRow>
+                  ))}
+                </Ol>
+              </>
+            );
+          }}
+        </Tabs.Content>
+      </Drawer.Body>
     </Drawer>
   );
 }

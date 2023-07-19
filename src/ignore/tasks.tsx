@@ -2,7 +2,7 @@ import React from "react";
 
 export var tasks = [
   {
-    id: "0",
+    id: 0,
     title: "Intro oppgave",
     description: (
       <p className="dnb-p">
@@ -74,7 +74,7 @@ export var tasks = [
     ],
   },
   {
-    id: "x",
+    id: 1,
     title: "Oppgave X",
     description: (
       <p className="dnb-p">
@@ -93,13 +93,16 @@ export var tasks = [
         name: "A",
         level: "EASY",
         description: (
-          <p className="dnb-p">
-            Det første vi skal gjøre er å lage en beskrivelse av tabellen for at
-            den skal være enklere for etterforskere å forstå. Det gjøres i fila
-            <code className="dnb-code">Transactions.tsx</code>. Vi bruker
-            elementet <code className="dnb-code">&lt;P&gt;</code> for å legge
-            til et paragraf og fyller inn teksten vi vil ha. Teksten kan for
-            eksempel være:{" "}
+          <>
+            <p className="dnb-p">
+              Det første vi skal gjøre er å lage en beskrivelse av tabellen for
+              at den skal være enklere for etterforskere å forstå. Det gjøres i
+              fila
+              <code className="dnb-code">Transactions.tsx</code>. Vi bruker
+              elementet <code className="dnb-code">&lt;P&gt;</code> for å legge
+              til et paragraf og fyller inn teksten vi vil ha. Teksten kan for
+              eksempel være:
+            </p>
             <p>
               <i>
                 Denne tabellen viser oversikt over alle transaksjonene i DNB.
@@ -107,11 +110,13 @@ export var tasks = [
                 kriminalitet
               </i>
             </p>
-            eller du kan finne på din egen. Legg inn paragrafet under
-            overskriften, og hvis du vil kan du legge til farge, endre størrelse
-            eller liknende ved å legge til{" "}
-            <code className="dnb-code">style</code> som tidligere.
-          </p>
+            <p>
+              eller du kan finne på din egen. Legg inn paragrafet under
+              overskriften, og hvis du vil kan du legge til farge, endre
+              størrelse eller liknende ved å legge til{" "}
+              <code className="dnb-code">style</code> som tidligere.
+            </p>
+          </>
         ),
         hint: (
           <p className="dnb-p">
@@ -250,7 +255,7 @@ export var tasks = [
     ],
   },
   {
-    id: "y",
+    id: 2,
     title: "Oppgave Y",
     description: (
       <p className="dnb-p">
@@ -293,27 +298,33 @@ export var tasks = [
         name: "B",
         level: "EASY",
         description: (
-          <p className="dnb-p">
-            Dersom du klikker på et kontonavn vil vi navigeres inn på en liste
-            over transaksjoner fra denne kontoen. Siden kontonummeret også
-            fungerer som et id til kontoen, gir det mening at vi kan forvente
-            det samme til å skje når vi klikker her. Vi ønsker derfor å legge
-            til en link fra brukerens hovedside til kontotransaksjoner via
-            kontonummeret, lignende slik det er gjort med kontonavn. For å gjøre
-            dette må vi endre HTML elementet som inneholder kontonummeret fra et
-            <code className="dnb-code">NumberElement</code>
-            til en link. Ta en titt i{" "}
-            <code className="dnb-code">AccountTable.tsx</code>. Her er en
-            funksjon, <code className="dnb-code">getTransactionLink</code>
-            som gjør nettopp dette. Funksjonen tar et argument som heter
-            attribute som er den kolonnen vi ønsker å gjøre til et link element.
-            Prøv å bruke <code className="dnb-code">
-              getTransactionLink
-            </code>{" "}
-            funksjonen til å lage kontonummer kolonnen linket til
-            kontotransaksjonsiden. For inspirasjon, se hvordan funksjonen er
-            brukt med kontonavn.
-          </p>
+          <>
+            <p className="dnb-p">
+              Dersom du klikker på et kontonavn vil vi navigeres inn på en liste
+              over transaksjoner fra denne kontoen. Siden kontonummeret også
+              fungerer som en id til kontoen, gir det mening at vi kan forvente
+              det samme til å skje når vi klikker her. Vi ønsker derfor å legge
+              til en link fra brukerens hovedside til kontotransaksjoner via
+              kontonummeret, lignende slik det er gjort med kontonavn.
+            </p>
+            <p>
+              For å gjøre dette må vi endre HTML elementet som inneholder
+              kontonummeret fra et
+              <code className="dnb-code">NumberElement</code>
+              til en link. Ta en titt i{" "}
+              <code className="dnb-code">AccountTable.tsx</code>. Her er en
+              funksjon, <code className="dnb-code">getTransactionLink</code>
+              som gjør nettopp dette.{" "}
+            </p>
+            <p>
+              {" "}
+              Funksjonen tar et argument som heter attribute som er den kolonnen
+              vi ønsker å gjøre til et link element. Prøv å bruke{" "}
+              <code className="dnb-code">getTransactionLink</code> funksjonen
+              til å lage kontonummer kolonnen linket til kontotransaksjonsiden.
+              For inspirasjon, se hvordan funksjonen er brukt med kontonavn.
+            </p>
+          </>
         ),
         hint: (
           <p className="dnb-p">
