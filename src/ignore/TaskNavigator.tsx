@@ -4,13 +4,11 @@ import {
   P,
   FormStatus,
   Tabs,
-  H2,
-  Ol,
-  Li,
   Checkbox,
   FormRow,
   Dialog,
   Tag,
+  Accordion,
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
@@ -82,9 +80,9 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
             return (
               <>
                 {task.description}
-                <Ol>
+                <Accordion.Provider id={task.id.toString()}>
                   {task.subtask.map((sub) => (
-                    <FormRow key={sub.id}>
+                    <FormRow>
                       <Checkbox
                         right="large"
                         title="Kryss av når du er ferdig med oppgaven"
@@ -101,23 +99,30 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                         }}
                         checked={checkedTasks[sub.id]}
                       />
-                      <FormRow direction="vertical">
-                        <Li>{sub.description}</Li>
-                        <FormRow bottom direction="horizontal">
-                          <Dialog
-                            triggerAttributes={{
-                              text: "Hint " + sub.name,
-                            }}
-                            title={"Hint " + sub.name}
-                          >
-                            <P>{sub.hint}</P>
-                          </Dialog>
-                          <Tag text={sub.level} space="0.5" />
+                      <Accordion
+                        top
+                        title={sub.name}
+                        id={sub.id.toString()}
+                        remember_state
+                      >
+                        <FormRow direction="vertical">
+                          <P>{sub.description}</P>
+                          <FormRow top bottom direction="horizontal">
+                            <Dialog
+                              triggerAttributes={{
+                                text: "Hint",
+                              }}
+                              title={"Hint " + sub.name}
+                            >
+                              <P>{sub.hint}</P>
+                            </Dialog>
+                            <Tag text={sub.level} space="0.5" />
+                          </FormRow>
                         </FormRow>
-                      </FormRow>
+                      </Accordion>
                     </FormRow>
                   ))}
-                </Ol>
+                </Accordion.Provider>
               </>
             );
           }}

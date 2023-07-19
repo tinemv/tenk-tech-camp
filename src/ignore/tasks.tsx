@@ -15,7 +15,7 @@ export var tasks = [
     subtask: [
       {
         id: 0,
-        name: "A",
+        name: "Oppgave A",
         level: "EASY",
         description: (
           <p className="dnb-p">
@@ -35,7 +35,7 @@ export var tasks = [
       },
       {
         id: 1,
-        name: "B",
+        name: "Oppgave B",
         level: "EASY",
         description: (
           <p className="dnb-p">
@@ -53,7 +53,7 @@ export var tasks = [
       },
       {
         id: 2,
-        name: "C",
+        name: "Oppgave C",
         level: "EASY",
         description: (
           <p className="dnb-p">
@@ -90,7 +90,7 @@ export var tasks = [
     subtask: [
       {
         id: 3,
-        name: "A",
+        name: "Oppgave A",
         level: "EASY",
         description: (
           <>
@@ -130,7 +130,7 @@ export var tasks = [
       },
       {
         id: 4,
-        name: "B",
+        name: "Oppgave B",
         level: "EASY",
         description: (
           <p className="dnb-p">
@@ -158,7 +158,7 @@ export var tasks = [
       },
       {
         id: 5,
-        name: "C",
+        name: "Oppgave C",
         level: "HARD",
         description: (
           <p className="dnb-p">
@@ -190,7 +190,7 @@ export var tasks = [
       },
       {
         id: 6,
-        name: "D",
+        name: "Oppgave D",
         level: "EASY",
         description: (
           <p className="dnb-p">
@@ -218,7 +218,7 @@ export var tasks = [
       },
       {
         id: 7,
-        name: "E",
+        name: "Oppgave E",
         level: "EASY",
         description: (
           <>
@@ -267,7 +267,7 @@ export var tasks = [
     subtask: [
       {
         id: 8,
-        name: "A",
+        name: "Oppgave A",
         level: "EASY",
         description: (
           <p className="dnb-p">
@@ -295,7 +295,7 @@ export var tasks = [
       },
       {
         id: 9,
-        name: "B",
+        name: "Oppgave B",
         level: "EASY",
         description: (
           <>
@@ -340,7 +340,7 @@ export var tasks = [
       },
       {
         id: 10,
-        name: "C",
+        name: "Oppgave C",
         level: "EASY",
         description: (
           <p className="dnb-p">
