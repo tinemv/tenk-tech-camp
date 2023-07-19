@@ -3,57 +3,20 @@ import PieChart from "../../../ignore/PieChart";
 import { H1, InfoCard, NumberFormat } from "@dnb/eufemia";
 import BarChart from "../../../ignore/BarChart";
 import "../../../ignore/styles.css";
-import {
-  account_medium,
-  card_in_medium,
-  people_1_medium,
-} from "@dnb/eufemia/icons";
+import { account_medium, card_in_medium } from "@dnb/eufemia/icons";
 import colorPicker from "../../../ignore/Colors";
-import { getAllTransactions } from "../../../ignore/codeDump";
-import ContentWrapper from "@dnb/eufemia/components/tabs/TabsContentWrapper";
-
-function sumTransactions() {
-  var sum = 0;
-  getAllTransactions().map((transaction) => {
-    sum += transaction.amount;
-  });
-  return <NumberFormat>{sum}</NumberFormat>;
-}
-
-function countCrossBorderTransactions() {
-  var innenlandsCounter = 0;
-  getAllTransactions().map((transaction) => {
-    if (transaction.from.country === transaction.to.country) {
-      innenlandsCounter += 1;
-    }
-  });
-  const utenlandsCounter = getAllTransactions().length - innenlandsCounter;
-  return [innenlandsCounter, utenlandsCounter];
-}
-
-function countTargetCountries(country: String) {
-  var counter = 0;
-  getAllTransactions().map((transaction) => {
-    if (transaction.to.country === country) {
-      counter += 1;
-    }
-  });
-  return counter;
-}
+import {
+  getAllTransactions,
+  countCrossBorderTransactions,
+  countTargetCountries,
+  sumTransactions,
+} from "../../../ignore/codeDump";
 
 const barChartData = {
-  labels: [
-    "Norge",
-    "Sverige",
-    "Danmark",
-    "USA",
-    "Spania",
-    "Italia",
-    "Russland",
-  ],
+  labels: ["Norge", "Sverige", "Danmark", "USA", "Spania", "Italia"],
   datasets: [
     {
-      label: "Sales",
+      label: "?????",
       data: [
         countTargetCountries("Norge"),
         countTargetCountries("Sverige"),
@@ -61,7 +24,6 @@ const barChartData = {
         countTargetCountries("USA"),
         countTargetCountries("Spania"),
         countTargetCountries("Italia"),
-        countTargetCountries("Russland"),
       ],
       backgroundColor: colorPicker.SuccessGreen,
     },
@@ -69,9 +31,10 @@ const barChartData = {
 };
 
 const pieChartData = {
-  labels: ["Innenlands", "Utenlands"], //TODO: Passende labels
+  labels: ["Innenlands", "Utenlands"],
   datasets: [
     {
+      label: "Antall",
       data: countCrossBorderTransactions(),
 
       backgroundColor: [
@@ -98,7 +61,9 @@ const pieChartData = {
 export default function Dashboard() {
   return (
     <div className="DashboardTab">
-      <H1 top="x-small">Dashboard</H1>
+      <H1 style={{ fontSize: "small" }} top="x-small">
+        Dashboard
+      </H1>
       <div className="chart-container">
         <div>
           <PieChart
@@ -117,13 +82,13 @@ export default function Dashboard() {
 
       <div className="DashboardBottom">
         <InfoCard
-          title="Antall transaksjoner"
-          text={getAllTransactions().length} 
+          title="Antall transaksjoner totalt"
+          text={getAllTransactions().length}
           icon={card_in_medium}
           space="x-small"
         />
         <InfoCard
-          title="Penger overført"
+          title="Penger overført totalt"
           text={sumTransactions()}
           icon={account_medium}
           space="x-small"

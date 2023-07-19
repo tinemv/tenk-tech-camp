@@ -111,4 +111,36 @@ export var tasks = [
       },
     ],
   },
+  {
+    id: "Z",
+    title: "Oppgave Z",
+    description:
+      "Det er veldig mange transaksjoner i banken og vanskelig å se gjennom alle for å finne kriminalitet. Derfor har vi laget en oversikt over hvilke land penger sendes mellom så man enkelt kan se om noe virker mistengelig. I denne oppgaven skal du gjøre ferdig oversikten den er til hjelp i etterforskningen. Oppgavene her skal løses i fila 'Dashboard.tsx' i mappen Transactions og du ser endringene i Dashboard når du er logget inn som etterforsker.",
+    subtask: [
+      {
+        id: 11,
+        name: "A",
+        level: "EASY",
+        description:
+          "Overskriften på siden, der det står 'Dashboard', er veldig liten. Endre overskriften til å være en mer passende størrelse.",
+        hint: 'Her må vi endre stilen (style) på H1 på X i fila. Man kan enten skrive inn noe annet enn small, eller man kan bare fjerne det helt så den går tilbake til orginal størrelse for H1.',
+      },
+      {
+        id: 12,
+        name: "B",
+        level: "EASY",
+        description:
+          "Først må vi sørge for at figurene viser riktig data. Hvis du holder musa over kakediagrammet ser du at den viser antall innenlands og utenlands transaksjoner. Hvis du holder musa over søylediagrammet får man heller opp spørsmålstegn. Endre koden slik at det også står 'Antall' på søylediagrammet.",
+        hint: 'Se på linje X så finner du label for kakediagrammet (pie chart på engelsk). Finner du det samme for søylediagrammet på linje X?',
+      },
+      {
+        id: 13,
+        name: "C",
+        level: "EASY",
+        description:
+          "For å se om det er noen transaksjoner til russland blant alle uten å bla gjennom ønsker vi å ha Russland som et av landene i søylediagrammet. Legg til en ny søyle som viser antall transaksjoner til Russland slik som vises for de andre landene.",
+        hint: "På samme måte som er gjort på linje X  og X for alle de andre landene må vi legge til både en ny label og ny data. Vi må bruke metoden 'countTargetCountries()' og bruke Russland som input og legge til en ny linje under Italia på både linje X og linje X og skriv countTargetCountries('Russland') og 'Russland'.",
+      },
+    ],
+  },
 ];
