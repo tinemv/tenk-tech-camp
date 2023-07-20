@@ -266,7 +266,7 @@ export var tasks = [
         Noen har overført penger til Russland!
         I denne oppgaven skal vi prøve å finne ut hvem som har overført pengene.
         Oppgavene hører til siden som
-        heter <i>Logg inn som etterforsker</i> og i tabellen under siden
+        heter <i>Logg inn som etterforsker</i>. I tabellen under siden
         <i>Transaksjoner</i> ser du en oversikt over alle transaksjonene i
         banken. Koden for denne siden ligger under{" "}
         <code className="dnb-code">Transactions</code> i mappa{" "}
@@ -305,24 +305,27 @@ export var tasks = [
         hint: (
           <p className="dnb-p">
             Her må vi finne overskriften i koden først. Se om du finner
-            overskriften og legg til en ny linje under. Her legger du til
+            overskriften på linje X. Legg til en ny linje under med
             elementet{" "}
             <code className="dnb-code">&lt;P&gt; din tekst &lt;/P&gt;</code> og
-            fyller inn teksten din i mellom P'ene.
+            fyll inn teksten din i mellom
+            <code className="dnb-code">&lt;P&gt;</code>'ene.
           </p>
         ),
       },
       {
         id: 4,
         name: "Oppgave B",
-        level: "EASY",
+        level: "HARD",
         description: (
           <p className="dnb-p">
             Videre skal vi prøve å legge inn litt mer informasjon i tabellen enn
             det som er der nå. Hvis du går inn i filen som heter{" "}
             <code className="dnb-code">transactions.tsx</code> under mappen{" "}
             <code className="dnb-code">data</code> så ser du hvor dataen du ser
-            blir hentet fra. Legg merke til at hver transaksjon innholder to
+            blir hentet fra.
+            <br></br><br></br>
+            Legg merke til at hver transaksjon innholder to
             felt som ikke vises i tabellen på siden: Landet pengene er sendt fra
             og landet pengene er sendt til. Finn koden for tabellen og legg in
             to nye kolonner som heter <b>Avsenders land</b> og{" "}
@@ -347,13 +350,14 @@ export var tasks = [
         description: (
           <p className="dnb-p">
             Som du ser viser tabellen hvilken risiko det er for at landet
-            pengene sendes mellom driver med kriminalitet, men det er foreløpig
+            pengene sendes mellom driver med kriminalitet, men det er
             ukjent hvilken risiko som er på hver transaksjon. Se på funksjonen
             som heter <code className="dnb-code">detectRiskCountry</code> i
-            filen <code className="dnb-code">TransactionTable</code>. Denne
+            filen <code className="dnb-code">TransactionTable.tsx</code>. Denne
             funksjonen skal sjekke om landet som pengene sendes fra eller til
-            kan virke mistenkelige for økonomisk kriminalitet. Funksjonen er
-            ikke implementert (laget ferdig) enda, så dette blir din oppgave.
+            kan virke mistenkelige for økonomisk kriminalitet.
+            <br></br><br></br>
+            Funksjonen er ikke kodet (laget ferdig) enda, så dette blir din oppgave.
             Legg inn kode i funskjonen som sjekker om et av landene gir høy
             risiko og isåfall returnerer ordet <b>HØY</b>. Hvis ikke kan du
             returnere <b>LAV</b>. Du trenger kun endre koden inne i

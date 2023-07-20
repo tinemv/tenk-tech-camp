@@ -8,6 +8,17 @@ export type TransactionTableProps = {
 
 export function detectRiskCountry(fromCountry, toCountry): String | undefined {
   {/** OPPGAVE X */}
+
+  /* Fjern denne linjen for å få koden din til å kjøre!
+
+  if (fromCountry ... || toCountry ... ){
+    return 'HØY eller LAV?';
+  } else {
+    return 'HØY eller LAV?';
+  }
+
+  Fjern denne linjen for å få koden din til å kjøre!*/
+
   return 'Ukjent';
 }
 
@@ -35,6 +46,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
               <Th>Mottakers navn</Th>
               <Th>Beløp</Th>
               <Th>Risiko</Th>
+              {/*Oppgave 3b: legg til to nye overskrifter her! Avsenders og Mottakers land*/}
             </Tr>
           </thead>
           <tbody>
