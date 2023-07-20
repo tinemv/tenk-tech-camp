@@ -1,7 +1,7 @@
 import React from "react";
 import { Dropdown, H1, Input, Section, P } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
-import { filterTable } from "../../../ignore/codeDump";
+import { filterTable } from "../../ignore/codeDump";
 
 export enum Parameter {
   FROM_NAME = "Avsenders navn",

@@ -13,7 +13,7 @@ import {
 } from "../../ignore/codeDump";
 
 const barChartData = {
-  labels: ["Norge", "Sverige", "Danmark", "USA", "Spania", "Italia"],
+  labels: ["Norge", "Sverige", "Danmark", "USA", "Spania", "Italia",],
   datasets: [
     {
       label: "?????",

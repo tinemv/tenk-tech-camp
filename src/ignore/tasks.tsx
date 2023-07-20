@@ -7,8 +7,9 @@ export var tasks = [
     description: (
       <p className="dnb-p">
         I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi skal
-        navigere oss til riktig fil og endre på nettsiden fra denne fila. Fila
-        vi skal jobbe i heter <code className="dnb-code">Welcome.tsx</code> og
+        navigere oss til riktig fil og endre på nettsiden fra denne fila.
+        Oppgavene hører til siden som heter <i>Velkommen</i>.
+        Filen vi skal jobbe i heter <code className="dnb-code">Welcome.tsx</code> og
         ligger i mappa som heter <code className="dnb-code">code</code>.
       </p>
     ),
@@ -88,7 +89,8 @@ export var tasks = [
     description: (
       <p className="dnb-p">
         For å bli litt bedre kjent med nettsiden og koden skal vi begynne med å
-        lage en profil i nettbanken. Først kan du finne filen vi skal kode i som
+        lage en profil i nettbanken. Oppgavene hører til siden som heter <i>Logg inn som kunde</i>.
+        Først kan du finne filen vi skal kode i som
         heter <code className="dnb-code">CustomerPage.tsx</code> som ligger i
         mappa <code className="dnb-code">Oppgave1</code> (husk at alle filene vi
         skal jobbe med i dag ligger i mappa{" "}
@@ -158,7 +160,8 @@ export var tasks = [
         alle for å finne kriminalitet. Derfor har vi laget en oversikt over
         hvilke land penger sendes mellom så man enkelt kan se om noe virker
         mistenkelig. I denne oppgaven skal du gjøre ferdig denne oversikten.
-        Oppgavene her skal løses i fila{" "}
+        Oppgavene hører til siden som heter <i>Logg inn som etterforsker</i>
+        og deretter <i>Dashboard</i>, og skal løses i fila: {" "}
         <code className="dnb-code">Dashboard.tsx</code> i mappen{" "}
         <code className="dnb-code">Oppgave2</code>.
       </p>
@@ -167,7 +170,7 @@ export var tasks = [
       {
         id: 11,
         name: "Oppgave A",
-        level: "EASY",
+        level: "MEDIUM",
         description: (
           <p className="dnb-p">
             Overskriften på siden, der det står <b>Dashboard</b>, er veldig
@@ -195,44 +198,61 @@ export var tasks = [
       {
         id: 12,
         name: "Oppgave B",
-        level: "EASY",
+        level: "MEDIUM",
         description: (
           <p className="dnb-p">
-            Først må vi sørge for at figurene viser riktig data. Hvis du holder
-            musa over kakediagrammet ser du at den viser antall innenlands og
-            utenlands transaksjoner. Hvis du holder musa over søylediagrammet
-            får man heller opp spørsmålstegn. Endre koden slik at det også står
-            <b> Antall</b> på søylediagrammet.
+            En feil har oppstått! Hvis du holder musepekeren over <i>kakediagrammet</i> til venstre
+            så ser du at den viser <b>Antall</b> innenlands og
+            utenlands transaksjoner. Hvis du holder musepekeren over <i>søylediagrammet</i> til høyre, så
+            får man heller opp spørsmålstegn der ordet <b>Antall</b> skulle vært.
+            Endre koden slik at det også står
+            <b>Antall</b> på søylediagrammet.
           </p>
         ),
         hint: (
           <p className="dnb-p">
-            Se på linje X så finner du label for kakediagrammet (pie chart på
-            engelsk). Finner du det samme for søylediagrammet på linje X?
+            På linje X så finner du en
+            <code className="dnb-code">
+             label
+            </code>
+            for kakediagrammet,
+            denne koden ser slik ut:{" "}
+            <code className="dnb-code">
+              label: "Antall"
+            </code>.{" "}
+            Finner du det samme for søylediagrammet på linje X? Her kan du bytte ut:{" "}
+            <code className="dnb-code">
+             label: "?????"
+            </code> med{" "}
+            <code className="dnb-code">
+             label: "Antall"
+            </code>
           </p>
         ),
       },
       {
         id: 13,
         name: "Oppgave C",
-        level: "EASY",
+        level: "HARD",
         description: (
           <p className="dnb-p">
-            For å se om det er noen transaksjoner til russland blant alle uten å
-            bla gjennom ønsker vi å ha Russland som et av landene i
-            søylediagrammet. Legg til en ny søyle som viser antall transaksjoner
-            til Russland slik som vises for de andre landene.
+            For å se om det er noen transaksjoner til Russland uten å bla igjennom
+            alle må vi legge til Russland i søylediagrammet. Dette vil vise
+            antall transaksjoner på samme måte som de andre landene.
+
+            Finn ut hvor i koden landene er listet opp og legg til <b>Russland</b>.
+            Her må du endre to steder i filen!
           </p>
         ),
         hint: (
           <p className="dnb-p">
-            På samme måte som er gjort på linje X og X for alle de andre landene
-            må vi legge til både en ny label og ny data. Vi må bruke metoden
-            <code className="dnb-code">countTargetCountries()</code> og bruke
-            Russland som input og legge til en ny linje under Italia på både
-            linje X og linje X og skriv{" "}
-            <code className="dnb-code">countTargetCountries('Russland')</code>
-            og <b>Russland</b>.
+            På samme måte som er gjort på linje X og X-Y for alle de andre landene
+            må vi legge til både en ny <code className="dnb-code">labels</code> og ny
+            <code className="dnb-code">data</code>.
+            På linje X må du legge til <code className="dnb-code">"Russland"</code> etter komma.
+
+            På linje X må du legge til:
+            <code className="dnb-code">countTargetCountries('Russland')</code> etter komma.
           </p>
         ),
       },
@@ -240,11 +260,12 @@ export var tasks = [
   },
   {
     id: 3,
-    title: "Oppgave X",
+    title: "Oppgave 3",
     description: (
       <p className="dnb-p">
-        I denne oppgaven skal du lage funksjonalitet på nettsiden som hjelper
-        DNB med å oppdage økonomisk kriminalitet. Oppgavene hører til siden som
+        Noen har overført penger til Russland!
+        I denne oppgaven skal vi prøve å finne ut hvem som har overført pengene.
+        Oppgavene hører til siden som
         heter <i>Logg inn som etterforsker</i> og i tabellen under siden
         <i>Transaksjoner</i> ser du en oversikt over alle transaksjonene i
         banken. Koden for denne siden ligger under{" "}
@@ -262,7 +283,7 @@ export var tasks = [
             <p className="dnb-p">
               Det første vi skal gjøre er å lage en beskrivelse av tabellen for
               at den skal være enklere for etterforskere å forstå. Det gjøres i
-              fila
+              filen
               <code className="dnb-code">Transactions.tsx</code>. Vi bruker
               elementet <code className="dnb-code">&lt;P&gt;</code> for å legge
               til et paragraf og fyller inn teksten vi vil ha. Teksten kan for
@@ -271,15 +292,13 @@ export var tasks = [
             <p>
               <i>
                 Denne tabellen viser oversikt over alle transaksjonene i DNB.
-                Den kan brukes til å finne mistengelige transaksjoner og oppdage
-                kriminalitet
+                Den kan brukes til å finne mistenkelige transaksjoner og oppdage
+                kriminalitet.
               </i>
             </p>
             <p>
-              eller du kan finne på din egen. Legg inn paragrafet under
-              overskriften, og hvis du vil kan du legge til farge, endre
-              størrelse eller liknende ved å legge til{" "}
-              <code className="dnb-code">style</code> som tidligere.
+              eller du kan finne på din egen tekst. Legg inn paragrafet under
+              overskriften.
             </p>
           </>
         ),
@@ -394,7 +413,7 @@ export var tasks = [
               farge ønsker vi å kunne filtrere vekk de som ikke har høy risiko.
               Som du ser over tabellen kan vi allerede filtrere på for eksempel{" "}
               <b>Avsenders navn</b>. Test ut dette for å gjøre deg kjent med
-              funksjonaliteten.
+              funksjonaliteten.<br></br><br></br>
             </p>
             <p className="dnb-p">
               Som du også ser finnes det ikke noen filtrering for <b>Risiko</b>.
