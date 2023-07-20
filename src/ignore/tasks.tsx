@@ -3,13 +3,13 @@ import React from "react";
 export var tasks = [
   {
     id: 0,
-    title: "Intro oppgave",
+    title: "Intro",
     description: (
       <p className="dnb-p">
         I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi skal
         navigere oss til riktig fil og endre på nettsiden fra denne fila. Fila
         vi skal jobbe i heter <code className="dnb-code">Welcome.tsx</code> og
-        ligger i mappa som heter 'code'.
+        ligger i mappa som heter <code className="dnb-code">code</code>.
       </p>
     ),
     subtask: [
@@ -19,17 +19,21 @@ export var tasks = [
         level: "EASY",
         description: (
           <p className="dnb-p">
-            I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi
-            skal navigere oss til riktig fil og endre på nettsiden fra denne
-            fila. Fila vi skal jobbe i heter{" "}
-            <code className="dnb-code">Welcome.tsx</code> og ligger i mappa som
-            heter code
+            Nå skal vi endre overskriften til forsiden. Finn stedet i koden hvor
+            vi har laget overskriften, ved å se etter teksten{" "}
+            <b>"Velkommen til workshop!"</b>. Når du finner det, kan du endre
+            til overskriften du liker.
           </p>
         ),
         hint: (
           <p className="dnb-p">
-            Se linje X . Prøv å endre på teksten på linja og se hva som skjer på
-            nettsiden.
+            Ser du denne teksten:{" "}
+            <code className="dnb-code">
+              &lt;H1 style=&#123;&#123; margin: 20, color: "black"
+              &#125;&#125;&gt;Velkommen til workshop!&lt;/H1&gt;
+            </code>{" "}
+            på linje X? Skift ut <b>"Velkommen til workshop!"</b> til det du vil
+            ha som overskrift.
           </p>
         ),
       },
@@ -40,21 +44,22 @@ export var tasks = [
         description: (
           <p className="dnb-p">
             Endre farge på overskriften til en farge du ønsker, for eksempel
-            rosa (pink) eller blå (blue).
+            rosa (pink) eller blå (blue), ved å bytte ut{" "}
+            <code className="dnb-code">color: "black"</code> til en annen farge.
           </p>
         ),
         hint: (
           <p className="dnb-p">
-            Her må vi endre på overskriftens Style og legge til{" "}
-            <code className="dnb-code">color:pink</code> eller{" "}
-            <code className="dnb-code">color:blue</code>
+            Her må vi endre på samme linje X som i oppgave A. Bytt ut ordet{" "}
+            <b>"black"</b> med for eksempel <b>"pink"</b>, og se hva som skjer
+            med overskriften.
           </p>
         ),
       },
       {
         id: 2,
         name: "Oppgave C",
-        level: "EASY",
+        level: "MEDIUM",
         description: (
           <p className="dnb-p">
             Lag en ny linje under overskriften og legg til en underoverskrift
@@ -66,8 +71,12 @@ export var tasks = [
           <p className="dnb-p">
             Her skal du skrive en nesten lik linje som på overskriften, bare at
             du skal bytte ut <code className="dnb-code">&lt;H1&gt;</code> med{" "}
-            <code className="dnb-code">&lt;H2&gt;</code>. I <i>style</i> kan du
-            velge farge og plassering slik du ønsker.
+            <code className="dnb-code">&lt;H2&gt;</code> slik:{" "}
+            <code className="dnb-code">
+              &lt;H2 style=&#123;&#123; margin: 20, color: "black"
+              &#125;&#125;&gt;Din tekst&lt;/H2&gt;
+            </code>
+            I <i>style</i> kan du velge farge slik du ønsker, som fra oppgave B.
           </p>
         ),
       },
@@ -75,6 +84,162 @@ export var tasks = [
   },
   {
     id: 1,
+    title: "Oppgave 1",
+    description: (
+      <p className="dnb-p">
+        For å bli litt bedre kjent med nettsiden og koden skal vi begynne med å
+        lage en profil i nettbanken. Først kan du finne filen vi skal kode i som
+        heter <code className="dnb-code">CustomerPage.tsx</code> som ligger i
+        mappa <code className="dnb-code">Oppgave1</code> (husk at alle filene vi
+        skal jobbe med i dag ligger i mappa{" "}
+        <code className="dnb-code">code</code>).
+      </p>
+    ),
+    subtask: [
+      {
+        id: 80,
+        name: "Oppgave A",
+        level: "EASY",
+        description: (
+          <p className="dnb-p">
+            Det første vi ønsker er å endre navnet på overskriften fra{" "}
+            <b>"ukjent"</b> til et ekte navn. Velg et navn, enten ditt eget
+            eller en kjendis. Finn overskriften i koden, så du kan bytte navnet
+            med et du har valgt.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            Linjen du skal endre ligner på den vi jobbet med i forrige oppgave.
+            Let etter{" "}
+            <code className="dnb-code">
+              &lt;H1&gt;Velkommen ukjent!&lt;/H1&gt;
+            </code>{" "}
+            på linje X og endre <b>"ukjent"</b> til et navn du velger.
+          </p>
+        ),
+      },
+
+      {
+        id: 8,
+        name: "Oppgave B",
+        level: "MEDIUM",
+        description: (
+          <p className="dnb-p">
+            Det neste vi skal gjøre er å endre profilbildet. Bildene du kan
+            velge mellom ligger i<code className="dnb-code">Profilbilder</code>
+            -mappa. Velg det bildet du liker best. Deretter legger du inn dette
+            bildet i koden ved å endre ordet{" "}
+            <code className="dnb-code">ukjent</code> på linje X til navnet på
+            bildet du har valgt.{" "}
+            <i>
+              Husk at du må skrive ordet helt likt som navnet på bildet (pass på
+              små og store bokstaver).
+            </i>
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            På linje X må du bytte ut
+            <code className="dnb-code">src=&#123;ukjent&#125;</code> med for
+            eksempel{" "}
+            <code className="dnb-code">src=&#123;TaylorSwift&#125;</code>
+          </p>
+        ),
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Oppgave 2",
+    description: (
+      <p className="dnb-p">
+        Det er veldig mange transaksjoner i banken og vanskelig å se gjennom
+        alle for å finne kriminalitet. Derfor har vi laget en oversikt over
+        hvilke land penger sendes mellom så man enkelt kan se om noe virker
+        mistenkelig. I denne oppgaven skal du gjøre ferdig denne oversikten.
+        Oppgavene her skal løses i fila{" "}
+        <code className="dnb-code">Dashboard.tsx</code> i mappen{" "}
+        <code className="dnb-code">Oppgave2</code>.
+      </p>
+    ),
+    subtask: [
+      {
+        id: 11,
+        name: "Oppgave A",
+        level: "EASY",
+        description: (
+          <p className="dnb-p">
+            Overskriften på siden, der det står <b>Dashboard</b>, er veldig
+            liten. Endre overskriften til å være en mer passende størrelse. Da
+            må du endre <code className="dnb-code">fontSize</code> til for
+            eksempel <code className="dnb-code">"xxx-large"</code> istedenfor{" "}
+            <code className="dnb-code">"small"</code>.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            Finn linje X hvor det står{" "}
+            <code className="dnb-code">
+              &lt;H1 style=&#123;&#123; fontSize: "small" &#125;&#125;
+              top="x-small"&gt;
+            </code>{" "}
+            og skift ut <i>style</i> til
+            <code className="dnb-code">
+              style=&#123;&#123; fontSize: "xxx-large" &#125;&#125;
+            </code>
+            .
+          </p>
+        ),
+      },
+      {
+        id: 12,
+        name: "Oppgave B",
+        level: "EASY",
+        description: (
+          <p className="dnb-p">
+            Først må vi sørge for at figurene viser riktig data. Hvis du holder
+            musa over kakediagrammet ser du at den viser antall innenlands og
+            utenlands transaksjoner. Hvis du holder musa over søylediagrammet
+            får man heller opp spørsmålstegn. Endre koden slik at det også står
+            <b> Antall</b> på søylediagrammet.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            Se på linje X så finner du label for kakediagrammet (pie chart på
+            engelsk). Finner du det samme for søylediagrammet på linje X?
+          </p>
+        ),
+      },
+      {
+        id: 13,
+        name: "Oppgave C",
+        level: "EASY",
+        description: (
+          <p className="dnb-p">
+            For å se om det er noen transaksjoner til russland blant alle uten å
+            bla gjennom ønsker vi å ha Russland som et av landene i
+            søylediagrammet. Legg til en ny søyle som viser antall transaksjoner
+            til Russland slik som vises for de andre landene.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            På samme måte som er gjort på linje X og X for alle de andre landene
+            må vi legge til både en ny label og ny data. Vi må bruke metoden
+            <code className="dnb-code">countTargetCountries()</code> og bruke
+            Russland som input og legge til en ny linje under Italia på både
+            linje X og linje X og skriv{" "}
+            <code className="dnb-code">countTargetCountries('Russland')</code>
+            og <b>Russland</b>.
+          </p>
+        ),
+      },
+    ],
+  },
+  {
+    id: 3,
     title: "Oppgave X",
     description: (
       <p className="dnb-p">
@@ -254,49 +419,20 @@ export var tasks = [
       },
     ],
   },
+
   {
-    id: 2,
-    title: "Oppgave Y",
+    id: 4,
+    title: "Ekstra oppgaver",
     description: (
       <p className="dnb-p">
-        For å bli litt bedre kjent med kodebasen som tilhører kundeprofilen,
-        skal vi begynne med å gjøre små forbedringer slik at kundene våre blir
-        mer fornøyd
+        Her har du noen ekstra oppgaver å bryne deg på som er litt vanskeligere.
       </p>
     ),
     subtask: [
       {
-        id: 8,
-        name: "Oppgave A",
-        level: "EASY",
-        description: (
-          <p className="dnb-p">
-            Vi skal begynne med å gjøre noen enkle forbedringer på profilsiden
-            vår. For øyeblikket er det et generisk profilbilde (kalt{" "}
-            <code className="dnb-code">default.png</code>) for brukeren vår. For
-            å gjøre siden mer personlig kan vi endre profilbilde. Dette kan du
-            gjøre ved å navigere til{" "}
-            <code className="dnb-code">Customer/Profile/CustomerPage.tsx</code>.
-            Se på bildene i mappa{" "}
-            <code className="dnb-code">profile_pictures</code> og velg et du
-            liker.
-          </p>
-        ),
-        hint: (
-          <p className="dnb-p">
-            Se på listen over importer i{" "}
-            <code className="dnb-code">CustomerPage.tsx</code>.{" "}
-            <code className="dnb-code">default.png</code> er navnet på
-            bildefilen til profilbildet. Endre dette til navnet på et av bildene
-            i <code className="dnb-code">profile_pictures</code> mappen (for
-            eksempel <code className="dnb-code">Kjerstin_Braathen.png</code>).
-          </p>
-        ),
-      },
-      {
         id: 9,
-        name: "Oppgave B",
-        level: "EASY",
+        name: "Oppgave A",
+        level: "HARD",
         description: (
           <>
             <p className="dnb-p">
@@ -335,110 +471,6 @@ export var tasks = [
             </code>
             . Husk å fjerne numberFormat elementet og å legge til &#123;&#125;
             rundt alt.
-          </p>
-        ),
-      },
-      {
-        id: 10,
-        name: "Oppgave C",
-        level: "EASY",
-        description: (
-          <p className="dnb-p">
-            Økonomisk kriminalitet hvor noen har overtatt kontrollen på en konto
-            de ikke har eierskap til, er kjennetegnet av en mengde mindre
-            transaksjoner tatt over en kort periode. Gå gjennom de forskjellige
-            kontoene og se om du kan finne noe som kan være økonomisk
-            kriminalitet, noter deg navn, kontonummer og land transaksjonen går
-            til.
-          </p>
-        ),
-        hint: (
-          <p className="dnb-p">Se ekstra nøye på transaksjonene i ......</p>
-        ),
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Oppgave Z",
-    description: (
-      <>
-        <p className="dnb-p">
-          Det er veldig mange transaksjoner i banken og vanskelig å se gjennom
-          alle for å finne kriminalitet. Derfor har vi laget en oversikt over
-          hvilke land penger sendes mellom så man enkelt kan se om noe virker
-          mistengelig. I denne oppgaven skal du gjøre ferdig oversikten den er
-          til hjelp i etterforskningen.
-        </p>
-        <p className="dnb-p">
-          Oppgavene her skal løses i fila{" "}
-          <code className="dnb-code">Dashboard.tsx</code> i mappen{" "}
-          <code className="dnb-code">Transactions</code> og du ser endringene i
-          Dashboard når du er logget inn som etterforsker.
-        </p>
-      </>
-    ),
-    subtask: [
-      {
-        id: 11,
-        name: "Oppgave A",
-        level: "EASY",
-        description: (
-          <p className="dnb-p">
-            Overskriften på siden, der det står <b>Dashboard</b>, er veldig
-            liten. Endre overskriften til å være en mer passende størrelse.
-          </p>
-        ),
-        hint: (
-          <p className="dnb-p">
-            Her må vi endre stilen (style) på{" "}
-            <code className="dnb-code">H1</code> på X i fila. Man kan enten
-            skrive inn noe annet enn small, eller man kan bare fjerne det helt
-            så den går tilbake til orginal størrelse for H1.
-          </p>
-        ),
-      },
-      {
-        id: 12,
-        name: "Oppgave B",
-        level: "EASY",
-        description: (
-          <p className="dnb-p">
-            Først må vi sørge for at figurene viser riktig data. Hvis du holder
-            musa over kakediagrammet ser du at den viser antall innenlands og
-            utenlands transaksjoner. Hvis du holder musa over søylediagrammet
-            får man heller opp spørsmålstegn. Endre koden slik at det også står
-            <b> Antall</b> på søylediagrammet.
-          </p>
-        ),
-        hint: (
-          <p className="dnb-p">
-            Se på linje X så finner du label for kakediagrammet (pie chart på
-            engelsk). Finner du det samme for søylediagrammet på linje X?
-          </p>
-        ),
-      },
-      {
-        id: 13,
-        name: "Oppgave C",
-        level: "EASY",
-        description: (
-          <p className="dnb-p">
-            For å se om det er noen transaksjoner til russland blant alle uten å
-            bla gjennom ønsker vi å ha Russland som et av landene i
-            søylediagrammet. Legg til en ny søyle som viser antall transaksjoner
-            til Russland slik som vises for de andre landene.
-          </p>
-        ),
-        hint: (
-          <p className="dnb-p">
-            På samme måte som er gjort på linje X og X for alle de andre landene
-            må vi legge til både en ny label og ny data. Vi må bruke metoden
-            <code className="dnb-code">countTargetCountries()</code> og bruke
-            Russland som input og legge til en ny linje under Italia på både
-            linje X og linje X og skriv{" "}
-            <code className="dnb-code">countTargetCountries('Russland')</code>
-            og <b>Russland</b>.
           </p>
         ),
       },

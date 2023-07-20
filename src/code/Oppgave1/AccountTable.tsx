@@ -1,8 +1,8 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
-import { Account } from "../../../ignore/Models";
+import { Account } from "../../ignore/Models";
 import { NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
-import { findBalance } from "../Account/AccountPage";
+import { findBalance } from "./AccountPage";
 
 export interface AccountTableProps {
   accountList: Account[];
@@ -31,11 +31,9 @@ export default function AccountTable(props: AccountTableProps) {
           <tbody>
             {accountList.map((account) => (
               <Tr key={account.id}>
+                <Td>{getTransactionLink(account.name)}</Td>
                 <Td>
-                    {getTransactionLink(account.name)}
-                </Td>
-                <Td>
-                    {/** OPPGAVE Y*/}
+                  {/** OPPGAVE Y*/}
                   <NumberFormat ban>{account.accountNumber}</NumberFormat>
                 </Td>
                 <Td>
@@ -50,17 +48,20 @@ export default function AccountTable(props: AccountTableProps) {
       </Table.ScrollView>
     </Provider>
   );
-    {/** En funksjon som returnerer ett knappelement med link til transaksjonslisten til en konto.
-     Tar kontoattributtet som skal være klikkbart som argument */}
-    function getTransactionLink(attribute) {
-        return  (<button
-            className="dnb-anchor"
-            onClick={() => {
-                setAccountClicked(attribute);
-            }}
-        >
-            {attribute}
-        </button>);
-    }
+  {
+    /** En funksjon som returnerer ett knappelement med link til transaksjonslisten til en konto.
+     Tar kontoattributtet som skal være klikkbart som argument */
+  }
+  function getTransactionLink(attribute) {
+    return (
+      <button
+        className="dnb-anchor"
+        onClick={() => {
+          setAccountClicked(attribute);
+        }}
+      >
+        {attribute}
+      </button>
+    );
+  }
 }
-

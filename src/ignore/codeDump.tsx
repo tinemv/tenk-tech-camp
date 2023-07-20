@@ -6,7 +6,7 @@ import Transactions from "../code/Transactions/AllTransactions/Transactions";
 import { Transaction } from "../ignore/Models";
 import { Parameter } from "../code/Transactions/AllTransactions/Transactions";
 import { detectRiskCountry } from "../code/Transactions/AllTransactions/TransactionTable";
-import Dashboard from "../code/Transactions/Dashboard/Dashboard";
+import Dashboard from "../code/Oppgave2/Dashboard";
 
 export function getAllTransactions () {
   const allCustomerTransactions = customer.accounts.flatMap(

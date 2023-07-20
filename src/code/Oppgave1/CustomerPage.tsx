@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import AccountTable from "./AccountTable";
-import { customer } from "../../../data/customer";
-{/** OPPGAVE Y */}
-import profile_picture from "../../../profile_pictures/default.png";
+import { customer } from "../../data/customer";
+import ukjent from "./Profilbilder/ukjent.png";
+import BTS from "./Profilbilder/BTS.png";
+import EmmaWatson from "./Profilbilder/EmmaWatson.png";
+import GirlInRed from "./Profilbilder/GirlInRed.png";
+import GretaThunberg from "./Profilbilder/GretaThunberg.png";
+import MarcusMartinus from "./Profilbilder/MarcusMartinus.png";
+import MillieBobbyBrown from "./Profilbilder/MillieBobbyBrown.png";
+import TaylorSwift from "./Profilbilder/TaylorSwift.png";
+import Zendaya from "./Profilbilder/Zendaya.png";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
-import "../../../ignore/styles.css";
-import AccountPage from "../Account/AccountPage";
+import "../../ignore/styles.css";
+import AccountPage from "./AccountPage";
 
 export default function CustomerPage() {
   const [accountClicked, setAccountClicked] = useState("Customer");
@@ -15,9 +22,9 @@ export default function CustomerPage() {
       <div className="CustomerTab">
         {accountClicked === "Customer" && (
           <>
-            <H1>Velkommen {customer.name}!</H1>
+            <H1>Velkommen ukjent!</H1>
             <Img
-              src={profile_picture}
+              src={ukjent}
               alt="User Picture"
               width="250rem"
               height="250rem"
@@ -39,7 +46,8 @@ export default function CustomerPage() {
           <>
             <AccountPage
               account={customer.accounts.find(
-                (account) => account.name || account.accountNumber === accountClicked
+                (account) =>
+                  account.name || account.accountNumber === accountClicked
               )}
               setAccountClicked={setAccountClicked}
             />

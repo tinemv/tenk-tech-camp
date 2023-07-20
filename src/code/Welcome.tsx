@@ -8,7 +8,8 @@ export default function Welcome() {
     <Section spacing="small" left right="0.25" style_type="white">
       <div className="WelcomeTab">
         {/* INTRO OPPGAVE: Her har du funnet overskriften :D */}
-        <H1 style={{ margin: 20 }}>Velkommen til workshop!</H1>
+        <H1 style={{ margin: 20, color: "black" }}>Velkommen til workshop!</H1>
+        {/* INTO OPPGAVE C: Legg inn underoverskrift her! */}
         <div className="GreenSection">
           <img
             style={{ margin: 25 }}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Tabs } from "@dnb/eufemia";
 import Welcome from "./Welcome";
-import CustomerPage from "./Customer/Profile/CustomerPage";
+import CustomerPage from "./Oppgave1/CustomerPage";
 import { TransactionsPage } from "../ignore/codeDump";
 import TaskNavigator from "../ignore/TaskNavigator";
 import styled from "styled-components";

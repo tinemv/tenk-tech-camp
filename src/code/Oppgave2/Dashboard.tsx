@@ -1,16 +1,16 @@
 import React from "react";
-import PieChart from "../../../ignore/PieChart";
+import PieChart from "../../ignore/PieChart";
 import { H1, InfoCard, NumberFormat } from "@dnb/eufemia";
-import BarChart from "../../../ignore/BarChart";
-import "../../../ignore/styles.css";
+import BarChart from "../../ignore/BarChart";
+import "../../ignore/styles.css";
 import { account_medium, card_in_medium } from "@dnb/eufemia/icons";
-import colorPicker from "../../../ignore/Colors";
+import colorPicker from "../../ignore/Colors";
 import {
   getAllTransactions,
   countCrossBorderTransactions,
   countTargetCountries,
   sumTransactions,
-} from "../../../ignore/codeDump";
+} from "../../ignore/codeDump";
 
 const barChartData = {
   labels: ["Norge", "Sverige", "Danmark", "USA", "Spania", "Italia"],
