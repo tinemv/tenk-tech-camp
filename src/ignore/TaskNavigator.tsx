@@ -9,6 +9,8 @@ import {
   Dialog,
   Tag,
   Accordion,
+  H3,
+  H4,
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
@@ -112,26 +114,26 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                         }}
                         checked={checkedTasks[sub.id]}
                       />
-                      <Accordion
-                        top
-                        title={sub.name}
-                        id={sub.id.toString()}
-                        remember_state
-                      >
-                        <FormRow direction="vertical">
-                          <P>{sub.description}</P>
-                          <FormRow top bottom direction="horizontal">
-                            <Dialog
-                              triggerAttributes={{
-                                text: "Hint",
-                              }}
-                              title={"Hint " + sub.name}
-                            >
-                              <P>{sub.hint}</P>
-                            </Dialog>
-                            <Tag text={sub.level} space="0.5" />
+                      <Accordion top id={sub.id.toString()} remember_state>
+                        <Accordion.Header>
+                          <H4>{sub.name}</H4>
+                        </Accordion.Header>
+                        <Accordion.Content>
+                          <FormRow direction="vertical">
+                            <P>{sub.description}</P>
+                            <FormRow top bottom direction="horizontal">
+                              <Dialog
+                                triggerAttributes={{
+                                  text: "Hint",
+                                }}
+                                title={"Hint " + sub.name}
+                              >
+                                <P>{sub.hint}</P>
+                              </Dialog>
+                              <Tag text={sub.level} space="0.5" />
+                            </FormRow>
                           </FormRow>
-                        </FormRow>
+                        </Accordion.Content>
                       </Accordion>
                     </FormRow>
                   </Accordion.Provider>
