@@ -33,7 +33,6 @@ export default function AccountTable(props: AccountTableProps) {
               <Tr key={account.id}>
                 <Td>{getTransactionLink(account.name)}</Td>
                 <Td>
-                  {/** OPPGAVE Y*/}
                   <NumberFormat ban>{account.accountNumber}</NumberFormat>
                 </Td>
                 <Td>
