@@ -36,8 +36,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <Table.ScrollView
         style={{
-          maxHeight: "44rem",
-          width: "65rem",
+          maxHeight: "60rem",
         }}
       >
         {/* OPPGAVE X: Her kan du endre på utseendet og innholdet til transaksjoner-tabellen */}

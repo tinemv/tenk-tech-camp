@@ -11,44 +11,47 @@ import {
   countTargetCountries,
   sumTransactions,
 } from "../../ignore/codeDump";
+import Provider from "@dnb/eufemia/shared/Provider";
 
 export default function Dashboard() {
   return (
-    <div className="DashboardTab">
-      <H1 style={{ fontSize: "small" }} top="x-small">
-        Dashboard
-      </H1>
-      <div className="chart-container">
-        <div>
-          <PieChart
-            title={"Innenlands vs. utenlands transaksjoner"}
-            data={pieChartData}
-          />
+    <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
+      <div className="DashboardTab">
+        <H1 style={{ fontSize: "small" }} top="x-small">
+          Dashboard
+        </H1>
+        <div className="chart-container">
+          <div>
+            <PieChart
+              title={"Innenlands vs. utenlands transaksjoner"}
+              data={pieChartData}
+            />
+          </div>
+
+          <div>
+            <BarChart
+              title={"Antall transaksjoner til ulike land"}
+              data={barChartData}
+            />
+          </div>
         </div>
 
-        <div>
-          <BarChart
-            title={"Antall transaksjoner til ulike land"}
-            data={barChartData}
+        <div className="DashboardBottom">
+          <InfoCard
+            title="Antall transaksjoner totalt"
+            text={getAllTransactions().length}
+            icon={card_in_medium}
+            space="x-small"
+          />
+          <InfoCard
+            title="Penger overført totalt"
+            text={sumTransactions()}
+            icon={account_medium}
+            space="x-small"
           />
         </div>
       </div>
-
-      <div className="DashboardBottom">
-        <InfoCard
-          title="Antall transaksjoner totalt"
-          text={getAllTransactions().length}
-          icon={card_in_medium}
-          space="x-small"
-        />
-        <InfoCard
-          title="Penger overført totalt"
-          text={sumTransactions()}
-          icon={account_medium}
-          space="x-small"
-        />
-      </div>
-    </div>
+    </Provider>
   );
 }
 

@@ -9,6 +9,8 @@ import {
   Dialog,
   Tag,
   Accordion,
+  H3,
+  H4,
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
@@ -46,6 +48,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
   } = props;
 
   useEffect(() => {
+    console.log(checkedTasks);
     setProgressValue(
       (checkedTasks.filter((x) => x == true).length * 100) / checkedTasks.length
     );
@@ -55,13 +58,6 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
   useEffect(() => {
     window.sessionStorage.setItem("currentTab", currentTab.toString());
   }, [currentTab]);
-
-  console.log(
-    "All subtasks: ",
-    tasks.flatMap((task) => {
-      return task.subtask.map((sub) => sub.id);
-    })
-  );
 
   return (
     <Drawer
@@ -99,8 +95,8 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
             return (
               <>
                 {task.description}
-                <Accordion.Provider id={task.id.toString()}>
-                  {task.subtask.map((sub) => (
+                {task.subtask.map((sub) => (
+                  <Accordion.Provider id={task.id.toString()}>
                     <FormRow key={sub.id}>
                       <Checkbox
                         right="large"
@@ -118,30 +114,30 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                         }}
                         checked={checkedTasks[sub.id]}
                       />
-                      <Accordion
-                        top
-                        title={sub.name}
-                        id={sub.id.toString()}
-                        remember_state
-                      >
-                        <FormRow direction="vertical">
-                          <P>{sub.description}</P>
-                          <FormRow top bottom direction="horizontal">
-                            <Dialog
-                              triggerAttributes={{
-                                text: "Hint",
-                              }}
-                              title={"Hint " + sub.name}
-                            >
-                              <P>{sub.hint}</P>
-                            </Dialog>
-                            <Tag text={sub.level} space="0.5" />
+                      <Accordion top id={sub.id.toString()} remember_state>
+                        <Accordion.Header>
+                          <H4>{sub.name}</H4>
+                        </Accordion.Header>
+                        <Accordion.Content>
+                          <FormRow direction="vertical">
+                            <P>{sub.description}</P>
+                            <FormRow top bottom direction="horizontal">
+                              <Dialog
+                                triggerAttributes={{
+                                  text: "Hint",
+                                }}
+                                title={"Hint " + sub.name}
+                              >
+                                <P>{sub.hint}</P>
+                              </Dialog>
+                              <Tag text={sub.level} space="0.5" />
+                            </FormRow>
                           </FormRow>
-                        </FormRow>
+                        </Accordion.Content>
                       </Accordion>
                     </FormRow>
-                  ))}
-                </Accordion.Provider>
+                  </Accordion.Provider>
+                ))}
               </>
             );
           }}
