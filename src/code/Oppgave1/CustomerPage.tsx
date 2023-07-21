@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AccountTable from "./AccountTable";
+import AccountTable from "../../ignore/AccountTable";
 import { customer } from "../../data/customer";
 import ukjent from "./Profilbilder/ukjent.png";
 import BTS from "./Profilbilder/BTS.png";
@@ -12,7 +12,7 @@ import TaylorSwift from "./Profilbilder/TaylorSwift.png";
 import Zendaya from "./Profilbilder/Zendaya.png";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../../ignore/styles.css";
-import AccountPage from "./AccountPage";
+import AccountPage from "../../ignore/AccountPage";
 
 export default function CustomerPage() {
   const [accountClicked, setAccountClicked] = useState("Customer");
