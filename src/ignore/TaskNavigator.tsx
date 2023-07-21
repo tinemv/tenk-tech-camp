@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect } from "react";
 import {
   Drawer,
   P,
@@ -56,6 +56,13 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
     window.sessionStorage.setItem("currentTab", currentTab.toString());
   }, [currentTab]);
 
+  console.log(
+    "All subtasks: ",
+    tasks.flatMap((task) => {
+      return task.subtask.map((sub) => sub.id);
+    })
+  );
+
   return (
     <Drawer
       title="Oppgaver"
@@ -90,7 +97,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                 {task.description}
                 <Accordion.Provider id={task.id.toString()}>
                   {task.subtask.map((sub) => (
-                    <FormRow>
+                    <FormRow key={sub.id}>
                       <Checkbox
                         right="large"
                         title="Kryss av når du er ferdig med oppgaven"

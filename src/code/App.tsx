@@ -52,7 +52,6 @@ export default function App() {
           <Tabs
             id="tabs"
             tabs_spacing
-            /* tabs_style="mint-green" */
             content_style="black-3"
             style={{
               marginLeft: "1rem",
