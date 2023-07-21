@@ -14,7 +14,6 @@ export const TransactionTableForAccounts = (props: TransactionTableForAccountsPr
       <Table.ScrollView
         style={{
           maxHeight: "44rem",
-          width: "65rem",
         }}
       >
         <>

@@ -51,7 +51,7 @@ export default function AccountTable(props: AccountTableProps) {
     /** En funksjon som returnerer ett knappelement med link til transaksjonslisten til en konto.
      Tar kontoattributtet som skal være klikkbart som argument */
   }
-  function getTransactionLink(attribute) {
+  function getTransactionLink(attribute: String) {
     return (
       <button
         className="dnb-anchor"

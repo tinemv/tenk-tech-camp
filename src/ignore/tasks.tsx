@@ -10,17 +10,17 @@ export var tasks = [
           I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi skal
           navigere oss til riktig fil og endre på nettsiden fra denne fila.
         </p>
-        <p>
+        <p className="dnb-p">
           <b>Hvor på nettsiden?</b> <i>Velkommen</i>
         </p>
-        <p>
+        <p className="dnb-p">
           <b>Hvor i koden?</b> <code className="dnb-code">Welcome.tsx</code>
         </p>
       </>
     ),
     subtask: [
       {
-        id: 10,
+        id: 0,
         name: "Oppgave A",
         level: "LETT",
         description: (
@@ -44,7 +44,7 @@ export var tasks = [
         ),
       },
       {
-        id: 11,
+        id: 1,
         name: "Oppgave B",
         level: "LETT",
         description: (
@@ -63,7 +63,7 @@ export var tasks = [
         ),
       },
       {
-        id: 12,
+        id: 2,
         name: "Oppgave C",
         level: "MEDIUM",
         description: (
@@ -99,10 +99,10 @@ export var tasks = [
           For å bli litt bedre kjent med nettsiden og koden skal vi begynne med
           å lage en profil i nettbanken.
         </p>
-        <p>
+        <p className="dnb-p">
           <b>Hvor på nettsiden?</b> <i>Logg inn som kunde</i>
         </p>
-        <p>
+        <p className="dnb-p">
           <b>Hvor i koden?</b>{" "}
           <code className="dnb-code">CustomerPage.tsx</code> i{" "}
           <code className="dnb-code">Oppgave1</code>-mappa
@@ -111,7 +111,7 @@ export var tasks = [
     ),
     subtask: [
       {
-        id: 13,
+        id: 3,
         name: "Oppgave A",
         level: "LETT",
         description: (
@@ -135,7 +135,7 @@ export var tasks = [
       },
 
       {
-        id: 14,
+        id: 4,
         name: "Oppgave B",
         level: "MEDIUM",
         description: (
@@ -174,11 +174,11 @@ export var tasks = [
           hvilke land penger sendes mellom så man enkelt kan se om noe virker
           mistenkelig. I denne oppgaven skal du gjøre ferdig denne oversikten.
         </p>
-        <p>
+        <p className="dnb-p">
           <b>Hvor på nettsiden?</b> <i>Dashboard</i> under{" "}
           <i>Logg inn som etterforsker</i>
         </p>
-        <p>
+        <p className="dnb-p">
           <b>Hvor i koden?</b> <code className="dnb-code">Dashboard.tsx</code> i{" "}
           <code className="dnb-code">Oppgave2</code>-mappa
         </p>
@@ -186,7 +186,7 @@ export var tasks = [
     ),
     subtask: [
       {
-        id: 15,
+        id: 5,
         name: "Oppgave A",
         level: "MEDIUM",
         description: (
@@ -214,7 +214,7 @@ export var tasks = [
         ),
       },
       {
-        id: 16,
+        id: 6,
         name: "Oppgave B",
         level: "MEDIUM",
         description: (
@@ -242,7 +242,7 @@ export var tasks = [
         ),
       },
       {
-        id: 17,
+        id: 7,
         name: "Oppgave C",
         level: "VANSKELIG",
         description: (
@@ -259,13 +259,12 @@ export var tasks = [
             På samme måte som er gjort på linje X og X-Y for alle de andre
             landene må vi legge til både en ny{" "}
             <code className="dnb-code">labels</code> og ny
-            <code className="dnb-code">data</code>. 
+            <code className="dnb-code">data</code>.
             <br /> På linje X må du legge til{" "}
-            <code className="dnb-code">"Russland"</code>, og på linje X
-            må du legge til {" "}
-            <code className="dnb-code">
-              countTargetCountries("Russland")
-            </code>{" "}. Husk å ha komma på riktig steder!
+            <code className="dnb-code">"Russland"</code>, og på linje X må du
+            legge til{" "}
+            <code className="dnb-code">countTargetCountries("Russland")</code> .
+            Husk å ha komma på riktig steder!
           </p>
         ),
       },
@@ -280,10 +279,10 @@ export var tasks = [
           Noen har overført penger til Russland! I denne oppgaven skal vi prøve
           å finne ut hvem som har overført pengene.
         </p>
-        <p>
+        <p className="dnb-p">
           <b>Hvor på nettsiden?</b> <i>Logg inn som etterforsker</i>
         </p>
-        <p>
+        <p className="dnb-p">
           <b>Hvor i koden?</b>{" "}
           <code className="dnb-code">Transactions.tsx</code> (Oppgave A) og{" "}
           <code className="dnb-code">TransactionTable.tsx</code> (Resten av
@@ -293,7 +292,7 @@ export var tasks = [
     ),
     subtask: [
       {
-        id: 18,
+        id: 8,
         name: "Oppgave A",
         level: "ENKEL",
         description: (
@@ -305,14 +304,14 @@ export var tasks = [
               paragraf og fyller inn teksten vi vil ha. Teksten kan for eksempel
               være:
             </p>
-            <p>
+            <p className="dnb-p">
               <i>
                 Denne tabellen viser oversikt over alle transaksjonene i DNB.
                 Den kan brukes til å finne mistenkelige transaksjoner og oppdage
                 kriminalitet.
               </i>
             </p>
-            <p>
+            <p className="dnb-p">
               eller du kan finne på din egen tekst. Legg inn paragrafet under
               overskriften.
             </p>
@@ -329,7 +328,7 @@ export var tasks = [
         ),
       },
       {
-        id: 19,
+        id: 9,
         name: "Oppgave B",
         level: "MEDIUM",
         description: (
@@ -363,7 +362,7 @@ export var tasks = [
         ),
       },
       {
-        id: 20,
+        id: 10,
         name: "Oppgave C",
         level: "VANSKELIG",
         description: (
@@ -398,7 +397,7 @@ export var tasks = [
         ),
       },
       {
-        id: 21,
+        id: 11,
         name: "Oppgave D",
         level: "VANSKELIG",
         description: (
@@ -446,7 +445,7 @@ export var tasks = [
     ),
     subtask: [
       {
-        id: 22,
+        id: 12,
         name: "Oppgave A",
         level: "LETT",
         description: (
@@ -458,8 +457,9 @@ export var tasks = [
               farge ønsker vi å kunne filtrere vekk de som ikke har høy risiko.
               Som du ser over tabellen kan vi allerede filtrere på for eksempel{" "}
               <b>Avsenders navn</b>. Test ut dette for å gjøre deg kjent med
-              funksjonaliteten.<br></br>
-              <br></br>
+              funksjonaliteten.
+              <br />
+              <br />
             </p>
             <p className="dnb-p">
               Som du også ser finnes det ikke noen filtrering for <b>Risiko</b>.
@@ -483,7 +483,7 @@ export var tasks = [
         ),
       },
       {
-        id: 23,
+        id: 13,
         name: "Oppgave B",
         level: "VANSKELIG",
         description: (
@@ -496,7 +496,7 @@ export var tasks = [
               til en link fra brukerens hovedside til kontotransaksjoner via
               kontonummeret, lignende slik det er gjort med kontonavn.
             </p>
-            <p>
+            <p className="dnb-p">
               For å gjøre dette må vi endre HTML elementet som inneholder
               kontonummeret fra et
               <code className="dnb-code">NumberElement</code>
@@ -505,7 +505,7 @@ export var tasks = [
               funksjon, <code className="dnb-code">getTransactionLink</code>
               som gjør nettopp dette.{" "}
             </p>
-            <p>
+            <p className="dnb-p">
               {" "}
               Funksjonen tar et argument som heter attribute som er den kolonnen
               vi ønsker å gjøre til et link element. Prøv å bruke{" "}

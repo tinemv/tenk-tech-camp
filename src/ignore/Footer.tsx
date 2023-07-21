@@ -7,7 +7,7 @@ export default function Footer() {
       spacing="small"
       style_type="sea-green"
       style={{
-        position: "absolute",
+        position: "fixed",
         bottom: 0,
         marginRight: "auto",
         marginLeft: "auto",
