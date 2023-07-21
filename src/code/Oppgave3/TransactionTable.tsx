@@ -1,30 +1,32 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Table, Th, Tr, Td, NumberFormat } from "@dnb/eufemia";
+import { Transaction } from "../../ignore/Models";
 
 export type TransactionTableProps = {
-  listOfTransactions: any;
+  listOfTransactions: Transaction[];
 };
 
-export function detectRiskCountry(fromCountry, toCountry): String | undefined {
-  {/** OPPGAVE X */}
+/** OPPGAVE 3c */
+export function detectRiskCountry(country: String): String | undefined {
+  /* Fjern denne linjen for å få koden din til å funke!
 
-  /* Fjern denne linjen for å få koden din til å kjøre!
-
-  if (fromCountry ... || toCountry ... ){
+  if (country === land ){
     return 'HØY eller LAV?';
   } else {
     return 'HØY eller LAV?';
   }
 
-  Fjern denne linjen for å få koden din til å kjøre!*/
+  Fjern denne linjen for å få koden din til å funke!*/
 
-  return 'Ukjent';
+  return "Ukjent";
 }
 
-function setColorForHighRisk(risk): any {
-  {/** OPPGAVE X */}
-  return 'black';
+function setColorForHighRisk(risk: String): any {
+  {
+    /** OPPGAVE X */
+  }
+  return "black";
 }
 
 export const TransactionTable = (props: TransactionTableProps) => {
@@ -43,32 +45,31 @@ export const TransactionTable = (props: TransactionTableProps) => {
           <thead>
             <Tr>
               <Th>Avsenders navn</Th>
+              <Th>Avsenders land</Th>
               <Th>Mottakers navn</Th>
+              {/*Oppgave 3b: legg til "Mottakers land" her*/}
               <Th>Beløp</Th>
               <Th>Risiko</Th>
-              {/*Oppgave 3b: legg til to nye overskrifter her! Avsenders og Mottakers land*/}
             </Tr>
           </thead>
           <tbody>
             {listOfTransactions.map((transaction) => (
-              <Tr key={transaction.id}>
+              <Tr key={transaction.id.toString()}>
                 <Td>{transaction.from.name}</Td>
+                <Td>{transaction.from.country}</Td>
                 <Td>{transaction.to.name}</Td>
-                <Td><NumberFormat>{transaction.amount}</NumberFormat></Td>
+                {/*Oppgave 3b: legg til "{transaction.to.country}" her*/}
+                <Td>
+                  <NumberFormat>{transaction.amount}</NumberFormat>
+                </Td>
                 <Td
                   style={{
                     color: setColorForHighRisk(
-                      detectRiskCountry(
-                        transaction.from.country,
-                        transaction.to.country
-                      )
+                      detectRiskCountry(transaction.to.country)
                     ),
                   }}
                 >
-                  {detectRiskCountry(
-                    transaction.from.country,
-                    transaction.to.country
-                  )}
+                  {detectRiskCountry(transaction.to.country)}
                 </Td>
               </Tr>
             ))}

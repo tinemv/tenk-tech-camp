@@ -71,7 +71,11 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
     >
       <Drawer.Header>
         <FormStatus state="info">
-          Spør oss om det skulle være noe du lurer på!
+          <p className="dnb-p">
+            Alle filene vi skal jobbe i ligger i{" "}
+            <code className="dnb-code">code</code>-mappa som ligger i{" "}
+            <code className="dnb-code">src</code>-mappa
+          </p>
         </FormStatus>
         <Progress progressValue={progressValue} />
         <Tabs

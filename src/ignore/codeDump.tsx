@@ -65,10 +65,7 @@ export function filterTable(
           ? filteredTransactions.push(transaction)
           : undefined;
           case Parameter.RISK:
-            return detectRiskCountry(
-              transaction.from.country,
-              transaction.to.country
-            ) == value
+            return detectRiskCountry(transaction.to.country) == value
               ? filteredTransactions.push(transaction)
               : undefined;
     }
