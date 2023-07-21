@@ -2,11 +2,11 @@ import React from "react";
 import { allDNBTransactions } from "../data/transactions";
 import { customer } from "../data/customer";
 import { H1, H2, Section, Tabs, NumberFormat } from "@dnb/eufemia";
-import Transactions from "../code/Transactions/AllTransactions/Transactions";
+import Transactions from "../code/Oppgave3/Transactions";
 import { Transaction } from "../ignore/Models";
-import { Parameter } from "../code/Transactions/AllTransactions/Transactions";
-import { detectRiskCountry } from "../code/Transactions/AllTransactions/TransactionTable";
-import Dashboard from "../code/Transactions/Dashboard/Dashboard";
+import { Parameter } from "../code/Oppgave3/Transactions";
+import { detectRiskCountry } from "../code/Oppgave3/TransactionTable";
+import Dashboard from "../code/Oppgave2/Dashboard";
 
 export function getAllTransactions () {
   const allCustomerTransactions = customer.accounts.flatMap(
@@ -65,10 +65,7 @@ export function filterTable(
           ? filteredTransactions.push(transaction)
           : undefined;
           case Parameter.RISK:
-            return detectRiskCountry(
-              transaction.from.country,
-              transaction.to.country
-            ) == value
+            return detectRiskCountry(transaction.to.country) == value
               ? filteredTransactions.push(transaction)
               : undefined;
     }

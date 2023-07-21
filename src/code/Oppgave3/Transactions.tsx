@@ -1,7 +1,7 @@
 import React from "react";
 import { Dropdown, H1, Input, Section, P } from "@dnb/eufemia";
 import { TransactionTable } from "./TransactionTable";
-import { filterTable } from "../../../ignore/codeDump";
+import { filterTable } from "../../ignore/codeDump";
 
 export enum Parameter {
   FROM_NAME = "Avsenders navn",
@@ -23,6 +23,7 @@ export default function Transactions() {
     <Section spacing="small" left right style_type="white">
       <div className="TransactionsTab">
         <H1>Oversikt over alle transaksjoner i DNB</H1>
+        {/* Oppgave 3a: legg til en paragraf her! :) */}
         <Section style_type="white">
           <Section spacing>
             <Dropdown
