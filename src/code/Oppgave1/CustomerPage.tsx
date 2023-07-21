@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AccountTable from "../../ignore/AccountTable";
 import { customer } from "../../data/customer";
 import ukjent from "./Profilbilder/ukjent.png";
@@ -47,7 +47,8 @@ export default function CustomerPage() {
             <AccountPage
               account={customer.accounts.find(
                 (account) =>
-                  account.name || account.accountNumber === accountClicked
+                  account.name === accountClicked ||
+                  account.accountNumber === accountClicked
               )}
               setAccountClicked={setAccountClicked}
             />
