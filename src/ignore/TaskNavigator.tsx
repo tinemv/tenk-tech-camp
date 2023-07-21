@@ -46,6 +46,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
   } = props;
 
   useEffect(() => {
+    console.log(checkedTasks);
     setProgressValue(
       (checkedTasks.filter((x) => x == true).length * 100) / checkedTasks.length
     );
@@ -55,13 +56,6 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
   useEffect(() => {
     window.sessionStorage.setItem("currentTab", currentTab.toString());
   }, [currentTab]);
-
-  console.log(
-    "All subtasks: ",
-    tasks.flatMap((task) => {
-      return task.subtask.map((sub) => sub.id);
-    })
-  );
 
   return (
     <Drawer
@@ -99,8 +93,8 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
             return (
               <>
                 {task.description}
-                <Accordion.Provider id={task.id.toString()}>
-                  {task.subtask.map((sub) => (
+                {task.subtask.map((sub) => (
+                  <Accordion.Provider id={task.id.toString()}>
                     <FormRow key={sub.id}>
                       <Checkbox
                         right="large"
@@ -140,8 +134,8 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                         </FormRow>
                       </Accordion>
                     </FormRow>
-                  ))}
-                </Accordion.Provider>
+                  </Accordion.Provider>
+                ))}
               </>
             );
           }}

@@ -20,7 +20,7 @@ export var tasks = [
     ),
     subtask: [
       {
-        id: 10,
+        id: 0,
         name: "Oppgave A",
         level: "LETT",
         description: (
@@ -44,7 +44,7 @@ export var tasks = [
         ),
       },
       {
-        id: 11,
+        id: 1,
         name: "Oppgave B",
         level: "LETT",
         description: (
@@ -63,7 +63,7 @@ export var tasks = [
         ),
       },
       {
-        id: 12,
+        id: 2,
         name: "Oppgave C",
         level: "MEDIUM",
         description: (
@@ -111,7 +111,7 @@ export var tasks = [
     ),
     subtask: [
       {
-        id: 13,
+        id: 3,
         name: "Oppgave A",
         level: "LETT",
         description: (
@@ -135,7 +135,7 @@ export var tasks = [
       },
 
       {
-        id: 14,
+        id: 4,
         name: "Oppgave B",
         level: "MEDIUM",
         description: (
@@ -186,7 +186,7 @@ export var tasks = [
     ),
     subtask: [
       {
-        id: 15,
+        id: 5,
         name: "Oppgave A",
         level: "MEDIUM",
         description: (
@@ -214,7 +214,7 @@ export var tasks = [
         ),
       },
       {
-        id: 16,
+        id: 6,
         name: "Oppgave B",
         level: "MEDIUM",
         description: (
@@ -242,7 +242,7 @@ export var tasks = [
         ),
       },
       {
-        id: 17,
+        id: 7,
         name: "Oppgave C",
         level: "VANSKELIG",
         description: (
@@ -259,13 +259,12 @@ export var tasks = [
             På samme måte som er gjort på linje X og X-Y for alle de andre
             landene må vi legge til både en ny{" "}
             <code className="dnb-code">labels</code> og ny
-            <code className="dnb-code">data</code>. 
+            <code className="dnb-code">data</code>.
             <br /> På linje X må du legge til{" "}
-            <code className="dnb-code">"Russland"</code>, og på linje X
-            må du legge til {" "}
-            <code className="dnb-code">
-              countTargetCountries("Russland")
-            </code>{" "}. Husk å ha komma på riktig steder!
+            <code className="dnb-code">"Russland"</code>, og på linje X må du
+            legge til{" "}
+            <code className="dnb-code">countTargetCountries("Russland")</code> .
+            Husk å ha komma på riktig steder!
           </p>
         ),
       },
@@ -293,7 +292,7 @@ export var tasks = [
     ),
     subtask: [
       {
-        id: 18,
+        id: 8,
         name: "Oppgave A",
         level: "ENKEL",
         description: (
@@ -329,7 +328,7 @@ export var tasks = [
         ),
       },
       {
-        id: 19,
+        id: 9,
         name: "Oppgave B",
         level: "MEDIUM",
         description: (
@@ -363,7 +362,7 @@ export var tasks = [
         ),
       },
       {
-        id: 20,
+        id: 10,
         name: "Oppgave C",
         level: "VANSKELIG",
         description: (
@@ -398,7 +397,7 @@ export var tasks = [
         ),
       },
       {
-        id: 21,
+        id: 11,
         name: "Oppgave D",
         level: "VANSKELIG",
         description: (
@@ -446,7 +445,7 @@ export var tasks = [
     ),
     subtask: [
       {
-        id: 22,
+        id: 12,
         name: "Oppgave A",
         level: "LETT",
         description: (
@@ -483,7 +482,7 @@ export var tasks = [
         ),
       },
       {
-        id: 23,
+        id: 13,
         name: "Oppgave B",
         level: "VANSKELIG",
         description: (
