@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import {
   Drawer,
   P,
@@ -14,6 +14,8 @@ import { tasks } from "./tasks";
 import Progress from "./Progress";
 
 export interface TaskNavigatorProps {
+  currentTab: number;
+  setCurrentTab: Function;
   progressValue: number;
   setProgressValue: Function;
   checkedTasks: boolean[];
@@ -34,8 +36,14 @@ interface Task {
 }
 
 export default function TaskNavigator(props: TaskNavigatorProps) {
-  const { progressValue, setProgressValue, checkedTasks, setCheckedTasks } =
-    props;
+  const {
+    currentTab,
+    setCurrentTab,
+    progressValue,
+    setProgressValue,
+    checkedTasks,
+    setCheckedTasks,
+  } = props;
 
   useEffect(() => {
     setProgressValue(
@@ -43,6 +51,10 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
     );
     window.sessionStorage.setItem("checkedTasks", checkedTasks.toString());
   }, [checkedTasks]);
+
+  useEffect(() => {
+    window.sessionStorage.setItem("currentTab", currentTab.toString());
+  }, [currentTab]);
 
   return (
     <Drawer
@@ -59,10 +71,14 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
           id="tasks-tab"
           data={tasks.map((task) => {
             return {
-                title: task.title,
-                key: task.id,
-              }
-            })}
+              title: task.title,
+              key: task.id,
+            };
+          })}
+          selected_key={currentTab}
+          on_change={({ key }) => {
+            setCurrentTab(key);
+          }}
         />
       </Drawer.Header>
       <Drawer.Body>

@@ -20,6 +20,12 @@ const RightArea = styled.div`
 `;
 
 export default function App() {
+  const [currentTab, setCurrentTab] = useState<number>(() => {
+    if (window.sessionStorage.getItem("currentTab") != null) {
+      return parseInt(window.sessionStorage.getItem("currentTab"));
+    }
+    return 0;
+  });
   const [progressValue, setProgressValue] = useState(0);
   const [checkedTasks, setCheckedTasks] = useState<boolean[]>(() => {
     if (window.sessionStorage.getItem("checkedTasks") == null) {
@@ -71,6 +77,8 @@ export default function App() {
 
         <RightArea>
           <TaskNavigator
+            currentTab={currentTab}
+            setCurrentTab={setCurrentTab}
             progressValue={progressValue}
             setProgressValue={setProgressValue}
             checkedTasks={checkedTasks}
