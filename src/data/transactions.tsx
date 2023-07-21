@@ -1122,7 +1122,7 @@ export var allDNBTransactions = [
   {
     id: "102",
     from: {
-      name: "Mina Paulsen",
+      name: "Jonas Gahr Støre",
       country: "Norge",
     },
     to: {
