@@ -12,6 +12,7 @@ export var tasks = [
           I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi skal
           navigere oss til riktig fil og endre på nettsiden fra denne fila.
         </p>
+        <br></br>
         <p className="dnb-p">
           <b>Hvor på nettsiden?</b> <i>Velkommen</i>
         </p>
@@ -101,6 +102,7 @@ export var tasks = [
           For å bli litt bedre kjent med nettsiden og koden skal vi begynne med
           å lage en profil i nettbanken.
         </p>
+        <br></br>
         <p className="dnb-p">
           <b>Hvor på nettsiden?</b> <i>Logg inn som kunde</i>
         </p>
@@ -176,6 +178,7 @@ export var tasks = [
           hvilke land penger sendes mellom så man enkelt kan se om noe virker
           mistenkelig. I denne oppgaven skal du gjøre ferdig denne oversikten.
         </p>
+        <br></br>
         <p className="dnb-p">
           <b>Hvor på nettsiden?</b> <i>Dashboard</i> under{" "}
           <i>Logg inn som etterforsker</i>
@@ -281,6 +284,7 @@ export var tasks = [
           Noen har overført penger til Russland! I denne oppgaven skal vi prøve
           å finne ut hvem som har overført pengene.
         </p>
+        <br></br>
         <p className="dnb-p">
           <b>Hvor på nettsiden?</b> <i>Logg inn som etterforsker</i>
         </p>
