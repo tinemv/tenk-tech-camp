@@ -1,19 +1,26 @@
 import React from "react";
 import { allDNBTransactions } from "../data/transactions";
 import { customer } from "../data/customer";
-import { H1, H2, Section, Tabs, NumberFormat } from "@dnb/eufemia";
+import {
+  H1,
+  H2,
+  Section,
+  Tabs,
+  NumberFormat
+} from "@dnb/eufemia";
 import Transactions from "../code/Oppgave3/Transactions";
 import { Transaction } from "../ignore/Models";
 import { Parameter } from "../code/Oppgave3/Transactions";
 import { detectRiskCountry } from "../code/Oppgave3/TransactionTable";
 import Dashboard from "../code/Oppgave2/Dashboard";
 
-export function getAllTransactions () {
+
+export function getAllTransactions() {
   const allCustomerTransactions = customer.accounts.flatMap(
     (account) => account.transactions
   );
   return allDNBTransactions.concat(allCustomerTransactions);
-};
+}
 
 export function TransactionsPage() {
   return (
@@ -29,7 +36,6 @@ export function TransactionsPage() {
         </div>
       </Tabs.Content>
     </Tabs>
-     
   );
 }
 
@@ -64,10 +70,10 @@ export function filterTable(
         return transaction.amount == +value
           ? filteredTransactions.push(transaction)
           : undefined;
-          case Parameter.RISK:
-            return detectRiskCountry(transaction.to.country) == value
-              ? filteredTransactions.push(transaction)
-              : undefined;
+      case Parameter.RISK:
+        return detectRiskCountry(transaction.to.country) == value
+          ? filteredTransactions.push(transaction)
+          : undefined;
     }
   });
   return filteredTransactions;
@@ -101,4 +107,3 @@ export function countTargetCountries(country: String) {
   });
   return counter;
 }
-

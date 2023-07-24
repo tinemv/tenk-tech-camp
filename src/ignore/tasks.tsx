@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 export var tasks = [
   {
     id: 0,
@@ -432,6 +434,24 @@ export var tasks = [
             <code className="dnb-code">"green"</code>.
           </p>
         ),
+      },
+      {
+        id: 11,
+        name: "Oppgave E",
+        level: "ENKEL",
+        description: (
+          <>
+            <p className="dnb-p">
+              Forhåpentligvis har du nå klart å lage kode for å finne ut hvem
+              som har overført penger til Russland. Bla gjennom alle transaksjonene
+              hvis du ikke har gjort det, og finn den som har blitt markert rødt og er til Russland.
+              Navnet på personen som sendte disse pengene fyller du inn i feltet øverst på siden og sender inn til politiet.
+            </p>
+          </>
+        ),
+        hint: (  <p className="dnb-p">
+        Her trenger du vel ikke noe hint!
+      </p>),
       },
     ],
   },
