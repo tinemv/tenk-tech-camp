@@ -5,10 +5,10 @@ import { NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
 import { findBalance } from "../Account/AccountPage";
 
 export interface AccountTableProps {
-  accountList: Account[];
-  setAccountClicked: Function;
+  accountList: Account[]; /*listen over alle kundens kontoer */
+  setAccountClicked: Function; /*en funksjon som sjekker om kontoen har blitt klikket på tidligere */
 }
-
+/** AccountTable er en funksjon som returnerer koden til kontotabellen under kundens bilde.*/
 export default function AccountTable(props: AccountTableProps) {
   const { accountList, setAccountClicked } = props;
 
@@ -50,8 +50,8 @@ export default function AccountTable(props: AccountTableProps) {
       </Table.ScrollView>
     </Provider>
   );
-    {/** En funksjon som returnerer ett knappelement med link til transaksjonslisten til en konto.
-     Tar kontoattributtet som skal være klikkbart som argument */}
+    /** En funksjon som returnerer ett knappelement med link til transaksjonslisten til en konto.
+     Tar kontoattributtet som skal være klikkbart som argument */
     function getTransactionLink(attribute) {
         return  (<button
             className="dnb-anchor"
@@ -63,4 +63,3 @@ export default function AccountTable(props: AccountTableProps) {
         </button>);
     }
 }
-

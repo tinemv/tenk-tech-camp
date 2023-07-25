@@ -7,6 +7,7 @@ import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../../../ignore/styles.css";
 import AccountPage from "../Account/AccountPage";
 
+/** CustomerPage er en funksjon som returnerer koden til kundesiden */
 export default function CustomerPage() {
   const [accountClicked, setAccountClicked] = useState("Customer");
 

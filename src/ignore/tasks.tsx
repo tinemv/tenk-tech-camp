@@ -88,7 +88,7 @@ export var tasks = [
       {
         id: 8,
         name: "A",
-        level: "EASY",
+        level: "MEDIUM",
         description:
           "Vi skal begynne med å gjøre noen enkle forbedringer på profilsiden vår. For øyeblikket er det et generisk profilbilde(kalt default.png) for brukeren vår. For å gjøre siden mer personlig kan vi endre profilbilde. Dette kan du gjøre ved å navigere til Customer/Profile/CustomerPage.tsx. Se på bildene i profile_pictures og velg et du liker.",
         hint: 'Se på listen over importer i CustomerPage.tsx. "default.png" er navnet på bildefilen til profilbildet. Endre dette til navnet på et av bildene i profile_pictures mappen (for eksempel Kjerstin_Braathen.png).',
@@ -96,7 +96,7 @@ export var tasks = [
       {
         id: 9,
         name: "B",
-        level: "EASY",
+        level: "DIFFICULT",
         description:
           "Dersom du klikker på et kontonavn vil vi navigeres inn på en liste over transaksjoner fra denne kontoen. Siden kontonummeret også fungerer som et id til kontoen, gir det mening at vi kan forvente det samme til å skje når vi klikker her. Vi ønsker derfor å legge til en link fra brukerens hovedside til kontotransaksjoner via kontonummeret, lignende slik det er gjort med kontonavn. For å gjøre dette må vi endre HTML elementet som inneholder kontonummeret fra et NumberElement til en link. Ta en titt i AccountTable.tsx. Her er en funksjon, getTransactionLink som gjør nettopp dette. Funksjonen tar et argument som heter attribute som er den kolonnen vi ønsker å gjøre til et link element. Prøv å bruke getTransactionLink funksjonen til å lage kontonummer kolonnen linket til kontotransaksjonsiden. For inspirasjon, se hvordan funksjonen er brukt med kontonavn.",
         hint: "Bruk account.accountNumber som et attributt i funksjonen på følgende vis: getTransactionsLink(account.accountNumber). Husk å fjerne numberFormat elementet og å legge til {} rundt alt.",

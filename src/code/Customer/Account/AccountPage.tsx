@@ -9,6 +9,7 @@ export type AccountProps = {
   setAccountClicked: Function;
 };
 
+{/**findBalance er en variabel som tilsier hvor mye penger som er på kontoen */}
 export const findBalance = (transactions: Transaction[]) => {
   return transactions.reduce(
     (totalBalance, transaction) => totalBalance + transaction.amount,
@@ -16,6 +17,7 @@ export const findBalance = (transactions: Transaction[]) => {
   );
 };
 
+{/**AccountPage er en funksjon vi bruker til å presentere selve kontosiden (du kan se kontosiden hvis du logger inn som kunde og trykker på et av kontonavnene) */}
 export default function AccountPage(props: AccountProps) {
   const { account, setAccountClicked } = props;
   if (account == undefined) {

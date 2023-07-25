@@ -16,6 +16,7 @@ function setColorForHighRisk(risk): any {
   return 'black';
 }
 
+/** Transactions returnerer koden som visualiserer transaksjonstabellen mellom alle kunder. Logg inn som etterforsker og trykk på fanen hvor det står Transaksjoner for å se resultatet på denne koden */
 export const TransactionTable = (props: TransactionTableProps) => {
   const { listOfTransactions } = props;
 
