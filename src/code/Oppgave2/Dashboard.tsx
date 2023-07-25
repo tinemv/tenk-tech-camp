@@ -13,6 +13,7 @@ import {
 } from "../../ignore/codeDump";
 import Provider from "@dnb/eufemia/shared/Provider";
 
+/** Dashboard er en funksjon som returnerer koden til Dashboard siden. Kan finnes dersom du logger inn som etterforsker */
 export default function Dashboard() {
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
