@@ -2,7 +2,6 @@ import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Table, Th, Tr, Td, NumberFormat, H2 } from "@dnb/eufemia";
 
-/**  */
 export type TransactionTableForAccountsProps = {
   listOfTransactions: any;
 };
