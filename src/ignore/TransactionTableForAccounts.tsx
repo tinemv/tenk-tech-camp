@@ -15,12 +15,10 @@ export const TransactionTableForAccounts = (props: TransactionTableForAccountsPr
       <Table.ScrollView
         style={{
           maxHeight: "44rem",
-          width: "65rem",
         }}
       >
         <>
           <H2 bottom>Transaksjoner</H2>
-          {/* OPPGAVE X: Her kan du endre på utseendet og innholdet til transaksjoner-tabellen */}
           <Table sticky="css-position">
             <thead>
               <Tr>
