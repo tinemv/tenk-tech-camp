@@ -17,6 +17,7 @@ export default function Dashboard() {
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <div className="DashboardTab">
+        {/* Oppgave 2A: Her finner du overskriften til siden */}
         <H1 style={{ fontSize: "small" }} top="x-small">
           Dashboard
         </H1>
@@ -55,10 +56,12 @@ export default function Dashboard() {
   );
 }
 
+/* Oppgave 2C: Her må du legge til Russland to steder */
 const barChartData = {
   labels: ["Norge", "Sverige", "Danmark", "USA", "Spania", "Italia"],
   datasets: [
     {
+      /* Oppgave 2B: Her kan du legge til "Antall" */
       label: "?????",
       data: [
         countTargetCountries("Norge"),

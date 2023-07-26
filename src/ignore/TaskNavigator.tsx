@@ -11,6 +11,7 @@ import {
   Accordion,
   H3,
   H4,
+  Input,
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
@@ -48,6 +49,11 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
     setCheckedTasks,
   } = props;
 
+  const [inputText, setInputText] = React.useState("");
+  const handleInputText = (event) => {
+    setInputText(event.target.value);
+  };
+
   useEffect(() => {
     console.log(checkedTasks);
     setProgressValue(
@@ -75,6 +81,21 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
           </p>
         </FormStatus>
         <Progress progressValue={progressValue} />
+        <Input space type="text" onChange={handleInputText} value={inputText} />
+        <Dialog
+          triggerAttributes={{
+            text: "Meld inn til politiet",
+          }}
+          title={
+            inputText === "Jonas Gahr Støre" ? "Gratulerer!" : "Prøv igjen!"
+          }
+        >
+          <P>
+            {inputText === "Jonas Gahr Støre"
+              ? "Du har løst saken. Jonas Gahr Støre, statsministeren i Norge, har uten lov overført penger til Russland. Heldigvis klarte du å oppdage det og anmelde det til politiet. Bra jobba og takk for din hjelp!"
+              : "Det ser ikke ut som navnet du har skrevet inn er helt riktig. Dobbeltsjekk at du har skrevet alle navnene med stor forbokstav og at du har mellomrom på riktig steder. Hvis det fortsatt blir feil må du kanskje se gjennom transaksjonene på nytt for å finne riktig navn å anmelde."}
+          </P>
+        </Dialog>
         <Tabs
           id="tasks-tab"
           data={tasks.map((task) => {
@@ -132,16 +153,20 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                         <Accordion.Content>
                           <FormRow direction="vertical">
                             <P>{sub.description}</P>
-                            <FormRow top bottom direction="horizontal">
-                              <Dialog
-                                triggerAttributes={{
-                                  text: "Hint",
-                                }}
-                                title={"Hint " + sub.name}
-                              >
-                                <P>{sub.hint}</P>
-                              </Dialog>
-                            </FormRow>
+                            {sub.id !== 12 ? (
+                              <FormRow top bottom direction="horizontal">
+                                <Dialog
+                                  triggerAttributes={{
+                                    text: "Hint",
+                                  }}
+                                  title={"Hint " + sub.name}
+                                >
+                                  <P>{sub.hint}</P>
+                                </Dialog>
+                              </FormRow>
+                            ) : (
+                              <></>
+                            )}
                           </FormRow>
                         </Accordion.Content>
                       </Accordion>

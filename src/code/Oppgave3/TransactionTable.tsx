@@ -7,14 +7,14 @@ export type TransactionTableProps = {
   listOfTransactions: Transaction[];
 };
 
-/** OPPGAVE 3c */
+/** OPPGAVE 3C: du har funnet funksjonen du skal endre på! */
 export function detectRiskCountry(country: String): String | undefined {
   /* Fjern denne linjen for å få koden din til å funke!
 
   if (country === land ){
-    return 'HØY eller LAV?';
+    return "HØY" eller "LAV";
   } else {
-    return 'HØY eller LAV?';
+    return "HØY" eller "LAV";
   }
 
   Fjern denne linjen for å få koden din til å funke!*/
@@ -46,7 +46,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
               <Th>Avsenders navn</Th>
               <Th>Avsenders land</Th>
               <Th>Mottakers navn</Th>
-              {/*Oppgave 3b: legg til "Mottakers land" her*/}
+              {/*Oppgave 3B: legg til overskrift her */}
               <Th>Beløp</Th>
               <Th>Risiko</Th>
             </Tr>
@@ -57,7 +57,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
                 <Td>{transaction.from.name}</Td>
                 <Td>{transaction.from.country}</Td>
                 <Td>{transaction.to.name}</Td>
-                {/*Oppgave 3b: legg til "{transaction.to.country}" her*/}
+                {/*Oppgave 3B: legg til innhold her */}
                 <Td>
                   <NumberFormat>{transaction.amount}</NumberFormat>
                 </Td>
