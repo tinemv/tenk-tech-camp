@@ -14,6 +14,7 @@ import {
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
+import "./styles.css";
 
 export interface TaskNavigatorProps {
   currentTab: number;
@@ -114,7 +115,14 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                         }}
                         checked={checkedTasks[sub.id]}
                       />
-                      <Accordion top id={sub.id.toString()} remember_state>
+                      <Accordion
+                        top
+                        id={sub.id.toString()}
+                        remember_state
+                        left_component={
+                          <Tag text={sub.level} className="tag" />
+                        }
+                      >
                         <Accordion.Header>
                           <H4>{sub.name}</H4>
                         </Accordion.Header>
@@ -130,7 +138,6 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                               >
                                 <P>{sub.hint}</P>
                               </Dialog>
-                              <Tag text={sub.level} space="0.5" />
                             </FormRow>
                           </FormRow>
                         </Accordion.Content>

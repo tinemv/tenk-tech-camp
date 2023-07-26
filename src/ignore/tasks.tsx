@@ -25,7 +25,7 @@ export var tasks = [
       {
         id: 0,
         name: "Oppgave A",
-        level: "LETT",
+        level: "ENKEL",
         description: (
           <p className="dnb-p">
             Nå skal vi endre overskriften til forsiden. Finn stedet i koden hvor
@@ -49,7 +49,7 @@ export var tasks = [
       {
         id: 1,
         name: "Oppgave B",
-        level: "LETT",
+        level: "ENKEL",
         description: (
           <p className="dnb-p">
             Endre farge på overskriften til en farge du ønsker, for eksempel
@@ -117,7 +117,7 @@ export var tasks = [
       {
         id: 3,
         name: "Oppgave A",
-        level: "LETT",
+        level: "ENKEL",
         description: (
           <p className="dnb-p">
             Det første vi ønsker er å endre navnet på overskriften fra{" "}
@@ -471,11 +471,11 @@ export var tasks = [
       {
         id: 12,
         name: "Oppgave A",
-        level: "LETT",
+        level: "ENKEL",
         description: (
           <>
             <p className="dnb-p">
-              Til slutt ønsker DNB å gjøre det enda lettere for etterforskerene
+              Til slutt ønsker DNB å gjøre det enda ENKELere for etterforskerene
               å se hvilke transaksjoner som har høy risiko for kriminalitet.
               Selv om vi allerede har markert de som har høy risiko i en annen
               farge ønsker vi å kunne filtrere vekk de som ikke har høy risiko.
