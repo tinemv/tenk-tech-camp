@@ -1,6 +1,6 @@
 import React from "react";
-
-
+import { Tooltip } from "@dnb/eufemia";
+import "./styles.css";
 
 export var tasks = [
   {
@@ -9,8 +9,11 @@ export var tasks = [
     description: (
       <>
         <p className="dnb-p">
-          I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi skal
-          navigere oss til riktig fil og endre på nettsiden fra denne fila.
+          I denne oppgaven skal vi teste hvordan oppgavene vil fungere. Vi skal{" "}
+          <Tooltip targetElement={<a className="tooltip">navigere</a>}>
+            Finn riktig fil ved å se på panelet til venstre og i mappa code
+          </Tooltip>{" "}
+          oss til riktig fil og endre på nettsiden fra denne fila.
         </p>
         <br></br>
         <p className="dnb-p">
