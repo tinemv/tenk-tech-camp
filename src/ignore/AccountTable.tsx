@@ -5,10 +5,10 @@ import { NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
 import { findBalance } from "./AccountPage";
 
 export interface AccountTableProps {
-  accountList: Account[];
-  setAccountClicked: Function;
+  accountList: Account[]; /*listen over alle kundens kontoer */
+  setAccountClicked: Function; /*en funksjon som sjekker om kontoen har blitt klikket på tidligere */
 }
-
+/** AccountTable er en funksjon som returnerer koden til kontotabellen under kundens bilde.*/
 export default function AccountTable(props: AccountTableProps) {
   const { accountList, setAccountClicked } = props;
 

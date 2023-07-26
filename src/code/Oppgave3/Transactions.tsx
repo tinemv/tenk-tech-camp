@@ -12,6 +12,7 @@ export enum Parameter {
   RISK = 'Risiko'
 }
 
+/** Transactions returnerer koden som visualiserer transaksjonssiden mellom alle kunder. Logg inn som etterforsker og trykk på fanen hvor det står Transaksjoner for å se resultatet på denne koden */
 export default function Transactions() {
   const [inputText, setInputText] = React.useState("");
   const handleInputText = (event) => {
