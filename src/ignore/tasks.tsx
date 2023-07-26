@@ -447,15 +447,15 @@ export var tasks = [
           <>
             <p className="dnb-p">
               Forhåpentligvis har du nå klart å lage kode for å finne ut hvem
-              som har overført penger til Russland. Bla gjennom alle transaksjonene
-              hvis du ikke har gjort det, og finn den som har blitt markert rødt og er til Russland.
-              Navnet på personen som sendte disse pengene fyller du inn i feltet øverst på siden og sender inn til politiet.
+              som har overført penger til Russland. Bla gjennom alle
+              transaksjonene hvis du ikke har gjort det, og finn den som har
+              blitt markert rødt og er til Russland. Navnet på personen som
+              sendte disse pengene fyller du inn i feltet øverst på siden og
+              sender inn til politiet.
             </p>
           </>
         ),
-        hint: (  <p className="dnb-p">
-        Her trenger du vel ikke noe hint!
-      </p>),
+        hint: <p className="dnb-p">Her trenger du vel ikke noe hint!</p>,
       },
     ],
   },
@@ -475,7 +475,7 @@ export var tasks = [
         description: (
           <>
             <p className="dnb-p">
-              Til slutt ønsker DNB å gjøre det enda ENKELere for etterforskerene
+              Til slutt ønsker DNB å gjøre det enda lettere for etterforskerene
               å se hvilke transaksjoner som har høy risiko for kriminalitet.
               Selv om vi allerede har markert de som har høy risiko i en annen
               farge ønsker vi å kunne filtrere vekk de som ikke har høy risiko.
