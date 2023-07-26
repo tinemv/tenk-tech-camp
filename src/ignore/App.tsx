@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Tabs, Input, P, Dialog } from "@dnb/eufemia";
-import Welcome from "./Welcome";
-import CustomerPage from "./Oppgave1/CustomerPage";
-import { TransactionsPage } from "../ignore/codeDump";
-import TaskNavigator from "../ignore/TaskNavigator";
+import { Tabs } from "@dnb/eufemia";
+import Welcome from "../code/Intro/Welcome";
+import CustomerPage from "../code/Oppgave1/CustomerPage";
+import { TransactionsPage } from "./codeDump";
+import TaskNavigator from "./TaskNavigator";
 import styled from "styled-components";
-import { tasks } from "../ignore/tasks";
+import { tasks } from "./tasks";
 
 const FlexWrapper = styled.div`
   display: flex;
@@ -17,9 +17,6 @@ const LeftArea = styled.div`
 `;
 const RightArea = styled.div`
   overflow: hidden;
-`;
-const MiddelArea = styled.div`
-display flex;
 `;
 
 export default function App() {
@@ -47,11 +44,6 @@ export default function App() {
         }
       });
   });
-
-  const [inputText, setInputText] = React.useState("");
-  const handleInputText = (event) => {
-    setInputText(event.target.value);
-  };
 
   return (
     <>
@@ -81,28 +73,6 @@ export default function App() {
             ]}
           />
         </LeftArea>
-        <MiddelArea>
-          <Input
-            space
-            type="text"
-            onChange={handleInputText}
-            value={inputText}
-          />
-          <Dialog
-            triggerAttributes={{
-              text: "Meld inn til politiet",
-            }}
-            title={
-              inputText === "Jonas Gahr Støre" ? "Gratulerer!" : "Prøv igjen!"
-            }
-          >
-            <P>
-              {inputText === "Jonas Gahr Støre"
-                ? "Du har løst saken. Jonas Gahr Støre, statsministeren i Norge, har uten lov overført penger til Russland. Heldigvis klarte du å oppdage det og anmelde det til politiet. Bra jobba og takk for din hjelp!"
-                : "Det ser ikke ut som navnet du har skrevet inn er helt rikrig. Dobbeltsjekk at du har skrevet alle navnene med stor forbokstav og at du har mellomrom på riktig steder. Hvis det fortsatt blir feil må du kanskje se gjennom transaksjonene på nytt for å finne riktig navn å anmelde."}
-            </P>
-          </Dialog>
-        </MiddelArea>
         <RightArea>
           <TaskNavigator
             currentTab={currentTab}

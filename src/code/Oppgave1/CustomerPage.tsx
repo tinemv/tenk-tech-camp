@@ -22,8 +22,10 @@ export default function CustomerPage() {
       <div className="CustomerTab">
         {accountClicked === "Customer" && (
           <>
+            {/* Oppgave 1A: Her kan du endre overskriften */}
             <H1>Velkommen ukjent!</H1>
             <Img
+              /* Oppgave 1B: Her kan du endre bilde */
               src={ukjent}
               alt="User Picture"
               width="250rem"
