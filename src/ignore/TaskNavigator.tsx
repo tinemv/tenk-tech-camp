@@ -120,11 +120,14 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                         id={sub.id.toString()}
                         remember_state
                         left_component={
-                          <Tag text={sub.level} className="tag" />
+                          <Tag
+                            text={sub.level}
+                            className={"tag-" + sub.level}
+                          />
                         }
                       >
                         <Accordion.Header>
-                          <H4>{sub.name}</H4>
+                          <div>{sub.name}</div>
                         </Accordion.Header>
                         <Accordion.Content>
                           <FormRow direction="vertical">

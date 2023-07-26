@@ -55,6 +55,21 @@ flex-direction: column;
   padding: 2rem;
   margin-top: 1rem;
 }
-.tag {
+
+.tag-ENKEL {
   width: 6rem;
+  color: white;
+  background-color: #007B5E !important;
+  }
+  
+.tag-MEDIUM {
+  width: 6rem;
+  color: white;
+  background-color: #FDBB31 !important;
+}
+
+.tag-VANSKELIG {
+  width: 6rem;
+  color: white;
+  background-color: #DC2A2A !important;
 }
