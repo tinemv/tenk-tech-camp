@@ -77,8 +77,12 @@ export var tasks = [
         description: (
           <p className="dnb-p">
             Lag en ny linje under overskriften og legg til en underoverskrift
-            med elementet <code className="dnb-code">&lt;H2&gt;</code>. Velg
-            selv hva underoverskriften skal være, for eksempel navnet ditt.
+            med{" "}
+            <Tooltip targetElement={<a className="tooltip">elementet</a>}>
+              Element er en digital byggekloss, som er laget med &lt;&gt;
+            </Tooltip>{" "}
+            <code className="dnb-code">&lt;H2&gt;</code>. Velg selv hva
+            underoverskriften skal være, for eksempel navnet ditt.
           </p>
         ),
         hint: (
@@ -316,7 +320,10 @@ export var tasks = [
           <>
             <p className="dnb-p">
               Det første vi skal gjøre er å lage en beskrivelse av tabellen for
-              at den skal være enklere å forstå. Vi bruker elementet{" "}
+              at den skal være enklere å forstå. Vi bruker{" "}
+              <Tooltip targetElement={<a className="tooltip">elementet</a>}>
+                Element er en digital byggekloss, som er laget med &lt;&gt;
+              </Tooltip>{" "}
               <code className="dnb-code">&lt;P&gt;</code> for å legge til et
               paragraf og fyller inn teksten vi vil ha. Teksten kan for eksempel
               være:
@@ -339,7 +346,10 @@ export var tasks = [
         hint: (
           <p className="dnb-p">
             Her må vi finne overskriften i koden først. Se om du finner
-            overskriften på linje X. Legg til en ny linje under med elementet{" "}
+            overskriften på linje X. Legg til en ny linje under med{" "}
+            <Tooltip targetElement={<a className="tooltip">elementet</a>}>
+              Element er en digital byggekloss, som er laget med &lt;&gt;
+            </Tooltip>{" "}
             <code className="dnb-code">&lt;P&gt; din tekst &lt;/P&gt;</code> og
             fyll inn teksten din mellom
             <code className="dnb-code">&lt;P&gt;</code>'ene.
@@ -506,35 +516,40 @@ export var tasks = [
       {
         id: 13,
         name: "Oppgave A",
-        level: "ENKEL",
+        level: "PROFESJONELL",
         description: (
           <>
             <p className="dnb-p">
-              Til slutt ønsker DNB å gjøre det enda lettere for etterforskerene
-              å se hvilke transaksjoner som har høy risiko for kriminalitet.
-              Selv om vi allerede har markert de som har høy risiko i en annen
-              farge ønsker vi å kunne filtrere vekk de som ikke har høy risiko.
-              Som du ser over tabellen kan vi allerede filtrere på for eksempel{" "}
-              <b>Avsenders navn</b>. Test ut dette for å gjøre deg kjent med
-              funksjonaliteten.
+              På siden <i>Transaksjoner</i> under{" "}
+              <i>Logg inn som etterforsker</i> er det mulig å filtrere
+              transaksjonene i tabellen. Nå er det mulig å filtrere på for
+              eksempel <b>Avsenders navn</b>, slik at man bare ser de
+              transaksjonene som er sendt fra en viss person.
               <br />
               <br />
-            </p>
-            <p className="dnb-p">
-              Som du også ser finnes det ikke noen filtrering for <b>Risiko</b>.
-              Din oppgave blir å fikse dette så den fungerer likt som de andre
-              parameterene. Se i fila{" "}
-              <code className="dnb-code">Transactions.tsx</code>
-              og let etter hvor det er definert hva som er i rullgardinmenyen
-              (drop down) på engelsk.
+              For å gjøre det lettere for etterforskere å se hvilke
+              transaksjoner som har høy risiko for kriminalitet, ønsker vi også
+              å filtrere på risiko, slik at bare de transaksjonene med høy
+              risiko synes.
+              <br />
+              <br />
+              Din oppgave blir å fikse dette så man kan filtrere på risiko på
+              samme måte som for eksempel <b>Avsenders navn</b>.
+              <br />
+              <br />
+              Se i fila <code className="dnb-code">
+                Transactions.tsx
+              </code> i <code className="dnb-code">Oppgave3</code>-mappa og let
+              etter hvor det er definert hva som er i rullgardinmenyen (
+              <code className="dnb-code">Dropdown</code> på engelsk).
             </p>
           </>
         ),
         hint: (
           <p className="dnb-p">
-            Funskjonalitet for selve filtreringen er allerede lagt inn men
+            Funksjonalitet for selve filtreringen er allerede lagt inn men
             rullgardinmenyen mangler et valg for risiko. Her må vi finne
-            komponenten som heter <code className="dnb-code">DropDown</code> og
+            komponenten som heter <code className="dnb-code">Dropdown</code> og
             legge til data i denne. Se på{" "}
             <code className="dnb-code">Parameter</code> på linje X og se om du
             finner den som mangler i rullgardinen så du kan legge til denne.
@@ -544,40 +559,51 @@ export var tasks = [
       {
         id: 14,
         name: "Oppgave B",
-        level: "VANSKELIG",
+        level: "PROFESJONELL",
         description: (
           <>
             <p className="dnb-p">
-              Dersom du klikker på et kontonavn vil vi navigeres inn på en liste
-              over transaksjoner fra denne kontoen. Siden kontonummeret også
-              fungerer som en id til kontoen, gir det mening at vi kan forvente
-              det samme til å skje når vi klikker her. Vi ønsker derfor å legge
-              til en link fra brukerens hovedside til kontotransaksjoner via
-              kontonummeret, lignende slik det er gjort med kontonavn.
-            </p>
-            <p className="dnb-p">
-              For å gjøre dette må vi endre HTML elementet som inneholder
-              kontonummeret fra et
+              På siden <i>Logg inn som kunde</i> har vi en liste over alle
+              kontoene til denne kunden. Hvis man trykker på et kontonavn vil
+              man se alle transaksjoner knyttet til denne kontoen.
+              <br />
+              <br />
+              Vi ønsker å også kunne trykke på kontonummeret og komme til samme
+              side som viser oversikt over alle transaksjonene.
+              <br />
+              <br />
+              For å gjøre dette må vi endre{" "}
+              <Tooltip targetElement={<a className="tooltip">elementet</a>}>
+                Element er en digital byggekloss, som er laget med &lt;&gt;
+              </Tooltip>{" "}
+              som inneholder kontonummeret fra et
               <code className="dnb-code">NumberElement</code>
-              til en link. Ta en titt i{" "}
-              <code className="dnb-code">AccountTable.tsx</code>. Her er en
-              funksjon, <code className="dnb-code">getTransactionLink</code>
-              som gjør nettopp dette.{" "}
-            </p>
-            <p className="dnb-p">
-              {" "}
-              Funksjonen tar et argument som heter attribute som er den kolonnen
-              vi ønsker å gjøre til et link element. Prøv å bruke{" "}
-              <code className="dnb-code">getTransactionLink</code> funksjonen
-              til å lage kontonummer kolonnen linket til kontotransaksjonsiden.
-              For inspirasjon, se hvordan funksjonen er brukt med kontonavn.
+              til en knapp. Ta en titt i{" "}
+              <code className="dnb-code">AccountTable.tsx</code> i{" "}
+              <code className="dnb-code">Ekstra</code>-mappa. Her finner du
+              funksjonen <code className="dnb-code">getTransactionLink</code>
+              som gjør nettopp dette.
+              <br />
+              <br />
+              Funksjonen <code className="dnb-code">getTransactionLink</code>
+              trenger en <code className="dnb-code">accountIdentifier</code>.
+              Dette kan enten være kontonavn eller kontonummer.
+              <br />
+              <br />
+              Prøv å bruke <code className="dnb-code">
+                getTransactionLink
+              </code>{" "}
+              funksjonen slik at man kan trykke på kontonummeret og komme inn på
+              listen over alle transaksjoner. For inspirasjon, se hvordan
+              funksjonen er brukt med kontonavn.
             </p>
           </>
         ),
         hint: (
           <p className="dnb-p">
             Bruk <code className="dnb-code">account.accountNumber</code>
-            som et attributt i funksjonen på følgende vis:{" "}
+            som <code className="dnb-code">accountIdentifier</code> i
+            funksjonen på følgende vis:{" "}
             <code className="dnb-code">
               getTransactionsLink(account.accountNumber)
             </code>

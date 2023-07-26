@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import AccountTable from "../../ignore/AccountTable";
+import AccountTable from "../Ekstra/AccountTable";
 import { customer } from "../../data/customer";
 import ukjent from "./Profilbilder/ukjent.png";
 import BTS from "./Profilbilder/BTS.png";

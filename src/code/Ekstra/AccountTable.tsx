@@ -1,12 +1,12 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
-import { Account } from "./Models";
+import { Account } from "../../ignore/Models";
 import { NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
-import { findBalance } from "./AccountPage";
+import { findBalance } from "../../ignore/AccountPage";
 
 export interface AccountTableProps {
-  accountList: Account[]; /*listen over alle kundens kontoer */
-  setAccountClicked: Function; /*en funksjon som sjekker om kontoen har blitt klikket på tidligere */
+  accountList: Account[] /*listen over alle kundens kontoer */;
+  setAccountClicked: Function /*en funksjon som sjekker om kontoen har blitt klikket på tidligere */;
 }
 /** AccountTable er en funksjon som returnerer koden til kontotabellen under kundens bilde.*/
 export default function AccountTable(props: AccountTableProps) {
@@ -33,7 +33,8 @@ export default function AccountTable(props: AccountTableProps) {
               <Tr key={account.id}>
                 <Td>{getTransactionLink(account.name)}</Td>
                 <Td>
-                  <NumberFormat ban>{account.accountNumber}</NumberFormat>
+                  {/* <NumberFormat ban>{account.accountNumber}</NumberFormat> */}
+                  {getTransactionLink(account.accountNumber)}
                 </Td>
                 <Td>
                   <NumberFormat currency>
@@ -51,15 +52,15 @@ export default function AccountTable(props: AccountTableProps) {
     /** En funksjon som returnerer ett knappelement med link til transaksjonslisten til en konto.
      Tar kontoattributtet som skal være klikkbart som argument */
   }
-  function getTransactionLink(attribute: String) {
+  function getTransactionLink(accountIdentifier: String) {
     return (
       <button
         className="dnb-anchor"
         onClick={() => {
-          setAccountClicked(attribute);
+          setAccountClicked(accountIdentifier);
         }}
       >
-        {attribute}
+        {accountIdentifier}
       </button>
     );
   }
