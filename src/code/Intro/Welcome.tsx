@@ -10,18 +10,21 @@ export default function Welcome() {
         {/* INTRO OPPGAVE A: Her har du funnet overskriften :D */}
         <H1 style={{ margin: 20, color: "black" }}>Velkommen til workshop!</H1>
         {/* INTO OPPGAVE C: Legg inn underoverskrift her! */}
-        <div className="GreenSection">
-          <img
-            style={{ margin: 25, marginTop: 55 }}
-            src={jente_koder}
-            alt="JenteKoder"
-            height="250"
-          />
+        <Section
+          style_type="sea-green"
+          style={{
+            padding: "2rem",
+            minWidth: "40rem",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            columnGap: "1rem",
+          }}
+        >
+          <img src={jente_koder} alt="JenteKoder" height="250" />
           <P
             style={{
               color: "white",
-              margin: 25,
-              marginRight: 100,
               fontSize: "large",
             }}
           >
@@ -38,16 +41,8 @@ export default function Welcome() {
             Det vi skal gjøre er å lete etter noen som har overført penger til
             Russland, og rapportere dette til politiet.
           </P>
-        </div>
-        <Section
-          style={{
-            marginLeft: 30,
-            marginTop: 20,
-            fontSize: "large",
-            display: "flex",
-          }}
-          style_type="white"
-        ></Section>
+        </Section>
+        <br />
         <InfoCard
           style={{ fontSize: "large", bottom: "0px" }}
           text="Har du spørsmål eller trenger hjelp? Spør oss! "
