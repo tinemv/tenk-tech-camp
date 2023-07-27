@@ -9,9 +9,8 @@ import {
   Dialog,
   Tag,
   Accordion,
-  H3,
-  H4,
   Input,
+  Section,
 } from "@dnb/eufemia";
 import { tasks } from "./tasks";
 import Progress from "./Progress";
@@ -81,21 +80,40 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
           </p>
         </FormStatus>
         <Progress progressValue={progressValue} />
-        <Input space type="text" onChange={handleInputText} value={inputText} />
-        <Dialog
-          triggerAttributes={{
-            text: "Meld inn til politiet",
-          }}
-          title={
-            inputText === "Jonas Gahr Støre" ? "Gratulerer!" : "Prøv igjen!"
-          }
-        >
-          <P>
-            {inputText === "Jonas Gahr Støre"
-              ? "Du har løst saken. Jonas Gahr Støre, statsministeren i Norge, har uten lov overført penger til Russland. Heldigvis klarte du å oppdage det og anmelde det til politiet. Bra jobba og takk for din hjelp!"
-              : "Det ser ikke ut som navnet du har skrevet inn er helt riktig. Dobbeltsjekk at du har skrevet alle navnene med stor forbokstav og at du har mellomrom på riktig steder. Hvis det fortsatt blir feil må du kanskje se gjennom transaksjonene på nytt for å finne riktig navn å anmelde."}
-          </P>
-        </Dialog>
+
+        <Section spacing="small" style={{ marginTop: "10px" }}>
+          <FormRow vertical>
+           
+            <Section style={{ display: "flex" }}>
+              <Input
+                space
+                label="Meld inn den kriminelle til politiet her:"
+                type="text"
+                onChange={handleInputText}
+                value={inputText}
+                suffix={
+                  <Dialog
+                    triggerAttributes={{
+                      text: "Meld inn",
+                    }}
+                    title={
+                      inputText === "Jonas Gahr Støre"
+                        ? "Gratulerer!"
+                        : "Prøv igjen!"
+                    }
+                  >
+                    <P>
+                      {inputText === "Jonas Gahr Støre"
+                        ? "Du har løst saken. Jonas Gahr Støre, statsministeren i Norge, har uten lov overført penger til Russland. Heldigvis klarte du å oppdage det og anmelde det til politiet. Bra jobba og takk for din hjelp!"
+                        : "Det ser ikke ut som navnet du har skrevet inn er helt riktig. Dobbeltsjekk at du har skrevet alle navnene med stor forbokstav og at du har mellomrom på riktig steder. Hvis det fortsatt blir feil må du kanskje se gjennom transaksjonene på nytt for å finne riktig navn å anmelde."}
+                    </P>
+                  </Dialog>
+                }
+              />
+            </Section>
+          </FormRow>
+        </Section>
+
         <Tabs
           id="tasks-tab"
           data={tasks.map((task) => {
