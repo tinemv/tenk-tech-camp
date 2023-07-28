@@ -265,10 +265,10 @@ export var tasks = [
         level: "VANSKELIG",
         description: (
           <p className="dnb-p">
-            Vi ønsker å sjekke om det er noen transaksjoer som går til Russland.
-            For å gjøre dette så må vi legge til en kolonne i søylediagrammet
-            som viser Russland, som dermed vil vise antall transaksjoner på
-            samme måte som de andre landene. <br />
+            Vi ønsker å sjekke om det er noen transaksjoner som går til
+            Russland. For å gjøre dette så må vi legge til en kolonne i
+            søylediagrammet som viser Russland, som dermed vil vise antall
+            transaksjoner på samme måte som de andre landene. <br />
             <br /> Finn ut hvor i koden landene er listet opp og legg til{" "}
             <b>Russland</b>. Her må du endre to steder i filen!
           </p>
@@ -602,8 +602,8 @@ export var tasks = [
         hint: (
           <p className="dnb-p">
             Bruk <code className="dnb-code">account.accountNumber</code>
-            som <code className="dnb-code">accountIdentifier</code> i
-            funksjonen på følgende vis:{" "}
+            som <code className="dnb-code">accountIdentifier</code> i funksjonen
+            på følgende vis:{" "}
             <code className="dnb-code">
               getTransactionsLink(account.accountNumber)
             </code>
