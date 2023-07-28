@@ -528,13 +528,13 @@ export var tasks = [
               <br />
               <br />
               For å gjøre det lettere for etterforskere å se hvilke
-              transaksjoner som har høy risiko for kriminalitet, ønsker vi også
-              å filtrere på risiko, slik at bare de transaksjonene med høy
+              transaksjoner som er sendt til Russland, ønsker vi også
+              å filtrere på <b>Mottakers land</b>, slik at bare de transaksjonene med høy
               risiko synes.
               <br />
               <br />
-              Din oppgave blir å fikse dette så man kan filtrere på risiko på
-              samme måte som for eksempel <b>Avsenders navn</b>.
+              Din oppgave blir å fikse dette så man kan filtrere på <b>Mottakers land</b> på
+              samme måte som for eksempel <b>Avsenders land</b>.
               <br />
               <br />
               Se i fila <code className="dnb-code">
@@ -548,7 +548,7 @@ export var tasks = [
         hint: (
           <p className="dnb-p">
             Funksjonalitet for selve filtreringen er allerede lagt inn men
-            rullgardinmenyen mangler et valg for risiko. Her må vi finne
+            rullgardinmenyen mangler et valg for <b>Mottakers land</b>. Her må vi finne
             komponenten som heter <code className="dnb-code">Dropdown</code> og
             legge til data i denne. Se på{" "}
             <code className="dnb-code">Parameter</code> på linje X og se om du

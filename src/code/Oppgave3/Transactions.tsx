@@ -30,10 +30,10 @@ export default function Transactions() {
             <Dropdown
               data={[
                 Parameter.TO_NAME,
-                Parameter.TO_COUNTRY,
                 Parameter.FROM_NAME,
                 Parameter.FROM_COUNTRY,
                 Parameter.AMOUNT,
+                Parameter.RISK
               ]}
               label="Parameter som skal filtreres på:"
               title="Velg parameter"

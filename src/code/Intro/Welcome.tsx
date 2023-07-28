@@ -46,7 +46,7 @@ export default function Welcome() {
         <InfoCard
           style={{ fontSize: "large", bottom: "0px" }}
           text="Har du spørsmål eller trenger hjelp? Spør oss! "
-        />
+        ></InfoCard>
       </div>
     </Section>
   );
