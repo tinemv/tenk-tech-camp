@@ -22,10 +22,8 @@ export function detectRiskCountry(country: String): String | undefined {
   return "Ukjent";
 }
 
+/** OPPGAVE 3D */
 function setColorForHighRisk(risk: String): any {
-  {
-    /** OPPGAVE X */
-  }
   return "black";
 }
 
