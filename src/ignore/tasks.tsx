@@ -45,8 +45,8 @@ export var tasks = [
               &lt;H1 style=&#123;&#123; margin: 20, color: "black"
               &#125;&#125;&gt;Velkommen til workshop!&lt;/H1&gt;
             </code>{" "}
-            på linje X? Skift ut <b>"Velkommen til workshop!"</b> til det du vil
-            ha som overskrift.
+            på linje 11? Skift ut <b>"Velkommen til workshop!"</b> til det du
+            vil ha som overskrift.
           </p>
         ),
       },
@@ -63,7 +63,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her må vi endre på samme linje X som i oppgave A. Bytt ut ordet{" "}
+            Her må vi endre på samme linje 11 som i oppgave A. Bytt ut ordet{" "}
             <code className="dnb-code">"black"</code> med for eksempel{" "}
             <code className="dnb-code">"pink"</code>, og se hva som skjer med
             overskriften.
@@ -142,7 +142,7 @@ export var tasks = [
             <code className="dnb-code">
               &lt;H1&gt;Velkommen ukjent!&lt;/H1&gt;
             </code>{" "}
-            på linje X og endre <b>"ukjent"</b> til et navn du velger.
+            på linje 27 og endre <b>"ukjent"</b> til et navn du velger.
           </p>
         ),
       },
@@ -157,7 +157,7 @@ export var tasks = [
             velge mellom ligger i<code className="dnb-code">Profilbilder</code>
             -mappa. Velg det bildet du liker best. Deretter legger du inn dette
             bildet i koden ved å endre ordet{" "}
-            <code className="dnb-code">ukjent</code> på linje X til navnet på
+            <code className="dnb-code">ukjent</code> på linje 30 til navnet på
             bildet du har valgt. <br />
             <i>
               Husk at du må skrive ordet helt likt som navnet på bildet (pass på
@@ -167,7 +167,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            På linje X må du bytte ut{" "}
+            På linje 30 må du bytte ut{" "}
             <code className="dnb-code">src=&#123;ukjent&#125;</code> med for
             eksempel{" "}
             <code className="dnb-code">src=&#123;TaylorSwift&#125;</code>
@@ -218,7 +218,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Finn linje X hvor det står{" "}
+            Finn linje 22 hvor det står{" "}
             <code className="dnb-code">
               &lt;H1 style=&#123;&#123; fontSize: "small" &#125;&#125;
               top="x-small"&gt;
@@ -248,11 +248,11 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            På linje X så finner du en
+            På linje 84 så finner du en
             <code className="dnb-code">label</code>
             for kakediagrammet, denne koden ser slik ut:{" "}
             <code className="dnb-code">label: "Antall"</code>. Finner du det
-            samme for søylediagrammet på linje X? <br />
+            samme for søylediagrammet på linje 66? <br />
             Her kan du bytte ut:{" "}
             <code className="dnb-code">label: "?????"</code> med{" "}
             <code className="dnb-code">label: "Antall"</code>
@@ -275,12 +275,12 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            På samme måte som er gjort på linje X og X-Y for alle de andre
-            landene må vi legge til både en ny{" "}
+            På samme måte som er gjort på linje 62 og linje 68 til 73 for alle
+            de andre landene må vi legge til både en ny{" "}
             <code className="dnb-code">labels</code> og ny
             <code className="dnb-code">data</code>.
-            <br /> På linje X må du legge til{" "}
-            <code className="dnb-code">"Russland"</code>, og på linje X må du
+            <br /> På linje 62 må du legge til{" "}
+            <code className="dnb-code">"Russland"</code>, og på linje 73 må du
             legge til{" "}
             <code className="dnb-code">countTargetCountries("Russland")</code> .
             Husk å ha komma på riktig steder!
@@ -346,7 +346,7 @@ export var tasks = [
         hint: (
           <p className="dnb-p">
             Her må vi finne overskriften i koden først. Se om du finner
-            overskriften på linje X. Legg til en ny linje under med{" "}
+            overskriften på linje 26. Legg til en ny linje under med{" "}
             <Tooltip targetElement={<a className="tooltip">elementet</a>}>
               Element er en digital byggekloss, som er laget med &lt;&gt;
             </Tooltip>{" "}
@@ -383,11 +383,11 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her må du legge til én ny overskrift på linje X ved å legge til{" "}
+            Her må du legge til én ny overskrift på linje 50 ved å legge til{" "}
             <code className="dnb-code">
               &lt;Th&gt;Mottakers land&lt;/Th&gt;
             </code>
-            . <br /> Også må du legge til innhold på linje X ved å legge til{" "}
+            . <br /> Også må du legge til innhold på linje 61 ved å legge til{" "}
             <code className="dnb-code">
               &lt;Td&gt;&#123;transaction.to.country&#125;&lt;/Td&gt;
             </code>
@@ -410,7 +410,7 @@ export var tasks = [
               En funksjon er kode som skal gjøre en spesifikk oppgave
             </Tooltip>{" "}
             som heter <code className="dnb-code">detectRiskCountry</code> på
-            linje X i filen{" "}
+            linje 11 i filen{" "}
             <code className="dnb-code">TransactionTable.tsx</code>.<br></br>
             Endre koden i funksjonen slik at den sjekker om pengene er sendt til
             Russland, og isåfall returnerer du ordet <b>"HØY"</b>. Hvis ikke
@@ -551,8 +551,9 @@ export var tasks = [
             rullgardinmenyen mangler et valg for risiko. Her må vi finne
             komponenten som heter <code className="dnb-code">Dropdown</code> og
             legge til data i denne. Se på{" "}
-            <code className="dnb-code">Parameter</code> på linje X og se om du
-            finner den som mangler i rullgardinen så du kan legge til denne.
+            <code className="dnb-code">Parameter</code> på linje 32 til 36 og se
+            om du finner den som mangler i rullgardinen så du kan legge til
+            denne.
           </p>
         ),
       },
@@ -602,8 +603,8 @@ export var tasks = [
         hint: (
           <p className="dnb-p">
             Bruk <code className="dnb-code">account.accountNumber</code>
-            som <code className="dnb-code">accountIdentifier</code> i
-            funksjonen på følgende vis:{" "}
+            som <code className="dnb-code">accountIdentifier</code> i funksjonen
+            på følgende vis:{" "}
             <code className="dnb-code">
               getTransactionsLink(account.accountNumber)
             </code>
