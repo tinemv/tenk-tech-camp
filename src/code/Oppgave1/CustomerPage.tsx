@@ -57,7 +57,7 @@ export default function CustomerPage(props: CustomerPageProps) {
               account={customer.accounts.find(
                 (account) =>
                   account.name === accountClicked ||
-                  account.accountNumber === accountClicked
+                  account.number === accountClicked
               )}
               setAccountClicked={setAccountClicked}
             />
