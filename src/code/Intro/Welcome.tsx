@@ -3,7 +3,13 @@ import jente_koder from "../../ignore/jente_koder.jpg";
 import { Section, H1, H2, P, InfoCard } from "@dnb/eufemia";
 import "../../ignore/styles.css";
 
-export default function Welcome() {
+export interface WelcomeProps {
+  setCurrentTab: Function;
+}
+
+export default function Welcome(props: WelcomeProps) {
+  const { setCurrentTab } = props;
+  setCurrentTab("Velkommen");
   return (
     <Section spacing="small" left right="0.25" style_type="white">
       <div className="WelcomeTab">

@@ -13,8 +13,15 @@ import {
 } from "../../ignore/codeDump";
 import Provider from "@dnb/eufemia/shared/Provider";
 
+export interface DashboardProps {
+  setCurrentSubTab: Function;
+}
+
 /** Dashboard er en funksjon som returnerer koden til Dashboard siden. Kan finnes dersom du logger inn som etterforsker */
-export default function Dashboard() {
+export default function Dashboard(props: DashboardProps) {
+  const { setCurrentSubTab } = props;
+  setCurrentSubTab("Dashboard");
+
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <div className="DashboardTab">

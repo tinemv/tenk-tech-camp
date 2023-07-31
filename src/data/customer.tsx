@@ -4,7 +4,7 @@ export var customer = {
     {
       id: 1,
       name: "Brukskonto",
-      accountNumber: "1592.33.12123",
+      number: "1592.33.12123",
       transactions: [
         {
           id: "1",
@@ -83,7 +83,7 @@ export var customer = {
     {
       id: 2,
       name: "Sparekonto",
-      accountNumber: "9411.05.96614",
+      number: "9411.05.96614",
       transactions: [
         {
           id: "7",
@@ -138,7 +138,7 @@ export var customer = {
     {
       id: 3,
       name: "BSU",
-      accountNumber: "2344.90.41249",
+      number: "2344.90.41249",
       transactions: [
         {
           id: "11",

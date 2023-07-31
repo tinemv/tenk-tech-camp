@@ -54,7 +54,6 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
   };
 
   useEffect(() => {
-    console.log(checkedTasks);
     setProgressValue(
       (checkedTasks.filter((x) => x == true).length * 100) / checkedTasks.length
     );
@@ -62,7 +61,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
   }, [checkedTasks]);
 
   useEffect(() => {
-    window.sessionStorage.setItem("currentTab", currentTab.toString());
+    window.sessionStorage.setItem("currentTaskTab", currentTab.toString());
   }, [currentTab]);
 
   return (
@@ -83,7 +82,6 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
 
         <Section spacing="small" style={{ marginTop: "10px" }}>
           <FormRow vertical>
-           
             <Section style={{ display: "flex" }}>
               <Input
                 space
@@ -137,7 +135,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                 {task.description}
                 {task.subtask.map((sub) => (
                   <Accordion.Provider id={task.id.toString()}>
-                    <FormRow key={sub.id}>
+                    <FormRow top key={sub.id} wrap={false}>
                       <Checkbox
                         right="large"
                         title="Kryss av når du er ferdig med oppgaven"
@@ -155,7 +153,6 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                         checked={checkedTasks[sub.id]}
                       />
                       <Accordion
-                        top
                         id={sub.id.toString()}
                         remember_state
                         left_component={
