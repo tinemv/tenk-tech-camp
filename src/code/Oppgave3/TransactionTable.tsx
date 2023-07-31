@@ -7,19 +7,14 @@ export type TransactionTableProps = {
   listOfTransactions: Transaction[];
 };
 
-/** OPPGAVE 3C: du har funnet funksjonen du skal endre på! */
+/** OPPGAVE 3C: */
 export function detectRiskCountry(country: String): String | undefined {
-  /* Fjern denne linjen for å få koden din til å funke!
 
-  if (country === land ){
-    return "HØY" eller "LAV";
+  if (country === "land" ){
+    return "Ukjent";
   } else {
-    return "HØY" eller "LAV";
+    return "Ukjent";
   }
-
-  Fjern denne linjen for å få koden din til å funke!*/
-
-  return "Ukjent";
 }
 
 /** OPPGAVE 3D */
@@ -27,7 +22,8 @@ function setColorForHighRisk(risk: String): any {
   return "black";
 }
 
-/** Transactions returnerer koden som visualiserer transaksjonstabellen mellom alle kunder. Logg inn som etterforsker og trykk på fanen hvor det står Transaksjoner for å se resultatet på denne koden */
+/** Transactions returnerer koden som visualiserer transaksjonstabellen mellom alle kunder. 
+ * Logg inn som etterforsker og trykk på fanen hvor det står Transaksjoner for å se resultatet på denne koden */
 export const TransactionTable = (props: TransactionTableProps) => {
   const { listOfTransactions } = props;
 
@@ -38,7 +34,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
           maxHeight: "60rem",
         }}
       >
-        {/* OPPGAVE X: Her kan du endre på utseendet og innholdet til transaksjoner-tabellen */}
+        {/* Oppgave 3: Her kan du endre på utseendet og innholdet til transaksjoner-tabellen */}
         <Table sticky="css-position">
           <thead>
             <Tr>

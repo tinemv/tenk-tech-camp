@@ -20,7 +20,7 @@ export var tasks = [
           <b>Hvor på nettsiden?</b> <i>Velkommen</i>
         </p>
         <p className="dnb-p">
-          <b>Hvor i koden?</b> <code className="dnb-code">Welcome.tsx</code> i{" "}
+          <b>Hvilken fil er koden i?</b> <code className="dnb-code">Welcome.tsx</code> i{" "}
           <code className="dnb-code">Intro</code>-mappa
         </p>
       </>
@@ -116,7 +116,7 @@ export var tasks = [
           <b>Hvor på nettsiden?</b> <i>Logg inn som kunde</i>
         </p>
         <p className="dnb-p">
-          <b>Hvor i koden?</b>{" "}
+          <b>Hvilken fil er koden i?</b>{" "}
           <code className="dnb-code">CustomerPage.tsx</code> i{" "}
           <code className="dnb-code">Oppgave1</code>-mappa
         </p>
@@ -197,7 +197,7 @@ export var tasks = [
           <i>Logg inn som etterforsker</i>
         </p>
         <p className="dnb-p">
-          <b>Hvor i koden?</b> <code className="dnb-code">Dashboard.tsx</code> i{" "}
+          <b>Hvilken fil er koden i?</b> <code className="dnb-code">Dashboard.tsx</code> i{" "}
           <code className="dnb-code">Oppgave2</code>-mappa
         </p>
       </>
@@ -304,7 +304,7 @@ export var tasks = [
           <i>Logg inn som etterforsker</i>
         </p>
         <p className="dnb-p">
-          <b>Hvor i koden?</b>{" "}
+          <b>Hvilken fil er koden i?</b>{" "}
           <code className="dnb-code">Transactions.tsx</code> (Oppgave A) og{" "}
           <code className="dnb-code">TransactionTable.tsx</code> (Resten av
           oppgavene) i <code className="dnb-code">Oppgave 3</code>-mappa
@@ -424,14 +424,13 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Du må først fjerne to linjer i{" "}
-            <code className="dnb-code">detectRiskCountry</code>, og deretter
+            Du må først
             bytte ut <code className="dnb-code">land</code> med{" "}
-            <code className="dnb-code">"Russland"</code>. Videre må du velge når
+            <code className="dnb-code">Russland</code> (husk å behold fnuttene på hver side av begge ordene). Videre må du velge når
             du skal returnere <b>"HØY"</b> og <b>"LAV"</b> for at det skal bli
             riktig, slik at den ene er{" "}
             <code className="dnb-code">return "HØY";</code> og den andre er{" "}
-            <code className="dnb-code">return "LAV";</code>
+            <code className="dnb-code">return "LAV"; </code> istedenfor <code className="dnb-code">return "Ukjent"; </code>
             <br />
             <br />
             Bemerk at <b>hvis</b> i kode skrives{" "}
