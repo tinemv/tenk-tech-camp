@@ -8,9 +8,11 @@ import styled from "styled-components";
 import { tasks } from "./tasks";
 
 const FlexWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @media (min-width: 750px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 const LeftArea = styled.div`
   flex-shrink: 0;
