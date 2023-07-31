@@ -20,7 +20,8 @@ export var tasks = [
           <b>Hvor på nettsiden?</b> <i>Velkommen</i>
         </p>
         <p className="dnb-p">
-          <b>Hvilken fil er koden i?</b> <code className="dnb-code">Welcome.tsx</code> i{" "}
+          <b>Hvilken fil er koden i?</b>{" "}
+          <code className="dnb-code">Welcome.tsx</code> i{" "}
           <code className="dnb-code">Intro</code>-mappa
         </p>
       </>
@@ -197,7 +198,8 @@ export var tasks = [
           <i>Logg inn som etterforsker</i>
         </p>
         <p className="dnb-p">
-          <b>Hvilken fil er koden i?</b> <code className="dnb-code">Dashboard.tsx</code> i{" "}
+          <b>Hvilken fil er koden i?</b>{" "}
+          <code className="dnb-code">Dashboard.tsx</code> i{" "}
           <code className="dnb-code">Oppgave2</code>-mappa
         </p>
       </>
@@ -363,6 +365,11 @@ export var tasks = [
         description: (
           <>
             <p className="dnb-p">
+              Fra denne oppgaven og ut skal vi jobbe i{" "}
+              <code className="dnb-code">TransactionTable.tsx</code>
+            </p>
+            <br />
+            <p className="dnb-p">
               Hver transaksjon sendes mellom to land. I tabellen så vises
               hvilket land pengene er sendt fra. Vi ønsker også å vite hvor
               pengene er sendt til.
@@ -412,9 +419,9 @@ export var tasks = [
             som heter <code className="dnb-code">detectRiskCountry</code> på
             linje X i filen{" "}
             <code className="dnb-code">TransactionTable.tsx</code>.<br></br>
-            Endre koden i funksjonen slik at den sjekker om pengene er sendt til
-            Russland, og isåfall returnerer du ordet <b>"HØY"</b>. Hvis ikke
-            returnerer du <b>"LAV"</b>.
+            <b>Endre koden</b> i funksjonen slik at den sjekker om pengene er
+            sendt til Russland, og isåfall returnerer du ordet <b>"HØY"</b>.
+            Hvis ikke returnerer du <b>"LAV"</b>.
             <br /> <br />
             Sjekk at risikoen endres for alle transaksjonene fra <b>
               Ukjent
@@ -424,13 +431,13 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Du må først
-            bytte ut <code className="dnb-code">land</code> med{" "}
-            <code className="dnb-code">Russland</code> (husk å behold fnuttene på hver side av begge ordene). Videre må du velge når
-            du skal returnere <b>"HØY"</b> og <b>"LAV"</b> for at det skal bli
-            riktig, slik at den ene er{" "}
-            <code className="dnb-code">return "HØY";</code> og den andre er{" "}
-            <code className="dnb-code">return "LAV"; </code> istedenfor <code className="dnb-code">return "Ukjent"; </code>
+            Du må først bytte ut <code className="dnb-code">land</code> med{" "}
+            <code className="dnb-code">Russland</code> (husk å behold fnuttene
+            på hver side av begge ordene). Videre må du velge når du skal
+            returnere <b>"HØY"</b> og <b>"LAV"</b> for at det skal bli riktig,
+            slik at den ene er <code className="dnb-code">return "HØY";</code>{" "}
+            og den andre er <code className="dnb-code">return "LAV"; </code>{" "}
+            istedenfor <code className="dnb-code">return "Ukjent"; </code>
             <br />
             <br />
             Bemerk at <b>hvis</b> i kode skrives{" "}
@@ -527,13 +534,14 @@ export var tasks = [
               <br />
               <br />
               For å gjøre det lettere for etterforskere å se hvilke
-              transaksjoner som er sendt til Russland, ønsker vi også
-              å filtrere på <b>Mottakers land</b>, slik at bare de transaksjonene med høy
+              transaksjoner som er sendt til Russland, ønsker vi også å filtrere
+              på <b>Mottakers land</b>, slik at bare de transaksjonene med høy
               risiko synes.
               <br />
               <br />
-              Din oppgave blir å fikse dette så man kan filtrere på <b>Mottakers land</b> på
-              samme måte som for eksempel <b>Avsenders land</b>.
+              Din oppgave blir å fikse dette så man kan filtrere på{" "}
+              <b>Mottakers land</b> på samme måte som for eksempel{" "}
+              <b>Avsenders land</b>.
               <br />
               <br />
               Se i fila <code className="dnb-code">
@@ -547,11 +555,12 @@ export var tasks = [
         hint: (
           <p className="dnb-p">
             Funksjonalitet for selve filtreringen er allerede lagt inn men
-            rullgardinmenyen mangler et valg for <b>Mottakers land</b>. Her må vi finne
-            komponenten som heter <code className="dnb-code">Dropdown</code> og
-            legge til data i denne. Se på{" "}
-            <code className="dnb-code">Parameter</code> på linje X og se om du
-            finner den som mangler i rullgardinen så du kan legge til denne.
+            rullgardinmenyen mangler et valg for <b>Mottakers land</b>. Her må
+            vi finne komponenten som heter{" "}
+            <code className="dnb-code">Dropdown</code> og legge til data i
+            denne. Se på <code className="dnb-code">Parameter</code> på linje X
+            og se om du finner den som mangler i rullgardinen så du kan legge
+            til denne.
           </p>
         ),
       },
