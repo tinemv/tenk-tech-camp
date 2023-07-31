@@ -54,7 +54,6 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
   };
 
   useEffect(() => {
-    console.log(checkedTasks);
     setProgressValue(
       (checkedTasks.filter((x) => x == true).length * 100) / checkedTasks.length
     );
@@ -62,7 +61,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
   }, [checkedTasks]);
 
   useEffect(() => {
-    window.sessionStorage.setItem("currentTab", currentTab.toString());
+    window.sessionStorage.setItem("currentTaskTab", currentTab.toString());
   }, [currentTab]);
 
   return (

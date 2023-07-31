@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Tabs } from "@dnb/eufemia";
 import Welcome from "../code/Intro/Welcome";
 import CustomerPage from "../code/Oppgave1/CustomerPage";
@@ -20,9 +20,15 @@ const RightArea = styled.div`
 `;
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState<number>(() => {
+  const [currentTab, setCurrentTab] = useState<string>(() => {
     if (window.sessionStorage.getItem("currentTab") != null) {
-      return parseInt(window.sessionStorage.getItem("currentTab"));
+      return window.sessionStorage.getItem("currentTab");
+    }
+    return "Kunde";
+  });
+  const [currentTaskTab, setCurrentTaskTab] = useState<number>(() => {
+    if (window.sessionStorage.getItem("currentTaskTab") != null) {
+      return parseInt(window.sessionStorage.getItem("currentTaskTab"));
     }
     return 0;
   });
@@ -44,6 +50,10 @@ export default function App() {
         }
       });
   });
+
+  useEffect(() => {
+    window.sessionStorage.setItem("currentTab", currentTab.toString());
+  }, [currentTab]);
 
   return (
     <>
@@ -71,12 +81,13 @@ export default function App() {
                 key: "Etterforsker",
               },
             ]}
+            selected_key={currentTab}
           />
         </LeftArea>
         <RightArea>
           <TaskNavigator
-            currentTab={currentTab}
-            setCurrentTab={setCurrentTab}
+            currentTab={currentTaskTab}
+            setCurrentTab={setCurrentTaskTab}
             progressValue={progressValue}
             setProgressValue={setProgressValue}
             checkedTasks={checkedTasks}
@@ -87,11 +98,11 @@ export default function App() {
       <Tabs.Content id="tabs">
         {({ key }) => {
           if (key == "Velkommen") {
-            return <Welcome />;
+            return <Welcome setCurrentTab={setCurrentTab} />;
           } else if (key == "Kunde") {
-            return <CustomerPage />;
+            return <CustomerPage setCurrentTab={setCurrentTab} />;
           } else if (key == "Etterforsker") {
-            return <TransactionsPage />;
+            return <TransactionsPage setCurrentTab={setCurrentTab} />;
           }
         }}
       </Tabs.Content>

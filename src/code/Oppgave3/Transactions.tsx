@@ -12,8 +12,15 @@ export enum Parameter {
   RISK = 'Risiko'
 }
 
+export interface TransactionsProps {
+  setCurrentSubTab: Function;
+}
+
 /** Transactions returnerer koden som visualiserer transaksjonssiden mellom alle kunder. Logg inn som etterforsker og trykk på fanen hvor det står Transaksjoner for å se resultatet på denne koden */
-export default function Transactions() {
+export default function Transactions(props: TransactionsProps) {
+  const { setCurrentSubTab } = props;
+  setCurrentSubTab("Transaksjoner");
+
   const [inputText, setInputText] = React.useState("");
   const handleInputText = (event) => {
     setInputText(event.target.value);
@@ -33,7 +40,7 @@ export default function Transactions() {
                 Parameter.FROM_NAME,
                 Parameter.FROM_COUNTRY,
                 Parameter.AMOUNT,
-                Parameter.RISK
+                Parameter.RISK,
               ]}
               label="Parameter som skal filtreres på:"
               title="Velg parameter"

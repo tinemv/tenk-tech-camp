@@ -14,8 +14,14 @@ import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../../ignore/styles.css";
 import AccountPage from "../../ignore/AccountPage";
 
+export interface CustomerPageProps {
+  setCurrentTab: Function;
+}
+
 /** CustomerPage er en funksjon som returnerer koden til kundesiden, sett når man logger inn som kunde */
-export default function CustomerPage() {
+export default function CustomerPage(props: CustomerPageProps) {
+  const { setCurrentTab } = props;
+  setCurrentTab("Kunde");
   const [accountClicked, setAccountClicked] = useState("Customer");
 
   return (

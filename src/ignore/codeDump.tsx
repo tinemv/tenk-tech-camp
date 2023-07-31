@@ -1,19 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { allDNBTransactions } from "../data/transactions";
 import { customer } from "../data/customer";
-import {
-  H1,
-  H2,
-  Section,
-  Tabs,
-  NumberFormat
-} from "@dnb/eufemia";
+import { H1, H2, Section, Tabs, NumberFormat } from "@dnb/eufemia";
 import Transactions from "../code/Oppgave3/Transactions";
 import { Transaction } from "../ignore/Models";
 import { Parameter } from "../code/Oppgave3/Transactions";
 import { detectRiskCountry } from "../code/Oppgave3/TransactionTable";
 import Dashboard from "../code/Oppgave2/Dashboard";
-
 
 export function getAllTransactions() {
   const allCustomerTransactions = customer.accounts.flatMap(
@@ -22,20 +15,49 @@ export function getAllTransactions() {
   return allDNBTransactions.concat(allCustomerTransactions);
 }
 
-export function TransactionsPage() {
+export interface TransactionsPageProps {
+  setCurrentTab: Function;
+}
+
+export function TransactionsPage(props: TransactionsPageProps) {
+  const { setCurrentTab } = props;
+  setCurrentTab("Etterforsker");
+  const [currentSubTab, setCurrentSubTab] = useState<string>(() => {
+    if (window.sessionStorage.getItem("currentSubTab") != null) {
+      return window.sessionStorage.getItem("currentSubTab");
+    }
+    return "Dashboard";
+  });
+
+  useEffect(() => {
+    window.sessionStorage.setItem("currentSubTab", currentSubTab.toString());
+  }, [currentSubTab]);
+
   return (
-    <Tabs left>
-      <Tabs.Content title="Dashboard">
-        <div className="DashboardTab">
-          <Dashboard />
-        </div>
-      </Tabs.Content>
-      <Tabs.Content title="Transaksjoner">
-        <div className="TransactionsTab">
-          <Transactions />
-        </div>
-      </Tabs.Content>
-    </Tabs>
+    <Tabs
+      left
+      selected_key={currentSubTab}
+      data={[
+        {
+          title: "Dashboard",
+          key: "Dashboard",
+          content: (
+            <div className="DashboardTab">
+              <Dashboard setCurrentSubTab={setCurrentSubTab} />
+            </div>
+          ),
+        },
+        {
+          title: "Transaksjoner",
+          key: "Transaksjoner",
+          content: (
+            <div className="TransactionsTab">
+              <Transactions setCurrentSubTab={setCurrentSubTab} />
+            </div>
+          ),
+        },
+      ]}
+    ></Tabs>
   );
 }
 
