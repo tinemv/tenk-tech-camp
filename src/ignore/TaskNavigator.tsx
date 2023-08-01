@@ -132,9 +132,79 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
             const task: Task = tasks[key];
             return (
               <>
-                {task.description}
+                <P bottom>{task.description}</P>
                 {task.subtask.map((sub) => (
-                  <FormRow top key={sub.id} wrap={false}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      minWidth: "370px",
+                      justifyContent: "flex-start",
+                      alignItems: "baseline",
+                      marginBottom: "1rem",
+                    }}
+                  >
+                    <Checkbox
+                      style={{ flexShrink: 0 }}
+                      right="large"
+                      title="Kryss av når du er ferdig med oppgaven"
+                      on_change={({ checked }) => {
+                        setCheckedTasks(
+                          checkedTasks.map((task: any, i: number) => {
+                            if (i == sub.id) {
+                              return (task = checked);
+                            } else {
+                              return (task = task);
+                            }
+                          })
+                        );
+                      }}
+                      checked={checkedTasks[sub.id]}
+                    />
+                    <Accordion
+                      style={{ flexShrink: 1 }}
+                      id={sub.id.toString()}
+                      remember_state
+                      left_component={
+                        <Tag text={sub.level} className={"tag-" + sub.level} />
+                      }
+                    >
+                      <Accordion.Header>
+                        <div>{sub.name}</div>
+                      </Accordion.Header>
+                      <Accordion.Content>
+                        <FormRow direction="vertical">
+                          <P>{sub.description}</P>
+                          {sub.id !== 12 ? (
+                            <FormRow top bottom direction="horizontal">
+                              <Dialog
+                                triggerAttributes={{
+                                  text: "Hint",
+                                }}
+                                title={"Hint " + sub.name}
+                              >
+                                <P>{sub.hint}</P>
+                              </Dialog>
+                            </FormRow>
+                          ) : (
+                            <></>
+                          )}
+                        </FormRow>
+                      </Accordion.Content>
+                    </Accordion>
+                  </div>
+                ))}
+              </>
+            );
+          }}
+        </Tabs.Content>
+      </Drawer.Body>
+    </Drawer>
+  );
+}
+
+{
+  /* <FormRow top key={sub.id} wrap={false}>
                     <Checkbox
                       right="large"
                       title="Kryss av når du er ferdig med oppgaven"
@@ -181,13 +251,5 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                         </FormRow>
                       </Accordion.Content>
                     </Accordion>
-                  </FormRow>
-                ))}
-              </>
-            );
-          }}
-        </Tabs.Content>
-      </Drawer.Body>
-    </Drawer>
-  );
+                  </FormRow> */
 }
