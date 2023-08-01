@@ -80,35 +80,55 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         </FormStatus>
         <Progress progressValue={progressValue} />
 
-        <Section spacing="small" style={{ marginTop: "10px" }}>
+        <Section spacing="small" top="x-small">
           <FormRow vertical>
-            <Section style={{ display: "flex" }}>
-              <Input
-                space
-                label="Meld inn den kriminelle til politiet her:"
-                type="text"
-                onChange={handleInputText}
-                value={inputText}
-                suffix={
-                  <Dialog
-                    triggerAttributes={{
-                      text: "Meld inn",
-                    }}
-                    title={
-                      inputText === "Jonas Gahr Støre"
-                        ? "Gratulerer!"
-                        : "Prøv igjen!"
-                    }
-                  >
+            <Input
+              space
+              label="Meld inn den kriminelle til politiet her:"
+              type="text"
+              onChange={handleInputText}
+              value={inputText}
+              placeholder="Navn på kriminell"
+              stretch
+              style={{ minWidth: "200px" }}
+              suffix={
+                <Dialog
+                  triggerAttributes={{
+                    text: "Meld inn",
+                  }}
+                  title={
+                    inputText.toLowerCase().split(" ").join("") ===
+                    "jonasgahrstøre"
+                      ? "Gratulerer!"
+                      : "Prøv igjen!"
+                  }
+                >
+                  {inputText.toLowerCase().split(" ").join("") ===
+                  "jonasgahrstøre" ? (
                     <P>
-                      {inputText === "Jonas Gahr Støre"
-                        ? "Du har løst saken. Jonas Gahr Støre, statsministeren i Norge, har uten lov overført penger til Russland. Heldigvis klarte du å oppdage det og anmelde det til politiet. Bra jobba og takk for din hjelp!"
-                        : "Det ser ikke ut som navnet du har skrevet inn er helt riktig. Dobbeltsjekk at du har skrevet alle navnene med stor forbokstav og at du har mellomrom på riktig steder. Hvis det fortsatt blir feil må du kanskje se gjennom transaksjonene på nytt for å finne riktig navn å anmelde."}
+                      Du har løst saken!
+                      <br />
+                      <br />
+                      Jonas Gahr Støre, statsministeren i Norge, har ulovlig
+                      overført penger til Russland. Heldigvis klarte du å
+                      oppdage det og anmelde det til politiet.
+                      <br />
+                      <br />
+                      Bra jobba og takk for din hjelp!
                     </P>
-                  </Dialog>
-                }
-              />
-            </Section>
+                  ) : (
+                    <P>
+                      Det ser ikke ut som navnet du har skrevet inn er helt
+                      riktig.
+                      <br />
+                      <br />
+                      Her må du nok se gjennom transaksjonene på nytt for å
+                      finne riktig person å anmelde.
+                    </P>
+                  )}
+                </Dialog>
+              }
+            />
           </FormRow>
         </Section>
 
@@ -132,61 +152,67 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
             const task: Task = tasks[key];
             return (
               <>
-                {task.description}
+                <P bottom>{task.description}</P>
                 {task.subtask.map((sub) => (
-                  <Accordion.Provider id={task.id.toString()}>
-                    <FormRow top key={sub.id} wrap={false}>
-                      <Checkbox
-                        right="large"
-                        title="Kryss av når du er ferdig med oppgaven"
-                        on_change={({ checked }) => {
-                          setCheckedTasks(
-                            checkedTasks.map((task: any, i: number) => {
-                              if (i == sub.id) {
-                                return (task = checked);
-                              } else {
-                                return (task = task);
-                              }
-                            })
-                          );
-                        }}
-                        checked={checkedTasks[sub.id]}
-                      />
-                      <Accordion
-                        id={sub.id.toString()}
-                        remember_state
-                        left_component={
-                          <Tag
-                            text={sub.level}
-                            className={"tag-" + sub.level}
-                          />
-                        }
-                      >
-                        <Accordion.Header>
-                          <div>{sub.name}</div>
-                        </Accordion.Header>
-                        <Accordion.Content>
-                          <FormRow direction="vertical">
-                            <P>{sub.description}</P>
-                            {sub.id !== 12 ? (
-                              <FormRow top bottom direction="horizontal">
-                                <Dialog
-                                  triggerAttributes={{
-                                    text: "Hint",
-                                  }}
-                                  title={"Hint " + sub.name}
-                                >
-                                  <P>{sub.hint}</P>
-                                </Dialog>
-                              </FormRow>
-                            ) : (
-                              <></>
-                            )}
-                          </FormRow>
-                        </Accordion.Content>
-                      </Accordion>
-                    </FormRow>
-                  </Accordion.Provider>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      minWidth: "370px",
+                      justifyContent: "flex-start",
+                      alignItems: "baseline",
+                      marginBottom: "1rem",
+                    }}
+                  >
+                    <Checkbox
+                      style={{ flexShrink: 0 }}
+                      right="large"
+                      title="Kryss av når du er ferdig med oppgaven"
+                      on_change={({ checked }) => {
+                        setCheckedTasks(
+                          checkedTasks.map((task: any, i: number) => {
+                            if (i == sub.id) {
+                              return (task = checked);
+                            } else {
+                              return (task = task);
+                            }
+                          })
+                        );
+                      }}
+                      checked={checkedTasks[sub.id]}
+                    />
+                    <Accordion
+                      style={{ flexShrink: 1 }}
+                      id={sub.id.toString()}
+                      remember_state
+                      left_component={
+                        <Tag text={sub.level} className={"tag-" + sub.level} />
+                      }
+                    >
+                      <Accordion.Header>
+                        <div>{sub.name}</div>
+                      </Accordion.Header>
+                      <Accordion.Content>
+                        <FormRow direction="vertical">
+                          <P>{sub.description}</P>
+                          {sub.id !== 12 ? (
+                            <FormRow top bottom direction="horizontal">
+                              <Dialog
+                                triggerAttributes={{
+                                  text: "Hint",
+                                }}
+                                title={"Hint " + sub.name}
+                              >
+                                <P>{sub.hint}</P>
+                              </Dialog>
+                            </FormRow>
+                          ) : (
+                            <></>
+                          )}
+                        </FormRow>
+                      </Accordion.Content>
+                    </Accordion>
+                  </div>
                 ))}
               </>
             );

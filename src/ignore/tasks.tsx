@@ -365,8 +365,8 @@ export var tasks = [
         description: (
           <>
             <p className="dnb-p">
-              Fra denne oppgaven og ut skal vi jobbe i{" "}
-              <code className="dnb-code">TransactionTable.tsx</code>
+              Fra denne oppgaven og ut skal vi jobbe i filen{" "}
+              <code className="dnb-code">TransactionTable.tsx</code>.
             </p>
             <br />
             <p className="dnb-p">
