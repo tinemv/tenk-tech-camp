@@ -80,35 +80,55 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         </FormStatus>
         <Progress progressValue={progressValue} />
 
-        <Section spacing="small" style={{ marginTop: "10px" }}>
+        <Section spacing="small" top="x-small">
           <FormRow vertical>
-            <Section style={{ display: "flex" }}>
-              <Input
-                space
-                label="Meld inn den kriminelle til politiet her:"
-                type="text"
-                onChange={handleInputText}
-                value={inputText}
-                suffix={
-                  <Dialog
-                    triggerAttributes={{
-                      text: "Meld inn",
-                    }}
-                    title={
-                      inputText === "Jonas Gahr Støre"
-                        ? "Gratulerer!"
-                        : "Prøv igjen!"
-                    }
-                  >
+            <Input
+              space
+              label="Meld inn den kriminelle til politiet her:"
+              type="text"
+              onChange={handleInputText}
+              value={inputText}
+              placeholder="Navn på kriminell"
+              stretch
+              style={{ minWidth: "200px" }}
+              suffix={
+                <Dialog
+                  triggerAttributes={{
+                    text: "Meld inn",
+                  }}
+                  title={
+                    inputText.toLowerCase().split(" ").join("") ===
+                    "jonasgahrstøre"
+                      ? "Gratulerer!"
+                      : "Prøv igjen!"
+                  }
+                >
+                  {inputText.toLowerCase().split(" ").join("") ===
+                  "jonasgahrstøre" ? (
                     <P>
-                      {inputText === "Jonas Gahr Støre"
-                        ? "Du har løst saken. Jonas Gahr Støre, statsministeren i Norge, har uten lov overført penger til Russland. Heldigvis klarte du å oppdage det og anmelde det til politiet. Bra jobba og takk for din hjelp!"
-                        : "Det ser ikke ut som navnet du har skrevet inn er helt riktig. Dobbeltsjekk at du har skrevet alle navnene med stor forbokstav og at du har mellomrom på riktig steder. Hvis det fortsatt blir feil må du kanskje se gjennom transaksjonene på nytt for å finne riktig navn å anmelde."}
+                      Du har løst saken!
+                      <br />
+                      <br />
+                      Jonas Gahr Støre, statsministeren i Norge, har ulovlig
+                      overført penger til Russland. Heldigvis klarte du å
+                      oppdage det og anmelde det til politiet.
+                      <br />
+                      <br />
+                      Bra jobba og takk for din hjelp!
                     </P>
-                  </Dialog>
-                }
-              />
-            </Section>
+                  ) : (
+                    <P>
+                      Det ser ikke ut som navnet du har skrevet inn er helt
+                      riktig.
+                      <br />
+                      <br />
+                      Her må du nok se gjennom transaksjonene på nytt for å
+                      finne riktig person å anmelde.
+                    </P>
+                  )}
+                </Dialog>
+              }
+            />
           </FormRow>
         </Section>
 
