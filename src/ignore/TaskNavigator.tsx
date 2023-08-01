@@ -134,59 +134,54 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
               <>
                 {task.description}
                 {task.subtask.map((sub) => (
-                  <Accordion.Provider id={task.id.toString()}>
-                    <FormRow top key={sub.id} wrap={false}>
-                      <Checkbox
-                        right="large"
-                        title="Kryss av når du er ferdig med oppgaven"
-                        on_change={({ checked }) => {
-                          setCheckedTasks(
-                            checkedTasks.map((task: any, i: number) => {
-                              if (i == sub.id) {
-                                return (task = checked);
-                              } else {
-                                return (task = task);
-                              }
-                            })
-                          );
-                        }}
-                        checked={checkedTasks[sub.id]}
-                      />
-                      <Accordion
-                        id={sub.id.toString()}
-                        remember_state
-                        left_component={
-                          <Tag
-                            text={sub.level}
-                            className={"tag-" + sub.level}
-                          />
-                        }
-                      >
-                        <Accordion.Header>
-                          <div>{sub.name}</div>
-                        </Accordion.Header>
-                        <Accordion.Content>
-                          <FormRow direction="vertical">
-                            <P>{sub.description}</P>
-                            {sub.id !== 12 ? (
-                              <FormRow top bottom direction="horizontal">
-                                <Dialog
-                                  triggerAttributes={{
-                                    text: "Hint",
-                                  }}
-                                  title={"Hint " + sub.name}
-                                >
-                                  <P>{sub.hint}</P>
-                                </Dialog>
-                              </FormRow>
-                            ) : (
-                              <></>
-                            )}
-                          </FormRow>
-                        </Accordion.Content>
-                      </Accordion>
-                    </FormRow>
-                  </Accordion.Provider>
+                  <FormRow top key={sub.id} wrap={false}>
+                    <Checkbox
+                      right="large"
+                      title="Kryss av når du er ferdig med oppgaven"
+                      on_change={({ checked }) => {
+                        setCheckedTasks(
+                          checkedTasks.map((task: any, i: number) => {
+                            if (i == sub.id) {
+                              return (task = checked);
+                            } else {
+                              return (task = task);
+                            }
+                          })
+                        );
+                      }}
+                      checked={checkedTasks[sub.id]}
+                    />
+                    <Accordion
+                      id={sub.id.toString()}
+                      remember_state
+                      left_component={
+                        <Tag text={sub.level} className={"tag-" + sub.level} />
+                      }
+                    >
+                      <Accordion.Header>
+                        <div>{sub.name}</div>
+                      </Accordion.Header>
+                      <Accordion.Content>
+                        <FormRow direction="vertical">
+                          <P>{sub.description}</P>
+                          {sub.id !== 12 ? (
+                            <FormRow top bottom direction="horizontal">
+                              <Dialog
+                                triggerAttributes={{
+                                  text: "Hint",
+                                }}
+                                title={"Hint " + sub.name}
+                              >
+                                <P>{sub.hint}</P>
+                              </Dialog>
+                            </FormRow>
+                          ) : (
+                            <></>
+                          )}
+                        </FormRow>
+                      </Accordion.Content>
+                    </Accordion>
+                  </FormRow>
                 ))}
               </>
             );
