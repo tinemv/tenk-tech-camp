@@ -31,14 +31,14 @@ export default function Transactions(props: TransactionsProps) {
     <Section spacing="small" left right style_type="white">
       <div className="TransactionsTab">
         <H1>Oversikt over alle transaksjoner i DNB</H1>
-        {/* Oppgave 3A: legg til en paragraf her! */}
+        {/* Oppgave 3A: legg til et paragraf her! */}
         <Section style_type="white">
           <Section spacing>
             <Dropdown
               data={[
-                Parameter.TO_NAME,
                 Parameter.FROM_NAME,
                 Parameter.FROM_COUNTRY,
+                Parameter.TO_NAME,
                 Parameter.AMOUNT,
                 Parameter.RISK,
               ]}
