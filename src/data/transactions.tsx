@@ -1,6 +1,6 @@
 export var allDNBTransactions = [
   {
-    id: "9",
+    id: "900",
     from: {
       name: "Andre Skaug Amundsen",
       country: "Norge",
@@ -12,7 +12,7 @@ export var allDNBTransactions = [
     amount: 1133,
   },
   {
-    id: "10",
+    id: "1000",
     from: {
       name: "Erling Fjeldberg",
       country: "Norge",
@@ -24,7 +24,7 @@ export var allDNBTransactions = [
     amount: 200,
   },
   {
-    id: "11",
+    id: "1100",
     from: {
       name: "Louise Angelica Riise",
       country: "Norge",
@@ -1129,7 +1129,7 @@ export var allDNBTransactions = [
       name: "Alexander Volenski",
       country: "Russland",
     },
-    amount:10387439,
+    amount: 10387439,
   },
   {
     id: "103",
@@ -1382,7 +1382,8 @@ export var allDNBTransactions = [
       country: "USA",
     },
     amount: 40000,
-  },{
+  },
+  {
     id: "124",
     from: {
       name: "Henrik Sundby",
