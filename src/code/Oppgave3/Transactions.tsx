@@ -51,7 +51,7 @@ export default function Transactions(props: TransactionsProps) {
               type="text"
               onChange={handleInputText}
               value={inputText}
-              placeholder={`Parameter`}
+              placeholder="Parameter"
             />
           </Section>{" "}
           <TransactionTable

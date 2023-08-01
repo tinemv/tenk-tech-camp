@@ -73,27 +73,52 @@ export function filterTable(
   allTransactions.map((transaction) => {
     switch (parameter) {
       case Parameter.FROM_NAME:
-        return transaction.from.name === value
+        return transaction.from.name
+          .toLowerCase()
+          .split(" ")
+          .join("")
+          .includes(value.toLowerCase().split(" ").join(""))
           ? filteredTransactions.push(transaction)
           : undefined;
       case Parameter.FROM_COUNTRY:
-        return transaction.from.country == value
+        return transaction.from.country
+          .toLowerCase()
+          .split(" ")
+          .join("")
+          .includes(value.toLowerCase().split(" ").join(""))
           ? filteredTransactions.push(transaction)
           : undefined;
       case Parameter.TO_NAME:
-        return transaction.to.name == value
+        return transaction.to.name
+          .toLowerCase()
+          .split(" ")
+          .join("")
+          .includes(value.toLowerCase().split(" ").join(""))
           ? filteredTransactions.push(transaction)
           : undefined;
       case Parameter.TO_COUNTRY:
-        return transaction.to.country == value
+        return transaction.to.country
+          .toLowerCase()
+          .split(" ")
+          .join("")
+          .includes(value.toLowerCase().split(" ").join(""))
           ? filteredTransactions.push(transaction)
           : undefined;
       case Parameter.AMOUNT:
-        return transaction.amount == +value
+        return transaction.amount
+          .toString()
+          .toLowerCase()
+          .split(" ")
+          .join("")
+          .includes(value.toLowerCase().split(" ").join(""))
           ? filteredTransactions.push(transaction)
           : undefined;
       case Parameter.RISK:
-        return detectRiskCountry(transaction.to.country) == value
+        return detectRiskCountry(transaction.to.country)
+          .toLowerCase()
+          .split(" ")
+          .join("")
+          .includes(value.toLowerCase().split(" ").join(""))
           ? filteredTransactions.push(transaction)
           : undefined;
     }
