@@ -26,7 +26,7 @@ export default function App() {
     if (window.sessionStorage.getItem("currentTab") != null) {
       return window.sessionStorage.getItem("currentTab");
     }
-    return "Kunde";
+    return "Velkommen";
   });
   const [currentTaskTab, setCurrentTaskTab] = useState<number>(() => {
     if (window.sessionStorage.getItem("currentTaskTab") != null) {
