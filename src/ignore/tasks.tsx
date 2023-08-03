@@ -46,8 +46,8 @@ export var tasks = [
               &lt;H1 style=&#123;&#123; margin: 20, color: "black"
               &#125;&#125;&gt;Velkommen til workshop!&lt;/H1&gt;
             </code>{" "}
-            på linje 17? Skift ut <b>"Velkommen til workshop!"</b> til det du
-            vil ha som overskrift.
+            på linje 17? Bytt ut <b>"Velkommen til workshop!"</b> til det du vil
+            ha som overskrift.
           </p>
         ),
       },
