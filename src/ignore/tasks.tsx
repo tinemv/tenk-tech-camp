@@ -345,10 +345,7 @@ export var tasks = [
               </i>
             </p>
             <br />
-            <p className="dnb-p">
-              eller du kan finne på din egen tekst. Legg inn paragrafen under
-              overskriften.
-            </p>
+            <p className="dnb-p">Legg inn paragrafen under overskriften.</p>
           </>
         ),
         hint: (
@@ -376,13 +373,13 @@ export var tasks = [
             </p>
             <br />
             <p className="dnb-p">
-              Hver transaksjon sendes mellom to land. I tabellen så vises
+              Hver transaksjon sendes mellom to land. I tabellen vises det
               hvilket land pengene er sendt fra. Vi ønsker også å vite hvor
               pengene er sendt til.
             </p>
             <br />
             <p className="dnb-p">
-              Finn koden for tabellen og legg inn én nye kolonne som heter{" "}
+              Finn koden for tabellen og legg til én nye kolonne som heter{" "}
               <b>Mottakers land</b>, på samme måte som er gjort for{" "}
               <b>Avsenders land</b>.
             </p>
@@ -429,10 +426,7 @@ export var tasks = [
             sendt til Russland, og isåfall returnerer du ordet <b>"HØY"</b>.
             Hvis ikke returnerer du <b>"LAV"</b>.
             <br /> <br />
-            Sjekk at risikoen endres for alle transaksjonene fra <b>
-              Ukjent
-            </b>{" "}
-            til <b>HØY</b> eller <b>LAV</b> i tabellen.
+            Sjekk at <i>Risiko</i> endres for alle transaksjonene i tabellen.
           </p>
         ),
         hint: (
