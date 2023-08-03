@@ -254,11 +254,8 @@ export var tasks = [
             På linje 89 så finner du en
             <code className="dnb-code">label</code>
             for kakediagrammet, denne koden ser slik ut:{" "}
-            <code className="dnb-code">label: "Antall"</code>. Finner du det
-            samme for søylediagrammet på linje 71? <br />
-            Her kan du bytte ut:{" "}
-            <code className="dnb-code">label: "?????"</code> med{" "}
-            <code className="dnb-code">label: "Antall"</code>
+            <code className="dnb-code">label: "Antall"</code>. <br />
+            Finner du det samme for søylediagrammet på linje 71?
           </p>
         ),
       },
@@ -282,10 +279,6 @@ export var tasks = [
             landene må vi legge til både en ny{" "}
             <code className="dnb-code">labels</code> og ny{" "}
             <code className="dnb-code">data</code>.
-            <br /> På linje 67 må du legge til{" "}
-            <code className="dnb-code">"Russland"</code>, og på linje 78 må du
-            legge til{" "}
-            <code className="dnb-code">countTargetCountries("Russland")</code>.
             <br />
             <br />
             Husk å ha komma på riktig steder!
@@ -390,15 +383,20 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her må du legge til én ny overskrift på linje 44 ved å legge til{" "}
+            Slik har vi gjort det for <b>Avsenders land</b>: <br /> Overskrift
+            er lagt til på linje 42 slik{" "}
             <code className="dnb-code">
-              &lt;Th&gt;Mottakers land&lt;/Th&gt;
+              &lt;Th&gt;Avsenders land&lt;/Th&gt;
             </code>
-            . <br /> Også må du legge til innhold på linje 55 ved å legge til{" "}
+            . <br />
+            Innhold er lagt til på linje 53 slik
             <code className="dnb-code">
-              &lt;Td&gt;&#123;transaction.to.country&#125;&lt;/Td&gt;
+              &lt;Td&gt;&#123;transaction.from.country&#125;&lt;/Td&gt;
             </code>
-            .
+            . <br />
+            <br />
+            For <b>Mottakers land</b> skal du gjøre tilsvarende, men bytte ut
+            noen ord.
           </p>
         ),
       },
@@ -429,12 +427,12 @@ export var tasks = [
         hint: (
           <p className="dnb-p">
             Du må først bytte ut <code className="dnb-code">land</code> med{" "}
-            <code className="dnb-code">Russland</code> (husk å behold fnuttene
-            på hver side av begge ordene). Videre må du velge når du skal
-            returnere <b>"HØY"</b> og <b>"LAV"</b> for at det skal bli riktig,
-            slik at den ene er <code className="dnb-code">return "HØY";</code>{" "}
-            og den andre er <code className="dnb-code">return "LAV"; </code>{" "}
-            istedenfor <code className="dnb-code">return "Ukjent"; </code>
+            <code className="dnb-code">Russland</code>. Videre må du velge når
+            du skal returnere <b>"HØY"</b> og <b>"LAV"</b> for at det skal bli
+            riktig, slik at den ene er{" "}
+            <code className="dnb-code">return "HØY";</code> og den andre er{" "}
+            <code className="dnb-code">return "LAV"; </code> istedenfor{" "}
+            <code className="dnb-code">return "Ukjent"; </code>
             <br />
             <br />
             Bemerk at <b>hvis</b> i kode skrives{" "}
@@ -470,17 +468,15 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her må vi bruke <b>hvis</b> som i forrige oppgave. Husk at{" "}
-            <b>hvis</b> i kode skrives <code className="dnb-code">if</code> og{" "}
-            <b>er lik</b> skrives <code className="dnb-code">===</code>.
+            Her må vi bruke <b>hvis</b> som i forrige oppgave. Vi bytter ut{" "}
+            <code className="dnb-code">country</code> med{" "}
+            <code className="dnb-code">risk</code>, og returner{" "}
+            <code className="dnb-code">red</code> og{" "}
+            <code className="dnb-code">green</code> der det passer.
             <br />
-            <br />
-            Ellers kan du herme etter den forrige oppgaven, men bytte ut{" "}
-            <code className="dnb-code">country === "Russland"</code> med{" "}
-            <code className="dnb-code">risk === "HØY"</code> (Husk store
-            bokstaver), og returnere først{" "}
-            <code className="dnb-code">"red"</code> og deretter{" "}
-            <code className="dnb-code">"green"</code>.
+            <br /> Husk at <b>hvis</b> i kode skrives{" "}
+            <code className="dnb-code">if{}</code> og, <b>er lik</b> skrives{" "}
+            <code className="dnb-code">===</code>.
           </p>
         ),
       },
