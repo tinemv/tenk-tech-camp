@@ -88,16 +88,13 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her skal du skrive en nesten lik linje som på overskriften, bare at
-            du skal bytte ut <code className="dnb-code">&lt;H1&gt;</code> med{" "}
-            <code className="dnb-code">&lt;H2&gt;</code> slik:{" "}
-            <code className="dnb-code">
-              &lt;H2 style=&#123;&#123; margin: 20, color: "black"
-              &#125;&#125;&gt;Din tekst&lt;/H2&gt;
-            </code>
+            Her skal du skrive en kodelinje som ligner på{" "}
+            <code className="dnb-code">&lt;H1&gt;</code> overskriften, men du
+            skal bytte ut <code className="dnb-code">&lt;H1&gt;</code> med{" "}
+            <code className="dnb-code">&lt;H2&gt;</code>.
             <br />
             <br />I <i>style</i> kan du velge farge slik du ønsker, som fra
-            oppgave B.
+            Intro oppgave B.
           </p>
         ),
       },
