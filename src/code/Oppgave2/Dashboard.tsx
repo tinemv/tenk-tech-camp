@@ -26,9 +26,7 @@ export default function Dashboard(props: DashboardProps) {
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <div className="DashboardTab">
         {/* Oppgave 2A: Her finner du overskriften til siden */}
-        <H1 style={{ fontSize: "small" }} top="x-small">
-          Dashboard
-        </H1>
+        <H1 style={{ fontSize: "small" }}>Dashboard</H1>
         <div className="chart-container">
           <div>
             <PieChart

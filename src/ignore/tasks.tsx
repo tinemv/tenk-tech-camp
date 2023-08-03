@@ -13,7 +13,7 @@ export var tasks = [
           <Tooltip targetElement={<a className="tooltip">navigere</a>}>
             Finn riktig fil ved å se på panelet til venstre og i mappa code
           </Tooltip>{" "}
-          oss til riktig fil og endre på nettsiden fra denne fila.
+          oss til riktig fil og endre på nettsiden fra denne filen.
         </p>
         <br></br>
         <p className="dnb-p">
@@ -46,8 +46,8 @@ export var tasks = [
               &lt;H1 style=&#123;&#123; margin: 20, color: "black"
               &#125;&#125;&gt;Velkommen til workshop!&lt;/H1&gt;
             </code>{" "}
-            på linje X? Skift ut <b>"Velkommen til workshop!"</b> til det du vil
-            ha som overskrift.
+            på linje 17? Skift ut <b>"Velkommen til workshop!"</b> til det du
+            vil ha som overskrift.
           </p>
         ),
       },
@@ -64,7 +64,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her må vi endre på samme linje X som i oppgave A. Bytt ut ordet{" "}
+            Her må vi endre på samme linje 17 som i oppgave A. Bytt ut ordet{" "}
             <code className="dnb-code">"black"</code> med for eksempel{" "}
             <code className="dnb-code">"pink"</code>, og se hva som skjer med
             overskriften.
@@ -132,18 +132,19 @@ export var tasks = [
           <p className="dnb-p">
             Det første vi ønsker er å endre navnet på overskriften fra{" "}
             <b>"ukjent"</b> til et ekte navn. Velg et navn, enten ditt eget
-            eller en kjendis. Finn overskriften i koden, så du kan bytte navnet
-            med et du har valgt.
+            eller en kjendis. <br />
+            Finn overskriften i koden, slik du kan bytte ut navnet med et du har
+            valgt.
           </p>
         ),
         hint: (
           <p className="dnb-p">
-            Linjen du skal endre ligner på den vi jobbet med i forrige oppgave.
+            Linjen du skal endre ligner på den vi jobbet med i Intro oppgaven.
             Let etter{" "}
             <code className="dnb-code">
               &lt;H1&gt;Velkommen ukjent!&lt;/H1&gt;
             </code>{" "}
-            på linje X og endre <b>"ukjent"</b> til et navn du velger.
+            på linje 33 og endre <b>"ukjent"</b> til et navn du velger selv.
           </p>
         ),
       },
@@ -156,10 +157,13 @@ export var tasks = [
           <p className="dnb-p">
             Det neste vi skal gjøre er å endre profilbildet. Bildene du kan
             velge mellom ligger i<code className="dnb-code">Profilbilder</code>
-            -mappa. Velg det bildet du liker best. Deretter legger du inn dette
+            -mappa.
+            <br />
+            <br /> Velg det bildet du liker best. Deretter legger du inn dette
             bildet i koden ved å endre ordet{" "}
-            <code className="dnb-code">ukjent</code> på linje X til navnet på
+            <code className="dnb-code">ukjent</code> på linje 36 til navnet på
             bildet du har valgt. <br />
+            <br />
             <i>
               Husk at du må skrive ordet helt likt som navnet på bildet (pass på
               små og store bokstaver).
@@ -168,7 +172,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            På linje X må du bytte ut{" "}
+            På linje 36 bytter du ut{" "}
             <code className="dnb-code">src=&#123;ukjent&#125;</code> med for
             eksempel{" "}
             <code className="dnb-code">src=&#123;TaylorSwift&#125;</code>
@@ -187,10 +191,10 @@ export var tasks = [
           <Tooltip targetElement={<a className="tooltip">transaksjoner</a>}>
             En transaksjon er en overføring/sending av penger
           </Tooltip>{" "}
-          i banken og vanskelig å se gjennom alle for å finne kriminalitet.
-          Derfor har vi laget en oversikt over hvilke land penger sendes mellom
-          så man enkelt kan se om noe virker mistenkelig. I denne oppgaven skal
-          du gjøre ferdig denne oversikten.
+          i banken og det er vanskelig å se gjennom alle for å oppdage
+          kriminelle handlinger. Derfor har vi laget en oversikt over hvilke
+          land penger sendes mellom så man enkelt kan se om noe virker
+          mistenkelig. I denne oppgaven skal du gjøre ferdig denne oversikten.
         </p>
         <br></br>
         <p className="dnb-p">
@@ -220,12 +224,12 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Finn linje X hvor det står{" "}
+            Finn linje 29 hvor det står{" "}
             <code className="dnb-code">
-              &lt;H1 style=&#123;&#123; fontSize: "small" &#125;&#125;
-              top="x-small"&gt;
+              &lt;H1 style=&#123;&#123; fontSize: "small"
+              &#125;&#125;&gt;Dashboard&lt;/H1&gt;
             </code>{" "}
-            og skift ut <i>style</i> til
+            og endre <i>style</i> til{" "}
             <code className="dnb-code">
               style=&#123;&#123; fontSize: "xxx-large" &#125;&#125;
             </code>
@@ -242,19 +246,19 @@ export var tasks = [
             En feil har oppstått! Hvis du holder musepekeren over{" "}
             <i>kakediagrammet</i> til venstre så ser du at den viser{" "}
             <b>Antall</b> innenlands og utenlands transaksjoner. Hvis du holder
-            musepekeren over <i>søylediagrammet</i> til høyre, så får man heller
-            opp spørsmålstegn der ordet <b>Antall</b> skulle vært. <br />
+            musepekeren over <i>søylediagrammet</i> til høyre, så får man opp
+            spørsmålstegn der ordet <b>Antall</b> skulle vært. <br />
             <br />
             Endre koden slik at det også står <b>Antall</b> på søylediagrammet.
           </p>
         ),
         hint: (
           <p className="dnb-p">
-            På linje X så finner du en
+            På linje 89 så finner du en
             <code className="dnb-code">label</code>
             for kakediagrammet, denne koden ser slik ut:{" "}
             <code className="dnb-code">label: "Antall"</code>. Finner du det
-            samme for søylediagrammet på linje X? <br />
+            samme for søylediagrammet på linje 71? <br />
             Her kan du bytte ut:{" "}
             <code className="dnb-code">label: "?????"</code> med{" "}
             <code className="dnb-code">label: "Antall"</code>
@@ -277,14 +281,16 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            På samme måte som er gjort på linje X og X-Y for alle de andre
+            På samme måte som er gjort på linje 67 og 73-78 for alle de andre
             landene må vi legge til både en ny{" "}
-            <code className="dnb-code">labels</code> og ny
+            <code className="dnb-code">labels</code> og ny{" "}
             <code className="dnb-code">data</code>.
-            <br /> På linje X må du legge til{" "}
-            <code className="dnb-code">"Russland"</code>, og på linje X må du
+            <br /> På linje 67 må du legge til{" "}
+            <code className="dnb-code">"Russland"</code>, og på linje 78 må du
             legge til{" "}
-            <code className="dnb-code">countTargetCountries("Russland")</code> .
+            <code className="dnb-code">countTargetCountries("Russland")</code>.
+            <br />
+            <br />
             Husk å ha komma på riktig steder!
           </p>
         ),
@@ -340,7 +346,7 @@ export var tasks = [
             </p>
             <br />
             <p className="dnb-p">
-              eller du kan finne på din egen tekst. Legg inn paragrafet under
+              eller du kan finne på din egen tekst. Legg inn paragrafen under
               overskriften.
             </p>
           </>
@@ -348,7 +354,7 @@ export var tasks = [
         hint: (
           <p className="dnb-p">
             Her må vi finne overskriften i koden først. Se om du finner
-            overskriften på linje X. Legg til en ny linje under med{" "}
+            overskriften på linje 33. Legg til en ny linje under med{" "}
             <Tooltip targetElement={<a className="tooltip">elementet</a>}>
               Element er en digital byggekloss, som er laget med &lt;&gt;
             </Tooltip>{" "}
@@ -365,7 +371,7 @@ export var tasks = [
         description: (
           <>
             <p className="dnb-p">
-              Fra denne oppgaven og ut skal vi jobbe i filen{" "}
+              Fra og med denne oppgaven skal vi jobbe i filen{" "}
               <code className="dnb-code">TransactionTable.tsx</code>.
             </p>
             <br />
@@ -390,11 +396,11 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her må du legge til én ny overskrift på linje X ved å legge til{" "}
+            Her må du legge til én ny overskrift på linje 44 ved å legge til{" "}
             <code className="dnb-code">
               &lt;Th&gt;Mottakers land&lt;/Th&gt;
             </code>
-            . <br /> Også må du legge til innhold på linje X ved å legge til{" "}
+            . <br /> Også må du legge til innhold på linje 55 ved å legge til{" "}
             <code className="dnb-code">
               &lt;Td&gt;&#123;transaction.to.country&#125;&lt;/Td&gt;
             </code>
@@ -417,7 +423,7 @@ export var tasks = [
               En funksjon er kode som skal gjøre en spesifikk oppgave
             </Tooltip>{" "}
             som heter <code className="dnb-code">detectRiskCountry</code> på
-            linje X i filen{" "}
+            linje 11 i filen{" "}
             <code className="dnb-code">TransactionTable.tsx</code>.<br></br>
             <b>Endre koden</b> i funksjonen slik at den sjekker om pengene er
             sendt til Russland, og isåfall returnerer du ordet <b>"HØY"</b>.
@@ -544,23 +550,24 @@ export var tasks = [
               <b>Avsenders land</b>.
               <br />
               <br />
-              Se i fila <code className="dnb-code">
+              Se i filen <code className="dnb-code">
                 Transactions.tsx
               </code> i <code className="dnb-code">Oppgave3</code>-mappa og let
-              etter hvor det er definert hva som er i rullgardinmenyen (
-              <code className="dnb-code">Dropdown</code> på engelsk).
+              etter hvor det er definert hva som er i rullegardinmenyen (
+              <code className="dnb-code">Dropdown</code> på engelsk), og filtrer
+              på <b>Mottakers land</b>.
             </p>
           </>
         ),
         hint: (
           <p className="dnb-p">
             Funksjonalitet for selve filtreringen er allerede lagt inn men
-            rullgardinmenyen mangler et valg for <b>Mottakers land</b>. Her må
+            rullegardinmenyen mangler et valg for <b>Mottakers land</b>. Her må
             vi finne komponenten som heter{" "}
             <code className="dnb-code">Dropdown</code> og legge til data i
-            denne. Se på <code className="dnb-code">Parameter</code> på linje X
-            og se om du finner den som mangler i rullgardinen så du kan legge
-            til denne.
+            denne. Se på <code className="dnb-code">Parameter</code> på linje 39
+            til 43 og se om du finner den som mangler i rullegardinen så du kan
+            legge til denne.
           </p>
         ),
       },
@@ -572,7 +579,7 @@ export var tasks = [
           <>
             <p className="dnb-p">
               På siden <i>Logg inn som kunde</i> har vi en liste over alle
-              kontoene til denne kunden. Hvis man trykker på et kontonavn vil
+              kontoene til denne kunden. Hvis man trykker på et kontonavn, vil
               man se alle transaksjoner knyttet til denne kontoen.
               <br />
               <br />
@@ -609,14 +616,16 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Bruk <code className="dnb-code">account.accountNumber</code>
+            Bruk <code className="dnb-code">account.number</code>
             som <code className="dnb-code">accountIdentifier</code> i funksjonen
             på følgende vis:{" "}
             <code className="dnb-code">
-              getTransactionsLink(account.accountNumber)
+              getTransactionsLink(account.number)
             </code>
-            . Husk å fjerne numberFormat elementet og å legge til &#123;&#125;
-            rundt alt.
+            . <br /> Husk å fjerne{" "}
+            <code className="dnb-code">NumberFormat</code>
+            elementet og å legg til{" "}
+            <code className="dnb-code">&#123;&#125;</code> rundt alt.
           </p>
         ),
       },
