@@ -64,7 +64,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her må vi endre på samme linje 17 som i oppgave A. Bytt ut ordet{" "}
+            Her må vi endre på samme kodelinje som i oppgave A. Bytt ut ordet{" "}
             <code className="dnb-code">"black"</code> med for eksempel{" "}
             <code className="dnb-code">"pink"</code>, og se hva som skjer med
             overskriften.
@@ -94,7 +94,7 @@ export var tasks = [
             <code className="dnb-code">&lt;H2&gt;</code>.
             <br />
             <br />I <i>style</i> kan du velge farge slik du ønsker, som fra
-            Intro oppgave B.
+            oppgave B.
           </p>
         ),
       },
