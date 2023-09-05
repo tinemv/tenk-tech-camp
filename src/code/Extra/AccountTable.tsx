@@ -23,9 +23,9 @@ export default function AccountTable(props: AccountTableProps) {
         <Table sticky="css-position">
           <thead>
             <Tr>
-              <Th>Navn</Th>
-              <Th>Kontonummer</Th>
-              <Th>Saldo</Th>
+              <Th>Name</Th>
+              <Th>Account number</Th>
+              <Th>Balance</Th>
             </Tr>
           </thead>
           <tbody>

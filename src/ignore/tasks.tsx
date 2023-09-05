@@ -30,7 +30,7 @@ export var tasks = [
       {
         id: 0,
         name: "Oppgave A",
-        level: "ENKEL",
+        level: "EASY",
         description: (
           <p className="dnb-p">
             Nå skal vi endre overskriften til forsiden. Finn stedet i koden hvor
@@ -54,7 +54,7 @@ export var tasks = [
       {
         id: 1,
         name: "Oppgave B",
-        level: "ENKEL",
+        level: "EASY",
         description: (
           <p className="dnb-p">
             Endre farge på overskriften til en farge du ønsker, for eksempel
@@ -124,7 +124,7 @@ export var tasks = [
       {
         id: 3,
         name: "Oppgave A",
-        level: "ENKEL",
+        level: "EASY",
         description: (
           <p className="dnb-p">
             Det første vi ønsker er å endre navnet på overskriften fra{" "}
@@ -262,7 +262,7 @@ export var tasks = [
       {
         id: 7,
         name: "Oppgave C",
-        level: "VANSKELIG",
+        level: "HARD",
         description: (
           <p className="dnb-p">
             Vi ønsker å sjekke om det er noen transaksjoner som går til
@@ -313,7 +313,7 @@ export var tasks = [
       {
         id: 8,
         name: "Oppgave A",
-        level: "ENKEL",
+        level: "EASY",
         description: (
           <>
             <p className="dnb-p">
@@ -403,7 +403,7 @@ export var tasks = [
       {
         id: 10,
         name: "Oppgave C",
-        level: "VANSKELIG",
+        level: "HARD",
         description: (
           <p className="dnb-p">
             Som du ser i tabellen så er det ukjent hvilken risiko hver
@@ -444,7 +444,7 @@ export var tasks = [
       {
         id: 11,
         name: "Oppgave D",
-        level: "VANSKELIG",
+        level: "HARD",
         description: (
           <p className="dnb-p">
             For å gjøre transaksjonene med høy risiko mer synlig ønsker vi at de
@@ -483,7 +483,7 @@ export var tasks = [
       {
         id: 12,
         name: "Oppgave E",
-        level: "ENKEL",
+        level: "EASY",
         description: (
           <>
             <p className="dnb-p">
@@ -515,7 +515,7 @@ export var tasks = [
       {
         id: 13,
         name: "Oppgave A",
-        level: "PROFESJONELL",
+        level: "PROFESSIONAL",
         description: (
           <>
             <p className="dnb-p">
@@ -561,7 +561,7 @@ export var tasks = [
       {
         id: 14,
         name: "Oppgave B",
-        level: "PROFESJONELL",
+        level: "PROFESSIONAL",
         description: (
           <>
             <p className="dnb-p">

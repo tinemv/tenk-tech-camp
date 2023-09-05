@@ -17,13 +17,11 @@ export function detectRiskCountry(country: String): String | undefined {
   }
 }
 
-/** OPPGAVE 3D */
+/** Assignment 3D */
 function setColorForHighRisk(risk: String): any {
   return "black";
 }
 
-/** Transactions returnerer koden som visualiserer transaksjonstabellen mellom alle kunder. 
- * Logg inn som etterforsker og trykk på fanen hvor det står Transaksjoner for å se resultatet på denne koden */
 export const TransactionTable = (props: TransactionTableProps) => {
   const { listOfTransactions } = props;
 
@@ -34,16 +32,16 @@ export const TransactionTable = (props: TransactionTableProps) => {
           maxHeight: "60rem",
         }}
       >
-        {/* Oppgave 3: Her kan du endre på utseendet og innholdet til transaksjoner-tabellen */}
+        {/* Assignment 3: Here you can change the look and the content of the transactions table */}
         <Table sticky="css-position">
           <thead>
             <Tr>
-              <Th>Avsenders navn</Th>
-              <Th>Avsenders land</Th>
-              <Th>Mottakers navn</Th>
-              {/*Oppgave 3B: legg til overskrift her */}
-              <Th>Beløp</Th>
-              <Th>Risiko</Th>
+              <Th>Senders name</Th>
+              <Th>Senders country</Th>
+              <Th>Recipients name</Th>
+              {/*Oppgave 3B: header */}
+              <Th>Amount</Th>
+              <Th>Risk</Th>
             </Tr>
           </thead>
           <tbody>
@@ -52,7 +50,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
                 <Td>{transaction.from.name}</Td>
                 <Td>{transaction.from.country}</Td>
                 <Td>{transaction.to.name}</Td>
-                {/*Oppgave 3B: legg til innhold her */}
+                {/*Oppgave 3B: content */}
                 <Td>
                   <NumberFormat>{transaction.amount}</NumberFormat>
                 </Td>

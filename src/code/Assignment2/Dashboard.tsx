@@ -30,14 +30,14 @@ export default function Dashboard(props: DashboardProps) {
         <div className="chart-container">
           <div>
             <PieChart
-              title={"Innenlands vs. utenlands transaksjoner"}
+              title={"Domestic vs. international transactions"}
               data={pieChartData}
             />
           </div>
 
           <div>
             <BarChart
-              title={"Antall transaksjoner til ulike land"}
+              title={"Number of transactions sent to a country"}
               data={barChartData}
             />
           </div>
@@ -45,13 +45,13 @@ export default function Dashboard(props: DashboardProps) {
 
         <div className="DashboardBottom">
           <InfoCard
-            title="Antall transaksjoner totalt"
+            title="Number of transactions in total"
             text={getAllTransactions().length}
             icon={card_in_medium}
             space="x-small"
           />
           <InfoCard
-            title="Penger overført totalt"
+            title="Total amount of money"
             text={sumTransactions()}
             icon={account_medium}
             space="x-small"
@@ -64,18 +64,18 @@ export default function Dashboard(props: DashboardProps) {
 
 /* Oppgave 2C: Her må du legge til Russland to steder */
 const barChartData = {
-  labels: ["Norge", "Sverige", "Danmark", "USA", "Spania", "Italia"],
+  labels: ["Norway", "Sweeden", "Denmark", "USA", "Spain", "Italy"],
   datasets: [
     {
       /* Oppgave 2B: Her kan du legge til "Antall" */
       label: "?????",
       data: [
-        countTargetCountries("Norge"),
-        countTargetCountries("Sverige"),
-        countTargetCountries("Danmark"),
+        countTargetCountries("Norway"),
+        countTargetCountries("Sweeden"),
+        countTargetCountries("Denmark"),
         countTargetCountries("USA"),
-        countTargetCountries("Spania"),
-        countTargetCountries("Italia"),
+        countTargetCountries("Spain"),
+        countTargetCountries("Italy"),
       ],
       backgroundColor: colorPicker.SuccessGreen,
     },
@@ -83,7 +83,7 @@ const barChartData = {
 };
 
 const pieChartData = {
-  labels: ["Innenlands", "Utenlands"],
+  labels: ["Domestic", "International"],
   datasets: [
     {
       label: "Antall",

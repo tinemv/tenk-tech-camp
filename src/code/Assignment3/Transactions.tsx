@@ -4,12 +4,12 @@ import { TransactionTable } from "./TransactionTable";
 import { filterTable } from "../../ignore/codeDump";
 
 export enum Parameter {
-  FROM_NAME = "Avsenders navn",
-  FROM_COUNTRY = "Avsenders land",
-  TO_NAME = "Mottakers navn",
-  TO_COUNTRY = "Mottakers land",
-  AMOUNT = "Beløp",
-  RISK = 'Risiko'
+  FROM_NAME = "Senders name",
+  FROM_COUNTRY = "Senders country",
+  TO_NAME = "Recipients name",
+  TO_COUNTRY = "Recipients country",
+  AMOUNT = "Amount",
+  RISK = 'Risk'
 }
 
 export interface TransactionsProps {
@@ -30,7 +30,7 @@ export default function Transactions(props: TransactionsProps) {
   return (
     <Section spacing="small" left right style_type="white">
       <div className="TransactionsTab">
-        <H1>Oversikt over alle transaksjoner i DNB</H1>
+        <H1>Overview of all transactions</H1>
         {/* Oppgave 3A: legg til et paragraf her! */}
         <Section style_type="white">
           <Section spacing>
@@ -42,8 +42,8 @@ export default function Transactions(props: TransactionsProps) {
                 Parameter.AMOUNT,
                 Parameter.RISK,
               ]}
-              label="Parameter som skal filtreres på:"
-              title="Velg parameter"
+              label="Parameter to be filtered on:"
+              title="Choose parameter"
               on_change={({ data }) => setInputParameter(data)}
             />
             <Input
