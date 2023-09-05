@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Tabs } from "@dnb/eufemia";
 import Welcome from "../code/Intro/Welcome";
-import CustomerPage from "../code/Oppgave1/CustomerPage";
+import CustomerPage from "../code/Assignment1/CustomerPage";
 import { TransactionsPage } from "./codeDump";
 import TaskNavigator from "./TaskNavigator";
 import styled from "styled-components";
@@ -26,7 +26,7 @@ export default function App() {
     if (window.sessionStorage.getItem("currentTab") != null) {
       return window.sessionStorage.getItem("currentTab");
     }
-    return "Velkommen";
+    return "Welcome";
   });
   const [currentTaskTab, setCurrentTaskTab] = useState<number>(() => {
     if (window.sessionStorage.getItem("currentTaskTab") != null) {
@@ -71,15 +71,15 @@ export default function App() {
             }}
             data={[
               {
-                title: "Velkommen",
+                title: "Welcome",
                 key: "Velkommen",
               },
               {
-                title: "Logg inn som kunde",
+                title: "Customer page",
                 key: "Kunde",
               },
               {
-                title: "Logg inn som etterforsker",
+                title: "Employee page",
                 key: "Etterforsker",
               },
             ]}
