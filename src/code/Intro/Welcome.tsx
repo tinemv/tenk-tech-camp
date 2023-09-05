@@ -13,9 +13,9 @@ export default function Welcome(props: WelcomeProps) {
   return (
     <Section spacing="small" left right="0.25" style_type="white">
       <div className="WelcomeTab">
-        {/* INTRO OPPGAVE A: Her har du funnet overskriften :D */}
+        {/* Intro assignment A */}
         <H1 style={{ margin: 20, color: "black" }}>Welcome to workshop!</H1>
-        {/* INTO OPPGAVE C: Legg inn underoverskrift her! */}
+        {/* Intro assignment C */}
         <Section
           style_type="sea-green"
           style={{
@@ -47,7 +47,7 @@ export default function Welcome(props: WelcomeProps) {
         <br />
         <InfoCard
           style={{ fontSize: "large", bottom: "0px" }}
-          text="Do not hesitate to ask us for help or if you have questions"
+          text="Do not hesitate to ask us for help or if you have"
         ></InfoCard>
       </div>
     </Section>

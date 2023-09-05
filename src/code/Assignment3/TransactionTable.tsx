@@ -7,13 +7,13 @@ export type TransactionTableProps = {
   listOfTransactions: Transaction[];
 };
 
-/** OPPGAVE 3C: */
+/** Assignment 3C */
 export function detectRiskCountry(country: String): String | undefined {
 
   if (country === "land" ){
-    return "Ukjent";
+    return "Unknown";
   } else {
-    return "Ukjent";
+    return "Unknown";
   }
 }
 
@@ -36,10 +36,10 @@ export const TransactionTable = (props: TransactionTableProps) => {
         <Table sticky="css-position">
           <thead>
             <Tr>
-              <Th>Senders name</Th>
-              <Th>Senders country</Th>
-              <Th>Recipients name</Th>
-              {/*Oppgave 3B: header */}
+              <Th>Sender's name</Th>
+              <Th>Sender's country</Th>
+              <Th>Recipient's name</Th>
+              {/* Assignment 3B  */}
               <Th>Amount</Th>
               <Th>Risk</Th>
             </Tr>
@@ -50,7 +50,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
                 <Td>{transaction.from.name}</Td>
                 <Td>{transaction.from.country}</Td>
                 <Td>{transaction.to.name}</Td>
-                {/*Oppgave 3B: content */}
+                {/*Assignment 3B */}
                 <Td>
                   <NumberFormat>{transaction.amount}</NumberFormat>
                 </Td>

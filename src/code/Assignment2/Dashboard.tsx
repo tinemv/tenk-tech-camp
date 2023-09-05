@@ -25,7 +25,7 @@ export default function Dashboard(props: DashboardProps) {
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <div className="DashboardTab">
-        {/* Oppgave 2A: Her finner du overskriften til siden */}
+        {/* Assignment 2A */}
         <H1 style={{ fontSize: "small" }}>Dashboard</H1>
         <div className="chart-container">
           <div>
@@ -62,16 +62,16 @@ export default function Dashboard(props: DashboardProps) {
   );
 }
 
-/* Oppgave 2C: Her må du legge til Russland to steder */
+/* Assignment 2C */
 const barChartData = {
-  labels: ["Norway", "Sweeden", "Denmark", "USA", "Spain", "Italy"],
+  labels: ["Norway", "Sweden", "Denmark", "USA", "Spain", "Italy"],
   datasets: [
     {
-      /* Oppgave 2B: Her kan du legge til "Antall" */
+      /* Assignment 2B */
       label: "?????",
       data: [
         countTargetCountries("Norway"),
-        countTargetCountries("Sweeden"),
+        countTargetCountries("Sweden"),
         countTargetCountries("Denmark"),
         countTargetCountries("USA"),
         countTargetCountries("Spain"),
@@ -86,7 +86,7 @@ const pieChartData = {
   labels: ["Domestic", "International"],
   datasets: [
     {
-      label: "Antall",
+      label: "Amount",
       data: countCrossBorderTransactions(),
 
       backgroundColor: [

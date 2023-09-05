@@ -4,10 +4,10 @@ import { TransactionTable } from "./TransactionTable";
 import { filterTable } from "../../ignore/codeDump";
 
 export enum Parameter {
-  FROM_NAME = "Senders name",
-  FROM_COUNTRY = "Senders country",
-  TO_NAME = "Recipients name",
-  TO_COUNTRY = "Recipients country",
+  FROM_NAME = "Sender's name",
+  FROM_COUNTRY = "Sender's country",
+  TO_NAME = "Recipient's name",
+  TO_COUNTRY = "Recipient's country",
   AMOUNT = "Amount",
   RISK = 'Risk'
 }
@@ -31,7 +31,7 @@ export default function Transactions(props: TransactionsProps) {
     <Section spacing="small" left right style_type="white">
       <div className="TransactionsTab">
         <H1>Overview of all transactions</H1>
-        {/* Oppgave 3A: legg til et paragraf her! */}
+        {/* Assignment 3A */}
         <Section style_type="white">
           <Section spacing>
             <Dropdown

@@ -21,10 +21,10 @@ export const TransactionTableForAccounts = (props: TransactionTableForAccountsPr
           <Table sticky="css-position">
             <thead>
               <Tr>
-              <Th>Senders name</Th>
-              <Th>Senders country</Th>
-              <Th>Recipients name</Th>
-              <Th>Recipients country</Th>
+              <Th>Sender's name</Th>
+              <Th>Sender's country</Th>
+              <Th>Recipient's name</Th>
+              <Th>Recipient's country</Th>
               <Th>Amount</Th>
               </Tr>
             </thead>
