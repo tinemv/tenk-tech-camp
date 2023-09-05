@@ -56,7 +56,7 @@ input {
   margin-top: 1rem;
 }
 
-.tag-ENKEL {
+.tag-EASY {
   width: 6rem;
   color: white;
   background-color: #007B5E !important;
@@ -68,7 +68,7 @@ input {
   background-color: #FDBB31 !important;
 }
 
-.tag-VANSKELIG {
+.tag-HARD {
   width: 6rem;
   color: white;
   background-color: #DC2A2A !important;
