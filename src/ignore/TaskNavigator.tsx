@@ -66,16 +66,16 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
 
   return (
     <Drawer
-      title="Oppgaver"
+      title="Assignments"
       space
       triggerAttributes={{ text: "Oppgaver", variant: "secondary" }}
     >
       <Drawer.Header>
         <FormStatus state="info">
           <p className="dnb-p">
-            Alle filene vi skal jobbe i ligger i{" "}
-            <code className="dnb-code">code</code>-mappa som ligger i{" "}
-            <code className="dnb-code">src</code>-mappa
+            All of the files we will be coding in is located in the{" "}
+            <code className="dnb-code">code</code>-folder, which is in the{" "}
+            <code className="dnb-code">src</code>-folder.
           </p>
         </FormStatus>
         <Progress progressValue={progressValue} />
@@ -84,23 +84,23 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
           <FormRow vertical>
             <Input
               space
-              label="Meld inn den kriminelle til politiet her:"
+              label="Report the criminal to the police here:"
               type="text"
               onChange={handleInputText}
               value={inputText}
-              placeholder="Navn på kriminell"
+              placeholder="Name of the criminal"
               stretch
               style={{ minWidth: "200px" }}
               suffix={
                 <Dialog
                   triggerAttributes={{
-                    text: "Meld inn",
+                    text: "Report",
                   }}
                   title={
                     inputText.toLowerCase().split(" ").join("") ===
                     "jonasgahrstøre"
-                      ? "Gratulerer!"
-                      : "Prøv igjen!"
+                      ? "Congratulations!"
+                      : "Try again!"
                   }
                 >
                   {inputText.toLowerCase().split(" ").join("") ===

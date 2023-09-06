@@ -40,13 +40,12 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Ser du denne teksten:{" "}
+            Do you see this code:{" "}
             <code className="dnb-code">
               &lt;H1 style=&#123;&#123; margin: 20, color: "black"
-              &#125;&#125;&gt;Velkommen til workshop!&lt;/H1&gt;
+              &#125;&#125;&gt;Welcome to workshop!&lt;/H1&gt;
             </code>{" "}
-            på linje 17? Bytt ut <b>"Velkommen til workshop!"</b> til det du vil
-            ha som overskrift.
+            on line 17? Switch out <b>"Welcome to workshop!"</b> to whatever you would like to have as a header.
           </p>
         ),
       },
@@ -62,10 +61,9 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her må vi endre på samme kodelinje som i oppgave A. Bytt ut ordet{" "}
-            <code className="dnb-code">"black"</code> med for eksempel{" "}
-            <code className="dnb-code">"pink"</code>, og se hva som skjer med
-            overskriften.
+            Here we have to change the same line of code as in assignment A. Switch out the word {" "}
+            <code className="dnb-code">"black"</code> with, for instance, {" "}
+            <code className="dnb-code">"pink"</code>, and see what happens to the header.
           </p>
         ),
       },
@@ -85,13 +83,12 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her skal du skrive en kodelinje som ligner på{" "}
-            <code className="dnb-code">&lt;H1&gt;</code> overskriften, men du
-            skal bytte ut <code className="dnb-code">&lt;H1&gt;</code> med{" "}
+            Here you have to write a line of code that looks like the {" "}
+            <code className="dnb-code">&lt;H1&gt;</code> header, but switch out 
+            <code className="dnb-code">&lt;H1&gt;</code> with {" "}
             <code className="dnb-code">&lt;H2&gt;</code>.
             <br />
-            <br />I <i>style</i> kan du velge farge slik du ønsker, som fra
-            oppgave B.
+            <br />In <i>style</i> you can choose colour as you want, like in part B.
           </p>
         ),
       },
@@ -132,12 +129,11 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Linjen du skal endre ligner på den vi jobbet med i Intro oppgaven.
-            Let etter{" "}
+            The line of code you have to edit looks like the one we worked on in the intro assignment. Look for{" "}
             <code className="dnb-code">
-              &lt;H1&gt;Velkommen ukjent!&lt;/H1&gt;
+              &lt;H1&gt;Welcome unknown user!&lt;/H1&gt;
             </code>{" "}
-            på linje 33 og endre <b>"ukjent"</b> til et navn du velger selv.
+            in line 33 and change <b>"unknown"</b> with a name you choose yourself.
           </p>
         ),
       },
@@ -162,9 +158,8 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            På linje 36 bytter du ut{" "}
-            <code className="dnb-code">src=&#123;ukjent&#125;</code> med for
-            eksempel{" "}
+            On code line 36 you have to switch out {" "}
+            <code className="dnb-code">src=&#123;unknown&#125;</code> with for instance{" "}
             <code className="dnb-code">src=&#123;TaylorSwift&#125;</code>
           </p>
         ),
@@ -206,12 +201,12 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Finn linje 29 hvor det står{" "}
+            Find code line 29 that says {" "}
             <code className="dnb-code">
               &lt;H1 style=&#123;&#123; fontSize: "small"
               &#125;&#125;&gt;Dashboard&lt;/H1&gt;
             </code>{" "}
-            og endre <i>style</i> til{" "}
+            and change <i>style</i> to{" "}
             <code className="dnb-code">
               style=&#123;&#123; fontSize: "xxx-large" &#125;&#125;
             </code>
@@ -235,11 +230,11 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            På linje 89 så finner du en
+            On code line 89 you will find a 
             <code className="dnb-code">label</code>
-            for kakediagrammet, denne koden ser slik ut:{" "}
-            <code className="dnb-code">label: "Antall"</code>. <br />
-            Finner du det samme for søylediagrammet på linje 71?
+            for the pie chart that looks like this:{" "}
+            <code className="dnb-code">label: "Amount"</code>. <br />
+            Do you find the same for the column diagram on line 71? 
           </p>
         ),
       },
@@ -256,13 +251,12 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            På samme måte som er gjort på linje 67 og 73-78 for alle de andre
-            landene må vi legge til både en ny{" "}
-            <code className="dnb-code">labels</code> og ny{" "}
+            The same way that is done on code line 67 and 73-78 for all the other countries, we have to add both a new {" "}
+            <code className="dnb-code">labels</code> and new {" "}
             <code className="dnb-code">data</code>.
             <br />
             <br />
-            Husk å ha komma på riktig steder!
+            Remember to put the comma in the right spot both places!
           </p>
         ),
       },
@@ -314,14 +308,10 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her må vi finne overskriften i koden først. Se om du finner
-            overskriften på linje 33. Legg til en ny linje under med{" "}
-            <Tooltip targetElement={<a className="tooltip">elementet</a>}>
-              Element er en digital byggekloss, som er laget med &lt;&gt;
-            </Tooltip>{" "}
-            <code className="dnb-code">&lt;P&gt; din tekst &lt;/P&gt;</code> og
-            fyll inn teksten din mellom
-            <code className="dnb-code">&lt;P&gt;</code>'ene.
+            Here you first have to find the header in the code. See if you can can find the header on line 33. Add a new line under the element
+            <code className="dnb-code">&lt;P&gt; your text &lt;/P&gt;</code> og
+            and fill inn the text between the  
+            <code className="dnb-code">&lt;P&gt;</code>'s.
           </p>
         ),
       },
@@ -353,20 +343,18 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Slik har vi gjort det for <b>Avsenders land</b>: <br /> Overskrift
-            er lagt til på linje 42 slik{" "}
+            Show it is done for <b>Senders country</b>: <br /> Header added on code line 42 like this: {" "}
             <code className="dnb-code">
-              &lt;Th&gt;Avsenders land&lt;/Th&gt;
+              &lt;Th&gt;Senders country&lt;/Th&gt;
             </code>
             . <br />
-            Innhold er lagt til på linje 53 slik
+            Content added on code line 53 like this:
             <code className="dnb-code">
               &lt;Td&gt;&#123;transaction.from.country&#125;&lt;/Td&gt;
             </code>
             . <br />
             <br />
-            For <b>Mottakers land</b> skal du gjøre tilsvarende, men bytte ut
-            noen ord.
+            Do the same thing for <b>Recipients country</b>, but swich out the words to be correct for this case.
           </p>
         ),
       },
@@ -392,17 +380,17 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Du må først bytte ut <code className="dnb-code">land</code> med{" "}
-            <code className="dnb-code">Russland</code>. Videre må du velge når
-            du skal returnere <b>"HØY"</b> og <b>"LAV"</b> for at det skal bli
-            riktig, slik at den ene er{" "}
-            <code className="dnb-code">return "HØY";</code> og den andre er{" "}
-            <code className="dnb-code">return "LAV"; </code> istedenfor{" "}
-            <code className="dnb-code">return "Ukjent"; </code>
+            You first have to switch out <code className="dnb-code">country</code> with{" "}
+            <code className="dnb-code">Russia</code>. Further you have to decide when to return <b>"HIGH"</b>;
+            and when to return <b>"LOW"</b> for it to be logically correct.
+            It should be {" "}
+            <code className="dnb-code">return "HIGH";</code>; for one and {" "}
+            <code className="dnb-code">return "LOW"; </code>; for the other instead of {" "}
+            <code className="dnb-code">return "Unknown"; </code>
             <br />
             <br />
-            Bemerk at <b>hvis</b> i kode skrives{" "}
-            <code className="dnb-code">if{}</code> og, <b>er lik</b> skrives{" "}
+            Mark that conditions in code is written like {" "}
+            <code className="dnb-code">if{}</code> and, <b>equals</b> like{" "}
             <code className="dnb-code">===</code>.
           </p>
         ),
@@ -430,14 +418,14 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Her må vi bruke <b>hvis</b> som i forrige oppgave. Vi bytter ut{" "}
-            <code className="dnb-code">country</code> med{" "}
-            <code className="dnb-code">risk</code>, og returner{" "}
-            <code className="dnb-code">red</code> og{" "}
-            <code className="dnb-code">green</code> der det passer.
+            Here we have to use <b>if</b> like in assignment C. We switch out {" "}
+            <code className="dnb-code">country</code> with{" "}
+            <code className="dnb-code">risk</code>, and returns{" "}
+            <code className="dnb-code">red</code> and{" "}
+            <code className="dnb-code">green</code> instead.
             <br />
-            <br /> Husk at <b>hvis</b> i kode skrives{" "}
-            <code className="dnb-code">if{}</code> og, <b>er lik</b> skrives{" "}
+            <br /> Remember that conditions in code is written like {" "}
+            <code className="dnb-code">if{}</code> and, <b>equals</b> like{" "}
             <code className="dnb-code">===</code>.
           </p>
         ),
@@ -476,42 +464,28 @@ export var tasks = [
         description: (
           <>
             <p className="dnb-p">
-              På siden <i>Transactions</i> under{" "}
-              <i>Logg inn som etterforsker</i> er det mulig å filtrere
-              transaksjonene i tabellen. Nå er det mulig å filtrere på for
-              eksempel <b>Avsenders navn</b>, slik at man bare ser de
-              transaksjonene som er sendt fra en viss person.
+              The <i>Transactions</i> table, under the {" "}
+              <i>Employee page</i>, can currently be filtered on for instance <b>Senders name</b>. 
+              To make it easier to see what transactions are sent to Russia, we would like to be able to filter on the  <b>Recipients country</b>. 
               <br />
               <br />
-              For å gjøre det lettere for etterforskere å se hvilke
-              transaksjoner som er sendt til Russland, ønsker vi også å filtrere
-              på <b>Mottakers land</b>, slik at bare de transaksjonene med høy
-              risiko synes.
+              Your task is to implement a way to filter on the <b>Recipients country</b>, 
+              in the same way as is done for <b>Senders country</b>.
               <br />
               <br />
-              Din oppgave blir å fikse dette så man kan filtrere på{" "}
-              <b>Mottakers land</b> på samme måte som for eksempel{" "}
-              <b>Avsenders land</b>.
-              <br />
-              <br />
-              Se i filen <code className="dnb-code">
+              Have a look in the file <code className="dnb-code">
                 Transactions.tsx
-              </code> i <code className="dnb-code">Oppgave3</code>-mappa og let
-              etter hvor det er definert hva som er i rullegardinmenyen (
-              <code className="dnb-code">Dropdown</code> på engelsk), og filtrer
-              på <b>Mottakers land</b>.
+              </code> in the <code className="dnb-code">Assignment3</code>-folder, find the
+              <code className="dnb-code">Dropdown</code> menu and filter on <b>Recipients country</b>.
             </p>
           </>
         ),
         hint: (
           <p className="dnb-p">
-            Funksjonalitet for selve filtreringen er allerede lagt inn men
-            rullegardinmenyen mangler et valg for <b>Mottakers land</b>. Her må
-            vi finne komponenten som heter{" "}
-            <code className="dnb-code">Dropdown</code> og legge til data i
-            denne. Se på <code className="dnb-code">Parameter</code> på linje 39
-            til 43 og se om du finner den som mangler i rullegardinen så du kan
-            legge til denne.
+            The functionality for the actual filtering is already implemented, but the drop-down menu is still missing a choice for the
+             <b>Recipients country</b>. Find the {" "}
+            <code className="dnb-code">Dropdown</code> component and add data to it. Have a look at <code className="dnb-code">Parameter</code> 
+            on line 39-43 and see if you can find the missing one and add it to the drop-down menu.
           </p>
         ),
       },
@@ -522,54 +496,44 @@ export var tasks = [
         description: (
           <>
             <p className="dnb-p">
-              På siden <i>Logg inn som kunde</i> har vi en liste over alle
-              kontoene til denne kunden. Hvis man trykker på et kontonavn, vil
-              man se alle transaksjoner knyttet til denne kontoen.
+              On the <i>Customer page </i> we have a list over all accounts belonging to this customer. If you click on one of the account names, you will see an overview of all the transactions connected to this account. 
               <br />
               <br />
               Vi ønsker å også kunne trykke på kontonummeret og komme til samme
               side som viser oversikt over alle transaksjonene.
               <br />
               <br />
-              For å gjøre dette må vi endre{" "}
-              <Tooltip targetElement={<a className="tooltip">elementet</a>}>
-                Element er en digital byggekloss, som er laget med &lt;&gt;
-              </Tooltip>{" "}
-              som inneholder kontonummeret fra et
+              We would also like to be able to click on the account number and be directed to this same overview. To be able to do this we would have to change the element that contains the account number from 
               <code className="dnb-code">NumberElement</code>
-              til en knapp. Ta en titt i{" "}
+              to a button. Have a look in the {" "}
               <code className="dnb-code">AccountTable.tsx</code> i{" "}
-              <code className="dnb-code">Ekstra</code>-mappa. Her finner du
-              funksjonen <code className="dnb-code">getTransactionLink</code>
-              som gjør nettopp dette.
+              <code className="dnb-code">Extra</code>-folder. Inside here you will find the <code className="dnb-code">getTransactionLink</code>
+              function that does this. 
               <br />
               <br />
-              Funksjonen <code className="dnb-code">getTransactionLink</code>
-              trenger en <code className="dnb-code">accountIdentifier</code>.
-              Dette kan enten være kontonavn eller kontonummer.
+              The <code className="dnb-code">getTransactionLink</code>
+              function needs an  <code className="dnb-code">accountIdentifier</code>.
+              This could be account name or account number.
               <br />
               <br />
-              Prøv å bruke <code className="dnb-code">
+              Try to use the  <code className="dnb-code">
                 getTransactionLink
               </code>{" "}
-              funksjonen slik at man kan trykke på kontonummeret og komme inn på
-              listen over alle transaksjoner. For inspirasjon, se hvordan
-              funksjonen er brukt med kontonavn.
+              function so that you can click on the account number and get to the list over all transactions for that account. For inspiration, have a look at how the function is used with account name.
             </p>
           </>
         ),
         hint: (
           <p className="dnb-p">
-            Bruk <code className="dnb-code">account.number</code>
-            som <code className="dnb-code">accountIdentifier</code> i funksjonen
-            på følgende vis:{" "}
+            Use <code className="dnb-code">account.number</code>
+            as <code className="dnb-code">accountIdentifier</code> in the function like this:{" "}
             <code className="dnb-code">
               getTransactionsLink(account.number)
             </code>
-            . <br /> Husk å fjerne{" "}
+            . <br /> Remember to remove the{" "}
             <code className="dnb-code">NumberFormat</code>
-            elementet og å legg til{" "}
-            <code className="dnb-code">&#123;&#125;</code> rundt alt.
+            elementet and add{" "}
+            <code className="dnb-code">&#123;&#125;</code> around everything.
           </p>
         ),
       },
