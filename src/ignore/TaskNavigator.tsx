@@ -68,14 +68,13 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
     <Drawer
       title="Assignments"
       space
-      triggerAttributes={{ text: "Oppgaver", variant: "secondary" }}
+      triggerAttributes={{ text: "Assignments", variant: "secondary" }}
     >
       <Drawer.Header>
         <FormStatus state="info">
           <p className="dnb-p">
-            All of the files we will be coding in is located in the{" "}
-            <code className="dnb-code">code</code>-folder, which is in the{" "}
-            <code className="dnb-code">src</code>-folder.
+            All files needed for the assignments are located in the{" "}
+            <code className="dnb-code">src/code</code>folder
           </p>
         </FormStatus>
         <Progress progressValue={progressValue} />
@@ -84,11 +83,11 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
           <FormRow vertical>
             <Input
               space
-              label="Report the criminal to the police here:"
+              label="Report the suspicious person here:"
               type="text"
               onChange={handleInputText}
               value={inputText}
-              placeholder="Name of the criminal"
+              placeholder="Name of person"
               stretch
               style={{ minWidth: "200px" }}
               suffix={
@@ -100,30 +99,26 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                     inputText.toLowerCase().split(" ").join("") ===
                     "jonasgahrstøre"
                       ? "Congratulations!"
-                      : "Try again!"
+                      : "Oooops... try again!"
                   }
                 >
                   {inputText.toLowerCase().split(" ").join("") ===
                   "jonasgahrstøre" ? (
                     <P>
-                      Du har løst saken!
+                      You solved the case and reported the right person to the police.
                       <br />
                       <br />
-                      Jonas Gahr Støre, statsministeren i Norge, har ulovlig
-                      overført penger til Russland. Heldigvis klarte du å
-                      oppdage det og anmelde det til politiet.
+                      Jonas Gahr Støre, prime minister of Norway, has transferred money to Russia to support war in Ukraine. 
                       <br />
                       <br />
-                      Bra jobba og takk for din hjelp!
+                      Luckily for us, you were able to use technology to effectivly track him down so he can be stopped!
                     </P>
                   ) : (
                     <P>
-                      Det ser ikke ut som navnet du har skrevet inn er helt
-                      riktig.
+                      Looks like you have not submitted the correct name.
                       <br />
                       <br />
-                      Her må du nok se gjennom transaksjonene på nytt for å
-                      finne riktig person å anmelde.
+                      Go back and look through the transactions again to find someone suspicious.
                     </P>
                   )}
                 </Dialog>
@@ -167,7 +162,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                     <Checkbox
                       style={{ flexShrink: 0 }}
                       right="large"
-                      title="Kryss av når du er ferdig med oppgaven"
+                      title="Check off when you finish the assignment"
                       on_change={({ checked }) => {
                         setCheckedTasks(
                           checkedTasks.map((task: any, i: number) => {

@@ -25,19 +25,19 @@ export default function Dashboard(props: DashboardProps) {
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <div className="DashboardTab">
-        {/* Oppgave 2A: Her finner du overskriften til siden */}
+        {/* Assignment 2A */}
         <H1 style={{ fontSize: "small" }}>Dashboard</H1>
         <div className="chart-container">
           <div>
             <PieChart
-              title={"Innenlands vs. utenlands transaksjoner"}
+              title={"Domestic vs. international transactions"}
               data={pieChartData}
             />
           </div>
 
           <div>
             <BarChart
-              title={"Antall transaksjoner til ulike land"}
+              title={"Number of transactions sent to a country"}
               data={barChartData}
             />
           </div>
@@ -45,13 +45,13 @@ export default function Dashboard(props: DashboardProps) {
 
         <div className="DashboardBottom">
           <InfoCard
-            title="Antall transaksjoner totalt"
+            title="Number of transactions in total"
             text={getAllTransactions().length}
             icon={card_in_medium}
             space="x-small"
           />
           <InfoCard
-            title="Penger overført totalt"
+            title="Total amount of money"
             text={sumTransactions()}
             icon={account_medium}
             space="x-small"
@@ -62,20 +62,20 @@ export default function Dashboard(props: DashboardProps) {
   );
 }
 
-/* Oppgave 2C: Her må du legge til Russland to steder */
+/* Assignment 2C */
 const barChartData = {
-  labels: ["Norge", "Sverige", "Danmark", "USA", "Spania", "Italia"],
+  labels: ["Norway", "Sweden", "Denmark", "USA", "Spain", "Italy"],
   datasets: [
     {
-      /* Oppgave 2B: Her kan du legge til "Antall" */
+      /* Assignment 2B */
       label: "?????",
       data: [
-        countTargetCountries("Norge"),
-        countTargetCountries("Sverige"),
-        countTargetCountries("Danmark"),
+        countTargetCountries("Norway"),
+        countTargetCountries("Sweden"),
+        countTargetCountries("Denmark"),
         countTargetCountries("USA"),
-        countTargetCountries("Spania"),
-        countTargetCountries("Italia"),
+        countTargetCountries("Spain"),
+        countTargetCountries("Italy"),
       ],
       backgroundColor: colorPicker.SuccessGreen,
     },
@@ -83,10 +83,10 @@ const barChartData = {
 };
 
 const pieChartData = {
-  labels: ["Innenlands", "Utenlands"],
+  labels: ["Domestic", "International"],
   datasets: [
     {
-      label: "Antall",
+      label: "Amount",
       data: countCrossBorderTransactions(),
 
       backgroundColor: [

@@ -241,7 +241,8 @@ export var tasks = [
       {
         id: 7,
         name: "Part C",
-        level: "VANSKELIG",
+        level: "HARD",
+
         description: (
           <p className="dnb-p">
             We want to check if there are any transactions going to Russia. To do this we need to add another column to the column chart.  <br />
