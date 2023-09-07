@@ -17,7 +17,6 @@ export interface DashboardProps {
   setCurrentSubTab: Function;
 }
 
-/** Dashboard er en funksjon som returnerer koden til Dashboard siden. Kan finnes dersom du logger inn som etterforsker */
 export default function Dashboard(props: DashboardProps) {
   const { setCurrentSubTab } = props;
   setCurrentSubTab("Dashboard");
@@ -25,7 +24,7 @@ export default function Dashboard(props: DashboardProps) {
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <div className="DashboardTab">
-        {/* Assignment 2A */}
+        {/* Task 2A */}
         <H1 style={{ fontSize: "small" }}>Dashboard</H1>
         <div className="chart-container">
           <div>
@@ -62,12 +61,12 @@ export default function Dashboard(props: DashboardProps) {
   );
 }
 
-/* Assignment 2C */
+/* Task 2C */
 const barChartData = {
   labels: ["Norway", "Sweden", "Denmark", "USA", "Spain", "Italy"],
   datasets: [
     {
-      /* Assignment 2B */
+      /* Task 2B */
       label: "?????",
       data: [
         countTargetCountries("Norway"),

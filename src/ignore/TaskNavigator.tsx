@@ -66,14 +66,14 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
 
   return (
     <Drawer
-      title="Assignments"
+      title="Tasks"
       space
-      triggerAttributes={{ text: "Assignments", variant: "secondary" }}
+      triggerAttributes={{ text: "Tasks", variant: "secondary" }}
     >
       <Drawer.Header>
         <FormStatus state="info">
           <p className="dnb-p">
-            All files needed for the assignments are located in the{" "}
+            All files needed for the tasks are located in the{" "}
             <code className="dnb-code">src/code</code>folder
           </p>
         </FormStatus>
@@ -162,7 +162,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                     <Checkbox
                       style={{ flexShrink: 0 }}
                       right="large"
-                      title="Check off when you finish the assignment"
+                      title="Check off when you finish the task"
                       on_change={({ checked }) => {
                         setCheckedTasks(
                           checkedTasks.map((task: any, i: number) => {

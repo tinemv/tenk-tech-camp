@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AccountTable from "../Extra/AccountTable";
 import { customer } from "../../data/customer";
-import ukjent from "./ProfilePictures/ukjent.png";
+import unknown from "./ProfilePictures/Unknown.png";
 import BTS from "./ProfilePictures/BTS.png";
 import EmmaWatson from "./ProfilePictures/EmmaWatson.png";
 import GirlInRed from "./ProfilePictures/GirlInRed.png";
@@ -29,11 +29,11 @@ export default function CustomerPage(props: CustomerPageProps) {
       <div className="CustomerTab">
         {accountClicked === "Customer" && (
           <>
-            {/* Assignment 1A: Change the header here */}
-            <H1>Welcome unknown person!</H1>
+            {/* Task 1A: Change the header here */}
+            <H1>Welcome unknown user!</H1>
             <Img
-              /* Assignment 1B: Change the picture here */
-              src={ukjent}
+              /* Task 1B: Change the picture here */
+              src={unknown}
               alt="User Picture"
               width="250rem"
               height="250rem"

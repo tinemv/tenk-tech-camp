@@ -13,9 +13,9 @@ export default function Welcome(props: WelcomeProps) {
   return (
     <Section spacing="small" left right="0.25" style_type="white">
       <div className="WelcomeTab">
-        {/* Intro assignment A */}
+        {/* Intro Task A */}
         <H1 style={{ margin: 20, color: "black" }}>Welcome to workshop!</H1>
-        {/* Intro assignment C */}
+        {/* Intro Task C */}
         <Section
           style_type="sea-green"
           style={{
@@ -34,12 +34,12 @@ export default function Welcome(props: WelcomeProps) {
             }}
           >
 
-           In this workshop we will go though a set of assignments related to web development. 
+           In this workshop we will go though a set of tasks related to web development. 
            We will work on both the customer page and the employee page, which is meant to be a 
            view for respectivly customers and AML workers in a fictive DNB online bank. 
            <br></br>
            <br></br>
-           The end goal of the assignments is to come up with a name that is suspicious in an AML context. 
+           The end goal of the tasks is to come up with a name that is suspicious in an AML context. 
            In this simplified online bank, suspicious means that the person has transfered money to Russia, 
            violating the international sanctions about not supporting the war.  
           </P>

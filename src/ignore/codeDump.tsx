@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { allDNBTransactions } from "../data/transactions";
 import { customer } from "../data/customer";
 import { H1, H2, Section, Tabs, NumberFormat } from "@dnb/eufemia";
-import Transactions from "../code/Assignment3/Transactions";
+import Transactions from "../code/Task3/Transactions";
 import { Transaction } from "../ignore/Models";
-import { Parameter } from "../code/Assignment3/Transactions";
-import { detectRiskCountry } from "../code/Assignment3/TransactionTable";
-import Dashboard from "../code/Assignment2/Dashboard";
+import { Parameter } from "../code/Task3/Transactions";
+import { detectRiskCountry } from "../code/Task3/TransactionTable";
+import Dashboard from "../code/Task2/Dashboard";
 
 export function getAllTransactions() {
   const allCustomerTransactions = customer.accounts.flatMap(

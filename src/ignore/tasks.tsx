@@ -9,7 +9,7 @@ export var tasks = [
     description: (
       <>
         <p className="dnb-p">
-        In this assignment we will test how the assignments will work. 
+        In this task we will test how the tasks will work. 
         We will {" "}
           <Tooltip targetElement={<a className="tooltip">navigate</a>}>
             Find the right file by looking at the panel to the left in the folder code.
@@ -61,7 +61,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Here we have to change the same line of code as in assignment A. Switch out the word {" "}
+            Here we have to change the same line of code as in task A. Switch out the word {" "}
             <code className="dnb-code">"black"</code> with, for instance, {" "}
             <code className="dnb-code">"pink"</code>, and see what happens to the header.
           </p>
@@ -110,7 +110,7 @@ export var tasks = [
         <p className="dnb-p">
           <b>Where is the code located? </b>{" "}
           <code className="dnb-code">CustomerPage.tsx</code> in{" "}
-          <code className="dnb-code">Assignment1</code>-folder
+          <code className="dnb-code">Task1</code>-folder
         </p>
       </>
     ),
@@ -122,14 +122,14 @@ export var tasks = [
         description: (
           <p className="dnb-p">
             The first thing we want to do is to change the name of the title from {" "}
-            <b>"unknown"</b> to a real name. Your are free to choose a name, for instance your own or a celeberty name.
+            <b>"unknown"</b> to a real name.
             <br />
             Find the title in the code and change the name to one of your choosing. 
           </p>
         ),
         hint: (
           <p className="dnb-p">
-            The line of code you have to edit looks like the one we worked on in the intro assignment. Look for{" "}
+            The line of code you have to edit looks like the one we worked on in the intro Task. Look for{" "}
             <code className="dnb-code">
               &lt;H1&gt;Welcome unknown user!&lt;/H1&gt;
             </code>{" "}
@@ -144,7 +144,7 @@ export var tasks = [
         level: "MEDIUM",
         description: (
           <p className="dnb-p">
-            Time to change the profile picture. The pictures you can choose from reside in the<code className="dnb-code">Profilepictures</code>
+            Time to change the profile picture. The pictures you can choose from reside in the<code className="dnb-code">ProfilePictures</code>
             -folder.
             <br />
             <br /> Find a picture you like, afterwards, put this image in the code by changing the word{" "}
@@ -172,17 +172,17 @@ export var tasks = [
     description: (
       <>
         <p className="dnb-p">
-        To help us find anything suspicious we have made an overview of transactions that are made in the bank. In this assignment you will work on completing this overview. 
+        To help us find anything suspicious we have made an overview of transactions that are made in the bank. In this task you will work on completing this overview. 
         </p>
         <br></br>
         <p className="dnb-p">
           <b>Where on the website?</b> <i>Dashboard</i> under{" "}
-          <i>Logg inn som etterforsker</i>
+          <i>Customer page</i>
         </p>
         <p className="dnb-p">
           <b>Where is the code located?</b>{" "}
           <code className="dnb-code">Dashboard.tsx</code> in{" "}
-          <code className="dnb-code">Assignment2</code>-folder
+          <code className="dnb-code">Task2</code>-folder
         </p>
       </>
     ),
@@ -201,7 +201,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Find code line 29 that says {" "}
+            Find code line 28 that says {" "}
             <code className="dnb-code">
               &lt;H1 style=&#123;&#123; fontSize: "small"
               &#125;&#125;&gt;Dashboard&lt;/H1&gt;
@@ -221,8 +221,8 @@ export var tasks = [
         description: (
           <p className="dnb-p">
             If you hover over the {" "}
-            <i>pie chart </i> on the left with your computer mouse, you can see that is shows {" "}
-            <b>Amount</b> of domestic and foreign transactions. If you do the same to the 
+            <i>pie chart </i> on the left with your mouse, you can see that is shows {" "}
+            <b>Amount</b> of domestic and foreign transactions. If you do the same to the {" "}
              <i>column chart </i> on the right, you instead get question marks. 
             <br />
             Change the code so that it says <b>Amount</b> on the column chart.
@@ -230,11 +230,11 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            On code line 89 you will find a 
+            On code line 88 you will find a {" "}
             <code className="dnb-code">label</code>
             for the pie chart that looks like this:{" "}
             <code className="dnb-code">label: "Amount"</code>. <br />
-            Do you find the same for the column diagram on line 71? 
+            Do you find the same for the column diagram on line 70? 
           </p>
         ),
       },
@@ -252,7 +252,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            The same way that is done on code line 67 and 73-78 for all the other countries, we have to add both a new {" "}
+            The same way that is done on code line 66 and 72-77 for all the other countries, we have to add both a new {" "}
             <code className="dnb-code">labels</code> and new {" "}
             <code className="dnb-code">data</code>.
             <br />
@@ -269,17 +269,17 @@ export var tasks = [
     description: (
       <>
         <p className="dnb-p">
-        Someone has transferred money to Russia! In this assignment we will try to figure out who transferred money to Russia.
+        Someone has transferred money to Russia! In this task we will try to figure out who transferred money to Russia.
         </p>
         <br />
         <p className="dnb-p">
-          <b>Where on the website?</b> <i>Transaksjoner</i> under{" "}
-          <i>Logg inn som etterforsker</i>
+          <b>Where on the website?</b> <i>Transactions</i> under{" "}
+          <i>Employee page</i>
         </p>
         <p className="dnb-p">
           <b>Where is the code located?</b>{" "}
           <code className="dnb-code">Transactions.tsx</code> (Part A) and{" "}
-          <code className="dnb-code">TransactionTable.tsx</code> (the rest of the parts) in the <code className="dnb-code">Assignment3</code>-folder
+          <code className="dnb-code">TransactionTable.tsx</code> (the rest) in the <code className="dnb-code">task3</code>-folder
         </p>
       </>
     ),
@@ -309,7 +309,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Here you first have to find the header in the code. See if you can can find the header on line 33. Add a new line under the element
+            Here you first have to find the title in the code. See if you can can find the title on line 32. Add a new line under the element
             <code className="dnb-code">&lt;P&gt; your text &lt;/P&gt;</code> og
             and fill inn the text between the  
             <code className="dnb-code">&lt;P&gt;</code>'s.
@@ -328,34 +328,34 @@ export var tasks = [
             </p>
             <br />
             <p className="dnb-p">
-            Every transaction is sent between two countries. Our table currently only shows which country the money was sent from. We would like to know where the money is being sent.
+            Every transaction is sent between two countries. Our table currently only shows which country the money was sent from. We would like to know where the money is being sent to.
             </p>
             <br />
             <p className="dnb-p">
             Find the code for the table and add a new column named {" "}
-              <b>Recipients country</b>, in the same way as for {" "}
-              <b>Senders country</b>.
+              <b>Recipient's country</b>, in the same way as for the {" "}
+              <b>Sender's country</b>.
             </p>
             <br />
             <p className="dnb-p">
-            Changes need to be made two different places in the code, as you want both the title and the content of the table to change. Double check to see that the correct content can be found under the correct tittle. 
+            Changes need to be made two different places in the code, as you want both the title and the content of the table to change. Double check to see that the correct content can be found under the correct title. 
             </p>
           </>
         ),
         hint: (
           <p className="dnb-p">
-            Show it is done for <b>Senders country</b>: <br /> Header added on code line 42 like this: {" "}
+            This is how we have done it for the <b>Sender's country</b>: <br /> Header added on line 40 like this: {" "}
             <code className="dnb-code">
-              &lt;Th&gt;Senders country&lt;/Th&gt;
+              &lt;Th&gt;Sender's country&lt;/Th&gt;
             </code>
             . <br />
-            Content added on code line 53 like this:
+            Content added on code line 51 like this:
             <code className="dnb-code">
               &lt;Td&gt;&#123;transaction.from.country&#125;&lt;/Td&gt;
             </code>
             . <br />
             <br />
-            Do the same thing for <b>Recipients country</b>, but swich out the words to be correct for this case.
+            Do the same thing for the <b>Recipient's country</b>, but switch out the words to be correct for this case.
           </p>
         ),
       },
@@ -373,20 +373,20 @@ export var tasks = [
               A function is a code that are going to do a specific task.
             </Tooltip>{" "} named <code className="dnb-code">detectRiskCountry</code> on line 11 in the file{" "}
             <code className="dnb-code">TransactionTable.tsx</code>.<br></br>
-            <b>Change the code</b> so the function returns the word <b>"HIGH"</b>.
+            <b>Change the code</b> so the function returns the word <b>"HIGH"</b>
             if the money was sent to Russia, and <b>"LOW"</b> if it was sent elsewhere.
             <br /> <br />
-            Double check that the <i>Risik</i> changes for each transaction in the table.
+            Double check that the <i>Risk</i> changes for each transaction in the table.
           </p>
         ),
         hint: (
           <p className="dnb-p">
             You first have to switch out <code className="dnb-code">country</code> with{" "}
-            <code className="dnb-code">Russia</code>. Further you have to decide when to return <b>"HIGH"</b>;
+            <code className="dnb-code">Russia</code>. Further you have to decide when to return <b>"HIGH"</b>
             and when to return <b>"LOW"</b> for it to be logically correct.
             It should be {" "}
-            <code className="dnb-code">return "HIGH";</code>; for one and {" "}
-            <code className="dnb-code">return "LOW"; </code>; for the other instead of {" "}
+            <code className="dnb-code">return "HIGH";</code> for one and {" "}
+            <code className="dnb-code">return "LOW"; </code> for the other instead of {" "}
             <code className="dnb-code">return "Unknown"; </code>
             <br />
             <br />
@@ -406,20 +406,20 @@ export var tasks = [
             <br />
             <br />
             Have a look at the function named {" "}
-            <code className="dnb-code">setColorForHighRisk</code> and complete it using the same method as you used in Part C. 
+            <code className="dnb-code">setColorForHighRisk</code> and complete it using the same approach as you used in Part C. 
             <br />
             <br />
-            If the <code className="dnb-code">risk</code> is <b>HIGH</b> return the colour 
-            <code className="dnb-code">red</code> . If it is <b>LOW</b>,
+            If the <code className="dnb-code">risk</code> is <b>HIGH</b> return the colour {" "}
+            <code className="dnb-code">red</code>. If it is <b>LOW</b>,
             return the colour <code className="dnb-code">green</code>.
             <br />
             <br />
-            Does the risk change colour when you do this? ?
+            Does the risk change colour when you do this?
           </p>
         ),
         hint: (
           <p className="dnb-p">
-            Here we have to use <b>if</b> like in assignment C. We switch out {" "}
+            Here we have to use <b>if</b> like in task C. We switch out {" "}
             <code className="dnb-code">country</code> with{" "}
             <code className="dnb-code">risk</code>, and returns{" "}
             <code className="dnb-code">red</code> and{" "}
@@ -438,11 +438,11 @@ export var tasks = [
         description: (
           <>
             <p className="dnb-p">
-              Scroll through the transaction and find the one with the <b>HIGH</b> risk marked with a red colour. 
+              Scroll through the transactions and find the one with the <b>HIGH</b> risk marked with a red colour. 
               Double check that the recipients country is in fact Russia. 
               <br />
               <br />
-              With the risk being high, it is classed as an illegal transaction, and we have to report the sender to the police. Enter the name of the sender in the reporting feature at the top of the assignments. 
+              With the risk being high, it is classified as a suspicious transaction, and we have to report the sender to the police. Enter the name of the sender at the top of the tasks tab. 
             </p>
           </>
         ),
@@ -455,7 +455,7 @@ export var tasks = [
     title: "Extra",
     description: (
       <p className="dnb-p">
-        In this section you will find some extra assignments that are a bit more challenging.       </p>
+        In this section you will find some extra tasks that are a bit more challenging.       </p>
     ),
     subtask: [
       {
@@ -465,28 +465,28 @@ export var tasks = [
         description: (
           <>
             <p className="dnb-p">
-              The <i>Transactions</i> table, under the {" "}
-              <i>Employee page</i>, can currently be filtered on for instance <b>Senders name</b>. 
-              To make it easier to see what transactions are sent to Russia, we would like to be able to filter on the  <b>Recipients country</b>. 
+              The <i>Transactions</i> table under the {" "}
+              <i>Employee page</i> can currently be filtered on, for instance, <b>Sender's name</b>. 
+              To make it easier to see which transactions are sent to Russia, we would like to be able to filter on the  <b>Recipient's country</b>. 
               <br />
               <br />
-              Your task is to implement a way to filter on the <b>Recipients country</b>, 
-              in the same way as is done for <b>Senders country</b>.
+              Your task is to implement a way to filter on the <b>Recipient's country</b>, 
+              in the same way as is done for <b>Sender's country</b>.
               <br />
               <br />
               Have a look in the file <code className="dnb-code">
                 Transactions.tsx
-              </code> in the <code className="dnb-code">Assignment3</code>-folder, find the
-              <code className="dnb-code">Dropdown</code> menu and filter on <b>Recipients country</b>.
+              </code> in the <code className="dnb-code">Task3</code>-folder. Find the
+              <code className="dnb-code">Dropdown</code> menu and filter on <b>Recipient's country</b>.
             </p>
           </>
         ),
         hint: (
           <p className="dnb-p">
-            The functionality for the actual filtering is already implemented, but the drop-down menu is still missing a choice for the
-             <b>Recipients country</b>. Find the {" "}
+            The functionality for the actual filtering is already implemented, but the drop-down menu is still missing a choice for the {" "}
+             <b>Recipient's country</b>. Find the {" "}
             <code className="dnb-code">Dropdown</code> component and add data to it. Have a look at <code className="dnb-code">Parameter</code> 
-            on line 39-43 and see if you can find the missing one and add it to the drop-down menu.
+            {" "} on line 38-42 and see if you can find the missing one and add it to the drop-down menu.
           </p>
         ),
       },
@@ -500,19 +500,15 @@ export var tasks = [
               On the <i>Customer page </i> we have a list over all accounts belonging to this customer. If you click on one of the account names, you will see an overview of all the transactions connected to this account. 
               <br />
               <br />
-              Vi ønsker å også kunne trykke på kontonummeret og komme til samme
-              side som viser oversikt over alle transaksjonene.
-              <br />
-              <br />
-              We would also like to be able to click on the account number and be directed to this same overview. To be able to do this we would have to change the element that contains the account number from 
-              <code className="dnb-code">NumberElement</code>
+              We would also like to be able to click on the account number and be directed to the same overview. To be able to do this we have to change the element that contains the account number from 
+              <code className="dnb-code">NumberElement</code> {" "}
               to a button. Have a look in the {" "}
-              <code className="dnb-code">AccountTable.tsx</code> i{" "}
+              <code className="dnb-code">AccountTable.tsx</code> in the{" "}
               <code className="dnb-code">Extra</code>-folder. Inside here you will find the <code className="dnb-code">getTransactionLink</code>
               function that does this. 
               <br />
               <br />
-              The <code className="dnb-code">getTransactionLink</code>
+              The <code className="dnb-code">getTransactionLink</code> {" "}
               function needs an  <code className="dnb-code">accountIdentifier</code>.
               This could be account name or account number.
               <br />
@@ -526,14 +522,14 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Use <code className="dnb-code">account.number</code>
-            as <code className="dnb-code">accountIdentifier</code> in the function like this:{" "}
+            Use <code className="dnb-code">account.number</code> {" "}
+            as <code className="dnb-code">accountIdentifier</code> {" "} in the function like this:{" "}
             <code className="dnb-code">
               getTransactionsLink(account.number)
             </code>
             . <br /> Remember to remove the{" "}
-            <code className="dnb-code">NumberFormat</code>
-            elementet and add{" "}
+            <code className="dnb-code">NumberFormat</code> {" "}
+            element and add{" "}
             <code className="dnb-code">&#123;&#125;</code> around everything.
           </p>
         ),

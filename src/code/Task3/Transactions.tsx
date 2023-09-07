@@ -16,7 +16,6 @@ export interface TransactionsProps {
   setCurrentSubTab: Function;
 }
 
-/** Transactions returnerer koden som visualiserer transaksjonssiden mellom alle kunder. Logg inn som etterforsker og trykk på fanen hvor det står Transaksjoner for å se resultatet på denne koden */
 export default function Transactions(props: TransactionsProps) {
   const { setCurrentSubTab } = props;
   setCurrentSubTab("Transaksjoner");
@@ -31,7 +30,7 @@ export default function Transactions(props: TransactionsProps) {
     <Section spacing="small" left right style_type="white">
       <div className="TransactionsTab">
         <H1>Overview of all transactions</H1>
-        {/* Assignment 3A */}
+        {/* Task 3A */}
         <Section style_type="white">
           <Section spacing>
             <Dropdown

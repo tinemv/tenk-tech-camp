@@ -7,17 +7,17 @@ export type TransactionTableProps = {
   listOfTransactions: Transaction[];
 };
 
-/** Assignment 3C */
+/** Task 3C */
 export function detectRiskCountry(country: String): String | undefined {
 
-  if (country === "land" ){
+  if (country === "country" ){
     return "Unknown";
   } else {
     return "Unknown";
   }
 }
 
-/** Assignment 3D */
+/** Task 3D */
 function setColorForHighRisk(risk: String): any {
   return "black";
 }
@@ -32,14 +32,14 @@ export const TransactionTable = (props: TransactionTableProps) => {
           maxHeight: "60rem",
         }}
       >
-        {/* Assignment 3: Here you can change the look and the content of the transactions table */}
+        {/* Task 3: Here you can change the look and the content of the transactions table */}
         <Table sticky="css-position">
           <thead>
             <Tr>
               <Th>Sender's name</Th>
               <Th>Sender's country</Th>
               <Th>Recipient's name</Th>
-              {/* Assignment 3B  */}
+              {/* Task 3B  */}
               <Th>Amount</Th>
               <Th>Risk</Th>
             </Tr>
@@ -50,7 +50,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
                 <Td>{transaction.from.name}</Td>
                 <Td>{transaction.from.country}</Td>
                 <Td>{transaction.to.name}</Td>
-                {/*Assignment 3B */}
+                {/*Task 3B */}
                 <Td>
                   <NumberFormat>{transaction.amount}</NumberFormat>
                 </Td>

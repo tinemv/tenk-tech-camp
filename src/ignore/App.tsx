@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Tabs } from "@dnb/eufemia";
 import Welcome from "../code/Intro/Welcome";
-import CustomerPage from "../code/Assignment1/CustomerPage";
+import CustomerPage from "../code/Task1/CustomerPage";
 import { TransactionsPage } from "./codeDump";
 import TaskNavigator from "./TaskNavigator";
 import styled from "styled-components";
