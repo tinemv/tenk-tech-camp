@@ -122,7 +122,7 @@ export var tasks = [
         description: (
           <p className="dnb-p">
             The first thing we want to do is to change the name of the title from {" "}
-            <b>"unknown"</b> to a real name.
+            <b>unknown</b> to a real name.
             <br />
             Find the title in the code and change the name to one of your choosing. 
           </p>
@@ -133,7 +133,7 @@ export var tasks = [
             <code className="dnb-code">
               &lt;H1&gt;Welcome unknown user!&lt;/H1&gt;
             </code>{" "}
-            in line 33 and change <b>"unknown"</b> with a name you choose yourself.
+            in line 33 and change <b>unknown</b> with a name you choose yourself.
           </p>
         ),
       },
@@ -177,7 +177,7 @@ export var tasks = [
         <br></br>
         <p className="dnb-p">
           <b>Where on the website?</b> <i>Dashboard</i> under{" "}
-          <i>Customer page</i>
+          <i>Employee page</i>
         </p>
         <p className="dnb-p">
           <b>Where is the code located?</b>{" "}
@@ -279,7 +279,7 @@ export var tasks = [
         <p className="dnb-p">
           <b>Where is the code located?</b>{" "}
           <code className="dnb-code">Transactions.tsx</code> (Part A) and{" "}
-          <code className="dnb-code">TransactionTable.tsx</code> (the rest) in the <code className="dnb-code">task3</code>-folder
+          <code className="dnb-code">TransactionTable.tsx</code> (the rest) in the <code className="dnb-code">Task3</code>-folder
         </p>
       </>
     ),

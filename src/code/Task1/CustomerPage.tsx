@@ -18,7 +18,7 @@ export interface CustomerPageProps {
   setCurrentTab: Function;
 }
 
-/** CustomerPage er en funksjon som returnerer koden til kundesiden, sett når man logger inn som kunde */
+/** */
 export default function CustomerPage(props: CustomerPageProps) {
   const { setCurrentTab } = props;
   setCurrentTab("Kunde");
