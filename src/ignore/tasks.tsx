@@ -105,7 +105,7 @@ export var tasks = [
         </p>
         <br></br>
         <p className="dnb-p">
-          <b>Where on the website?</b> <i>Logg inn som kunde</i>
+          <b>Where on the website?</b> <i>Customer page</i>
         </p>
         <p className="dnb-p">
           <b>Where is the code located? </b>{" "}
