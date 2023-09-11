@@ -14,7 +14,7 @@ export default function Welcome(props: WelcomeProps) {
     <Section spacing="small" left right="0.25" style_type="white">
       <div className="WelcomeTab">
         {/* Intro Task A */}
-        <H1 style={{ margin: 20, color: "black" }}>Welcome to workshop!</H1>
+        <H1 style={{ margin: 20, color: "black" }}>Welcome to the workshop!</H1>
         {/* Intro Task C */}
         <Section
           style_type="sea-green"

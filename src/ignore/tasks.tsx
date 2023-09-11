@@ -35,7 +35,7 @@ export var tasks = [
         description: (
           <p className="dnb-p">
             Let´s change the title of the front page. Find the place in the code where the title is made by looking for the text{" "}
-            <b>"Welcome to workshop!"</b>. Once you find it, you may change it to something you like. 
+            <b>"Welcome to the workshop!"</b>. Once you find it, you may change it to something you like. 
           </p>
         ),
         hint: (
