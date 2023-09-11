@@ -309,7 +309,7 @@ export var tasks = [
         ),
         hint: (
           <p className="dnb-p">
-            Here you first have to find the title in the code. See if you can can find the title on line 32. Add a new line under the element
+            Here you first have to find the title in the code. See if you can find the title on line 32. Add a new line under the element
             <code className="dnb-code">&lt;P&gt; your text &lt;/P&gt;</code> og
             and fill inn the text between the  
             <code className="dnb-code">&lt;P&gt;</code>'s.
