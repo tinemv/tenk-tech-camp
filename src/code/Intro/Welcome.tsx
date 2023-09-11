@@ -47,7 +47,7 @@ export default function Welcome(props: WelcomeProps) {
         <br />
         <InfoCard
           style={{ fontSize: "large", bottom: "0px" }}
-          text="Do not hesitate to ask us for help or if you have"
+          text="Do not hesitate to ask us for help or if you have any questions"
         ></InfoCard>
       </div>
     </Section>
