@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
 import { Tabs } from "@dnb/eufemia";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
 import Welcome from "../code/Intro/Welcome";
 import CustomerPage from "../code/Task1/CustomerPage";
-import { TransactionsPage } from "./codeDump";
 import TaskNavigator from "./TaskNavigator";
-import styled from "styled-components";
-import { tasks } from "./tasks";
+import { TransactionsPage } from "./codeDump";
+import { tasks_level1 } from "./tasks_level1";
+import { tasks_level2 } from "./tasks_level2";
 
 const FlexWrapper = styled.div`
   @media (min-width: 750px) {
@@ -28,30 +29,57 @@ export default function App() {
     }
     return "Welcome";
   });
-  const [currentTaskTab, setCurrentTaskTab] = useState<number>(() => {
-    if (window.sessionStorage.getItem("currentTaskTab") != null) {
-      return parseInt(window.sessionStorage.getItem("currentTaskTab"));
+  const [currentTaskTabLevel1, setCurrentTaskTabLevel1] = useState(() => {
+    if (window.sessionStorage.getItem("currentTaskTabLevel1") != null) {
+      return parseInt(window.sessionStorage.getItem("currentTaskTabLevel1"));
+    }
+    return 0;
+  });
+  const [currentTaskTabLevel2, setCurrentTaskTabLevel2] = useState(() => {
+    if (window.sessionStorage.getItem("currentTaskTabLevel2") != null) {
+      return parseInt(window.sessionStorage.getItem("currentTaskTabLevel2"));
     }
     return 0;
   });
   const [progressValue, setProgressValue] = useState(0);
-  const [checkedTasks, setCheckedTasks] = useState<boolean[]>(() => {
-    if (window.sessionStorage.getItem("checkedTasks") == null) {
-      return new Array<boolean>(tasks.flatMap((x) => x.subtask).length).fill(
-        false
-      );
+  const [checkedTasksLevel1, setCheckedTasksLevel1] = useState<boolean[]>(
+    () => {
+      if (window.sessionStorage.getItem("checkedTasksLevel1") == null) {
+        return new Array<boolean>(
+          tasks_level1.flatMap((x) => x.subtask).length
+        ).fill(false);
+      }
+      return window.sessionStorage
+        .getItem("checkedTasksLevel1")
+        .split(",")
+        .map((x) => {
+          if (x == "false") {
+            return false;
+          } else {
+            return true;
+          }
+        });
     }
-    return window.sessionStorage
-      .getItem("checkedTasks")
-      .split(",")
-      .map((x) => {
-        if (x == "false") {
-          return false;
-        } else {
-          return true;
-        }
-      });
-  });
+  );
+  const [checkedTasksLevel2, setCheckedTasksLevel2] = useState<boolean[]>(
+    () => {
+      if (window.sessionStorage.getItem("checkedTasksLevel2") == null) {
+        return new Array<boolean>(
+          tasks_level2.flatMap((x) => x.subtask).length
+        ).fill(false);
+      }
+      return window.sessionStorage
+        .getItem("checkedTasksLevel2")
+        .split(",")
+        .map((x) => {
+          if (x == "false") {
+            return false;
+          } else {
+            return true;
+          }
+        });
+    }
+  );
 
   useEffect(() => {
     window.sessionStorage.setItem("currentTab", currentTab.toString());
@@ -88,12 +116,16 @@ export default function App() {
         </LeftArea>
         <RightArea>
           <TaskNavigator
-            currentTab={currentTaskTab}
-            setCurrentTab={setCurrentTaskTab}
             progressValue={progressValue}
             setProgressValue={setProgressValue}
-            checkedTasks={checkedTasks}
-            setCheckedTasks={setCheckedTasks}
+            currentTabLevel1={currentTaskTabLevel1}
+            setCurrentTabLevel1={setCurrentTaskTabLevel1}
+            checkedTasksLevel1={checkedTasksLevel1}
+            setCheckedTasksLevel1={setCheckedTasksLevel1}
+            currentTabLevel2={currentTaskTabLevel2}
+            setCurrentTabLevel2={setCurrentTaskTabLevel2}
+            checkedTasksLevel2={checkedTasksLevel2}
+            setCheckedTasksLevel2={setCheckedTasksLevel2}
           />
         </RightArea>
       </FlexWrapper>
