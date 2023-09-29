@@ -29,13 +29,13 @@ export default function App() {
     }
     return "Welcome";
   });
-  const [currentTaskTabLevel1, setcurrentTaskTabLevel1] = useState(() => {
+  const [currentTaskTabLevel1, setCurrentTaskTabLevel1] = useState(() => {
     if (window.sessionStorage.getItem("currentTaskTabLevel1") != null) {
       return parseInt(window.sessionStorage.getItem("currentTaskTabLevel1"));
     }
     return 0;
   });
-  const [currentTaskTabLevel2, setcurrentTaskTabLevel2] = useState(() => {
+  const [currentTaskTabLevel2, setCurrentTaskTabLevel2] = useState(() => {
     if (window.sessionStorage.getItem("currentTaskTabLevel2") != null) {
       return parseInt(window.sessionStorage.getItem("currentTaskTabLevel2"));
     }
@@ -119,11 +119,11 @@ export default function App() {
             progressValue={progressValue}
             setProgressValue={setProgressValue}
             currentTabLevel1={currentTaskTabLevel1}
-            setCurrentTabLevel1={setcurrentTaskTabLevel1}
+            setCurrentTabLevel1={setCurrentTaskTabLevel1}
             checkedTasksLevel1={checkedTasksLevel1}
             setCheckedTasksLevel1={setCheckedTasksLevel1}
-            currentTabLevel2={currentTaskTabLevel1}
-            setCurrentTabLevel2={setcurrentTaskTabLevel1}
+            currentTabLevel2={currentTaskTabLevel2}
+            setCurrentTabLevel2={setCurrentTaskTabLevel2}
             checkedTasksLevel2={checkedTasksLevel2}
             setCheckedTasksLevel2={setCheckedTasksLevel2}
           />

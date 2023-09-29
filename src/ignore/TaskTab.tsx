@@ -4,99 +4,51 @@ import {
   Dialog,
   Drawer,
   FormRow,
-  Input,
   P,
   Tabs,
   Tag,
 } from "@dnb/eufemia";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Task } from "./TaskNavigator";
 import "./styles.css";
-import { tasks_level1 } from "./tasks_level1";
 
-export interface TaskLevel1Props {
+export interface TaskTabProps {
   currentTab: number;
   setCurrentTab: Function;
   checkedTasks: boolean[];
   setCheckedTasks: Function;
+  checkedTaskString: string;
+  currentTaskString: string;
+  tabId: string;
+  tasks: Task[];
 }
 
-export default function TaskLevel1(props: TaskLevel1Props) {
-  const { currentTab, setCurrentTab, checkedTasks, setCheckedTasks } = props;
-
-  const [inputText, setInputText] = React.useState("");
-  const handleInputText = (event) => {
-    setInputText(event.target.value);
-  };
+export default function TaskTab(props: TaskTabProps) {
+  const {
+    currentTab,
+    setCurrentTab,
+    checkedTasks,
+    setCheckedTasks,
+    checkedTaskString,
+    currentTaskString,
+    tabId,
+    tasks,
+  } = props;
 
   useEffect(() => {
-    window.sessionStorage.setItem(
-      "checkedTasksLevel1",
-      checkedTasks.toString()
-    );
+    window.sessionStorage.setItem(checkedTaskString, checkedTasks.toString());
   }, [checkedTasks]);
 
   useEffect(() => {
-    window.sessionStorage.setItem(
-      "currentTaskTabLevel1",
-      currentTab.toString()
-    );
+    window.sessionStorage.setItem(currentTaskString, currentTab.toString());
   }, [currentTab]);
 
   return (
     <>
-      <FormRow vertical>
-        <Input
-          label="Report the suspicious person here:"
-          type="text"
-          onChange={handleInputText}
-          value={inputText}
-          placeholder="Name of person"
-          stretch
-          style={{ minWidth: "200px" }}
-          suffix={
-            <Dialog
-              triggerAttributes={{
-                text: "Report",
-              }}
-              title={
-                inputText.toLowerCase().split(" ").join("") === "jonasgahrstøre"
-                  ? "Congratulations!"
-                  : "Oooops... try again!"
-              }
-            >
-              {inputText.toLowerCase().split(" ").join("") ===
-              "jonasgahrstøre" ? (
-                <P>
-                  You solved the case and reported the right person to the
-                  police.
-                  <br />
-                  <br />
-                  Jonas Gahr Støre, prime minister of Norway, has transferred
-                  money to Russia to support war in Ukraine.
-                  <br />
-                  <br />
-                  Luckily for us, you were able to use technology to effectivly
-                  track him down so he can be stopped!
-                </P>
-              ) : (
-                <P>
-                  Looks like you have not submitted the correct name.
-                  <br />
-                  <br />
-                  Go back and look through the transactions again to find
-                  someone suspicious.
-                </P>
-              )}
-            </Dialog>
-          }
-        />
-      </FormRow>
-
       <Tabs
         top
-        id="tasks-level1-tab"
-        data={tasks_level1.map((task) => {
+        id={tabId}
+        data={tasks.map((task) => {
           return {
             title: task.title,
             key: task.id,
@@ -109,9 +61,9 @@ export default function TaskLevel1(props: TaskLevel1Props) {
       />
 
       <Drawer.Body>
-        <Tabs.Content id="tasks-level1-tab">
+        <Tabs.Content id={tabId}>
           {({ key }) => {
-            const task: Task = tasks_level1[key];
+            const task: Task = tasks[key];
             return (
               <>
                 <P bottom>{task.description}</P>

@@ -1,9 +1,18 @@
-import { Drawer, FormStatus, Tabs } from "@dnb/eufemia";
-import { ReactNode, useEffect } from "react";
+import {
+  Dialog,
+  Drawer,
+  FormRow,
+  FormStatus,
+  Input,
+  P,
+  Tabs,
+} from "@dnb/eufemia";
+import React, { ReactNode, useEffect } from "react";
 import Progress from "./Progress";
-import TaskLevel1 from "./TaskLevel1";
-import TaskLevel2 from "./TaskLevel2";
+import TaskTab from "./TaskTab";
 import "./styles.css";
+import { tasks_level1 } from "./tasks_level1";
+import { tasks_level2 } from "./tasks_level2";
 
 export interface TaskNavigatorProps {
   progressValue: number;
@@ -44,6 +53,11 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
     checkedTasksLevel2,
     setCheckedTasksLevel2,
   } = props;
+
+  const [inputText, setInputText] = React.useState("");
+  const handleInputText = (event) => {
+    setInputText(event.target.value);
+  };
 
   useEffect(() => {
     setProgressValue(
@@ -89,21 +103,81 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
           {({ key }) => {
             if (key == "level_1") {
               return (
-                <TaskLevel1
-                  currentTab={currentTabLevel1}
-                  setCurrentTab={setCurrentTabLevel1}
-                  checkedTasks={checkedTasksLevel1}
-                  setCheckedTasks={setCheckedTasksLevel1}
-                />
+                <>
+                  <FormRow vertical>
+                    <Input
+                      label="Report the suspicious person here:"
+                      type="text"
+                      onChange={handleInputText}
+                      value={inputText}
+                      placeholder="Name of person"
+                      stretch
+                      style={{ minWidth: "200px" }}
+                      suffix={
+                        <Dialog
+                          triggerAttributes={{
+                            text: "Report",
+                          }}
+                          title={
+                            inputText.toLowerCase().split(" ").join("") ===
+                            "jonasgahrstøre"
+                              ? "Congratulations!"
+                              : "Oooops... try again!"
+                          }
+                        >
+                          {inputText.toLowerCase().split(" ").join("") ===
+                          "jonasgahrstøre" ? (
+                            <P>
+                              You solved the case and reported the right person
+                              to the police.
+                              <br />
+                              <br />
+                              Jonas Gahr Støre, prime minister of Norway, has
+                              transferred money to Russia to support war in
+                              Ukraine.
+                              <br />
+                              <br />
+                              Luckily for us, you were able to use technology to
+                              effectivly track him down so he can be stopped!
+                            </P>
+                          ) : (
+                            <P>
+                              Looks like you have not submitted the correct
+                              name.
+                              <br />
+                              <br />
+                              Go back and look through the transactions again to
+                              find someone suspicious.
+                            </P>
+                          )}
+                        </Dialog>
+                      }
+                    />
+                  </FormRow>
+                  <TaskTab
+                    currentTab={currentTabLevel1}
+                    setCurrentTab={setCurrentTabLevel1}
+                    checkedTasks={checkedTasksLevel1}
+                    setCheckedTasks={setCheckedTasksLevel1}
+                    checkedTaskString="checkedTasksLevel1"
+                    currentTaskString="currentTaskTabLevel1"
+                    tabId="tasks-level1-tab"
+                    tasks={tasks_level1}
+                  />
+                </>
               );
             }
             if (key == "level_2") {
               return (
-                <TaskLevel2
+                <TaskTab
                   currentTab={currentTabLevel2}
                   setCurrentTab={setCurrentTabLevel2}
                   checkedTasks={checkedTasksLevel2}
                   setCheckedTasks={setCheckedTasksLevel2}
+                  checkedTaskString="checkedTasksLevel2"
+                  currentTaskString="currentTaskTabLevel2"
+                  tabId="tasks-level2-tab"
+                  tasks={tasks_level2}
                 />
               );
             }
