@@ -32,7 +32,7 @@ export default function CustomerPage(props: CustomerPageProps) {
             <H1>Welcome unknown user!</H1>
             <Img
               /* Task 1B: Change the picture here */
-              src={michelleObama}
+              src={unknown}
               alt="User Picture"
               width="250rem"
               height="250rem"
