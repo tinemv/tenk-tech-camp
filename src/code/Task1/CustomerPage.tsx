@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import AccountTable from "../Extra/AccountTable";
 import { customer } from "../../data/customer";
 import unknown from "./ProfilePictures/Unknown.png";
-import BTS from "./ProfilePictures/BTS.png";
-import EmmaWatson from "./ProfilePictures/EmmaWatson.png";
-import GirlInRed from "./ProfilePictures/GirlInRed.png";
-import GretaThunberg from "./ProfilePictures/GretaThunberg.png";
-import MarcusMartinus from "./ProfilePictures/MarcusMartinus.png";
-import MillieBobbyBrown from "./ProfilePictures/MillieBobbyBrown.png";
-import TaylorSwift from "./ProfilePictures/TaylorSwift.png";
-import Zendaya from "./ProfilePictures/Zendaya.png";
+import adaLovelace from "./ProfilePictures/AdaLovelace.png";
+import amalClooney from "./ProfilePictures/AmalClooney.jpg";
+import celineDion from "./ProfilePictures/CelineDion.jpg";
+import chimamandaAdichie from "./ProfilePictures/ChimamandaAdichie.jpg";
+import kamalHarris from "./ProfilePictures/KamalaHarris.png";
+import graceHopper from "./ProfilePictures/GraceHopper.jpg";
+import michelleObama from "./ProfilePictures/MichelleObama.jpg"
 import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../../ignore/styles.css";
 import AccountPage from "../../ignore/AccountPage";
@@ -33,7 +32,7 @@ export default function CustomerPage(props: CustomerPageProps) {
             <H1>Welcome unknown user!</H1>
             <Img
               /* Task 1B: Change the picture here */
-              src={unknown}
+              src={michelleObama}
               alt="User Picture"
               width="250rem"
               height="250rem"
