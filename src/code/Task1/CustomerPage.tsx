@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import AccountTable from "../Extra/AccountTable";
 import { customer } from "../../data/customer";
 import unknown from "./ProfilePictures/Unknown.png";
-import adaLovelace from "./ProfilePictures/AdaLovelace.png";
-import amalClooney from "./ProfilePictures/AmalClooney.jpg";
-import celineDion from "./ProfilePictures/CelineDion.jpg";
-import chimamandaAdichie from "./ProfilePictures/ChimamandaAdichie.jpg";
-import kamalHarris from "./ProfilePictures/KamalaHarris.png";
-import graceHopper from "./ProfilePictures/GraceHopper.jpg";
-import michelleObama from "./ProfilePictures/MichelleObama.jpg"
+import AdaLovelace from "./ProfilePictures/AdaLovelace.png";
+import AmalClooney from "./ProfilePictures/AmalClooney.jpg";
+import CelineDion from "./ProfilePictures/CelineDion.jpg";
+import ChimamandaAdichie from "./ProfilePictures/ChimamandaAdichie.jpg";
+import KamalHarris from "./ProfilePictures/KamalaHarris.png";
+import GraceHopper from "./ProfilePictures/GraceHopper.jpg";
+import MichelleObama from "./ProfilePictures/MichelleObama.jpg"
+import TaylorSwift from "./ProfilePictures/TaylorSwift.png";
+import GretaThunberg from "./ProfilePictures/GretaThunberg.png";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../../ignore/styles.css";
 import AccountPage from "../../ignore/AccountPage";
