@@ -13,12 +13,13 @@ export const TransactionTableForAccounts = (props: TransactionTableForAccountsPr
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <Table.ScrollView
         style={{
-          maxHeight: "44rem",
+          maxHeight: "50rem",
+          width: "45rem",
         }}
       >
         <>
           <H2 bottom>Transactions</H2>
-          <Table sticky="css-position">
+          <Table sticky="css-position" >
             <thead>
               <Tr>
               <Th>Date</Th>

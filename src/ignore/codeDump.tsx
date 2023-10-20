@@ -6,7 +6,7 @@ import Transactions from "../code/Task3/Transactions";
 import { Transaction } from "./CustomerModel";
 import { CompanyTransaction } from "./TransactionModel";
 import { Parameter } from "../code/Task3/Transactions";
-import { detectRiskCountry } from "../code/Task3/TransactionTable";
+import { detectRiskCompany } from "../code/Task3/TransactionTable";
 import Dashboard from "../code/Task2/Dashboard";
 
 export function getAllTransactions() {
@@ -81,8 +81,8 @@ export function filterTable(
           .includes(value.toLowerCase().split(" ").join(""))
           ? filteredTransactions.push(transaction)
           : undefined;
-      case Parameter.FROM_COUNTRY:
-        return transaction.from.location
+      case Parameter.FROM_COMPANY:
+        return transaction.from.company
           .toLowerCase()
           .split(" ")
           .join("")
@@ -97,8 +97,8 @@ export function filterTable(
           .includes(value.toLowerCase().split(" ").join(""))
           ? filteredTransactions.push(transaction)
           : undefined;
-      case Parameter.TO_COUNTRY:
-        return transaction.to.location
+      case Parameter.TO_COMPANY:
+        return transaction.to.company
           .toLowerCase()
           .split(" ")
           .join("")
@@ -115,7 +115,7 @@ export function filterTable(
           ? filteredTransactions.push(transaction)
           : undefined;
       case Parameter.RISK:
-        return detectRiskCountry(transaction.to.location)
+        return detectRiskCompany(transaction.to.location)
           .toLowerCase()
           .split(" ")
           .join("")

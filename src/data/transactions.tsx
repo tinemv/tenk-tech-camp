@@ -45,7 +45,7 @@ export var allDNBTransactions = [
     id: "12",
     from: {
       name: "Therese Vinje",
-      company: "Statoil",
+      company: "Equinor",
       location: "Norway",
     },
     to: {
@@ -256,7 +256,7 @@ export var allDNBTransactions = [
     from: {
       name: "Ruby Trey",
       company: "Arla",
-      location: "Danish"
+      location: "Denmark"
     },
     to: {
       name: "Andreas Vister",
@@ -1342,7 +1342,7 @@ export var allDNBTransactions = [
     },
     to: {
       name: "Josefine Melan",
-      company: "Statoil",
+      company: "Equinor",
       location: "Norway"
     },
     amount: 744,
@@ -1356,7 +1356,7 @@ export var allDNBTransactions = [
     },
     to: {
       name: "Josefine Melan",
-      company: "Statoil",
+      company: "Equinor",
       location: "Norway"
     },
     amount: 744,
@@ -1384,7 +1384,7 @@ export var allDNBTransactions = [
     },
     to: {
       name: "Josefine Melan",
-      company: "Statoil",
+      company: "Equinor",
       location: "Norway"
     },
     amount: 7200,

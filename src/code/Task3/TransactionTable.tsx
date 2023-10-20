@@ -8,9 +8,9 @@ export type TransactionTableProps = {
 };
 
 /** Task 3C */
-export function detectRiskCountry(country: String): String | undefined {
+export function detectRiskCompany(company: String): String | undefined {
 
-  if (country === "country" ){
+  if (company === "company" ){
     return "Unknown";
   } else {
     return "Unknown";
@@ -37,7 +37,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
           <thead>
             <Tr>
               <Th>Sender's name</Th>
-              <Th>Sender's country</Th>
+              <Th>Sender's Company</Th>
               <Th>Recipient's name</Th>
               {/* Task 3B  */}
               <Th>Amount</Th>
@@ -47,9 +47,9 @@ export const TransactionTable = (props: TransactionTableProps) => {
           <tbody>
             {listOfTransactions.map((transaction) => (
               <Tr key={transaction.id.toString()}>
+                <Td>{transaction.from.name}</Td>
                 <Td>{transaction.from.company}</Td>
-                <Td>{transaction.from.company}</Td>
-                <Td>{transaction.to.company}</Td>
+                <Td>{transaction.to.name}</Td>
                 {/*Task 3B */}
                 <Td>
                   <NumberFormat>{transaction.amount}</NumberFormat>
@@ -57,11 +57,11 @@ export const TransactionTable = (props: TransactionTableProps) => {
                 <Td
                   style={{
                     color: setColorForHighRisk(
-                      detectRiskCountry(transaction.to.company)
+                      detectRiskCompany(transaction.to.company)
                     ),
                   }}
                 >
-                  {detectRiskCountry(transaction.to.company)}
+                  {detectRiskCompany(transaction.to.company)}
                 </Td>
               </Tr>
             ))}
