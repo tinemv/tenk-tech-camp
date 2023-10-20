@@ -112,7 +112,7 @@ export default function App() {
                 key: "Etterforsker",
               },
               {
-                title: "New Tab",
+                title: "Apply for a job",
                 key: "new_tab",
               },
             ]}

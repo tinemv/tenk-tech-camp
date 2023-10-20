@@ -84,7 +84,8 @@ export var tasks_level2 = [
               <br />
               <br />
               You can also change the name of the tab by changing the{" "}
-              <i>title</i> in the <code className="dnb-code">data</code> section.
+              <i>title</i> in the <code className="dnb-code">data</code>{" "}
+              section.
             </p>
           </>
         ),
@@ -97,7 +98,8 @@ export var tasks_level2 = [
         description: (
           <>
             <p className="dnb-p">
-              Now you will fill the page you created with content. 
+              Now you will fill the page you created with content. You will over
+              the next few parts create this page:{" "}
             </p>
           </>
         ),
