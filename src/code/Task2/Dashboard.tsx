@@ -27,13 +27,13 @@ export default function Dashboard(props: DashboardProps) {
         {/* Task 2A */}
         <H1 style={{ fontSize: "small" }}>Dashboard</H1>
         <div className="chart-container">
-          <div>
+          {/*<div>
             <PieChart
               title={"Domestic vs. international transactions"}
               data={pieChartData}
             />
           </div>
-
+          */}
           <div>
             <BarChart
               title={"Number of transactions sent to a country"}
@@ -82,7 +82,7 @@ const barChartData = {
 };
 
 const pieChartData = {
-  labels: ["Domestic", "International"],
+  labels: ["Norwegian", "International"],
   datasets: [
     {
       label: "Amount",

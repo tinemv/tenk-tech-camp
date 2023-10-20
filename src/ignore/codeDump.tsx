@@ -3,16 +3,17 @@ import { allDNBTransactions } from "../data/transactions";
 import { customer } from "../data/customer";
 import { H1, H2, Section, Tabs, NumberFormat } from "@dnb/eufemia";
 import Transactions from "../code/Task3/Transactions";
-import { Transaction } from "../ignore/Models";
+import { Transaction } from "./CustomerModel";
+import { CompanyTransaction } from "./TransactionModel";
 import { Parameter } from "../code/Task3/Transactions";
 import { detectRiskCountry } from "../code/Task3/TransactionTable";
 import Dashboard from "../code/Task2/Dashboard";
 
 export function getAllTransactions() {
-  const allCustomerTransactions = customer.accounts.flatMap(
-    (account) => account.transactions
-  );
-  return allDNBTransactions.concat(allCustomerTransactions);
+  //const allCustomerTransactions = customer.accounts.flatMap(
+  //  (account) => account.transactions
+  //);
+  return allDNBTransactions //.concat(allCustomerTransactions);
 }
 
 export interface TransactionsPageProps {
@@ -64,8 +65,8 @@ export function TransactionsPage(props: TransactionsPageProps) {
 export function filterTable(
   parameter: Parameter | undefined,
   value: string
-): Transaction[] {
-  const filteredTransactions: Transaction[] = [];
+): CompanyTransaction[] {
+  const filteredTransactions: CompanyTransaction[] = [];
   const allTransactions = getAllTransactions();
   if (value === "") {
     return allTransactions;
@@ -81,7 +82,7 @@ export function filterTable(
           ? filteredTransactions.push(transaction)
           : undefined;
       case Parameter.FROM_COUNTRY:
-        return transaction.from.country
+        return transaction.from.location
           .toLowerCase()
           .split(" ")
           .join("")
@@ -97,7 +98,7 @@ export function filterTable(
           ? filteredTransactions.push(transaction)
           : undefined;
       case Parameter.TO_COUNTRY:
-        return transaction.to.country
+        return transaction.to.location
           .toLowerCase()
           .split(" ")
           .join("")
@@ -114,7 +115,7 @@ export function filterTable(
           ? filteredTransactions.push(transaction)
           : undefined;
       case Parameter.RISK:
-        return detectRiskCountry(transaction.to.country)
+        return detectRiskCountry(transaction.to.location)
           .toLowerCase()
           .split(" ")
           .join("")
@@ -137,7 +138,7 @@ export function sumTransactions() {
 export function countCrossBorderTransactions() {
   var innenlandsCounter = 0;
   getAllTransactions().map((transaction) => {
-    if (transaction.from.country === transaction.to.country) {
+    if (transaction.from.location === transaction.to.location) {
       innenlandsCounter += 1;
     }
   });
@@ -148,7 +149,7 @@ export function countCrossBorderTransactions() {
 export function countTargetCountries(country: String) {
   var counter = 0;
   getAllTransactions().map((transaction) => {
-    if (transaction.to.country === country) {
+    if (transaction.to.location === country) {
       counter += 1;
     }
   });

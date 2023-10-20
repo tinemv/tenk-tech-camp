@@ -1,3 +1,5 @@
+import React from "react";
+
 export var tasks_level2 = [
   {
     id: 0,

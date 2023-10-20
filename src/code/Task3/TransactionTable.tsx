@@ -1,10 +1,10 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Table, Th, Tr, Td, NumberFormat } from "@dnb/eufemia";
-import { Transaction } from "../../ignore/Models";
+import { CompanyTransaction } from "../../ignore/TransactionModel";
 
 export type TransactionTableProps = {
-  listOfTransactions: Transaction[];
+  listOfTransactions: CompanyTransaction[];
 };
 
 /** Task 3C */
@@ -47,9 +47,9 @@ export const TransactionTable = (props: TransactionTableProps) => {
           <tbody>
             {listOfTransactions.map((transaction) => (
               <Tr key={transaction.id.toString()}>
-                <Td>{transaction.from.name}</Td>
-                <Td>{transaction.from.country}</Td>
-                <Td>{transaction.to.name}</Td>
+                <Td>{transaction.from.company}</Td>
+                <Td>{transaction.from.company}</Td>
+                <Td>{transaction.to.company}</Td>
                 {/*Task 3B */}
                 <Td>
                   <NumberFormat>{transaction.amount}</NumberFormat>
@@ -57,11 +57,11 @@ export const TransactionTable = (props: TransactionTableProps) => {
                 <Td
                   style={{
                     color: setColorForHighRisk(
-                      detectRiskCountry(transaction.to.country)
+                      detectRiskCountry(transaction.to.company)
                     ),
                   }}
                 >
-                  {detectRiskCountry(transaction.to.country)}
+                  {detectRiskCountry(transaction.to.company)}
                 </Td>
               </Tr>
             ))}
