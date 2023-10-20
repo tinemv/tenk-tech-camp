@@ -106,6 +106,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                 <>
                   <FormRow vertical>
                     <Input
+                      bottom
                       label="Report the suspicious person here:"
                       type="text"
                       onChange={handleInputText}

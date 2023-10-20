@@ -58,36 +58,35 @@ export var tasks_level2 = [
         name: "Part A",
         level: "MEDIUM",
         description: (
-          <>
-            <p className="dnb-p">
-              First you need to create a new tab after the <i>Employee page</i>.
-              Go to the file <code className="dnb-code">App.tsx</code> in the{" "}
-              <code className="dnb-code">Ignore</code>-folder. Then find the{" "}
-              <Anchor
-                href="https://eufemia.dnb.no/uilib/components/tabs/"
-                target="_blank"
-              >
-                Tabs
-              </Anchor>
-              -element on line 93. Under <code className="dnb-code">data</code>{" "}
-              you can see we have four different elements. Three of them are
-              already exsisting pages. The fourth here is the one you need to
-              add. To add it, you need to find{" "}
-              <code className="dnb-code">Tabs.Content</code>, which is where we
-              add content to the tabs. We check here against the keys created in
-              the <code className="dnb-code">data</code> section mentioned
-              above. Add a new check for the key for the new tab, and return the
-              new page:
-              <code className="dnb-code">
-                &lt;NewTab setCurrentTab=&#123;setCurrentTab&#125;/&gt;{" "}
-              </code>
-              <br />
-              <br />
-              You can also change the name of the tab by changing the{" "}
-              <i>title</i> in the <code className="dnb-code">data</code>{" "}
-              section.
-            </p>
-          </>
+          <p>
+            First you need to create a new tab after the <i>Employee page</i>.
+            Go to the file <code className="dnb-code">App.tsx</code> in the{" "}
+            <code className="dnb-code">Ignore</code>-folder. Then find the{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/components/tabs/"
+              target="_blank"
+            >
+              Tabs
+            </Anchor>
+            -element on line 93. Under <code className="dnb-code">data</code>{" "}
+            you can see we have four different elements. Three of them are
+            already exsisting pages. The fourth here is the one you need to add.
+            To add it, you need to find{" "}
+            <code className="dnb-code">Tabs.Content</code>, which is where we
+            add content to the tabs. We check here against the keys created in
+            the <code className="dnb-code">data</code> section mentioned above.
+            Add a new check for the key for the new tab, and return the new
+            page:
+            <code className="dnb-code">
+              &lt;NewTab setCurrentTab=&#123;setCurrentTab&#125;/&gt;{" "}
+            </code>
+            <br />
+            <br />
+            You can also change the name of the tab by changing the <i>
+              title
+            </i>{" "}
+            in the <code className="dnb-code">data</code> section.
+          </p>
         ),
         hint: <></>,
       },

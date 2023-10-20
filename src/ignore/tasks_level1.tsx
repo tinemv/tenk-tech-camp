@@ -497,7 +497,7 @@ export var tasks_level1 = [
             </p>
           </>
         ),
-        hint: <></>,
+        hint: undefined,
       },
     ],
   },
