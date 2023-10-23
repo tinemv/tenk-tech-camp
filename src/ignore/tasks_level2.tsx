@@ -44,12 +44,13 @@ export var tasks_level2 = [
           There you can see the list of accounts and the associated transactions
           that are displayed in the Accounts-table on the Customer page. The
           file
-          <code className="dnb-code">Models.tsx</code> describes the database
-          models that the data follows.
+          <code className="dnb-code">Models.tsx</code> describes the data
+          models, deciding how the data is structured in our database.
           <br />
           <br />
-          Try to edit the data by editing the name of one of the accounts in the
-          file and see what happens on the page.
+          Try to edit the data by editing the name of one of the accounts in{" "}
+          <code className="dnb-code">customer.tsx</code> and see what happens on
+          the page.
         </p>
         <br />
         <p className="dnb-p">
@@ -71,14 +72,15 @@ export var tasks_level2 = [
         level: "EASY",
         description: (
           <p className="dnb-p">
-            First we want to add another account to the customer displayed in
-            the bank. On the same format as the other ones, add another account
-            in the file. The new account can for instance be BSU2.
+            First, we want to add another account to the customer in the bank.
+            The accounts are displayed in the Accounts table. On the
+            same format as the other ones, add another account in the database (file). The
+            new account can for instance be BSU 2.
             <br />
             <br />
             Pay attention to the format, all the signs and to the accounts' and
-            transaction' ID's. You have to identify what is the variable names
-            and what is the conten. Make sure the new account is displayed in
+            transactions' ID's. You have to identify what is the variable names
+            and what is the data. Make sure the new account is displayed in
             the table when you are finished.
           </p>
         ),
@@ -143,7 +145,7 @@ export var tasks_level2 = [
             -file (Typescript) file in the same folder as
             <code className="dnb-code">customer.tsx</code> called{" "}
             <code className="dnb-code">funds.tsx</code>. The file is a new
-            database in our online bank and should contain a list of a customers
+            database in our online bank and should contain a list of a customer's
             funds. Create a new model in{" "}
             <code className="dnb-code">Models.tsx</code> and choose how to
             structure it. Create a new table under the account table that
