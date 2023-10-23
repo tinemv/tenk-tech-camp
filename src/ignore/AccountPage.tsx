@@ -1,6 +1,6 @@
 import React from "react";
 import { Breadcrumb, H1, H2, H3, NumberFormat, Section } from "@dnb/eufemia";
-import { Account, Transaction } from "./Models";
+import { Account, Transaction } from "../data/Models";
 import { transfer_to, pay_from } from "@dnb/eufemia/icons";
 import { TransactionTableForAccounts } from "./TransactionTableForAccounts";
 
