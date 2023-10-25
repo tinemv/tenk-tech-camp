@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Welcome from "../code/Intro/Welcome";
 import CustomerPage from "../code/Task1/CustomerPage";
-import { NewTab } from "../code/Task7/NewTab";
+import { Application } from "../code/Task7/Application";
 import TaskNavigator from "./TaskNavigator";
 import { TransactionsPage } from "./codeDump";
 import { tasks_level1 } from "./tasks_level1";
@@ -143,7 +143,7 @@ export default function App() {
           } else if (key == "Etterforsker") {
             return <TransactionsPage setCurrentTab={setCurrentTab} />;
           } else if (key == "new_tab") {
-            return <NewTab setCurrentTab={setCurrentTab} />;
+            return <Application setCurrentTab={setCurrentTab} />;
           }
         }}
       </Tabs.Content>

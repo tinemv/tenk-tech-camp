@@ -47,7 +47,7 @@ export var tasks_level2 = [
         </p>
         <p className="dnb-p">
           <b>Where is the code located?</b>{" "}
-          <code className="dnb-code">NewTab</code> in{" "}
+          <code className="dnb-code">Application</code> in{" "}
           <code className="dnb-code">Task7</code>-folder
         </p>
       </>
@@ -78,7 +78,7 @@ export var tasks_level2 = [
             Add a new check for the key for the new tab, and return the new
             page:
             <code className="dnb-code">
-              &lt;NewTab setCurrentTab=&#123;setCurrentTab&#125;/&gt;{" "}
+              &lt;Application setCurrentTab=&#123;setCurrentTab&#125;/&gt;{" "}
             </code>
             <br />
             <br />
