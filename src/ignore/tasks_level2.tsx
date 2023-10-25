@@ -1,4 +1,4 @@
-import { Anchor } from "@dnb/eufemia";
+import { Anchor, P } from "@dnb/eufemia";
 
 export var tasks_level2 = [
   {
@@ -58,7 +58,7 @@ export var tasks_level2 = [
         name: "Part A",
         level: "MEDIUM",
         description: (
-          <p>
+          <P>
             First you need to create a new tab after the <i>Employee page</i>.
             Go to the file <code className="dnb-code">App.tsx</code> in the{" "}
             <code className="dnb-code">Ignore</code>-folder. Then find the{" "}
@@ -86,7 +86,7 @@ export var tasks_level2 = [
               title
             </i>{" "}
             in the <code className="dnb-code">data</code> section.
-          </p>
+          </P>
         ),
         hint: <></>,
       },

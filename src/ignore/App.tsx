@@ -30,6 +30,12 @@ export default function App() {
     }
     return "Welcome";
   });
+  const [currentTaskLevel, setCurrentTaskLevel] = useState<string>(() => {
+    if (window.sessionStorage.getItem("currentTaskLevel") != null) {
+      return window.sessionStorage.getItem("currentTaskLevel");
+    }
+    return "level_1";
+  });
   const [currentTaskTabLevel1, setCurrentTaskTabLevel1] = useState(() => {
     if (window.sessionStorage.getItem("currentTaskTabLevel1") != null) {
       return parseInt(window.sessionStorage.getItem("currentTaskTabLevel1"));
@@ -123,6 +129,8 @@ export default function App() {
           <TaskNavigator
             progressValue={progressValue}
             setProgressValue={setProgressValue}
+            currentTaskLevel={currentTaskLevel}
+            setCurrentTaskLevel={setCurrentTaskLevel}
             currentTabLevel1={currentTaskTabLevel1}
             setCurrentTabLevel1={setCurrentTaskTabLevel1}
             checkedTasksLevel1={checkedTasksLevel1}

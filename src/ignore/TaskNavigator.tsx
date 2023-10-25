@@ -17,6 +17,8 @@ import { tasks_level2 } from "./tasks_level2";
 export interface TaskNavigatorProps {
   progressValue: number;
   setProgressValue: Function;
+  currentTaskLevel: string;
+  setCurrentTaskLevel: Function;
   currentTabLevel1: number;
   setCurrentTabLevel1: Function;
   checkedTasksLevel1: boolean[];
@@ -44,6 +46,8 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
   const {
     progressValue,
     setProgressValue,
+    currentTaskLevel,
+    setCurrentTaskLevel,
     currentTabLevel1,
     setCurrentTabLevel1,
     checkedTasksLevel1,
@@ -67,6 +71,10 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         (checkedTasksLevel1.length + checkedTasksLevel2.length)
     );
   }, [checkedTasksLevel1, checkedTasksLevel2]);
+
+  useEffect(() => {
+    window.sessionStorage.setItem("currentTaskLevel", currentTaskLevel);
+  }, [currentTaskLevel]);
 
   return (
     <Drawer
@@ -96,6 +104,10 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
               key: "level_2",
             },
           ]}
+          selected_key={currentTaskLevel}
+          on_change={({ key }) => {
+            setCurrentTaskLevel(key);
+          }}
         />
       </Drawer.Header>
       <Drawer.Body>
