@@ -107,9 +107,9 @@ export default function TaskTab(props: TaskTabProps) {
                       </Accordion.Header>
                       <Accordion.Content>
                         <FormRow direction="vertical">
-                          <p className="line-height: 2.5rem">
+                          <P style={{ lineHeight: "1.75rem" }}>
                             {sub.description}
-                          </p>
+                          </P>
                           {sub.hint != undefined ? (
                             <FormRow top bottom direction="horizontal">
                               <Dialog
