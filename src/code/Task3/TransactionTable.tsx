@@ -1,7 +1,7 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Table, Th, Tr, Td, NumberFormat } from "@dnb/eufemia";
-import { Transaction } from "../../ignore/Models";
+import { Transaction } from "../../data/Models";
 
 export type TransactionTableProps = {
   listOfTransactions: Transaction[];
@@ -9,8 +9,7 @@ export type TransactionTableProps = {
 
 /** Task 3C */
 export function detectRiskCountry(country: String): String | undefined {
-
-  if (country === "country" ){
+  if (country === "country") {
     return "Unknown";
   } else {
     return "Unknown";

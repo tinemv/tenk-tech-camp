@@ -3,7 +3,7 @@ import { allDNBTransactions } from "../data/transactions";
 import { customer } from "../data/customer";
 import { H1, H2, Section, Tabs, NumberFormat } from "@dnb/eufemia";
 import Transactions from "../code/Task3/Transactions";
-import { Transaction } from "../ignore/Models";
+import { Transaction } from "../data/Models";
 import { Parameter } from "../code/Task3/Transactions";
 import { detectRiskCountry } from "../code/Task3/TransactionTable";
 import Dashboard from "../code/Task2/Dashboard";
