@@ -118,7 +118,9 @@ export default function TaskTab(props: TaskTabProps) {
                                 }}
                                 title={"Hint " + sub.name}
                               >
-                                <P>{sub.hint}</P>
+                                <P style={{ lineHeight: "1.75rem" }}>
+                                  {sub.hint}
+                                </P>
                               </Dialog>
                             </FormRow>
                           ) : (

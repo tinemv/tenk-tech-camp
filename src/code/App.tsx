@@ -1,13 +1,13 @@
 import { Tabs } from "@dnb/eufemia";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Welcome from "../code/Intro/Welcome";
-import CustomerPage from "../code/Task1/CustomerPage";
-import { Application } from "../code/Task7/Application";
-import TaskNavigator from "./TaskNavigator";
-import { TransactionsPage } from "./codeDump";
-import { tasks_level1 } from "./tasks_level1";
-import { tasks_level2 } from "./tasks_level2";
+import TaskNavigator from "../ignore/TaskNavigator";
+import { TransactionsPage } from "../ignore/codeDump";
+import { tasks_level1 } from "../ignore/tasks_level1";
+import { tasks_level2 } from "../ignore/tasks_level2";
+import Welcome from "./Intro/Welcome";
+import CustomerPage from "./Task1/CustomerPage";
+import { Application } from "./Task7/Application";
 
 const FlexWrapper = styled.div`
   @media (min-width: 750px) {
