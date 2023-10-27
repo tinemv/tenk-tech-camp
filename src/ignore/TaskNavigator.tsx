@@ -1,31 +1,35 @@
-import React, { ReactNode, useEffect } from "react";
 import {
-  Drawer,
-  P,
-  FormStatus,
-  Tabs,
-  Checkbox,
-  FormRow,
   Dialog,
-  Tag,
-  Accordion,
+  Drawer,
+  FormRow,
+  FormStatus,
   Input,
-  Section,
+  P,
+  Tabs,
 } from "@dnb/eufemia";
-import { tasks } from "./tasks";
+import React, { ReactNode, useEffect } from "react";
 import Progress from "./Progress";
+import TaskTab from "./TaskTab";
 import "./styles.css";
+import { tasks_level1 } from "./tasks_level1";
+import { tasks_level2 } from "./tasks_level2";
 
 export interface TaskNavigatorProps {
-  currentTab: number;
-  setCurrentTab: Function;
   progressValue: number;
   setProgressValue: Function;
-  checkedTasks: boolean[];
-  setCheckedTasks: Function;
+  currentTaskLevel: string;
+  setCurrentTaskLevel: Function;
+  currentTabLevel1: number;
+  setCurrentTabLevel1: Function;
+  checkedTasksLevel1: boolean[];
+  setCheckedTasksLevel1: Function;
+  currentTabLevel2: number;
+  setCurrentTabLevel2: Function;
+  checkedTasksLevel2: boolean[];
+  setCheckedTasksLevel2: Function;
 }
 
-interface Task {
+export interface Task {
   id: number;
   title: String;
   description: ReactNode;
@@ -40,12 +44,18 @@ interface Task {
 
 export default function TaskNavigator(props: TaskNavigatorProps) {
   const {
-    currentTab,
-    setCurrentTab,
     progressValue,
     setProgressValue,
-    checkedTasks,
-    setCheckedTasks,
+    currentTaskLevel,
+    setCurrentTaskLevel,
+    currentTabLevel1,
+    setCurrentTabLevel1,
+    checkedTasksLevel1,
+    setCheckedTasksLevel1,
+    currentTabLevel2,
+    setCurrentTabLevel2,
+    checkedTasksLevel2,
+    setCheckedTasksLevel2,
   } = props;
 
   const [inputText, setInputText] = React.useState("");
@@ -55,167 +65,135 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
 
   useEffect(() => {
     setProgressValue(
-      (checkedTasks.filter((x) => x == true).length * 100) / checkedTasks.length
+      ((checkedTasksLevel1.filter((x) => x == true).length +
+        checkedTasksLevel2.filter((x) => x == true).length) *
+        100) /
+        (checkedTasksLevel1.length + checkedTasksLevel2.length)
     );
-    window.sessionStorage.setItem("checkedTasks", checkedTasks.toString());
-  }, [checkedTasks]);
+  }, [checkedTasksLevel1, checkedTasksLevel2]);
 
   useEffect(() => {
-    window.sessionStorage.setItem("currentTaskTab", currentTab.toString());
-  }, [currentTab]);
+    window.sessionStorage.setItem("currentTaskLevel", currentTaskLevel);
+  }, [currentTaskLevel]);
 
   return (
     <Drawer
-      title="Oppgaver"
+      title="Tasks"
       space
-      triggerAttributes={{ text: "Oppgaver", variant: "secondary" }}
+      triggerAttributes={{ text: "Tasks", variant: "secondary" }}
     >
       <Drawer.Header>
         <FormStatus state="info">
           <p className="dnb-p">
-            Alle filene vi skal jobbe i ligger i{" "}
-            <code className="dnb-code">code</code>-mappa som ligger i{" "}
-            <code className="dnb-code">src</code>-mappa
+            All files needed for the tasks are located in the{" "}
+            <code className="dnb-code">src/code</code>folder
           </p>
         </FormStatus>
+
         <Progress progressValue={progressValue} />
 
-        <Section spacing="small" top="x-small">
-          <FormRow vertical>
-            <Input
-              space
-              label="Meld inn den kriminelle til politiet her:"
-              type="text"
-              onChange={handleInputText}
-              value={inputText}
-              placeholder="Navn på kriminell"
-              stretch
-              style={{ minWidth: "200px" }}
-              suffix={
-                <Dialog
-                  triggerAttributes={{
-                    text: "Meld inn",
-                  }}
-                  title={
-                    inputText.toLowerCase().split(" ").join("") ===
-                    "jonasgahrstøre"
-                      ? "Gratulerer!"
-                      : "Prøv igjen!"
-                  }
-                >
-                  {inputText.toLowerCase().split(" ").join("") ===
-                  "jonasgahrstøre" ? (
-                    <P>
-                      Du har løst saken!
-                      <br />
-                      <br />
-                      Jonas Gahr Støre, statsministeren i Norge, har ulovlig
-                      overført penger til Russland. Heldigvis klarte du å
-                      oppdage det og anmelde det til politiet.
-                      <br />
-                      <br />
-                      Bra jobba og takk for din hjelp!
-                    </P>
-                  ) : (
-                    <P>
-                      Det ser ikke ut som navnet du har skrevet inn er helt
-                      riktig.
-                      <br />
-                      <br />
-                      Her må du nok se gjennom transaksjonene på nytt for å
-                      finne riktig person å anmelde.
-                    </P>
-                  )}
-                </Dialog>
-              }
-            />
-          </FormRow>
-        </Section>
-
         <Tabs
-          id="tasks-tab"
-          data={tasks.map((task) => {
-            return {
-              title: task.title,
-              key: task.id,
-            };
-          })}
-          selected_key={currentTab}
+          id="task-navigator"
+          data={[
+            {
+              title: "Level 1",
+              key: "level_1",
+            },
+            {
+              title: "Level 2",
+              key: "level_2",
+            },
+          ]}
+          selected_key={currentTaskLevel}
           on_change={({ key }) => {
-            setCurrentTab(key);
+            setCurrentTaskLevel(key);
           }}
         />
       </Drawer.Header>
       <Drawer.Body>
-        <Tabs.Content id="tasks-tab">
+        <Tabs.Content id="task-navigator">
           {({ key }) => {
-            const task: Task = tasks[key];
-            return (
-              <>
-                <P bottom>{task.description}</P>
-                {task.subtask.map((sub) => (
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      minWidth: "370px",
-                      justifyContent: "flex-start",
-                      alignItems: "baseline",
-                      marginBottom: "1rem",
-                    }}
-                  >
-                    <Checkbox
-                      style={{ flexShrink: 0 }}
-                      right="large"
-                      title="Kryss av når du er ferdig med oppgaven"
-                      on_change={({ checked }) => {
-                        setCheckedTasks(
-                          checkedTasks.map((task: any, i: number) => {
-                            if (i == sub.id) {
-                              return (task = checked);
-                            } else {
-                              return (task = task);
-                            }
-                          })
-                        );
-                      }}
-                      checked={checkedTasks[sub.id]}
-                    />
-                    <Accordion
-                      style={{ flexShrink: 1 }}
-                      id={sub.id.toString()}
-                      remember_state
-                      left_component={
-                        <Tag text={sub.level} className={"tag-" + sub.level} />
-                      }
-                    >
-                      <Accordion.Header>
-                        <div>{sub.name}</div>
-                      </Accordion.Header>
-                      <Accordion.Content>
-                        <FormRow direction="vertical">
-                          <P>{sub.description}</P>
-                          {sub.id !== 12 ? (
-                            <FormRow top bottom direction="horizontal">
-                              <Dialog
-                                triggerAttributes={{
-                                  text: "Hint",
-                                }}
-                                title={"Hint " + sub.name}
-                              >
-                                <P>{sub.hint}</P>
-                              </Dialog>
-                            </FormRow>
+            if (key == "level_1") {
+              return (
+                <>
+                  <FormRow vertical>
+                    <Input
+                      bottom
+                      label="Report the suspicious person here:"
+                      type="text"
+                      onChange={handleInputText}
+                      value={inputText}
+                      placeholder="Name of person"
+                      stretch
+                      style={{ minWidth: "200px" }}
+                      suffix={
+                        <Dialog
+                          triggerAttributes={{
+                            text: "Report",
+                          }}
+                          title={
+                            inputText.toLowerCase().split(" ").join("") ===
+                            "jonasgahrstøre"
+                              ? "Congratulations!"
+                              : "Oooops... try again!"
+                          }
+                        >
+                          {inputText.toLowerCase().split(" ").join("") ===
+                          "jonasgahrstøre" ? (
+                            <P>
+                              You solved the case and reported the right person
+                              to the police.
+                              <br />
+                              <br />
+                              Jonas Gahr Støre, prime minister of Norway, has
+                              transferred money to Russia to support war in
+                              Ukraine.
+                              <br />
+                              <br />
+                              Luckily for us, you were able to use technology to
+                              effectivly track him down so he can be stopped!
+                            </P>
                           ) : (
-                            <></>
+                            <P>
+                              Looks like you have not submitted the correct
+                              name.
+                              <br />
+                              <br />
+                              Go back and look through the transactions again to
+                              find someone suspicious.
+                            </P>
                           )}
-                        </FormRow>
-                      </Accordion.Content>
-                    </Accordion>
-                  </div>
-                ))}
-              </>
-            );
+                        </Dialog>
+                      }
+                    />
+                  </FormRow>
+                  <TaskTab
+                    currentTab={currentTabLevel1}
+                    setCurrentTab={setCurrentTabLevel1}
+                    checkedTasks={checkedTasksLevel1}
+                    setCheckedTasks={setCheckedTasksLevel1}
+                    checkedTaskString="checkedTasksLevel1"
+                    currentTaskString="currentTaskTabLevel1"
+                    tabId="tasks-level1-tab"
+                    tasks={tasks_level1}
+                  />
+                </>
+              );
+            }
+            if (key == "level_2") {
+              return (
+                <TaskTab
+                  currentTab={currentTabLevel2}
+                  setCurrentTab={setCurrentTabLevel2}
+                  checkedTasks={checkedTasksLevel2}
+                  setCheckedTasks={setCheckedTasksLevel2}
+                  checkedTaskString="checkedTasksLevel2"
+                  currentTaskString="currentTaskTabLevel2"
+                  tabId="tasks-level2-tab"
+                  tasks={tasks_level2}
+                />
+              );
+            }
           }}
         </Tabs.Content>
       </Drawer.Body>

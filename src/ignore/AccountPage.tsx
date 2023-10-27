@@ -1,6 +1,6 @@
 import React from "react";
 import { Breadcrumb, H1, H2, H3, NumberFormat, Section } from "@dnb/eufemia";
-import { Account, Transaction } from "./Models";
+import { Account, Transaction } from "../data/Models";
 import { transfer_to, pay_from } from "@dnb/eufemia/icons";
 import { TransactionTableForAccounts } from "./TransactionTableForAccounts";
 
@@ -9,7 +9,6 @@ export type AccountProps = {
   setAccountClicked: Function;
 };
 
-{/**findBalance er en variabel som tilsier hvor mye penger som er på kontoen */}
 export const findBalance = (transactions: Transaction[]) => {
   return transactions.reduce(
     (totalBalance, transaction) => totalBalance + transaction.amount,
@@ -17,7 +16,6 @@ export const findBalance = (transactions: Transaction[]) => {
   );
 };
 
-{/**AccountPage er en funksjon vi bruker til å presentere selve kontosiden (du kan se kontosiden hvis du logger inn som kunde og trykker på et av kontonavnene) */}
 export default function AccountPage(props: AccountProps) {
   const { account, setAccountClicked } = props;
   if (account == undefined) {
@@ -28,7 +26,7 @@ export default function AccountPage(props: AccountProps) {
     <Section spacing top bottom style_type="white">
       <Breadcrumb spacing>
         <Breadcrumb.Item
-          text="Kontoer"
+          text="Accounts"
           variant="previous"
           onClick={() => {
             setAccountClicked("Customer");
@@ -36,7 +34,7 @@ export default function AccountPage(props: AccountProps) {
         />
       </Breadcrumb>
       <H1>{account.name}</H1>
-      <H3 style={{ fontWeight: "normal" }}>Saldo</H3>
+      <H3 style={{ fontWeight: "normal" }}>Balance</H3>
       <H2>
         <NumberFormat currency>
           {findBalance(account.transactions)}

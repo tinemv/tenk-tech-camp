@@ -1,29 +1,26 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Table, Th, Tr, Td, NumberFormat } from "@dnb/eufemia";
-import { Transaction } from "../../ignore/Models";
+import { Transaction } from "../../data/Models";
 
 export type TransactionTableProps = {
   listOfTransactions: Transaction[];
 };
 
-/** OPPGAVE 3C: */
+/** Task 3C */
 export function detectRiskCountry(country: String): String | undefined {
-
-  if (country === "land" ){
-    return "Ukjent";
+  if (country === "country") {
+    return "Unknown";
   } else {
-    return "Ukjent";
+    return "Unknown";
   }
 }
 
-/** OPPGAVE 3D */
+/** Task 3D */
 function setColorForHighRisk(risk: String): any {
   return "black";
 }
 
-/** Transactions returnerer koden som visualiserer transaksjonstabellen mellom alle kunder. 
- * Logg inn som etterforsker og trykk på fanen hvor det står Transaksjoner for å se resultatet på denne koden */
 export const TransactionTable = (props: TransactionTableProps) => {
   const { listOfTransactions } = props;
 
@@ -34,16 +31,16 @@ export const TransactionTable = (props: TransactionTableProps) => {
           maxHeight: "60rem",
         }}
       >
-        {/* Oppgave 3: Her kan du endre på utseendet og innholdet til transaksjoner-tabellen */}
+        {/* Task 3: Here you can change the look and the content of the transactions table */}
         <Table sticky="css-position">
           <thead>
             <Tr>
-              <Th>Avsenders navn</Th>
-              <Th>Avsenders land</Th>
-              <Th>Mottakers navn</Th>
-              {/*Oppgave 3B: legg til overskrift her */}
-              <Th>Beløp</Th>
-              <Th>Risiko</Th>
+              <Th>Sender's name</Th>
+              <Th>Sender's country</Th>
+              <Th>Recipient's name</Th>
+              {/* Task 3B  */}
+              <Th>Amount</Th>
+              <Th>Risk</Th>
             </Tr>
           </thead>
           <tbody>
@@ -52,7 +49,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
                 <Td>{transaction.from.name}</Td>
                 <Td>{transaction.from.country}</Td>
                 <Td>{transaction.to.name}</Td>
-                {/*Oppgave 3B: legg til innhold her */}
+                {/*Task 3B */}
                 <Td>
                   <NumberFormat>{transaction.amount}</NumberFormat>
                 </Td>

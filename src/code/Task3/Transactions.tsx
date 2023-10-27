@@ -4,19 +4,18 @@ import { TransactionTable } from "./TransactionTable";
 import { filterTable } from "../../ignore/codeDump";
 
 export enum Parameter {
-  FROM_NAME = "Avsenders navn",
-  FROM_COUNTRY = "Avsenders land",
-  TO_NAME = "Mottakers navn",
-  TO_COUNTRY = "Mottakers land",
-  AMOUNT = "Beløp",
-  RISK = 'Risiko'
+  FROM_NAME = "Sender's name",
+  FROM_COUNTRY = "Sender's country",
+  TO_NAME = "Recipient's name",
+  TO_COUNTRY = "Recipient's country",
+  AMOUNT = "Amount",
+  RISK = 'Risk'
 }
 
 export interface TransactionsProps {
   setCurrentSubTab: Function;
 }
 
-/** Transactions returnerer koden som visualiserer transaksjonssiden mellom alle kunder. Logg inn som etterforsker og trykk på fanen hvor det står Transaksjoner for å se resultatet på denne koden */
 export default function Transactions(props: TransactionsProps) {
   const { setCurrentSubTab } = props;
   setCurrentSubTab("Transaksjoner");
@@ -30,8 +29,8 @@ export default function Transactions(props: TransactionsProps) {
   return (
     <Section spacing="small" left right style_type="white">
       <div className="TransactionsTab">
-        <H1>Oversikt over alle transaksjoner i DNB</H1>
-        {/* Oppgave 3A: legg til et paragraf her! */}
+        <H1>Overview of all transactions</H1>
+        {/* Task 3A */}
         <Section style_type="white">
           <Section spacing>
             <Dropdown
@@ -42,8 +41,8 @@ export default function Transactions(props: TransactionsProps) {
                 Parameter.AMOUNT,
                 Parameter.RISK,
               ]}
-              label="Parameter som skal filtreres på:"
-              title="Velg parameter"
+              label="Parameter to be filtered on:"
+              title="Choose parameter"
               on_change={({ data }) => setInputParameter(data)}
             />
             <Input
