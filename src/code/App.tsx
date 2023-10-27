@@ -7,7 +7,6 @@ import { tasks_level1 } from "../ignore/tasks_level1";
 import { tasks_level2 } from "../ignore/tasks_level2";
 import Welcome from "./Intro/Welcome";
 import CustomerPage from "./Task1/CustomerPage";
-import { Application } from "./Task7/Application";
 
 const FlexWrapper = styled.div`
   @media (min-width: 750px) {
@@ -117,10 +116,6 @@ export default function App() {
                 title: "Employee page",
                 key: "Etterforsker",
               },
-              {
-                title: "Apply for a job",
-                key: "new_tab",
-              },
             ]}
             selected_key={currentTab}
           />
@@ -150,8 +145,6 @@ export default function App() {
             return <CustomerPage setCurrentTab={setCurrentTab} />;
           } else if (key == "Etterforsker") {
             return <TransactionsPage setCurrentTab={setCurrentTab} />;
-          } else if (key == "new_tab") {
-            return <Application setCurrentTab={setCurrentTab} />;
           }
         }}
       </Tabs.Content>
