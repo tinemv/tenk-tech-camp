@@ -46,7 +46,6 @@ export default function TaskTab(props: TaskTabProps) {
   return (
     <>
       <Tabs
-        top
         id={tabId}
         data={tasks.map((task) => {
           return {
@@ -80,7 +79,7 @@ export default function TaskTab(props: TaskTabProps) {
                   >
                     <Checkbox
                       style={{ flexShrink: 0 }}
-                      right="large"
+                      right="x-small"
                       title="Check off when you finish the task"
                       on_change={({ checked }) => {
                         setCheckedTasks(
@@ -108,8 +107,10 @@ export default function TaskTab(props: TaskTabProps) {
                       </Accordion.Header>
                       <Accordion.Content>
                         <FormRow direction="vertical">
-                          <P>{sub.description}</P>
-                          {sub.id !== 12 ? (
+                          <P style={{ lineHeight: "1.75rem" }}>
+                            {sub.description}
+                          </P>
+                          {sub.hint != undefined ? (
                             <FormRow top bottom direction="horizontal">
                               <Dialog
                                 triggerAttributes={{
@@ -117,7 +118,9 @@ export default function TaskTab(props: TaskTabProps) {
                                 }}
                                 title={"Hint " + sub.name}
                               >
-                                <P>{sub.hint}</P>
+                                <P style={{ lineHeight: "1.75rem" }}>
+                                  {sub.hint}
+                                </P>
                               </Dialog>
                             </FormRow>
                           ) : (
