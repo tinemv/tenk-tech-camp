@@ -215,7 +215,7 @@ export var tasks_level2 = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Task 7",
     description: (
       <>
