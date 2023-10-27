@@ -17,6 +17,7 @@ export interface DashboardProps {
   setCurrentSubTab: Function;
 }
 
+/** Dashboard er en funksjon som returnerer koden til Dashboard siden. Kan finnes dersom du logger inn som etterforsker */
 export default function Dashboard(props: DashboardProps) {
   const { setCurrentSubTab } = props;
   setCurrentSubTab("Dashboard");
@@ -24,19 +25,19 @@ export default function Dashboard(props: DashboardProps) {
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <div className="DashboardTab">
-        {/* Task 2A */}
+        {/* Oppgave 2A: Her finner du overskriften til siden */}
         <H1 style={{ fontSize: "small" }}>Dashboard</H1>
         <div className="chart-container">
           <div>
             <PieChart
-              title={"Domestic vs. international transactions"}
+              title={"Innenlands vs. utenlands transaksjoner"}
               data={pieChartData}
             />
           </div>
 
           <div>
             <BarChart
-              title={"Number of transactions sent to a country"}
+              title={"Antall transaksjoner til ulike land"}
               data={barChartData}
             />
           </div>
@@ -44,13 +45,13 @@ export default function Dashboard(props: DashboardProps) {
 
         <div className="DashboardBottom">
           <InfoCard
-            title="Number of transactions in total"
+            title="Antall transaksjoner totalt"
             text={getAllTransactions().length}
             icon={card_in_medium}
             space="x-small"
           />
           <InfoCard
-            title="Total amount of money"
+            title="Penger overført totalt"
             text={sumTransactions()}
             icon={account_medium}
             space="x-small"
@@ -61,20 +62,20 @@ export default function Dashboard(props: DashboardProps) {
   );
 }
 
-/* Task 2C */
+/* Oppgave 2C: Her må du legge til Russland to steder */
 const barChartData = {
-  labels: ["Norway", "Sweden", "Denmark", "USA", "Spain", "Italy"],
+  labels: ["Norge", "Sverige", "Danmark", "USA", "Spania", "Italia"],
   datasets: [
     {
-      /* Task 2B */
+      /* Oppgave 2B: Her kan du legge til "Antall" */
       label: "?????",
       data: [
-        countTargetCountries("Norway"),
-        countTargetCountries("Sweden"),
-        countTargetCountries("Denmark"),
+        countTargetCountries("Norge"),
+        countTargetCountries("Sverige"),
+        countTargetCountries("Danmark"),
         countTargetCountries("USA"),
-        countTargetCountries("Spain"),
-        countTargetCountries("Italy"),
+        countTargetCountries("Spania"),
+        countTargetCountries("Italia"),
       ],
       backgroundColor: colorPicker.SuccessGreen,
     },
@@ -82,10 +83,10 @@ const barChartData = {
 };
 
 const pieChartData = {
-  labels: ["Domestic", "International"],
+  labels: ["Innenlands", "Utenlands"],
   datasets: [
     {
-      label: "Amount",
+      label: "Antall",
       data: countCrossBorderTransactions(),
 
       backgroundColor: [
