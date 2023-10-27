@@ -2,6 +2,7 @@ import React from "react";
 import jente_koder from "../../ignore/jente_koder.jpg";
 import { Section, H1, H2, P, InfoCard } from "@dnb/eufemia";
 import "../../ignore/styles.css";
+import oslo from "../../ignore/oslo.jpg"
 
 export interface WelcomeProps {
   setCurrentTab: Function;
@@ -27,6 +28,7 @@ export default function Welcome(props: WelcomeProps) {
             columnGap: "1rem",
           }}
         >
+          <img src={oslo} style={{width: "500px"}}/>
           <P
             style={{
               color: "white",
