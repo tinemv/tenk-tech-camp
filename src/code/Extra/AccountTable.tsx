@@ -1,6 +1,6 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
-import { Account } from "../../ignore/CustomerModel";
+import { Account } from "../../data/CustomerModel";
 import { NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
 import { findBalance } from "../../ignore/AccountPage";
 
