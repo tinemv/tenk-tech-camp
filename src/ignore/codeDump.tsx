@@ -8,6 +8,7 @@ import { CompanyTransaction } from "../data/TransactionModel";
 import { Parameter } from "../code/Task3/Transactions";
 import { detectRiskCompany } from "../code/Task3/TransactionTable";
 import Dashboard from "../code/Task2/Dashboard";
+import CardOverview from "../code/Task6/CardOverview";
 
 export function getAllTransactions() {
   //const allCustomerTransactions = customer.accounts.flatMap(
@@ -54,6 +55,15 @@ export function TransactionsPage(props: TransactionsPageProps) {
           content: (
             <div className="TransactionsTab">
               <Transactions setCurrentSubTab={setCurrentSubTab} />
+            </div>
+          ),
+        },
+        {
+          title: "Card Overview",
+          key: "CardOverview",
+          content: (
+            <div className="">
+              <CardOverview setCurrentSubTab={setCurrentSubTab} />
             </div>
           ),
         },

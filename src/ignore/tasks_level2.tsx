@@ -174,6 +174,50 @@ export var tasks_level2 = [
   },
   {
     id: 2,
+    title: "Task 6",
+    description: (
+      <>
+        <p className="dnb-p">CaseX is a service for customer service employees to review status of cards that have been applied for and block cards that are not filling the requirements.</p>
+        <br></br>
+        <p className="dnb-p">
+          <b>Where on the website?</b>  
+          <i>Block cards</i> under{" "}
+          <i>Employee page</i>
+        </p>
+        <p className="dnb-p">
+          <b>Where is the code located?</b>{" "}
+          <code className="dnb-code">CardOverview.tsx</code> in{" "}
+          <code className="dnb-code">Task6</code>-folder
+        </p>
+      </>
+    ),
+    subtask: [
+      {
+        id: 0,
+        name: "Part A",
+        level: "EASY",
+        description: <p className="dnb-p">In this part, we will start by coding the button, so the user later on can request for their data from DNB. </p>,
+        hint: 
+        <p className="dnb-p">
+          Buttons are created by coding: 
+          <br />
+            
+          <br />
+          <br />The resoult should be looking somthing like this:<br />
+          <br />Feel free to put your personal touch with the design of button.
+        </p>,
+      },
+      {
+        id: 0,
+        name: "Part B",
+        level: "MEDIUM",
+        description: <p className="dnb-p">FILL OUT</p>,
+        hint: <p className="dnb-p">FILL OUT</p>,
+      },
+    ],
+  },
+  {
+    id: 3,
     title: "Task 7",
     description: (
       <>
