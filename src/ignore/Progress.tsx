@@ -15,9 +15,9 @@ export default function Progress(props: ProgressProps) {
       progress={progressValue}
       size="medium"
       no_animation
-      label={"How far you've come: " + progressValue.toFixed(0) + "%"}
+      label={"Hvor langt du har kommet: " + progressValue.toFixed(0) + "%"}
       label_direction="vertical"
-      title="See how far you've come!"
+      title="Se hvor langt du har kommet!"
     />
   );
 }

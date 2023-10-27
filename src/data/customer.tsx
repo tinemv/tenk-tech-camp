@@ -3,78 +3,78 @@ export var customer = {
   accounts: [
     {
       id: 1,
-      name: "Checking Account",
+      name: "Brukskonto",
       number: "1592.33.12123",
       transactions: [
         {
           id: "1",
           from: {
-            name: "Mom",
-            country: "Norway",
+            name: "Mamma",
+            country: "Norge",
           },
           to: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           amount: 1000,
         },
         {
           id: "2",
           from: {
-            name: "Grandpa",
-            country: "Norway",
+            name: "Bestefar",
+            country: "Norge",
           },
           to: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           amount: 150,
         },
         {
           id: "3",
           from: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           to: {
             name: "Rema 1000",
-            country: "Norway",
+            country: "Norge",
           },
           amount: 30,
         },
         {
           id: "4",
           from: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           to: {
             name: "Bikbok",
-            country: "Norway",
+            country: "Norge",
           },
           amount: 150,
         },
         {
           id: "5",
           from: {
-            name: "Mom",
-            country: "Norway",
+            name: "Mamma",
+            country: "Norge",
           },
           to: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           amount: 500,
         },
         {
           id: "6",
           from: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           to: {
-            name: "Friend",
-            country: "Norway",
+            name: "Venninne",
+            country: "Norge",
           },
           amount: 150,
         },
@@ -82,54 +82,54 @@ export var customer = {
     },
     {
       id: 2,
-      name: "Savings account",
+      name: "Sparekonto",
       number: "9411.05.96614",
       transactions: [
         {
           id: "7",
           from: {
-            name: "Mom",
-            country: "Norway",
+            name: "Mamma",
+            country: "Norge",
           },
           to: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           amount: 2000,
         },
         {
           id: "8",
           from: {
-            name: "Mom",
-            country: "Norway",
+            name: "Mamma",
+            country: "Norge",
           },
           to: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           amount: 2000,
         },
         {
           id: "9",
           from: {
-            name: "Mom",
-            country: "Norway",
+            name: "Mamma",
+            country: "Norge",
           },
           to: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           amount: 2000,
         },
         {
           id: "10",
           from: {
-            name: "Mom",
-            country: "Norway",
+            name: "Mamma",
+            country: "Norge",
           },
           to: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           amount: 2000,
         },
@@ -143,22 +143,17 @@ export var customer = {
         {
           id: "11",
           from: {
-            name: "Grandma",
-            country: "Norway",
+            name: "Mormor",
+            country: "Norge",
           },
           to: {
-            name: "Yourself",
-            country: "Norway",
+            name: "Deg selv",
+            country: "Norge",
           },
           amount: 25000,
         },
       ],
     },
-    {
-      id: 4,
-      name: "BSU 2",
-      number: "1123.11.43212",
-      transactions: [],
-    },
+
   ],
 };

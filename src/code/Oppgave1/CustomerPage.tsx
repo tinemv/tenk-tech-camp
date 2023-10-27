@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
-import AccountTable from "../Extra/AccountTable";
+import AccountTable from "../Ekstra/AccountTable";
 import { customer } from "../../data/customer";
-import unknown from "./ProfilePictures/Unknown.png";
-import AdaLovelace from "./ProfilePictures/AdaLovelace.png";
-import AmalClooney from "./ProfilePictures/AmalClooney.jpg";
-import CelineDion from "./ProfilePictures/CelineDion.jpg";
-import ChimamandaAdichie from "./ProfilePictures/ChimamandaAdichie.jpg";
-import KamalHarris from "./ProfilePictures/KamalaHarris.png";
-import GraceHopper from "./ProfilePictures/GraceHopper.jpg";
-import MichelleObama from "./ProfilePictures/MichelleObama.jpg"
-import TaylorSwift from "./ProfilePictures/TaylorSwift.png";
-import GretaThunberg from "./ProfilePictures/GretaThunberg.png";
+import ukjent from "./Profilbilder/ukjent.png";
+import BTS from "./Profilbilder/BTS.png";
+import EmmaWatson from "./Profilbilder/EmmaWatson.png";
+import GirlInRed from "./Profilbilder/GirlInRed.png";
+import GretaThunberg from "./Profilbilder/GretaThunberg.png";
+import MarcusMartinus from "./Profilbilder/MarcusMartinus.png";
+import MillieBobbyBrown from "./Profilbilder/MillieBobbyBrown.png";
+import TaylorSwift from "./Profilbilder/TaylorSwift.png";
+import Zendaya from "./Profilbilder/Zendaya.png";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../../ignore/styles.css";
 import AccountPage from "../../ignore/AccountPage";
@@ -19,7 +18,7 @@ export interface CustomerPageProps {
   setCurrentTab: Function;
 }
 
-/** */
+/** CustomerPage er en funksjon som returnerer koden til kundesiden, sett når man logger inn som kunde */
 export default function CustomerPage(props: CustomerPageProps) {
   const { setCurrentTab } = props;
   setCurrentTab("Kunde");
@@ -30,11 +29,11 @@ export default function CustomerPage(props: CustomerPageProps) {
       <div className="CustomerTab">
         {accountClicked === "Customer" && (
           <>
-            {/* Task 1A: Change the header here */}
-            <H1>Welcome unknown user!</H1>
+            {/* Oppgave 1A: Her kan du endre overskriften */}
+            <H1>Velkommen ukjent!</H1>
             <Img
-              /* Task 1B: Change the picture here */
-              src={unknown}
+              /* Oppgave 1B: Her kan du endre bilde */
+              src={ukjent}
               alt="User Picture"
               width="250rem"
               height="250rem"
@@ -43,7 +42,7 @@ export default function CustomerPage(props: CustomerPageProps) {
               top
             />
             <Section style_type="lavender" spacing>
-              <H2 bottom>Accounts</H2>
+              <H2 bottom>Kontoer</H2>
               <AccountTable
                 accountList={customer.accounts}
                 setAccountClicked={setAccountClicked}
