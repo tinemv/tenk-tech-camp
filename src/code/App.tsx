@@ -2,12 +2,13 @@ import React from "react";
 import { Tabs } from "@dnb/eufemia";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Welcome from "../code/Intro/Welcome";
-import CustomerPage from "../code/Task1/CustomerPage";
-import TaskNavigator from "./TaskNavigator";
-import { TransactionsPage } from "./codeDump";
-import { tasks_level1 } from "./tasks_level1";
-import { tasks_level2 } from "./tasks_level2";
+import TaskNavigator from "../ignore/TaskNavigator";
+import { TransactionsPage } from "../ignore/codeDump";
+import { tasks_level1 } from "../ignore/tasks_level1";
+import { tasks_level2 } from "../ignore/tasks_level2";
+import Welcome from "./Intro/Welcome";
+import CustomerPage from "./Task1/CustomerPage";
+import { Application } from "./Task7/Application";
 
 const FlexWrapper = styled.div`
   @media (min-width: 750px) {
@@ -29,6 +30,12 @@ export default function App() {
       return window.sessionStorage.getItem("currentTab");
     }
     return "Welcome";
+  });
+  const [currentTaskLevel, setCurrentTaskLevel] = useState<string>(() => {
+    if (window.sessionStorage.getItem("currentTaskLevel") != null) {
+      return window.sessionStorage.getItem("currentTaskLevel");
+    }
+    return "level_1";
   });
   const [currentTaskTabLevel1, setCurrentTaskTabLevel1] = useState(() => {
     if (window.sessionStorage.getItem("currentTaskTabLevel1") != null) {
@@ -111,6 +118,10 @@ export default function App() {
                 title: "Employee page",
                 key: "Etterforsker",
               },
+              {
+                title: "Apply for a job",
+                key: "new_tab",
+              },
             ]}
             selected_key={currentTab}
           />
@@ -119,6 +130,8 @@ export default function App() {
           <TaskNavigator
             progressValue={progressValue}
             setProgressValue={setProgressValue}
+            currentTaskLevel={currentTaskLevel}
+            setCurrentTaskLevel={setCurrentTaskLevel}
             currentTabLevel1={currentTaskTabLevel1}
             setCurrentTabLevel1={setCurrentTaskTabLevel1}
             checkedTasksLevel1={checkedTasksLevel1}
@@ -138,6 +151,8 @@ export default function App() {
             return <CustomerPage setCurrentTab={setCurrentTab} />;
           } else if (key == "Etterforsker") {
             return <TransactionsPage setCurrentTab={setCurrentTab} />;
+          } else if (key == "new_tab") {
+            return <Application setCurrentTab={setCurrentTab} />;
           }
         }}
       </Tabs.Content>

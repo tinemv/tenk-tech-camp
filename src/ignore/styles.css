@@ -86,3 +86,11 @@ input {
   text-decoration-line: underline;
   color: #A5E1D2;
 }
+
+.ApplicationTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}

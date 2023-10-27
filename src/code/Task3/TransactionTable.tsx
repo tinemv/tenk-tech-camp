@@ -1,7 +1,7 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Table, Th, Tr, Td, NumberFormat } from "@dnb/eufemia";
-import { CompanyTransaction } from "../../ignore/TransactionModel";
+import { CompanyTransaction } from "../../data/TransactionModel";
 
 export type TransactionTableProps = {
   listOfTransactions: CompanyTransaction[];
