@@ -180,12 +180,18 @@ export var tasks_level2 = [
           engineer now, and you would like to apply for a job as a developer in
           DNB!
           <br />
+          <br />
           To be able to apply for a job, you first need to create a new page and
           create an application form. To create the page you will use{" "}
           <Anchor href="https://eufemia.dnb.no/uilib/elements/" target="_blank">
             Eufemia elements
           </Anchor>{" "}
           and add functionality to them.
+          <br />
+          <br />
+          This task is build up on two reference images, and you trying to
+          create that. But feel free to create your own design and
+          functionality.
         </p>
         <br></br>
         <p className="dnb-p">
@@ -198,6 +204,14 @@ export var tasks_level2 = [
           <code className="dnb-code">code</code>-folder and the files in the
           <code className="dnb-code">Task7</code>-folder
         </p>
+
+        <FormStatus
+          top
+          stretch={true}
+          text="If you want help we have a suggested solution in the folder FinishedFiles you can look at."
+          state="info"
+          variant="outlined"
+        />
       </>
     ),
     subtask: [
@@ -217,23 +231,20 @@ export var tasks_level2 = [
               Tabs
             </Anchor>
             -element on line 99. Under <code className="dnb-code">data</code> on
-            line 107 you can see we have four different elements. Three of them
-            are already exsisting pages. The fourth here is the one you need to
-            add. To add it, you need to find{" "}
-            <code className="dnb-code">Tabs.Content</code>, which is where we
-            add content to the tabs. We check here against the keys created in
-            the <code className="dnb-code">data</code> section mentioned above.
-            Add a new check for the key for the new tab, and return the new
-            page:
-            <code className="dnb-code">
-              &lt;Application setCurrentTab=&#123;setCurrentTab&#125;/&gt;{" "}
-            </code>
+            line 107 you can see we have three different elements, each
+            representing one tab.
+            <br />
+            You need to add a forth element here, where the title is{" "}
+            <b>Apply for a job</b> and the key is{" "}
+            <code className="dnb-code">new_tab</code>.
             <br />
             <br />
-            You can also change the name of the tab by changing the <i>
-              title
-            </i>{" "}
-            in the <code className="dnb-code">data</code> section.
+            To also add content to the tab you need to add a new{" "}
+            <code className="dnb-code">else if</code> check in the{" "}
+            <code className="dnb-code">Tabs.Content</code> section on line 143
+            where you check against the key{" "}
+            <code className="dnb-code">new_tab</code>. The page to return is{" "}
+            <code className="dnb-code">&lt;Application setCurrentTab=&#123;setCurrentTab&#125;/&gt;</code>
           </P>
         ),
         hint: (
@@ -365,7 +376,7 @@ export var tasks_level2 = [
             <Ul>
               <li>firstName</li>
               <li>lastName</li>
-              <li>reasonLetter</li>
+              <li>motivationLetter</li>
             </Ul>
             Then you need to assign the values from the fields to the different
             states. This is done by using{" "}
@@ -410,66 +421,37 @@ export var tasks_level2 = [
         name: "Part D",
         level: "PROFESSIONAL",
         description: (
-          <>
-            <p className="dnb-p">
-              We want to be redirected to a new page when we click the{" "}
-              <b>Check application</b> button at the bottom (see{" "}
-              <Anchor href="/reference_image_application" target="_blank">
-                Reference image for application form
-              </Anchor>
-              ).
-              <br />
-              To do this we need to add{" "}
-              <code className="dnb-code">onClick</code> on the{" "}
-              <b>Check Application</b> button where we set a state to{" "}
-              <code className="dnb-code">true</code> that will then show a new
-              page.
-              <br />
-              Add a new state{" "}
-              <code className="dnb-code">submittedApplication</code> which you
-              defaults as <code className="dnb-code">false</code>. Then you need
-              to add the code you have written in an conditional clause like so:
-            </p>
-            <pre className="dnb-pre" style={{ width: "350px" }}>
-              &#123;!submittedApplication && ( your_code_here )&#125;
-              <br />
-              &#123;submittedApplication && ( &lt;ApplicationResult /&gt;
-              )&#125;
-            </pre>{" "}
-            <p className="dnb-p">
-              where the code you have written so far is inside the first
-              paranthesis, and the new page code (which is in{" "}
-              <code className="dnb-code">ApplicationResult.tsx</code>) is shown
-              if the user press the <b>Check application</b> button.
-            </p>
-          </>
+          <p className="dnb-p">
+            We want to be redirected to a new page when we click the{" "}
+            <b>Check application</b> button at the bottom (see{" "}
+            <Anchor href="/reference_image_application" target="_blank">
+              Reference image for application form
+            </Anchor>
+            ).
+            <br />
+            To do this we need to add <code className="dnb-code">
+              onClick
+            </code>{" "}
+            on the <b>Check Application</b> button where we set the state{" "}
+            <code className="dnb-code">submittedApplication</code> to{" "}
+            <code className="dnb-code">true</code> that will then show a new
+            page (the <code className="dnb-code">ApplicationResult</code> page)
+            where we get a summary of the application.
+          </p>
         ),
         hint: (
           <>
-            Do be able to redirect you need to add a new state by using{" "}
-            <Anchor
-              href="https://www.w3schools.com/react/react_usestate.asp"
-              target="_blank"
-            >
-              React's useState
-            </Anchor>{" "}
-            as you did in part C. You need to set the default value to{" "}
-            <code className="dnb-code">false</code>, and call the{" "}
+            You need to call the{" "}
             <code className="dnb-code">setSubmittedApplication</code> to{" "}
             <code className="dnb-code">true</code> inside of the{" "}
             <code className="dnb-code">onClick</code> in the{" "}
             <code className="dnb-code">Form.SubmitButton</code> component.
             <br />
             <br />
-            When calling the <code className="dnb-code">
-              ApplicationResult
-            </code>{" "}
-            you also need to call it with the parameters it requires, like{" "}
-            <code className="dnb-code">firstName</code> and{" "}
-            <code className="dnb-code">lastName</code>. Check out how this is
-            done elsewhere (like in the{" "}
-            <code className="dnb-code">App.tsx</code> when you call{" "}
-            <code className="dnb-code">Application.tsx</code>)
+            Also ensure that you switch out all the{" "}
+            <code className="dnb-code">undefined</code> values when
+            <code className="dnb-code">ApplicationResult</code> is called to the
+            actual values.
           </>
         ),
       },
@@ -487,7 +469,8 @@ export var tasks_level2 = [
             </Anchor>
             .
             <br />
-            To create this page we need some layout components:
+            To create this page you can use some layout components to make it
+            look similar to the reference image:
             <br />
             <Anchor
               href="https://eufemia.dnb.no/uilib/layout/flex/container/"
@@ -513,6 +496,12 @@ export var tasks_level2 = [
         ),
         hint: (
           <>
+            Be sure to send with the values from the application form when you
+            call <code className="dnb-code">ApplicationResult</code> in{" "}
+            <code className="dnb-code">Application.tsx</code> so that you can
+            use those values.
+            <br />
+            <br />
             To create a layout similar to the{" "}
             <Anchor href="/reference_image_application_result" target="_blank">
               Reference image for application summary
@@ -587,8 +576,8 @@ export var tasks_level2 = [
             <code className="dnb-code">true</code> where we check that all the
             states (<code className="dnb-code">firstName</code>,{" "}
             <code className="dnb-code">lastName</code> and{" "}
-            <code className="dnb-code">reasonLetter</code>) has values in them.
-            If not, give the user an error message (for this you can for
+            <code className="dnb-code">motivationLetter</code>) has values in
+            them. If not, give the user an error message (for this you can for
             instance use{" "}
             <Anchor
               href="https://eufemia.dnb.no/uilib/components/form-status/#formstatus-displaying-error-status"
@@ -611,7 +600,10 @@ export var tasks_level2 = [
             <code className="dnb-code">isUserInputNull</code> that checks every
             state if it is <code className="dnb-code">undefined</code> or not,
             and then call this function inside of{" "}
-            <code className="dnb-code">onClick</code>
+            <code className="dnb-code">onClick</code>.
+            <br />
+            <br />
+            Remember that <code className="dnb-code">||</code> is <i>or</i>.
           </>
         ),
       },

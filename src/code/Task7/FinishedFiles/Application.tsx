@@ -10,11 +10,17 @@ export interface ApplicationProps {
 export function isUserInputNull(
   firstName: string,
   lastName: string,
-  reasonLetter: string
+  motivationLetter: string
 ): boolean {
-  return (
-    firstName == undefined || lastName == undefined || reasonLetter == undefined
-  );
+  if (
+    firstName == undefined ||
+    lastName == undefined ||
+    motivationLetter == undefined
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 export const Application = (props: ApplicationProps) => {
@@ -23,7 +29,7 @@ export const Application = (props: ApplicationProps) => {
 
   const [firstName, setFirstName] = useState(undefined);
   const [lastName, setLastName] = useState(undefined);
-  const [reasonLetter, setReasonLetter] = useState(undefined);
+  const [motivationLetter, setMotivationLetter] = useState(undefined);
   const { files, setFiles } = Upload.useUpload("upload-basic");
 
   const [submittedApplication, setSubmittedApplication] = useState(false);
@@ -68,8 +74,10 @@ export const Application = (props: ApplicationProps) => {
                 autoresize={true}
                 autoresizeMaxRows={15}
                 placeholder="Write your reason here..."
-                onChange={(value) => setReasonLetter(value)}
-                value={reasonLetter == undefined ? undefined : reasonLetter}
+                onChange={(value) => setMotivationLetter(value)}
+                value={
+                  motivationLetter == undefined ? undefined : motivationLetter
+                }
               />
             </Card>
 
@@ -87,7 +95,7 @@ export const Application = (props: ApplicationProps) => {
               top
               bottom
               onClick={() => {
-                if (isUserInputNull(firstName, lastName, reasonLetter)) {
+                if (isUserInputNull(firstName, lastName, motivationLetter)) {
                   return (
                     <FormStatus text="You need to fill out all the text fields!" />
                   );
@@ -105,12 +113,12 @@ export const Application = (props: ApplicationProps) => {
         <ApplicationResult
           firstName={firstName}
           lastName={lastName}
-          reasonLetter={reasonLetter}
+          motivationLetter={motivationLetter}
           files={files}
           setSubmittedApplication={setSubmittedApplication}
           setFirstName={setFirstName}
           setLastName={setLastName}
-          setReasonLetter={setReasonLetter}
+          setMotivationLetter={setMotivationLetter}
           setFiles={setFiles}
         />
       )}

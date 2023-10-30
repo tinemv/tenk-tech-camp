@@ -7,6 +7,7 @@ import { tasks_level1 } from "../ignore/tasks_level1";
 import { tasks_level2 } from "../ignore/tasks_level2";
 import Welcome from "./Intro/Welcome";
 import CustomerPage from "./Task1/CustomerPage";
+import { Application } from "./Task7/Application";
 
 const FlexWrapper = styled.div`
   @media (min-width: 750px) {
@@ -116,6 +117,8 @@ export default function App() {
                 title: "Employee page",
                 key: "Etterforsker",
               },
+              /* Task 7A: Add tab data here */
+              
             ]}
             selected_key={currentTab}
           />
@@ -146,6 +149,8 @@ export default function App() {
           } else if (key == "Etterforsker") {
             return <TransactionsPage setCurrentTab={setCurrentTab} />;
           }
+          /* Task 7A: Add tab content here */
+          
         }}
       </Tabs.Content>
     </>

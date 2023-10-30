@@ -6,12 +6,12 @@ import { UploadFile } from "@dnb/eufemia/components/upload/types";
 export interface ApplicationResultProps {
   firstName: String;
   lastName: String;
-  reasonLetter: String;
+  motivationLetter: String;
   files: UploadFile[];
   setSubmittedApplication: Function;
   setFirstName: Function;
   setLastName: Function;
-  setReasonLetter: Function;
+  setMotivationLetter: Function;
   setFiles: Function;
 }
 
@@ -19,12 +19,12 @@ export const ApplicationResult = (props: ApplicationResultProps) => {
   const {
     firstName,
     lastName,
-    reasonLetter,
+    motivationLetter,
     files,
     setSubmittedApplication,
     setFirstName,
     setLastName,
-    setReasonLetter,
+    setMotivationLetter,
     setFiles,
   } = props;
 
@@ -46,7 +46,7 @@ export const ApplicationResult = (props: ApplicationResultProps) => {
           <FlexItem size={2}>
             <P>Reason letter: </P>
           </FlexItem>
-          <FlexItem size={10}>{reasonLetter}</FlexItem>
+          <FlexItem size={10}>{motivationLetter}</FlexItem>
 
           <FlexItem size={2}>
             <P>Files: </P>
@@ -75,7 +75,7 @@ export const ApplicationResult = (props: ApplicationResultProps) => {
               onClick={() => {
                 setFirstName(undefined);
                 setLastName(undefined);
-                setReasonLetter(undefined);
+                setMotivationLetter(undefined);
                 setFiles([]);
                 setSubmittedApplication(false);
               }}
