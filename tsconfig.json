@@ -11,9 +11,9 @@
     "esModuleInterop": true,
     "allowJs": true,
     "checkJs": false,
-    "jsx": "react-jsx", 
+    "jsx": "react-jsx",
     "resolveJsonModule": true
   },
-  "include": ["src", "src/code/Task7/Application.tsx", "src/code/Task7/ApplicationResult.tsx"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }
