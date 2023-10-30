@@ -69,7 +69,7 @@ export var tasks_level2 = [
     ),
     subtask: [
       {
-        id: 10,
+        id: 1,
         name: "Part A",
         level: "EASY",
         description: (
@@ -94,7 +94,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 11,
+        id: 2,
         name: "Part B",
         level: "MEDIUM",
         description: (
@@ -129,7 +129,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 12,
+        id: 3,
         name: "Part C",
         level: "HARD",
         description: (
@@ -175,12 +175,15 @@ export var tasks_level2 = [
     title: "Task 6",
     description: (
       <>
-        <p className="dnb-p">CaseX is a service for customer service employees to review status of cards that have been applied for and block cards that are not filling the requirements.</p>
+        <p className="dnb-p">
+          CaseX is a service for customer service employees to review status of
+          cards that have been applied for and block cards that are not filling
+          the requirements.
+        </p>
         <br></br>
         <p className="dnb-p">
-          <b>Where on the website?</b>  
-          <i>Block cards</i> under{" "}
-          <i>Employee page</i>
+          <b>Where on the website?</b>
+          <i>Block cards</i> under <i>Employee page</i>
         </p>
         <p className="dnb-p">
           <b>Where is the code located?</b>{" "}
@@ -191,22 +194,30 @@ export var tasks_level2 = [
     ),
     subtask: [
       {
-        id: 0,
+        id: 4,
         name: "Part A",
         level: "EASY",
-        description: <p className="dnb-p">In this part, we will start by coding the button, so the user later on can request for their data from DNB. </p>,
-        hint: 
-        <p className="dnb-p">
-          Buttons are created by coding: 
-          <br />
-            
-          <br />
-          <br />The resoult should be looking somthing like this:<br />
-          <br />Feel free to put your personal touch with the design of button.
-        </p>,
+        description: (
+          <p className="dnb-p">
+            In this part, we will start by coding the button, so the user later
+            on can request for their data from DNB.{" "}
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            Buttons are created by coding:
+            <br />
+            <br />
+            <br />
+            The resoult should be looking somthing like this:
+            <br />
+            <br />
+            Feel free to put your personal touch with the design of button.
+          </p>
+        ),
       },
       {
-        id: 0,
+        id: 5,
         name: "Part B",
         level: "MEDIUM",
         description: <p className="dnb-p">FILL OUT</p>,
@@ -246,7 +257,7 @@ export var tasks_level2 = [
     ),
     subtask: [
       {
-        id: 0,
+        id: 6,
         name: "Part A",
         level: "EASY",
         description: (
@@ -290,7 +301,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 1,
+        id: 7,
         name: "Part B",
         level: "HARD",
         description: (
@@ -390,7 +401,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 2,
+        id: 8,
         name: "Part C",
         level: "PROFESSIONAL",
         description: (
@@ -450,7 +461,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 3,
+        id: 9,
         name: "Part D",
         level: "PROFESSIONAL",
         description: (
@@ -518,7 +529,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 4,
+        id: 10,
         name: "Part E",
         level: "HARD",
         description: (
@@ -579,7 +590,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 5,
+        id: 11,
         name: "Part F",
         level: "PROFESSIONAL",
         description: (
@@ -619,7 +630,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 5,
+        id: 12,
         name: "Part G",
         level: "MEDIUM",
         description: (
