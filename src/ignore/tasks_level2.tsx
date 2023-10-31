@@ -175,12 +175,15 @@ export var tasks_level2 = [
     title: "Task 6",
     description: (
       <>
-        <p className="dnb-p">CaseX is a service for customer service employees to review status of cards that have been applied for and block cards that are not filling the requirements.</p>
+        <p className="dnb-p">
+          CaseX is a service for customer service employees to review status of
+          cards that have been applied for and block cards that are not filling
+          the requirements.
+        </p>
         <br></br>
         <p className="dnb-p">
-          <b>Where on the website?</b>  
-          <i>Block cards</i> under{" "}
-          <i>Employee page</i>
+          <b>Where on the website?</b>
+          <i>Block cards</i> under <i>Employee page</i>
         </p>
         <p className="dnb-p">
           <b>Where is the code located?</b>{" "}
@@ -194,16 +197,24 @@ export var tasks_level2 = [
         id: 0,
         name: "Part A",
         level: "EASY",
-        description: <p className="dnb-p">In this part, we will start by coding the button, so the user later on can request for their data from DNB. </p>,
-        hint: 
-        <p className="dnb-p">
-          Buttons are created by coding: 
-          <br />
-            
-          <br />
-          <br />The resoult should be looking somthing like this:<br />
-          <br />Feel free to put your personal touch with the design of button.
-        </p>,
+        description: (
+          <p className="dnb-p">
+            In this part, we will start by coding the button, so the user later
+            on can request for their data from DNB.{" "}
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            Buttons are created by coding:
+            <br />
+            <br />
+            <br />
+            The resoult should be looking somthing like this:
+            <br />
+            <br />
+            Feel free to put your personal touch with the design of button.
+          </p>
+        ),
       },
       {
         id: 0,
@@ -249,13 +260,11 @@ export var tasks_level2 = [
           <code className="dnb-code">Task7</code>-folder
         </p>
 
-        <FormStatus
-          top
-          stretch={true}
-          text="If you want help we have a suggested solution in the folder FinishedFiles you can look at."
-          state="info"
-          variant="outlined"
-        />
+        <FormStatus top state="info" variant="outlined" stretch={true}>
+          If you want help we have a suggested solution in the
+          <code className="dnb-code">Task7/SuggestedSolution</code>-folder you
+          can look at.
+        </FormStatus>
       </>
     ),
     subtask: [
@@ -285,10 +294,12 @@ export var tasks_level2 = [
             <br />
             To also add content to the tab you need to add a new{" "}
             <code className="dnb-code">else if</code> check in the{" "}
-            <code className="dnb-code">Tabs.Content</code> section on line 143
-            where you check against the key{" "}
+            <code className="dnb-code">Tabs.Content</code> section (on approx.
+            line 143) where you check against the key{" "}
             <code className="dnb-code">new_tab</code>. The page to return is{" "}
-            <code className="dnb-code">&lt;Application setCurrentTab=&#123;setCurrentTab&#125;/&gt;</code>
+            <code className="dnb-code">
+              &lt;Application setCurrentTab=&#123;setCurrentTab&#125;/&gt;
+            </code>
           </P>
         ),
         hint: (
@@ -312,18 +323,16 @@ export var tasks_level2 = [
             <Anchor href="/reference_image_application" target="_blank">
               Reference image for application form
             </Anchor>
+            .
             <br />
-            To create this you will use numerous Eufemia components. Please feel
-            free to try other components as well, do not feel restricted to use
-            only the ones we suggest here:
             <br />
-            To get correct styling:{" "}
-            <Anchor
-              href="https://eufemia.dnb.no/uilib/components/section/"
-              target="_blank"
-            >
-              Section
-            </Anchor>
+            Go to the file <code className="dnb-code">Application.tsx</code> in
+            the <code className="dnb-code">Task7</code>-folder. This file has
+            some skelton code now to get you started. You will fill this file
+            with code to create the application form. To do this you will use
+            numerous Eufemia components. Please feel free to try other
+            components as well, do not feel restricted to use only the ones we
+            suggest here:
             <br />
             Text elements:{" "}
             <Anchor
@@ -424,8 +433,14 @@ export var tasks_level2 = [
             </Ul>
             Then you need to assign the values from the fields to the different
             states. This is done by using{" "}
-            <code className="dnb-code">onChange</code> and setting the value to
-            the different states.
+            <code className="dnb-code">onChange</code> in the{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/extensions/forms/base-fields/String/"
+              target="_blank"
+            >
+              Field.String
+            </Anchor>{" "}
+            and setting the value to the different states.
             <br />
             <br />
             For storing the files that is uploaded to{" "}
@@ -573,7 +588,8 @@ export var tasks_level2 = [
         level: "PROFESSIONAL",
         description: (
           <p className="dnb-p">
-            Add the two buttons on the bottom of the page, see{" "}
+            Add the two buttons on the bottom of the application summary page,
+            see{" "}
             <Anchor href="/reference_image_application_result" target="_blank">
               Reference image for application summary
             </Anchor>
@@ -586,16 +602,16 @@ export var tasks_level2 = [
             component and create one secondary button (<b>Back</b>) and one
             primary button (<b>Send application to DNB</b>).
             <br />
-            The <b>Back</b> button should return to the previous page when
-            pressed, and the <b>Send application to DNB</b> button should return
-            to the previous page when pressed as well as reset all the input
-            fields.
+            The <b>Back</b> button should return to the previous page (the
+            application form page) when pressed, and the{" "}
+            <b>Send application to DNB</b> button should aslo return to the
+            previous page when pressed as well as reset all the input fields.
           </p>
         ),
         hint: (
           <>
-            To be able to return back to the previous page (that is the
-            application form page) you need to set the state{" "}
+            To be able to return back to the previous page (the application form
+            page) you need to set the state{" "}
             <code className="dnb-code">submittedApplication</code> to{" "}
             <code className="dnb-code">false</code>.
             <br />
@@ -616,7 +632,8 @@ export var tasks_level2 = [
             To make the application form more secure towards wrong usage, we
             need to check if the user has actually filled in all the text
             fields. To do this we can have a check before setting the{" "}
-            <code className="dnb-code">submittedApplication</code> to{" "}
+            <code className="dnb-code">submittedApplication</code> in{" "}
+            <code className="dnb-code">Application.tsx</code> to{" "}
             <code className="dnb-code">true</code> where we check that all the
             states (<code className="dnb-code">firstName</code>,{" "}
             <code className="dnb-code">lastName</code> and{" "}
