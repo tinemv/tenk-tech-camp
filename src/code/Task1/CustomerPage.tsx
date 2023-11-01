@@ -43,7 +43,6 @@ export default function CustomerPage(props: CustomerPageProps) {
               top
             />
             <Section style_type="lavender" spacing>
-              <H2 bottom>Accounts</H2>
               <AccountTable
                 accountList={customer.accounts}
                 setAccountClicked={setAccountClicked}

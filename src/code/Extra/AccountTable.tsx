@@ -1,7 +1,7 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Account } from "../../data/Models";
-import { NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
+import { NumberFormat, Table, Td, Th, Tr, H1, H2 } from "@dnb/eufemia";
 import { findBalance } from "../../ignore/AccountPage";
 
 export interface AccountTableProps {
@@ -14,6 +14,7 @@ export default function AccountTable(props: AccountTableProps) {
   return (
     <>
       <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
+      <H2 bottom>Accounts</H2>
         <Table.ScrollView
           style={{
             maxHeight: "50rem",

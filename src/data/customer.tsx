@@ -154,11 +154,5 @@ export var customer = {
         },
       ],
     },
-    {
-      id: 4,
-      name: "BSU 2",
-      number: "1123.11.43212",
-      transactions: [],
-    },
   ],
 };

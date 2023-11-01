@@ -1,4 +1,4 @@
-import { Anchor, FormStatus, P, Ul } from "@dnb/eufemia";
+import { Anchor, FormStatus, P, Ul, Tooltip } from "@dnb/eufemia";
 
 export var tasks_level2 = [
   {
@@ -34,36 +34,51 @@ export var tasks_level2 = [
     description: (
       <>
         <p className="dnb-p">
-          Until now we have not cared about the existance or the content of the
-          database. In this tasks you will have to work with the database as a
-          source of content that is exposed on the page.
+          Until now we haven't considered where the content in the online bank
+          comes from. In this task you will work with the{" "}
+          <Tooltip targetElement={<a className="tooltip">database</a>}>
+            An organized collection of structured information, or data,
+            typically stored electronically in a computer system.
+          </Tooltip>{" "}
+          as a source of data that is exposed on the web page.
           <br />
           <br />
-          The file <code className="dnb-code">customer.tsx</code> under the
-          <code className="dnb-code">data</code> folder (instead of the{" "}
-          <code className="dnb-code">code</code> folder) holds parts of the data
-          for the online bank and thus serves like a database in this system.
-          There you can see the list of accounts and the associated transactions
-          that are displayed in the Accounts-table on the Customer page. The
-          file
-          <code className="dnb-code">Models.tsx</code> describes the data
-          models, deciding how the data is structured in our database.
-          <br />
-          <br />
-          Try to edit the data by editing the name of one of the accounts in{" "}
-          <code className="dnb-code">customer.tsx</code> and see what happens on
-          the page.
+          The
+          <code className="dnb-code">data</code> folder holds several files that
+          contain data for the online bank, and thus serves like the database in
+          this system. There you can see, for example, the list of accounts and
+          the associated transactions that are displayed in the table on the
+          Customer page. Try to identify these three components in the code:
+          <Ul>
+            <li>
+              The file
+              <code className="dnb-code">Models.tsx</code> contains the data
+              models. This is not data, but a definition of how the data we will
+              have shhould be structured in the database.
+            </li>
+            <li>
+              The file <code className="dnb-code">customer.tsx</code> under{" "}
+              <code className="dnb-code">data</code> contains the actual data.
+              You see that iy is structured according to the data models, where
+              each customer has a name and a list of transactions for example.
+            </li>
+            <li>
+              The <i>Accounts</i> table on the <i>Customer page</i>, found in{" "}
+              <code className="dnb-code">AccountTable.tsx</code> in the{" "}
+              <code className="dnb-code">Extra</code> folder, exposes some of
+              the data in these files. You see that the list of accounts here is
+              the same as in the data file.
+            </li>
+          </Ul>
+          You will have to remember these three aspects of data storage and
+          visualization to complete the parts of this task.
         </p>
         <br />
         <p className="dnb-p">
           <b>Where on the website?</b> <i>Customer page</i>
         </p>
         <p className="dnb-p">
-          <b>Where is the code located? </b>{" "}
-          <code className="dnb-code">CustomerPage.tsx</code> in{" "}
-          <code className="dnb-code">Task1</code>-folder and other files that
-          are linked to in the file, like{" "}
-          <code className="dnb-code">AccountTable.tsx</code>.
+          <b>Where is the code located? </b> Files listed above above
         </p>
       </>
     ),
@@ -74,44 +89,49 @@ export var tasks_level2 = [
         level: "EASY",
         description: (
           <p className="dnb-p">
-            First, we want to add another account to the customer in the bank.
-            The accounts are displayed in the Accounts table. On the same format
-            as the other ones, add another account in the database (file). The
-            new account can for instance be BSU 2.
+            Add another account for the customer in the bank. The new account
+            should be on the same format as the others and should have at least
+            two transactions related. The new account can for instance be BSU 2.
             <br />
             <br />
-            Pay attention to the format, all the signs and to the accounts' and
-            transactions' ID's. You have to identify what is the variable names
-            and what is the data. Make sure the new account is displayed in the
-            table when you are finished.
+            Make sure the new account is displayed in the table when you are
+            finished, and pay attention to the accounts' and transactions' ID's.
           </p>
         ),
         hint: (
           <p className="dnb-p">
-            After the closing tag for the ID 3 account named BSU, add an object
-            with the same structure and change the content.
+            After the closing tag for the ID 3 account named BSU, add a similar
+            object with the same structure and new data. This account follows
+            the Account model that is aldready defined. The new data will be
+            listed in the table automatically because the current code lists all
+            the customers accounts.
           </p>
         ),
       },
       {
         id: 2,
         name: "Part B",
-        level: "MEDIUM",
+        level: "HARD",
         description: (
           <p className="dnb-p">
             Oh no, the product owner in PM has a new requirement for the online
-            bank. She wants to display the owner of each account in the table
-            along with the account name, number and balance.
+            bank. She wants to display the owner of each account on the web
+            page, along with the account name, number and balance that is
+            already there.
             <br />
             <br />
-            At this point, the field is not even included in the database model,
+            At this point, the owner is not even included in the database model,
             so displaying it in the table is not possible. Therefore you have to
-            complete three logical steps in order to make the request come true:
-            Adding owner as a field in the data model for an account, adding
-            actual data in the database and displaying the data in the table so
-            the customer can see it.
-            <br />
-            <br />
+            make changes in all the three logical steps listed above. That
+            means:
+            <Ul>
+              <li>Adding owner as a field in the data model for an account</li>
+              <li>adding actual data in the database file</li>
+              <li>
+                adding code for displaying the data in the frontend table so the
+                customer can see it
+              </li>
+            </Ul>
             Complete the three steps and choose yourself who is the owner of
             each account - the customer themself or a partner or parent for
             instance.
@@ -123,47 +143,47 @@ export var tasks_level2 = [
             <code className="dnb-code">AccountTable.tsx</code>,{" "}
             <code className="dnb-code">Models.tsx</code> and{" "}
             <code className="dnb-code">customer.tsx</code>. Look at the other
-            data fields displayed in the table, like account number, and
-            implement similar logic for an account owner.
+            data fields displayed in the table, like the account number, and
+            implement similar logic for an account owner inn all three files.
           </p>
         ),
       },
       {
         id: 3,
         name: "Part C",
-        level: "HARD",
+        level: "PROFESSIONAL",
         description: (
           <p className="dnb-p">
-            Now the product owner wants to lanch a new feature; the possibility
-            for the customer to see all the funds they own on the same page as
-            the accounts. The funds data should be listed in a table under the
-            accounts in a similar design to the accounts. The data structure,
-            meaning how the model and data looks in the code, is not decided and
-            is up to you. Think about what info about the fund that is
-            interesting to see for the customer.
+            Now the product owner wants to lanch a new feature; a coustumer
+            should be able to see all the funds they own in the online bank. The
+            funds should be listed in a new table under the accounts in a
+            similar design (or another if you want).
+            <br />
+            <br />
+            The data model is not defined yet and is up to you to design and
+            implement. Think about what info about the fund that is interesting
+            to see for the customer, like fund name and value addition for
+            example.
             <br />
             <br />
             Create a new <code className="dnb-code">.tsx</code>
-            -file (Typescript) file in the same folder as
-            <code className="dnb-code">customer.tsx</code> called{" "}
-            <code className="dnb-code">funds.tsx</code>. The file is a new
-            database in our online bank and should contain a list of a
-            customer's funds. Create a new model in{" "}
-            <code className="dnb-code">Models.tsx</code> and choose how to
-            structure it. Create a new table under the account table that
-            displays the new content in some way . Easiest way to start is to
-            copy and paste in under the{" "}
-            <code className="dnb-code">Provider</code> element and everything
-            inside and change the fields from there.
+            -file (Typescript) file in the
+            <code className="dnb-code">data</code> folder that will contain the
+            list of the customer's funds, structured according to your data
+            model.
+            <br />
+            <br />
+            Complete the three steps and verify your changes in the
+            frontend table you have created.
           </p>
         ),
         hint: (
           <p className="dnb-p">
             First, create a model for Fund that holds the information you think
-            is needed. Then add the data with the same structure in the new file
-            you created. Lastly, copy the{" "}
+            is needed. Then add the data with the same structure in the new
+            database file you created. Lastly, copy the{" "}
             <code className="dnb-code">Provider</code> element in the{" "}
-            <code className="dnb-code">AccountTable</code> and implement it
+            <code className="dnb-code">AccountTable</code> and change it
             according to your funds data structure.
           </p>
         ),
