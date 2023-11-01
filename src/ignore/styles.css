@@ -94,3 +94,12 @@ input {
   align-content: center;
   flex-direction: column;
 }
+
+.TaskTab {  
+  display: flex;
+  flex-direction: row;
+  min-width: 370px;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
