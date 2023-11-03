@@ -43,6 +43,11 @@ input {
   align-content: center;
 }
 
+.CardOverview {
+  display: flex;
+  justify-content: center;
+}
+
 .chart-container {
   display: flex;
   flex-wrap: wrap;

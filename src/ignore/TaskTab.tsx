@@ -97,7 +97,7 @@ export default function TaskTab(props: TaskTabProps) {
                         <P style={{ lineHeight: "1.75rem" }}>
                           {sub.description}
                         </P>
-                        {sub.hint != undefined ? (
+                        {sub.hint ? (
                           <FormRow top bottom direction="horizontal">
                             <Dialog
                               triggerAttributes={{

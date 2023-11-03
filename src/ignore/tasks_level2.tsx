@@ -1,4 +1,4 @@
-import { Anchor, FormStatus, P, Ul, Tooltip } from "@dnb/eufemia";
+import { Anchor, FormStatus, Li, Ol, P, Tooltip, Ul } from "@dnb/eufemia";
 
 export var tasks_level2 = [
   {
@@ -173,8 +173,8 @@ export var tasks_level2 = [
             model.
             <br />
             <br />
-            Complete the three steps and verify your changes in the
-            frontend table you have created.
+            Complete the three steps and verify your changes in the frontend
+            table you have created.
           </p>
         ),
         hint: (
@@ -194,54 +194,329 @@ export var tasks_level2 = [
     id: 2,
     title: "Task 6",
     description: (
-      <>
-        <p className="dnb-p">
-          CaseX is a service for customer service employees to review status of
-          cards that have been applied for and block cards that are not filling
-          the requirements.
-        </p>
-        <br></br>
-        <p className="dnb-p">
-          <b>Where on the website?</b>
-          <i>Block cards</i> under <i>Employee page</i>
-        </p>
-        <p className="dnb-p">
-          <b>Where is the code located?</b>{" "}
-          <code className="dnb-code">CardOverview.tsx</code> in{" "}
-          <code className="dnb-code">Task6</code>-folder
-        </p>
-      </>
+      <p className="dnb-p">
+        Customer service in DNB work long hours to help our customers the best
+        they can. One thing our customer call us for is when they see suspicous
+        transactions on their accounts. They call DNB in the hope to find out
+        what has happened. One thing that is important when this happenes is to
+        block the cards linked to account. To be able to do this, customer
+        service has to see all the cards of a customer.
+        <br /> In this assignment, you will be creating such a page where the
+        customer service in DNB can see all the cards of a customer, and block
+        the ones linked to the account where suspicous transactions was found.
+        <br />
+        <br />
+        <b>Where on the website?</b> <i>Customer's Cards</i> under{" "}
+        <i>Employee page</i>
+        <br />
+        <b>Where is the code located?</b>{" "}
+        <code className="dnb-code">CardOverview.tsx</code> in{" "}
+        <code className="dnb-code">Task6</code>-folder
+      </p>
     ),
     subtask: [
       {
         id: 4,
         name: "Part A",
-        level: "EASY",
+        level: "MEDIUM",
         description: (
           <p className="dnb-p">
-            In this part, we will start by coding the button, so the user later
-            on can request for their data from DNB.{" "}
+            A webpage in our fictional bank consists of multiple{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/components/"
+              target="_blank"
+            >
+              Eufemia components
+            </Anchor>
+            . One component can for instance be the title page (
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/elements/heading/#the-most-basic-use-of-headings"
+              target="_blank"
+            >
+              H1
+            </Anchor>
+            ) and another can be a paragraph (
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/elements/paragraph/"
+              target="_blank"
+            >
+              P
+            </Anchor>
+            ). <br />
+            In the file <code className="dnb-code">CardOverview.tsx</code> you
+            can see we use three different components:
+            <Ul>
+              <Li>
+                <Anchor
+                  href="https://eufemia.dnb.no/uilib/components/section/"
+                  target="_blank"
+                >
+                  Section
+                </Anchor>
+                , which is used to get correct styling
+              </Li>
+              <Li>
+                <Anchor
+                  href="https://eufemia.dnb.no/uilib/elements/heading/#the-most-basic-use-of-headings"
+                  target="_blank"
+                >
+                  H1
+                </Anchor>
+                , which is used to create the title
+              </Li>
+              <Li>
+                <Anchor
+                  href="https://eufemia.dnb.no/uilib/elements/paragraph/"
+                  target="_blank"
+                >
+                  P
+                </Anchor>
+                , which is used to create a paragraph with explanatory text.
+              </Li>
+            </Ul>
+            As you see, the page do not have any cards yet. You can start of by
+            adding one card to the page. <br />
+            Add the Eufemia component{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/extensions/payment-card/"
+              target="_blank"
+            >
+              PaymentCard
+            </Anchor>{" "}
+            below the <code className="dnb-code">&lt;P&gt;</code> component, but
+            still inside the <code className="dnb-code">&lt;Section&gt;</code>{" "}
+            component.
+            <FormStatus top state="info" variant="outlined" stretch={true}>
+              Remember when you create a component like so{" "}
+              <code className="dnb-code">&lt;P&gt;</code> you also need to{" "}
+              <i>close</i> that component with{" "}
+              <code className="dnb-code">&lt;/P&gt;</code>
+              <br />
+              You can also write it on the shortform like so:{" "}
+              <code className="dnb-code">&lt;P /&gt;</code>
+            </FormStatus>
           </p>
         ),
         hint: (
           <p className="dnb-p">
-            Buttons are created by coding:
+            When you create the component{" "}
+            <code className="dnb-code">&lt;PaymentCard&gt;</code> you need to
+            send properties to it like so: <br />
+            <code className="dnb-code">
+              &lt;PaymentCard dummy_property="dummy_value"&gt;
+            </code>
+            <br />
+            Properties are values that the component needs, that you send with
+            it when you create it. PaymentCard has two requires properties{" "}
+            <code className="dnb-code">product_code</code> and{" "}
+            <code className="dnb-code">card_number</code> that you need to send
+            to it when you create it. It also has a numerous optional properties
+            you <i>can</i> send to it. See the full list of available properties
+            here:{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/extensions/payment-card/properties/"
+              target="_blank"
+            >
+              PaymentCard's Properties
+            </Anchor>
+            <FormStatus top state="warn" variant="outlined" stretch={true}>
+              The documentation of the various properties that the PaymentCard
+              has is wrong (
+              <Anchor
+                href="https://eufemia.dnb.no/uilib/extensions/payment-card/properties/"
+                target="_blank"
+              >
+                PaymentCard's Properties
+              </Anchor>
+              ). It says that only{" "}
+              <code className="dnb-code">product_code</code> is required. But{" "}
+              <code className="dnb-code">card_number</code> is also required.
+            </FormStatus>
             <br />
             <br />
-            <br />
-            The resoult should be looking somthing like this:
-            <br />
-            <br />
-            Feel free to put your personal touch with the design of button.
+            You can adjust the spacing by using{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/layout/space/demos/"
+              target="_blank"
+            >
+              Space
+            </Anchor>
           </p>
         ),
       },
       {
         id: 5,
         name: "Part B",
+        level: "EASY",
+        description: (
+          <p className="dnb-p">
+            Add two more <code className="dnb-code">PaymentCard</code>'s, and
+            play around with the different card types available:{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/extensions/payment-card/products/"
+              target="_blank"
+            >
+              Different card products
+            </Anchor>
+            .
+            <br />
+            <br />
+            Add spacing between the cards by adding a{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/layout/space/demos/"
+              target="_blank"
+            >
+              &lt;Space top bottom/&gt;
+            </Anchor>{" "}
+            between them.
+            <br />
+            <br />
+            Play around with the different{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/extensions/payment-card/properties/"
+              target="_blank"
+            >
+              PaymentCard's Properties
+            </Anchor>{" "}
+            to customize the cards the way you want.
+          </p>
+        ),
+      },
+      {
+        id: 5,
+        name: "Part C",
         level: "MEDIUM",
-        description: <p className="dnb-p">FILL OUT</p>,
-        hint: <p className="dnb-p">FILL OUT</p>,
+        description: (
+          <p className="dnb-p">
+            Now that you have the different cards, you want to add a button so
+            that you can block the cards that are linked to the account with
+            suspicous transactions.
+            <br />
+            <br />
+            Add a{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/components/switch/"
+              target="_blank"
+            >
+              Switch
+            </Anchor>{" "}
+            with <code className="dnb-code">label="Block card"</code> to the
+            right side of each card you have added.
+            <br />
+            <br />
+            To be able to place the button on the right side of the card you
+            need to wrap the <code className="dnb-code">
+              PaymentCard
+            </code> and <code className="dnb-code">Switch</code> inside a{" "}
+            <code className="dnb-code">&lt;FlexContainer &gt;</code> (
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/layout/flex/container/demos/#horizontal-fieldstring"
+              target="_blank"
+            >
+              FlexContainer
+            </Anchor>
+            )
+            <FormStatus
+              top
+              stretch={true}
+              text="Note that FlexContainer is FlexContainer NOT Flex.Container. It is wrong in the documentation"
+              state="warn"
+            />
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            You can play around with the different{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/layout/flex/container/properties/"
+              target="_blank"
+            >
+              properites of FlexContainer
+            </Anchor>{" "}
+            to place the components where you want.
+          </p>
+        ),
+      },
+      {
+        id: 5,
+        name: "Part D",
+        level: "HARD",
+        description: (
+          <p className="dnb-p">
+            As you may have noticed, the button doesn't actually change
+            anything. For this we need to implement some logic to the button, so
+            that when the button is pressed it will change the
+            <code className="dnb-code">card_status</code> of the card to{" "}
+            <i>blocked</i>.
+            <br />
+            <br />
+            Let's start with the card at the top, and implement logic to the
+            button next to it. <br />
+            You need to to two things for this to work:
+            <Ol>
+              <Li>
+                Use a state in{" "}
+                <code className="dnb-code">&lt;PaymentCard&gt;</code>
+              </Li>
+              <Li>
+                Change the state in{" "}
+                <code className="dnb-code">&lt;Switch&gt;</code>
+              </Li>
+            </Ol>
+            In order for one component to be able to change something in another
+            component we need to use a state that both of them can use and
+            change. A state is created by calling{" "}
+            <Anchor
+              href="https://www.w3schools.com/react/react_usestate.asp"
+              target="_blank"
+            >
+              React's useState
+            </Anchor>{" "}
+            which you can see we have done three time on line 19, 20 and 21 in{" "}
+            <code className="dnb-code">CardOverview.tsx</code>.
+            <br />
+            <br />
+            First we need to use the state (ref. nr. 1 above). This is done
+            setting the property <code className="dnb-code">
+              card_status
+            </code>{" "}
+            in <code className="dnb-code">PaymentCard</code> to the state. Let's
+            use the first state for the first card. <br />
+            <br /> Second (ref. nr. 2 above), we need to change this state when
+            the button is pressed. This is done by using the{" "}
+            <code className="dnb-code">on_change</code> property in{" "}
+            <code className="dnb-code">Switch</code>, and use the function to
+            set the state to a new value, which is our case would be{" "}
+            <code className="dnb-code">"blocked"</code>. See the documentation
+            for how to do this:{" "}
+            <Anchor
+              href="https://eufemia.dnb.no/uilib/components/switch/demos/#checked-switch"
+              target="_blank"
+            >
+              example of on_change in Switch
+            </Anchor>
+            <br />
+            <br />
+            Remember to also change back the state to{" "}
+            <code className="dnb-code">"active"</code> when the user press the
+            button again.
+            <br />
+            <br />
+            Add functionality for the other cards as well.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            In order to make the button switch the card status between{" "}
+            <code className="dnb-code">"active"</code> and{" "}
+            <code className="dnb-code">"blocked"</code> you need to write and{" "}
+            <code className="dnb-code">if</code> statement in the{" "}
+            <code className="dnb-code">on_change</code> and check if the card is{" "}
+            <code className="dnb-code">checked</code> or not. If it is checked,
+            set the card status to <code className="dnb-code">"blocked"</code>,
+            else set it to <code className="dnb-code">"active"</code>.
+          </p>
+        ),
       },
     ],
   },
@@ -258,8 +533,11 @@ export var tasks_level2 = [
           <br />
           To be able to apply for a job, you first need to create a new page and
           create an application form. To create the page you will use{" "}
-          <Anchor href="https://eufemia.dnb.no/uilib/elements/" target="_blank">
-            Eufemia elements
+          <Anchor
+            href="https://eufemia.dnb.no/uilib/components/"
+            target="_blank"
+          >
+            Eufemia components
           </Anchor>{" "}
           and add functionality to them.
           <br />

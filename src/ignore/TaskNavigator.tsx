@@ -38,7 +38,7 @@ export interface Task {
     name: string;
     level: string;
     description: ReactNode;
-    hint: ReactNode;
+    hint?: ReactNode;
   }[];
 }
 

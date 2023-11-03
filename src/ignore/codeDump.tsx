@@ -58,10 +58,10 @@ export function TransactionsPage(props: TransactionsPageProps) {
           ),
         },
         {
-          title: "Card Overview",
+          title: "Customer's Cards",
           key: "CardOverview",
           content: (
-            <div className="">
+            <div className="CardOverview">
               <CardOverview setCurrentSubTab={setCurrentSubTab} />
             </div>
           ),
