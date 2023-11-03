@@ -1,6 +1,7 @@
 import "@dnb/eufemia";
-import { H1, P, Section, Space } from "@dnb/eufemia";
-import { PaymentCardCardStatus } from "@dnb/eufemia/extensions/payment-card";
+import { H1, P, Section, Space, Switch } from "@dnb/eufemia";
+import FlexContainer from "@dnb/eufemia/components/flex/Container";
+import PaymentCard, { PaymentCardCardStatus } from "@dnb/eufemia/extensions/payment-card";
 import "@dnb/eufemia/extensions/payment-card/style";
 import "@dnb/eufemia/style/themes/theme-ui/extensions";
 import { useState } from "react";
@@ -29,7 +30,7 @@ export default function CardOverview(props: CardOverviewProps) {
       {/* THE CODE BELOW IS WHAT THEY WILL CODE IN TASK 6, 
       AND IS HERE NOW ONLY TO SHOW WHAT THE ASSIGNMENT IS ABOUT */}
 
-      {/* <FlexContainer align="center">
+      <FlexContainer align="center">
         <PaymentCard
           product_code="VX5"
           card_number="************1923"
@@ -75,7 +76,7 @@ export default function CardOverview(props: CardOverviewProps) {
             else setCard3("active");
           }}
         />
-      </FlexContainer> */}
+      </FlexContainer>
     </Section>
   );
 }

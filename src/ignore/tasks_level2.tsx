@@ -379,6 +379,12 @@ export var tasks_level2 = [
               PaymentCard's Properties
             </Anchor>{" "}
             to customize the cards the way you want.
+            <br />
+            <br />
+            You can try to make the page look similar to this:{" "}
+            <Anchor href="/reference_image_card_overview" target="_blank">
+              Reference image for <i>Customer's Cards</i> page
+            </Anchor>
           </p>
         ),
       },
