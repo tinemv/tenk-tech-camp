@@ -30,7 +30,7 @@ export default function CardOverview(props: CardOverviewProps) {
       {/* THE CODE BELOW IS WHAT THEY WILL CODE IN TASK 6, 
       AND IS HERE NOW ONLY TO SHOW WHAT THE ASSIGNMENT IS ABOUT */}
 
-      <FlexContainer align="center">
+      {/* <FlexContainer align="center">
         <PaymentCard
           product_code="VX5"
           card_number="************1923"
@@ -76,7 +76,7 @@ export default function CardOverview(props: CardOverviewProps) {
             else setCard3("active");
           }}
         />
-      </FlexContainer>
+      </FlexContainer> */}
     </Section>
   );
 }
