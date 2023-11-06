@@ -1,13 +1,24 @@
 import React from "react";
-import { Breadcrumb, H1, H2, H3, NumberFormat, Section } from "@dnb/eufemia";
-import { Account, Transaction } from "../data/CustomerModel";
-import { transfer_to, pay_from } from "@dnb/eufemia/icons";
-import { TransactionTableForAccounts } from "./TransactionTableForAccounts";
+import { Breadcrumb, H1, H2, H3, NumberFormat, Section, Dropdown } from "@dnb/eufemia";
+import { Account, Transaction } from "../../data/CustomerModel";
+import { TransactionTableForAccounts } from "../../ignore/TransactionTableForAccounts";
+
+
+
 
 export type AccountProps = {
   account: Account | undefined;
   setAccountClicked: Function;
 };
+
+
+
+export enum Parameter {
+  DESCRIPTION = "Transaction description",
+  DATE = "Date of transaction",
+  AMOUNT = "Amount",
+}
+
 
 export const findBalance = (transactions: Transaction[]) => {
   return transactions.reduce(
@@ -21,6 +32,9 @@ export default function AccountPage(props: AccountProps) {
   if (account == undefined) {
     return;
   }
+  const [inputParameter, setInputParameter] = React.useState(undefined);
+  const [lst, setLst] = React.useState<Transaction[]>(account.transactions);
+
 
   return (
     <Section spacing top bottom style_type="white">
@@ -41,10 +55,23 @@ export default function AccountPage(props: AccountProps) {
         </NumberFormat>
       </H2>
       <Section top style_type="lavender" spacing>
+      <Section spacing>
+            <Dropdown
+              data={[
+                Parameter.DESCRIPTION,
+                Parameter.DATE,
+                Parameter.AMOUNT,
+              ]}
+              label= "Sort by"
+              title="Select parameter"
+              on_change = {({ data }) => setInputParameter(data)}
+            />
+          </Section>{" "}
+        </Section> 
         <TransactionTableForAccounts
-          listOfTransactions={account.transactions}
+        /** Task 4B */
+        listOfTransactions={lst}
         />
-      </Section>
     </Section>
   );
 }

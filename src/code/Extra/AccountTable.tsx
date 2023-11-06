@@ -1,7 +1,8 @@
-import { H2, NumberFormat, Table, Td, Th, Tr } from "@dnb/eufemia";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Account } from "../../data/CustomerModel";
-import { findBalance } from "../../ignore/AccountPage";
+import { NumberFormat, Table, Td, Th, Tr, H1, H2 } from "@dnb/eufemia";
+import { findBalance } from "../Task4/AccountPage";
+import React from "react";
 
 export interface AccountTableProps {
   accountList: Account[];
