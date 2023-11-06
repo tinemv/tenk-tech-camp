@@ -37,6 +37,13 @@ export var tasks_level2 = [
         description: <p className="dnb-p">In Task4/SortingAlgorithm.tsx, implement the Bubble sort algorithm using the comments as a guide.</p>,
         hint: <p className="dnb-p">To access an item in a list at a certain index write var item = list[index]</p>,
       },
+      {
+        id: 0,
+        name: "Part B",
+        level: "MEDIUM",
+        description: <p className="dnb-p">Now that we have implemented a sorting algorithm which hopefully works, we can use it in our webpage. In the file AccountPage.tsx, we outline how the account page will look. In line 73, we see the list of transactions. To sort this list with Bubble Sort, use the function BubbleSort() with parameters transactionList and category which we are sorting. </p>,
+        hint: <p className="dnb-p">Note that the parameters have to be used in the order defined in the first line of the sorting function.</p>,
+      },
     ],
   },
   {

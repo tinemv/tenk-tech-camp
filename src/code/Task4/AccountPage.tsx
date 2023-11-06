@@ -13,9 +13,9 @@ export type AccountProps = {
 
 
 
-export enum Parameter {
-  DESCRIPTION = "Transaction description",
-  DATE = "Date of transaction",
+export enum Category {
+  DESCRIPTION = "Description",
+  DATE = "Date",
   AMOUNT = "Amount",
 }
 
@@ -32,8 +32,8 @@ export default function AccountPage(props: AccountProps) {
   if (account == undefined) {
     return;
   }
-  const [inputParameter, setInputParameter] = React.useState(undefined);
-  const [lst, setLst] = React.useState<Transaction[]>(account.transactions);
+  const [category, setCategory] = React.useState(undefined);
+  const [transactionList, setTransactionList] = React.useState<Transaction[]>(account.transactions);
 
 
   return (
@@ -54,23 +54,21 @@ export default function AccountPage(props: AccountProps) {
           {findBalance(account.transactions)}
         </NumberFormat>
       </H2>
-      <Section top style_type="lavender" spacing>
-      <Section spacing>
+      <Section top spacing>
             <Dropdown
               data={[
-                Parameter.DESCRIPTION,
-                Parameter.DATE,
-                Parameter.AMOUNT,
+                Category.DESCRIPTION,
+                Category.DATE,
+                Category.AMOUNT,
               ]}
               label= "Sort by"
               title="Select parameter"
-              on_change = {({ data }) => setInputParameter(data)}
+              on_change = {({ data }) => setCategory(data)}
             />
-          </Section>{" "}
         </Section> 
         <TransactionTableForAccounts
         /** Task 4B */
-        listOfTransactions={lst}
+        listOfTransactions={transactionList}
         />
     </Section>
   );

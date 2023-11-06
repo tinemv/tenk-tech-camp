@@ -1,5 +1,5 @@
 import { Transaction } from "../../data/CustomerModel"
-import { Parameter } from "../Task4/AccountPage"
+import { Category } from "../Task4/AccountPage"
 
 export function BubbleSort (input, category): any{
     var list = input
@@ -12,10 +12,12 @@ export function BubbleSort (input, category): any{
             index++) 
             {
                 var item1 // Assign item1 to the item in the list at the index.
-                var item2// Assign item2 to the next item in the list at index+1.
+                var item2 // Assign item2 to the next item in the list at index+1.
 
                 // If the first element is greater than the second element, swap them and let swapped be true. NOTE remove the 0 inside the if statement
                 if (0) {
+                    //Swap item1 and item2 in the list
+                    //Let swapped be true
 
                     
             }    
@@ -28,11 +30,11 @@ export function BubbleSort (input, category): any{
 
 function getValue(transaction: Transaction, category: string): any {
     switch (category){
-        case Parameter.AMOUNT:
+        case Category.AMOUNT:
             return transaction.amount
-        case Parameter.DATE:
+        case Category.DATE:
             return transaction.date
-        case Parameter.DESCRIPTION:
+        case Category.DESCRIPTION:
             return transaction.description
     }
 }
