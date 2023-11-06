@@ -133,25 +133,24 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                           }}
                           title={
                             inputText.toLowerCase().split(" ").join("") ===
-                            "jonasgahrstøre"
+                            "sindrefinnes"
                               ? "Congratulations!"
                               : "Oooops... try again!"
                           }
                         >
                           {inputText.toLowerCase().split(" ").join("") ===
-                          "jonasgahrstøre" ? (
+                          "sindrefinnes" ? (
                             <P>
-                              You solved the case and reported the right person
+                              You solved the case and reported the correct person
                               to the police.
                               <br />
                               <br />
-                              Jonas Gahr Støre, prime minister of Norway, has
-                              transferred money to Russia to support war in
-                              Ukraine.
+                              It was Sindre Finnes who transferred money 
+                              to the Evil corporation!
                               <br />
                               <br />
                               Luckily for us, you were able to use technology to
-                              effectivly track him down so he can be stopped!
+                              effectivly track him down so he can be investigated by the police!
                             </P>
                           ) : (
                             <P>
@@ -160,7 +159,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                               <br />
                               <br />
                               Go back and look through the transactions again to
-                              find someone suspicious.
+                              find a suspicious transaction.
                             </P>
                           )}
                         </Dialog>

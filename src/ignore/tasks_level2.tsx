@@ -1,4 +1,7 @@
+import React from "react";
 import { Anchor, FormStatus, Li, Ol, P, Tooltip, Ul } from "@dnb/eufemia";
+
+import { Anchor, FormStatus, P, Ul } from "@dnb/eufemia";
 
 export var tasks_level2 = [
   {
