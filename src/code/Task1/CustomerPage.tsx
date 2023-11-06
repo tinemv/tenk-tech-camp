@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from "react";
-import AccountTable from "../Extra/AccountTable";
+import { H1, Img, Section } from "@dnb/eufemia";
+import { useState } from "react";
 import { customer } from "../../data/customer";
-import unknown from "./ProfilePictures/Unknown.png";
-import AdaLovelace from "./ProfilePictures/AdaLovelace.png";
-import AmalClooney from "./ProfilePictures/AmalClooney.jpg";
-import CelineDion from "./ProfilePictures/CelineDion.jpg";
-import ChimamandaAdichie from "./ProfilePictures/ChimamandaAdichie.jpg";
-import KamalHarris from "./ProfilePictures/KamalaHarris.png";
-import GraceHopper from "./ProfilePictures/GraceHopper.jpg";
-import MichelleObama from "./ProfilePictures/MichelleObama.jpg"
-import TaylorSwift from "./ProfilePictures/TaylorSwift.png";
-import GretaThunberg from "./ProfilePictures/GretaThunberg.png";
-import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../../ignore/styles.css";
-import AccountPage from "../Task4/AccountPage";
+import AccountTable from "../Extra/AccountTable";
+import AccountPage from "../Task5/AccountPage";
+import unknown from "./ProfilePictures/Unknown.png";
 
 export interface CustomerPageProps {
   setCurrentTab: Function;

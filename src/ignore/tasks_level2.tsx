@@ -6,222 +6,16 @@ export var tasks_level2 = [
     id: 0,
     title: "Task 4",
     description: (
-      <>
-        <p className="dnb-p">This task covers algorithms. In the table which shows the transactions for a specific account, we see a list of transactions which can be sorted.  <br></br><br></br> 
-        Currently clicking on the sort by dropdown does nothing to the table, but we want to replace this our own sorting algorithm called Bubble sort. 
-        Imagine you have a row of people of different ages, and you want to arrange them in order from youngest to oldest.
-        <ol>
-          <li>Start at one end of the row and look at two people at a time.</li>
-          <li>If the person on the left is older than the person on the right, swap their positions.</li>
-          <li>Keep doing this for every pair of adjacent people in the row.</li>
-          <li>Go through the row again and again until you don't need to swap any more people, which means they are now sorted by age.</li>
-        </ol>
-        To get a better understanding of the algorithm watch <a href="https://www.youtube.com/watch?v=Cq7SMsQBEUw" >this video</a>.
-        </p>
-        <br></br>
-        <p className="dnb-p">
-          <b>Where on the website?</b> <i>Customer tab, account page</i>
-        </p>
-        <p className="dnb-p">
-          <b>Where is the code located?</b>{" "}
-          <code className="dnb-code">SortingAlgorithm.ts</code> and
-          <code className="dnb-code">Task4</code>-folder
-        </p>
-      </>
-    ),
-    subtask: [
-      {
-        id: 0,
-        name: "Part A",
-        level: "HARD",
-        description: <p className="dnb-p">In Task4/SortingAlgorithm.tsx, implement the Bubble sort algorithm using the comments as a guide.</p>,
-        hint: <p className="dnb-p">To access an item in a list at a certain index write var item = list[index]</p>,
-      },
-      {
-        id: 0,
-        name: "Part B",
-        level: "MEDIUM",
-        description: <p className="dnb-p">Now that we have implemented a sorting algorithm which hopefully works, we can use it in our webpage. In the file AccountPage.tsx, we outline how the account page will look. In line 73, we see the list of transactions. To sort this list with Bubble Sort, use the function BubbleSort() with parameters transactionList and category which we are sorting. </p>,
-        hint: <p className="dnb-p">Note that the parameters have to be used in the order defined in the first line of the sorting function.</p>,
-      },
-    ],
-  },
-  {
-    id: 1,
-    title: "Task 5",
-    description: (
-      <>
-        <p className="dnb-p">
-          Until now we haven't considered where the content in the online bank
-          comes from. In this task you will work with the{" "}
-          <Tooltip targetElement={<a className="tooltip">database</a>}>
-            An organized collection of structured information, or data,
-            typically stored electronically in a computer system.
-          </Tooltip>{" "}
-          as a source of data that is exposed on the web page.
-          <br />
-          <br />
-          The
-          <code className="dnb-code">data</code> folder holds several files that
-          contain data for the online bank, and thus serves like the database in
-          this system. There you can see, for example, the list of accounts and
-          the associated transactions that are displayed in the table on the
-          Customer page. Try to identify these three components in the code:
-          <Ul>
-            <li>
-              The file
-              <code className="dnb-code">Models.tsx</code> contains the data
-              models. This is not data, but a definition of how the data we will
-              have shhould be structured in the database.
-            </li>
-            <li>
-              The file <code className="dnb-code">customer.tsx</code> under{" "}
-              <code className="dnb-code">data</code> contains the actual data.
-              You see that iy is structured according to the data models, where
-              each customer has a name and a list of transactions for example.
-            </li>
-            <li>
-              The <i>Accounts</i> table on the <i>Customer page</i>, found in{" "}
-              <code className="dnb-code">AccountTable.tsx</code> in the{" "}
-              <code className="dnb-code">Extra</code> folder, exposes some of
-              the data in these files. You see that the list of accounts here is
-              the same as in the data file.
-            </li>
-          </Ul>
-          You will have to remember these three aspects of data storage and
-          visualization to complete the parts of this task.
-        </p>
-        <br />
-        <p className="dnb-p">
-          <b>Where on the website?</b> <i>Customer page</i>
-        </p>
-        <p className="dnb-p">
-          <b>Where is the code located? </b> Files listed above above
-        </p>
-      </>
-    ),
-    subtask: [
-      {
-        id: 1,
-        name: "Part A",
-        level: "EASY",
-        description: (
-          <p className="dnb-p">
-            Add another account for the customer in the bank. The new account
-            should be on the same format as the others and should have at least
-            two transactions related. The new account can for instance be BSU 2.
-            <br />
-            <br />
-            Make sure the new account is displayed in the table when you are
-            finished, and pay attention to the accounts' and transactions' ID's.
-          </p>
-        ),
-        hint: (
-          <p className="dnb-p">
-            After the closing tag for the ID 3 account named BSU, add a similar
-            object with the same structure and new data. This account follows
-            the Account model that is aldready defined. The new data will be
-            listed in the table automatically because the current code lists all
-            the customers accounts.
-          </p>
-        ),
-      },
-      {
-        id: 2,
-        name: "Part B",
-        level: "HARD",
-        description: (
-          <p className="dnb-p">
-            Oh no, the product owner in PM has a new requirement for the online
-            bank. She wants to display the owner of each account on the web
-            page, along with the account name, number and balance that is
-            already there.
-            <br />
-            <br />
-            At this point, the owner is not even included in the database model,
-            so displaying it in the table is not possible. Therefore you have to
-            make changes in all the three logical steps listed above. That
-            means:
-            <Ul>
-              <li>Adding owner as a field in the data model for an account</li>
-              <li>adding actual data in the database file</li>
-              <li>
-                adding code for displaying the data in the frontend table so the
-                customer can see it
-              </li>
-            </Ul>
-            Complete the three steps and choose yourself who is the owner of
-            each account - the customer themself or a partner or parent for
-            instance.
-          </p>
-        ),
-        hint: (
-          <p className="dnb-p">
-            Code needs to be added in three different files;{" "}
-            <code className="dnb-code">AccountTable.tsx</code>,{" "}
-            <code className="dnb-code">Models.tsx</code> and{" "}
-            <code className="dnb-code">customer.tsx</code>. Look at the other
-            data fields displayed in the table, like the account number, and
-            implement similar logic for an account owner inn all three files.
-          </p>
-        ),
-      },
-      {
-        id: 3,
-        name: "Part C",
-        level: "PROFESSIONAL",
-        description: (
-          <p className="dnb-p">
-            Now the product owner wants to lanch a new feature; a coustumer
-            should be able to see all the funds they own in the online bank. The
-            funds should be listed in a new table under the accounts in a
-            similar design (or another if you want).
-            <br />
-            <br />
-            The data model is not defined yet and is up to you to design and
-            implement. Think about what info about the fund that is interesting
-            to see for the customer, like fund name and value addition for
-            example.
-            <br />
-            <br />
-            Create a new <code className="dnb-code">.tsx</code>
-            -file (Typescript) file in the
-            <code className="dnb-code">data</code> folder that will contain the
-            list of the customer's funds, structured according to your data
-            model.
-            <br />
-            <br />
-            Complete the three steps and verify your changes in the frontend
-            table you have created.
-          </p>
-        ),
-        hint: (
-          <p className="dnb-p">
-            First, create a model for Fund that holds the information you think
-            is needed. Then add the data with the same structure in the new
-            database file you created. Lastly, copy the{" "}
-            <code className="dnb-code">Provider</code> element in the{" "}
-            <code className="dnb-code">AccountTable</code> and change it
-            according to your funds data structure.
-          </p>
-        ),
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Task 6",
-    description: (
       <p className="dnb-p">
         Customer service in DNB work long hours to help our customers the best
-        they can. One thing our customer call us for is when they see suspicous
-        transactions on their accounts. They call DNB in the hope to find out
-        what has happened. One thing that is important when this happenes is to
-        block the cards linked to account. To be able to do this, customer
-        service has to see all the cards of a customer.
-        <br /> In this assignment, you will be creating such a page where the
-        customer service in DNB can see all the cards of a customer, and block
-        the ones linked to the account where suspicous transactions was found.
+        they can. When they see suspicious transactions on their account, they
+        call us in the hope to find out what has happened, and to block the
+        cards linked to the account. To be able to do this, customer service has
+        to see all the cards of a customer.
+        <br /> <br /> In this assignment, you will be creating such a page where
+        the customer service in DNB can see all the cards of a customer, and
+        block the ones linked to the account where suspicious transactions were
+        found.
         <br />
         <br />
         <b>Where on the website?</b> <i>Customer's Cards</i> under{" "}
@@ -229,12 +23,17 @@ export var tasks_level2 = [
         <br />
         <b>Where is the code located?</b>{" "}
         <code className="dnb-code">CardOverview.tsx</code> in{" "}
-        <code className="dnb-code">Task6</code>-folder
+        <code className="dnb-code">Task4</code>-folder
+        <FormStatus top state="info" variant="outlined" stretch={true}>
+          If you want help we have a suggested solution in the
+          <code className="dnb-code">Task4/SuggestedSolution</code>-folder you
+          can look at.
+        </FormStatus>
       </p>
     ),
     subtask: [
       {
-        id: 4,
+        id: 0,
         name: "Part A",
         level: "MEDIUM",
         description: (
@@ -328,28 +127,14 @@ export var tasks_level2 = [
             it when you create it. PaymentCard has two requires properties{" "}
             <code className="dnb-code">product_code</code> and{" "}
             <code className="dnb-code">card_number</code> that you need to send
-            to it when you create it. It also has a numerous optional properties
-            you <i>can</i> send to it. See the full list of available properties
-            here:{" "}
+            to it when you create it. It also has numerous optional properties .
+            See the full list of available properties here:{" "}
             <Anchor
               href="https://eufemia.dnb.no/uilib/extensions/payment-card/properties/"
               target="_blank"
             >
               PaymentCard's Properties
             </Anchor>
-            <FormStatus top state="warn" variant="outlined" stretch={true}>
-              The documentation of the various properties that the PaymentCard
-              has is wrong (
-              <Anchor
-                href="https://eufemia.dnb.no/uilib/extensions/payment-card/properties/"
-                target="_blank"
-              >
-                PaymentCard's Properties
-              </Anchor>
-              ). It says that only{" "}
-              <code className="dnb-code">product_code</code> is required. But{" "}
-              <code className="dnb-code">card_number</code> is also required.
-            </FormStatus>
             <br />
             <br />
             You can adjust the spacing by using{" "}
@@ -363,7 +148,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 5,
+        id: 1,
         name: "Part B",
         level: "EASY",
         description: (
@@ -407,14 +192,14 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 5,
+        id: 2,
         name: "Part C",
         level: "MEDIUM",
         description: (
           <p className="dnb-p">
             Now that you have the different cards, you want to add a button so
             that you can block the cards that are linked to the account with
-            suspicous transactions.
+            suspicious transactions.
             <br />
             <br />
             Add a{" "}
@@ -462,7 +247,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 5,
+        id: 3,
         name: "Part D",
         level: "HARD",
         description: (
@@ -476,7 +261,7 @@ export var tasks_level2 = [
             <br />
             Let's start with the card at the top, and implement logic to the
             button next to it. <br />
-            You need to to two things for this to work:
+            You need to do two things for this to work:
             <Ol>
               <Li>
                 Use a state in{" "}
@@ -496,7 +281,7 @@ export var tasks_level2 = [
             >
               React's useState
             </Anchor>{" "}
-            which you can see we have done three time on line 19, 20 and 21 in{" "}
+            which you can see we have done three time on line 17, 18 and 19 in{" "}
             <code className="dnb-code">CardOverview.tsx</code>.
             <br />
             <br />
@@ -510,7 +295,7 @@ export var tasks_level2 = [
             the button is pressed. This is done by using the{" "}
             <code className="dnb-code">on_change</code> property in{" "}
             <code className="dnb-code">Switch</code>, and use the function to
-            set the state to a new value, which is our case would be{" "}
+            set the state to a new value, which is in our case would be{" "}
             <code className="dnb-code">"blocked"</code>. See the documentation
             for how to do this:{" "}
             <Anchor
@@ -539,6 +324,250 @@ export var tasks_level2 = [
             <code className="dnb-code">checked</code> or not. If it is checked,
             set the card status to <code className="dnb-code">"blocked"</code>,
             else set it to <code className="dnb-code">"active"</code>.
+          </p>
+        ),
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Task 5",
+    description: (
+      <>
+        <p className="dnb-p">
+          This task covers algorithms. In the table which shows the transactions
+          for a specific account, we see a list of transactions that can be
+          sorted. <br />
+          <br />
+          Currently, clicking on the <i>sort by</i> dropdown does nothing to the
+          table. We want to replace this with a sorting algorithm called{" "}
+          <b>Bubble sort</b>.
+          <br />
+          Bubble sort works as follows: imagine you have a row of people of
+          different ages, and you want to arrange them in order from youngest to
+          oldest.
+          <ol>
+            <li>
+              Start at one end of the row and look at two people at a time.
+            </li>
+            <li>
+              If the person on the left is older than the person on the right,
+              swap their positions.
+            </li>
+            <li>
+              Keep doing this for every pair of adjacent people in the row.
+            </li>
+            <li>
+              Go through the row again and again until you don't need to swap
+              any more people, which means they are now sorted by age.
+            </li>
+          </ol>
+          To get a better understanding of the algorithm watch{" "}
+          <a
+            href="https://youtu.be/Iv3vgjM8Pv4?feature=shared&t=52"
+            target="_blank"
+          >
+            this video
+          </a>
+          .
+        </p>
+        <br></br>
+        <p className="dnb-p">
+          <b>Where on the website?</b> Click on one of the accounts in{" "}
+          <i>Customer page</i>
+        </p>
+        <p className="dnb-p">
+          <b>Where is the code located?</b>{" "}
+          <code className="dnb-code">SortingAlgorithm.tsx</code> in the
+          <code className="dnb-code">Task5</code>-folder
+        </p>
+      </>
+    ),
+    subtask: [
+      {
+        id: 4,
+        name: "Part A",
+        level: "HARD",
+        description: (
+          <p className="dnb-p">
+            In <code className="dnb-code">SortingAlgorithm.tsx</code>, implement
+            the Bubble sort algorithm using the comments in the code as a guide.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            To access an item in a list at a certain index write var item =
+            list[index]
+          </p>
+        ),
+      },
+      {
+        id: 0,
+        name: "Part B",
+        level: "MEDIUM",
+        description: <p className="dnb-p">Now that we have implemented a sorting algorithm which hopefully works, we can use it in our webpage. In the file AccountPage.tsx, we outline how the account page will look. In line 73, we see the list of transactions. To sort this list with Bubble Sort, use the function BubbleSort() with parameters transactionList and category which we are sorting. </p>,
+        hint: <p className="dnb-p">Note that the parameters have to be used in the order defined in the first line of the sorting function.</p>,
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Task 6",
+    description: (
+      <>
+        <p className="dnb-p">
+          Until now we haven't considered where the data in the online bank
+          comes from. In this task you will work with the{" "}
+          <Tooltip targetElement={<a className="tooltip">database</a>}>
+            An organized collection of structured information, or data,
+            typically stored electronically in a computer system.
+          </Tooltip>{" "}
+          as a source of data that is exposed on the web page.
+          <br />
+          <br />
+          The
+          <code className="dnb-code">data</code> folder holds several files that
+          contain data for the online bank, thus serving like the database in
+          this system. There you can see, for example, the list of accounts and
+          the associated transactions on the Customer page. Try to identify
+          these three components in the code:
+          <Ul>
+            <li>
+              The file
+              <code className="dnb-code">CustomerModel.tsx</code> under{" "}
+              <code className="dnb-code">data</code> contains the data models
+              related to the customers. This is not data, but a definition of
+              how the data we will have should be structured in the database.
+            </li>
+            <li>
+              The file <code className="dnb-code">customer.tsx</code> under{" "}
+              <code className="dnb-code">data</code> contains the actual data.
+              You see that it is structured according to the data models, where
+              each customer has a name and a list of transactions for example.
+            </li>
+            <li>
+              The <i>Accounts</i> table on the <i>Customer page</i>, found in{" "}
+              <code className="dnb-code">AccountTable.tsx</code> in the{" "}
+              <code className="dnb-code">Extra</code> folder, exposes some of
+              the data in these files.
+            </li>
+          </Ul>
+          You will have to remember these three aspects of data storage and
+          visualization to complete the parts of this task.
+        </p>
+        <br />
+        <p className="dnb-p">
+          <b>Where on the website?</b> <i>Customer page</i>
+        </p>
+        <p className="dnb-p">
+          <b>Where is the code located? </b> Files listed above
+        </p>
+      </>
+    ),
+    subtask: [
+      {
+        id: 5,
+        name: "Part A",
+        level: "EASY",
+        description: (
+          <p className="dnb-p">
+            Add another account for the customer in the bank. The new account
+            should be on the same format as the others and should have at least
+            two transactions. The new account can for instance be <i>BSU 2</i>.
+            <br />
+            <br />
+            Make sure the new account is displayed in the table when you are
+            finished, and pay attention to the accounts' and transactions' ID's.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            After the closing tag for the ID 3 account named BSU, add a similar
+            object with the same structure and new data. This account follows
+            the Account model that is already defined. The new data will be
+            listed in the table automatically because the current code lists all
+            the customer's accounts.
+          </p>
+        ),
+      },
+      {
+        id: 6,
+        name: "Part B",
+        level: "HARD",
+        description: (
+          <p className="dnb-p">
+            Oh no, the product owner in PM has a new requirement for the online
+            bank. She wants to display the owner of each account on the web
+            page, along with the account name, number and balance that is
+            already there.
+            <br />
+            <br />
+            At this point, the owner is not even included in the database model,
+            so displaying it in the table is not possible. Therefore you have to
+            make changes in all the three logical steps listed above. That
+            means:
+            <Ul>
+              <li>Adding owner as a field in the data model for an account</li>
+              <li>Adding actual data in the database file</li>
+              <li>
+                Adding code for displaying the data in the frontend table so the
+                customer can see it
+              </li>
+            </Ul>
+            Complete the three steps and choose yourself who is the owner of
+            each account - the customer themself or a partner or parent for
+            instance.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            Code needs to be added in three different files;{" "}
+            <code className="dnb-code">CustomerModel.tsx</code>,{" "}
+            <code className="dnb-code">customer.tsx</code> and{" "}
+            <code className="dnb-code">AccountTable.tsx</code>. Look at the
+            other data fields displayed in the table, like the account number,
+            and implement similar logic for an account owner inn all three
+            files.
+          </p>
+        ),
+      },
+      {
+        id: 7,
+        name: "Part C",
+        level: "PROFESSIONAL",
+        description: (
+          <p className="dnb-p">
+            Now the product owner wants to lanch a new feature; a customer
+            should be able to see all the funds they own in the online bank. The
+            funds should be listed in a new table under the accounts table in a
+            similar design (or another if you want).
+            <br />
+            <br />
+            The data model is not defined yet and it is up to you to design and
+            implement it. Think about what info about the fund that is
+            interesting to see for the customer, like fund name and value
+            addition for example.
+            <br />
+            <br />
+            Create a new <code className="dnb-code">.tsx</code>
+            (Typescript)-file in the
+            <code className="dnb-code">data</code> folder that will contain the
+            list of the customer's funds, structured according to your data
+            model.
+            <br />
+            <br />
+            Complete the three steps and verify your changes in the frontend
+            table you have created.
+          </p>
+        ),
+        hint: (
+          <p className="dnb-p">
+            First, create a model for Fund that holds the information you think
+            is needed. Then add the data with the same structure in the new
+            database file you created. Lastly, copy the{" "}
+            <code className="dnb-code">Provider</code> element in the{" "}
+            <code className="dnb-code">AccountTable</code> and change it
+            according to your funds data structure.
           </p>
         ),
       },
@@ -591,7 +620,7 @@ export var tasks_level2 = [
     ),
     subtask: [
       {
-        id: 6,
+        id: 8,
         name: "Part A",
         level: "EASY",
         description: (
@@ -605,8 +634,8 @@ export var tasks_level2 = [
             >
               Tabs
             </Anchor>
-            -element on line 99. Under <code className="dnb-code">data</code> on
-            line 107 you can see we have three different elements, each
+            -element on line 100. Under <code className="dnb-code">data</code> on
+            line 108 you can see we have three different elements, each
             representing one tab.
             <br />
             You need to add a forth element here, where the title is{" "}
@@ -617,7 +646,7 @@ export var tasks_level2 = [
             To also add content to the tab you need to add a new{" "}
             <code className="dnb-code">else if</code> check in the{" "}
             <code className="dnb-code">Tabs.Content</code> section (on approx.
-            line 143) where you check against the key{" "}
+            line 145) where you check against the key{" "}
             <code className="dnb-code">new_tab</code>. The page to return is{" "}
             <code className="dnb-code">
               &lt;Application setCurrentTab=&#123;setCurrentTab&#125;/&gt;
@@ -634,7 +663,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 7,
+        id: 9,
         name: "Part B",
         level: "HARD",
         description: (
@@ -732,7 +761,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 8,
+        id: 10,
         name: "Part C",
         level: "PROFESSIONAL",
         description: (
@@ -798,7 +827,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 9,
+        id: 11,
         name: "Part D",
         level: "PROFESSIONAL",
         description: (
@@ -837,7 +866,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 10,
+        id: 12,
         name: "Part E",
         level: "HARD",
         description: (
@@ -905,7 +934,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 11,
+        id: 13,
         name: "Part F",
         level: "PROFESSIONAL",
         description: (
@@ -946,7 +975,7 @@ export var tasks_level2 = [
         ),
       },
       {
-        id: 12,
+        id: 14,
         name: "Part G",
         level: "MEDIUM",
         description: (

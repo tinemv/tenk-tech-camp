@@ -68,8 +68,8 @@ export default function AccountPage(props: AccountProps) {
             />
         </Section> 
         <TransactionTableForAccounts
-        /** Task 4B */
-        listOfTransactions={BubbleSort(transactionList, category)}
+        /** Task 5B */
+        listOfTransactions={transactionList}
         />
     </Section>
   );
