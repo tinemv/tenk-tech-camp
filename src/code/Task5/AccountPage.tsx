@@ -2,6 +2,7 @@ import React from "react";
 import { Breadcrumb, H1, H2, H3, NumberFormat, Section, Dropdown } from "@dnb/eufemia";
 import { Account, Transaction } from "../../data/CustomerModel";
 import { TransactionTableForAccounts } from "../../ignore/TransactionTableForAccounts";
+import { BubbleSort } from "./SortingAlgorithm";
 
 
 
@@ -13,9 +14,9 @@ export type AccountProps = {
 
 
 
-export enum Parameter {
-  DESCRIPTION = "Transaction description",
-  DATE = "Date of transaction",
+export enum CategoryEnum {
+  DESCRIPTION = "Description",
+  DATE = "Date",
   AMOUNT = "Amount",
 }
 
@@ -32,8 +33,8 @@ export default function AccountPage(props: AccountProps) {
   if (account == undefined) {
     return;
   }
-  const [inputParameter, setInputParameter] = React.useState(undefined);
-  const [lst, setLst] = React.useState<Transaction[]>(account.transactions);
+  const [category, setCategory] = React.useState(undefined);
+  const [transactionList, setTransactionList] = React.useState<Transaction[]>(account.transactions);
 
 
   return (
@@ -54,23 +55,21 @@ export default function AccountPage(props: AccountProps) {
           {findBalance(account.transactions)}
         </NumberFormat>
       </H2>
-      <Section top style_type="lavender" spacing>
-      <Section spacing>
+      <Section top spacing>
             <Dropdown
               data={[
-                Parameter.DESCRIPTION,
-                Parameter.DATE,
-                Parameter.AMOUNT,
+                CategoryEnum.DESCRIPTION,
+                CategoryEnum.DATE,
+                CategoryEnum.AMOUNT,
               ]}
               label= "Sort by"
               title="Select parameter"
-              on_change = {({ data }) => setInputParameter(data)}
+              on_change = {({ data }) => setCategory(data)}
             />
-          </Section>{" "}
         </Section> 
         <TransactionTableForAccounts
         /** Task 5B */
-        listOfTransactions={lst}
+        listOfTransactions={transactionList}
         />
     </Section>
   );
