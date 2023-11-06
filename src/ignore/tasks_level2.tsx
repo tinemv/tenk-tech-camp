@@ -1,4 +1,5 @@
 import { Anchor, FormStatus, Li, Ol, P, Tooltip, Ul } from "@dnb/eufemia";
+import React from "react";
 
 export var tasks_level2 = [
   {
@@ -33,8 +34,8 @@ export var tasks_level2 = [
         id: 0,
         name: "Part A",
         level: "HARD",
-        description: <p className="dnb-p">In Task4/SortingAlgorithm.tsx, fill out the</p>,
-        hint: <p className="dnb-p">FILL OUT</p>,
+        description: <p className="dnb-p">In Task4/SortingAlgorithm.tsx, implement the Bubble sort algorithm using the comments as a guide.</p>,
+        hint: <p className="dnb-p">To access an item in a list at a certain index write var item = list[index]</p>,
       },
     ],
   },
