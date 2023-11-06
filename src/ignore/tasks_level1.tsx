@@ -1,3 +1,4 @@
+import React from "react";
 import { Tooltip } from "@dnb/eufemia";
 import "./styles.css";
 
@@ -241,7 +242,7 @@ export var tasks_level1 = [
           <p className="dnb-p">
             If you hover over the <i>pie chart </i> on the left with your mouse,
             you can see that is shows <b>Amount</b> of domestic and foreign
-            transactions. If you do the same to the <i>column chart </i> on the
+            transactions. If you do the same to the <i>column chart</i> on the
             right, you instead get question marks.
             <br />
             Change the code so that it says <b>Amount</b> on the column chart.
@@ -264,17 +265,17 @@ export var tasks_level1 = [
 
         description: (
           <p className="dnb-p">
-            We want to check if there are any transactions going to Russia. To
+            We want to check if there are any transactions going to Evil Corp. To
             do this we need to add another column to the column chart. <br />
-            <br /> Find where in the code the countries are listen and add{" "}
-            <b>Russia</b> to the list. You will have to make adjustments at two
+            <br /> Find where in the code the companies are listen and add{" "}
+            <b>Evil Corp</b> to the list. You will have to make adjustments at two
             different places in the file!
           </p>
         ),
         hint: (
           <p className="dnb-p">
             The same way that is done on code line 66 and 72-77 for all the
-            other countries, we have to add both a new{" "}
+            other companies, we have to add both a new{" "}
             <code className="dnb-code">labels</code> and new{" "}
             <code className="dnb-code">data</code>.
             <br />
@@ -291,8 +292,8 @@ export var tasks_level1 = [
     description: (
       <>
         <p className="dnb-p">
-          Someone has transferred money to Russia! In this task we will try to
-          figure out who transferred money to Russia.
+          Someone has transferred money to Evil Corp! In this task we will try to
+          figure out who transferred money this corporation.
         </p>
         <br />
         <p className="dnb-p">
@@ -358,15 +359,15 @@ export var tasks_level1 = [
             </p>
             <br />
             <p className="dnb-p">
-              Every transaction is sent between two countries. Our table
-              currently only shows which country the money was sent from. We
+              Every transaction is sent between two companies. Our table
+              currently only shows which company the money was sent from. We
               would like to know where the money is being sent to.
             </p>
             <br />
             <p className="dnb-p">
               Find the code for the table and add a new column named{" "}
-              <b>Recipient's country</b>, in the same way as for the{" "}
-              <b>Sender's country</b>.
+              <b>Recipient's company</b>, in the same way as for the{" "}
+              <b>Sender's company</b>.
             </p>
             <br />
             <p className="dnb-p">
@@ -379,19 +380,19 @@ export var tasks_level1 = [
         ),
         hint: (
           <p className="dnb-p">
-            This is how we have done it for the <b>Sender's country</b>: <br />{" "}
+            This is how we have done it for the <b>Sender's company</b>: <br />{" "}
             Header added on line 40 like this:{" "}
             <code className="dnb-code">
-              &lt;Th&gt;Sender's country&lt;/Th&gt;
+              &lt;Th&gt;Sender's company&lt;/Th&gt;
             </code>
             . <br />
             Content added on code line 51 like this:
             <code className="dnb-code">
-              &lt;Td&gt;&#123;transaction.from.country&#125;&lt;/Td&gt;
+              &lt;Td&gt;&#123;transaction.from.company&#125;&lt;/Td&gt;
             </code>
             . <br />
             <br />
-            Do the same thing for the <b>Recipient's country</b>, but switch out
+            Do the same thing for the <b>Recipient's company</b>, but switch out
             the words to be correct for this case.
           </p>
         ),
@@ -404,19 +405,19 @@ export var tasks_level1 = [
           <p className="dnb-p">
             As you can see from the table, the risk for each transaction is
             unknown. We would like the risk to be either <b>LOW</b> or{" "}
-            <b>HIGH</b> depending on whether the money has been sent to Russia
+            <b>HIGH</b> depending on whether the money has been sent to Evil Corp
             or not.
             <br /> <br />
             Look at the{" "}
             <Tooltip targetElement={<a className="tooltip">function</a>}>
               A function is a code that are going to do a specific task.
             </Tooltip>{" "}
-            named <code className="dnb-code">detectRiskCountry</code> on line 11
+            named <code className="dnb-code">detectRiskCompany</code> on line 11
             in the file <code className="dnb-code">TransactionTable.tsx</code>.
             <br></br>
             <b>Change the code</b> so the function returns the word{" "}
             <b>"HIGH"</b>
-            if the money was sent to Russia, and <b>"LOW"</b> if it was sent
+            if the money was sent to Evil Corp, and <b>"LOW"</b> if it was sent
             elsewhere.
             <br /> <br />
             Double check that the <i>Risk</i> changes for each transaction in
@@ -426,8 +427,8 @@ export var tasks_level1 = [
         hint: (
           <p className="dnb-p">
             You first have to switch out{" "}
-            <code className="dnb-code">country</code> with{" "}
-            <code className="dnb-code">Russia</code>. Further you have to decide
+            <code className="dnb-code">company</code> with{" "}
+            <code className="dnb-code">Evil Corp</code>. Further you have to decide
             when to return <b>"HIGH"</b>
             and when to return <b>"LOW"</b> for it to be logically correct. It
             should be <code className="dnb-code">return "HIGH";</code> for one
@@ -468,7 +469,7 @@ export var tasks_level1 = [
         hint: (
           <p className="dnb-p">
             Here we have to use <b>if</b> like in task C. We switch out{" "}
-            <code className="dnb-code">country</code> with{" "}
+            <code className="dnb-code">company</code> with{" "}
             <code className="dnb-code">risk</code>, and returns{" "}
             <code className="dnb-code">red</code> and{" "}
             <code className="dnb-code">green</code> instead.
@@ -488,7 +489,7 @@ export var tasks_level1 = [
             <p className="dnb-p">
               Scroll through the transactions and find the one with the{" "}
               <b>HIGH</b> risk marked with a red colour. Double check that the
-              recipients country is in fact Russia.
+              recipients company is in fact Evil Corp.
               <br />
               <br />
               With the risk being high, it is classified as a suspicious
@@ -519,20 +520,20 @@ export var tasks_level1 = [
             <p className="dnb-p">
               The <i>Transactions</i> table under the <i>Employee page</i> can
               currently be filtered on, for instance, <b>Sender's name</b>. To
-              make it easier to see which transactions are sent to Russia, we
-              would like to be able to filter on the <b>Recipient's country</b>.
+              make it easier to see which transactions are sent to Evil Corp, we
+              would like to be able to filter on the <b>Recipient's company</b>.
               <br />
               <br />
               Your task is to implement a way to filter on the{" "}
-              <b>Recipient's country</b>, in the same way as is done for{" "}
-              <b>Sender's country</b>.
+              <b>Recipient's company</b>, in the same way as is done for{" "}
+              <b>Sender's company</b>.
               <br />
               <br />
               Have a look in the file{" "}
               <code className="dnb-code">Transactions.tsx</code> in the{" "}
               <code className="dnb-code">Task3</code>-folder. Find the
               <code className="dnb-code">Dropdown</code> menu and filter on{" "}
-              <b>Recipient's country</b>.
+              <b>Recipient's company</b>.
             </p>
           </>
         ),
@@ -540,7 +541,7 @@ export var tasks_level1 = [
           <p className="dnb-p">
             The functionality for the actual filtering is already implemented,
             but the drop-down menu is still missing a choice for the{" "}
-            <b>Recipient's country</b>. Find the{" "}
+            <b>Recipient's company</b>. Find the{" "}
             <code className="dnb-code">Dropdown</code> component and add data to
             it. Have a look at <code className="dnb-code">Parameter</code> on
             line 38-42 and see if you can find the missing one and add it to the

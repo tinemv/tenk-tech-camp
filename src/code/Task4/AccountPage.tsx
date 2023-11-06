@@ -1,6 +1,6 @@
 import React from "react";
 import { Breadcrumb, H1, H2, H3, NumberFormat, Section, Dropdown } from "@dnb/eufemia";
-import { Account, Transaction } from "../../data/Models";
+import { Account, Transaction } from "../../data/CustomerModel";
 import { TransactionTableForAccounts } from "../../ignore/TransactionTableForAccounts";
 
 
@@ -14,18 +14,15 @@ export type AccountProps = {
 
 
 export enum Parameter {
-  FROM_NAME = "Sender's name",
-  FROM_COUNTRY = "Sender's country",
-  TO_NAME = "Recipient's name",
-  TO_COUNTRY = "Recipient's country",
+  DESCRIPTION = "Transaction description",
+  DATE = "Date of transaction",
   AMOUNT = "Amount",
-  RISK = 'Risk'
 }
 
 
 export const findBalance = (transactions: Transaction[]) => {
   return transactions.reduce(
-    (totalBalance, transaction) => totalBalance + transaction.amount,
+    (totalBalance, transaction) => totalBalance + Number(transaction.amount),
     0
   );
 };
@@ -61,10 +58,9 @@ export default function AccountPage(props: AccountProps) {
       <Section spacing>
             <Dropdown
               data={[
-                Parameter.FROM_NAME,
-                Parameter.TO_NAME,
+                Parameter.DESCRIPTION,
+                Parameter.DATE,
                 Parameter.AMOUNT,
-                Parameter.FROM_COUNTRY
               ]}
               label= "Sort by"
               title="Select parameter"

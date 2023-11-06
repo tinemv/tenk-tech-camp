@@ -1,5 +1,5 @@
-import { Transaction } from "../../data/Models"
-import { Parameter } from "../Task3/Transactions"
+import { Transaction } from "../../data/CustomerModel"
+import { Parameter } from "../Task4/AccountPage"
 
 export function BubbleSort (input, category): any{
     var list = input
@@ -30,12 +30,9 @@ function getValue(transaction: Transaction, category: string): any {
     switch (category){
         case Parameter.AMOUNT:
             return transaction.amount
-        case Parameter.FROM_NAME:
-            return transaction.from.name
-        case Parameter.FROM_COUNTRY:
-            return transaction.from.country
-        case Parameter.TO_NAME:
-            console.log(transaction.to.name)
-            return transaction.to.name
+        case Parameter.DATE:
+            return transaction.date
+        case Parameter.DESCRIPTION:
+            return transaction.description
     }
 }

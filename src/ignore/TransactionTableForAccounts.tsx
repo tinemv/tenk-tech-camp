@@ -13,28 +13,25 @@ export const TransactionTableForAccounts = (props: TransactionTableForAccountsPr
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <Table.ScrollView
         style={{
-          maxHeight: "44rem",
+          maxHeight: "50rem",
+          width: "45rem",
         }}
       >
         <>
           <H2 bottom>Transactions</H2>
-          <Table sticky="css-position">
+          <Table sticky="css-position" >
             <thead>
               <Tr>
-              <Th>Sender's name</Th>
-              <Th>Sender's country</Th>
-              <Th>Recipient's name</Th>
-              <Th>Recipient's country</Th>
+              <Th>Date</Th>
+              <Th>Description</Th>
               <Th>Amount</Th>
               </Tr>
             </thead>
             <tbody>
               {listOfTransactions.map((transaction) => (
                 <Tr key={transaction.id}>
-                  <Td>{transaction.from.name}</Td>
-                  <Td>{transaction.from.country}</Td>
-                  <Td>{transaction.to.name}</Td>
-                  <Td>{transaction.to.country}</Td>
+                  <Td>{transaction.date}</Td>
+                  <Td>{transaction.description}</Td>
                   <Td>
                     <NumberFormat>{transaction.amount}</NumberFormat>
                   </Td>
