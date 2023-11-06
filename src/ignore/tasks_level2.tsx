@@ -1,4 +1,5 @@
 import { Anchor, FormStatus, Li, Ol, P, Tooltip, Ul } from "@dnb/eufemia";
+import React from "react";
 
 export var tasks_level2 = [
   {
@@ -399,6 +400,13 @@ export var tasks_level2 = [
             list[index]
           </p>
         ),
+      },
+      {
+        id: 0,
+        name: "Part B",
+        level: "MEDIUM",
+        description: <p className="dnb-p">Now that we have implemented a sorting algorithm which hopefully works, we can use it in our webpage. In the file AccountPage.tsx, we outline how the account page will look. In line 73, we see the list of transactions. To sort this list with Bubble Sort, use the function BubbleSort() with parameters transactionList and category which we are sorting. </p>,
+        hint: <p className="dnb-p">Note that the parameters have to be used in the order defined in the first line of the sorting function.</p>,
       },
     ],
   },
