@@ -118,10 +118,8 @@ export default function App() {
                 title: "Employee page",
                 key: "Etterforsker",
               },
-              {
-                title: "Apply for a job",
-                key: "new_tab",
-              },
+              /* Task 7A: Add tab data here */
+              
             ]}
             selected_key={currentTab}
           />
@@ -151,9 +149,9 @@ export default function App() {
             return <CustomerPage setCurrentTab={setCurrentTab} />;
           } else if (key == "Etterforsker") {
             return <TransactionsPage setCurrentTab={setCurrentTab} />;
-          } else if (key == "new_tab") {
-            return <Application setCurrentTab={setCurrentTab} />;
           }
+          /* Task 7A: Add tab content here */
+          
         }}
       </Tabs.Content>
     </>

@@ -14,6 +14,7 @@ export default function AccountTable(props: AccountTableProps) {
   return (
     <>
       <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
+      <H2 bottom>Accounts</H2>
         <Table.ScrollView
           style={{
             maxHeight: "50rem",

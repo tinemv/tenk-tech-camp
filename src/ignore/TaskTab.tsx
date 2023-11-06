@@ -3,7 +3,6 @@ import {
   Accordion,
   Checkbox,
   Dialog,
-  Drawer,
   FormRow,
   P,
   Tabs,
@@ -60,83 +59,70 @@ export default function TaskTab(props: TaskTabProps) {
         }}
       />
 
-      <Drawer.Body>
-        <Tabs.Content id={tabId}>
-          {({ key }) => {
-            const task: Task = tasks[key];
-            return (
-              <>
-                <P bottom>{task.description}</P>
-                {task.subtask.map((sub) => (
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      minWidth: "370px",
-                      justifyContent: "flex-start",
-                      alignItems: "baseline",
-                      marginBottom: "1rem",
+      <Tabs.Content id={tabId}>
+        {({ key }) => {
+          const task: Task = tasks[key];
+          return (
+            <>
+              <P bottom>{task.description}</P>
+              {task.subtask.map((sub) => (
+                <div className="TaskTab">
+                  <Checkbox
+                    style={{ flexShrink: 0 }}
+                    right="x-small"
+                    title="Check off when you finish the task"
+                    on_change={({ checked }) => {
+                      setCheckedTasks(
+                        checkedTasks.map((task: any, i: number) => {
+                          if (i == sub.id) {
+                            return (task = checked);
+                          } else {
+                            return (task = task);
+                          }
+                        })
+                      );
                     }}
+                    checked={checkedTasks[sub.id]}
+                  />
+                  <Accordion
+                    style={{ flexShrink: 1 }}
+                    id={tabId + "_" + sub.id.toString()}
+                    remember_state
+                    left_component={
+                      <Tag text={sub.level} className={"tag-" + sub.level} />
+                    }
                   >
-                    <Checkbox
-                      style={{ flexShrink: 0 }}
-                      right="x-small"
-                      title="Check off when you finish the task"
-                      on_change={({ checked }) => {
-                        setCheckedTasks(
-                          checkedTasks.map((task: any, i: number) => {
-                            if (i == sub.id) {
-                              return (task = checked);
-                            } else {
-                              return (task = task);
-                            }
-                          })
-                        );
-                      }}
-                      checked={checkedTasks[sub.id]}
-                    />
-                    <Accordion
-                      style={{ flexShrink: 1 }}
-                      id={sub.id.toString()}
-                      remember_state
-                      left_component={
-                        <Tag text={sub.level} className={"tag-" + sub.level} />
-                      }
-                    >
-                      <Accordion.Header>
-                        <div>{sub.name}</div>
-                      </Accordion.Header>
-                      <Accordion.Content>
-                        <FormRow direction="vertical">
-                          <P style={{ lineHeight: "1.75rem" }}>
-                            {sub.description}
-                          </P>
-                          {sub.hint != undefined ? (
-                            <FormRow top bottom direction="horizontal">
-                              <Dialog
-                                triggerAttributes={{
-                                  text: "Hint",
-                                }}
-                                title={"Hint " + sub.name}
-                              >
-                                <P style={{ lineHeight: "1.75rem" }}>
-                                  {sub.hint}
-                                </P>
-                              </Dialog>
-                            </FormRow>
-                          ) : (
-                            <></>
-                          )}
-                        </FormRow>
-                      </Accordion.Content>
-                    </Accordion>
-                  </div>
-                ))}
-              </>
-            );
-          }}
-        </Tabs.Content>
-      </Drawer.Body>
+                    <Accordion.Header>{sub.name}</Accordion.Header>
+                    <Accordion.Content>
+                      <FormRow direction="vertical">
+                        <P style={{ lineHeight: "1.75rem" }}>
+                          {sub.description}
+                        </P>
+                        {sub.hint ? (
+                          <FormRow top bottom direction="horizontal">
+                            <Dialog
+                              triggerAttributes={{
+                                text: "Hint",
+                              }}
+                              title={"Hint " + sub.name}
+                            >
+                              <P style={{ lineHeight: "1.75rem" }}>
+                                {sub.hint}
+                              </P>
+                            </Dialog>
+                          </FormRow>
+                        ) : (
+                          <></>
+                        )}
+                      </FormRow>
+                    </Accordion.Content>
+                  </Accordion>
+                </div>
+              ))}
+            </>
+          );
+        }}
+      </Tabs.Content>
     </>
   );
 }
