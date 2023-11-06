@@ -13,7 +13,7 @@ import TaylorSwift from "./ProfilePictures/TaylorSwift.png";
 import GretaThunberg from "./ProfilePictures/GretaThunberg.png";
 import { H1, H2, Img, Section } from "@dnb/eufemia";
 import "../../ignore/styles.css";
-import AccountPage from "../../ignore/AccountPage";
+import AccountPage from "../Task4/AccountPage";
 
 export interface CustomerPageProps {
   setCurrentTab: Function;

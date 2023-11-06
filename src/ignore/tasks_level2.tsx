@@ -6,15 +6,25 @@ export var tasks_level2 = [
     title: "Task 4",
     description: (
       <>
-        <p className="dnb-p">FILL OUT</p>
+        <p className="dnb-p">This task covers algorithms. In the table which shows the transactions for a specific account, we see a list of transactions which can be sorted.  <br></br><br></br> 
+        Currently clicking on the sort by dropdown does nothing to the table, but we want to replace this our own sorting algorithm called Bubble sort. 
+        Imagine you have a row of people of different ages, and you want to arrange them in order from youngest to oldest.
+        <ol>
+          <li>Start at one end of the row and look at two people at a time.</li>
+          <li>If the person on the left is older than the person on the right, swap their positions.</li>
+          <li>Keep doing this for every pair of adjacent people in the row.</li>
+          <li>Go through the row again and again until you don't need to swap any more people, which means they are now sorted by age.</li>
+        </ol>
+        To get a better understanding of the algorithm watch <a href="https://www.youtube.com/watch?v=Cq7SMsQBEUw" >this video</a>.
+        </p>
         <br></br>
         <p className="dnb-p">
-          <b>Where on the website?</b> <i>FILL OUT</i>
+          <b>Where on the website?</b> <i>Customer tab, account page</i>
         </p>
         <p className="dnb-p">
           <b>Where is the code located?</b>{" "}
-          <code className="dnb-code">FILL OUT</code> in{" "}
-          <code className="dnb-code">FILL OUT</code>-folder
+          <code className="dnb-code">SortingAlgorithm.ts</code> and
+          <code className="dnb-code">Task4</code>-folder
         </p>
       </>
     ),
@@ -22,8 +32,8 @@ export var tasks_level2 = [
       {
         id: 0,
         name: "Part A",
-        level: "MEDIUM",
-        description: <p className="dnb-p">FILL OUT</p>,
+        level: "HARD",
+        description: <p className="dnb-p">In Task4/SortingAlgorithm.tsx, fill out the</p>,
         hint: <p className="dnb-p">FILL OUT</p>,
       },
     ],
