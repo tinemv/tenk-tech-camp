@@ -2,6 +2,7 @@ import React from "react";
 import { Breadcrumb, H1, H2, H3, NumberFormat, Section, Dropdown } from "@dnb/eufemia";
 import { Account, Transaction } from "../../data/CustomerModel";
 import { TransactionTableForAccounts } from "../../ignore/TransactionTableForAccounts";
+import { BubbleSort } from "./SortingAlgorithm";
 
 
 
@@ -13,7 +14,7 @@ export type AccountProps = {
 
 
 
-export enum Category {
+export enum CategoryEnum {
   DESCRIPTION = "Description",
   DATE = "Date",
   AMOUNT = "Amount",
@@ -57,9 +58,9 @@ export default function AccountPage(props: AccountProps) {
       <Section top spacing>
             <Dropdown
               data={[
-                Category.DESCRIPTION,
-                Category.DATE,
-                Category.AMOUNT,
+                CategoryEnum.DESCRIPTION,
+                CategoryEnum.DATE,
+                CategoryEnum.AMOUNT,
               ]}
               label= "Sort by"
               title="Select parameter"
@@ -68,7 +69,7 @@ export default function AccountPage(props: AccountProps) {
         </Section> 
         <TransactionTableForAccounts
         /** Task 4B */
-        listOfTransactions={transactionList}
+        listOfTransactions={BubbleSort(transactionList, category)}
         />
     </Section>
   );
