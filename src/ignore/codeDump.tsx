@@ -8,7 +8,7 @@ import { CompanyTransaction } from "../data/TransactionModel";
 import { Parameter } from "../code/Task3/Transactions";
 import { detectRiskCompany } from "../code/Task3/TransactionTable";
 import Dashboard from "../code/Task2/Dashboard";
-import CardOverview from "../code/Task6/CardOverview";
+import CardOverview from "../code/Task4/CardOverview";
 
 export function getAllTransactions() {
   //const allCustomerTransactions = customer.accounts.flatMap(

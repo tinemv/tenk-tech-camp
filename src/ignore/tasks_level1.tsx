@@ -47,7 +47,7 @@ export var tasks_level1 = [
               &lt;H1 style=&#123;&#123; margin: 20, color: "black"
               &#125;&#125;&gt;Welcome to workshop!&lt;/H1&gt;
             </code>{" "}
-            on line 17? Switch out <b>"Welcome to workshop!"</b> to whatever you
+            on line 18? Switch out <b>"Welcome to workshop!"</b> to whatever you
             would like to have as a header.
           </p>
         ),
@@ -144,7 +144,7 @@ export var tasks_level1 = [
             <code className="dnb-code">
               &lt;H1&gt;Welcome unknown user!&lt;/H1&gt;
             </code>{" "}
-            in line 33 and change <b>unknown</b> with a name you choose
+            in line 34 and change <b>unknown</b> with a name you choose
             yourself.
           </p>
         ),
@@ -164,7 +164,7 @@ export var tasks_level1 = [
             code by changing the word <code className="dnb-code">
               unknown
             </code>{" "}
-            on line 36 to the name of the picture you chose. <br />
+            on line 37 to the name of the picture you chose. <br />
             <br />
             <i>
               Remember to spell it exactly like the name of the picture (pay
@@ -174,7 +174,7 @@ export var tasks_level1 = [
         ),
         hint: (
           <p className="dnb-p">
-            On code line 36 you have to switch out{" "}
+            On code line 37 you have to switch out{" "}
             <code className="dnb-code">src=&#123;unknown&#125;</code> with for
             instance{" "}
             <code className="dnb-code">src=&#123;TaylorSwift&#125;</code>
@@ -250,7 +250,7 @@ export var tasks_level1 = [
         ),
         hint: (
           <p className="dnb-p">
-            On code line 88 you will find a{" "}
+            On code line 96 you will find a{" "}
             <code className="dnb-code">label</code>
             for the pie chart that looks like this:{" "}
             <code className="dnb-code">label: "Amount"</code>. <br />
@@ -274,7 +274,7 @@ export var tasks_level1 = [
         ),
         hint: (
           <p className="dnb-p">
-            The same way that is done on code line 66 and 72-77 for all the
+            The same way that is done on code line 66 and 72-76 for all the
             other companies, we have to add both a new{" "}
             <code className="dnb-code">labels</code> and new{" "}
             <code className="dnb-code">data</code>.
