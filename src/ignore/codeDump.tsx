@@ -156,10 +156,10 @@ export function countCrossBorderTransactions() {
   return [innenlandsCounter, utenlandsCounter];
 }
 
-export function countTargetCountries(country: String) {
+export function countTargetCompanies(company: String) {
   var counter = 0;
   getAllTransactions().map((transaction) => {
-    if (transaction.to.location === country) {
+    if (transaction.to.company === company) {
       counter += 1;
     }
   });

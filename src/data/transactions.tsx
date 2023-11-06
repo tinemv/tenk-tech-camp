@@ -204,15 +204,15 @@ export var allDNBTransactions = [
     },
     to: {
       name: "Lily Rose Depp",
-      company: "Interflora",
-      location: "USA"
+      company: "Norges Gruppen",
+      location: "Norge"
     },
     amount: 599,
   },
   {
     id: "24",
     from: {
-      name: "Oskar Westerlien",
+      name: "Oskar Westerlin",
       company: "Byggmaker",
       location: "Norway",
     },

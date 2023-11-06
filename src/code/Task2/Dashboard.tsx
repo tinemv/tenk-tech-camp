@@ -8,8 +8,8 @@ import colorPicker from "../../ignore/Colors";
 import {
   getAllTransactions,
   countCrossBorderTransactions,
-  countTargetCountries,
   sumTransactions,
+  countTargetCompanies,
 } from "../../ignore/codeDump";
 import Provider from "@dnb/eufemia/shared/Provider";
 
@@ -36,7 +36,7 @@ export default function Dashboard(props: DashboardProps) {
           }
           <div>
             <BarChart
-              title={"Number of transactions sent to a country"}
+              title={"Transactions sent to companies"}
               data={barChartData}
             />
           </div>
@@ -63,27 +63,31 @@ export default function Dashboard(props: DashboardProps) {
 
 /* Task 2C */
 const barChartData = {
-  labels: ["Norway", "Sweden", "Denmark", "Finland", "USA", "Spain", "Italy", "Switzerland", "UK", "Germany"],
+  labels: ["DNB", "Interflora", "Skeidar", "Equinor", "IKEA"],
   datasets: [
     {
       /* Task 2B */
       label: "?????",
       data: [
-        countTargetCountries("Norway"),
-        countTargetCountries("Sweden"),
-        countTargetCountries("Denmark"),
-        countTargetCountries("Finland"),
-        countTargetCountries("USA"),
-        countTargetCountries("Spain"),
-        countTargetCountries("Italy"),
-        countTargetCountries("Switzerland"),
-        countTargetCountries("UK"),
-        countTargetCountries("Germany"),
+        countTargetCompanies("DNB"),
+        countTargetCompanies("Interflora"),
+        countTargetCompanies("Skeidar"),
+        countTargetCompanies("Equinor"),
+        countTargetCompanies("IKEA"),
       ],
-      backgroundColor: colorPicker.SuccessGreen,
-    },
-  ],
-};
+      backgroundColor: [
+        colorPicker.SuccessGreen,
+        colorPicker.MintGreen
+      ],
+
+      hoverColor: [
+        colorPicker.SuccessGreen,
+        colorPicker.MintGreen
+      ]
+    }
+  ]
+}
+
 
 const pieChartData = {
   labels: ["Domestic", "International"],

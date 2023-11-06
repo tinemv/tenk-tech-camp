@@ -10,8 +10,8 @@ export type TransactionTableProps = {
 /** Task 3C */
 export function detectRiskCompany(company: String): String | undefined {
 
-  if (company === "company" ){
-    return "Unknown";
+  if (company === "placeholder" ){
+    return "unknown";
   } else {
     return "Unknown";
   }
