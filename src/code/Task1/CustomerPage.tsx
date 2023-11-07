@@ -20,7 +20,6 @@ export interface CustomerPageProps {
   setCurrentTab: Function;
 }
 
-/** */
 export default function CustomerPage(props: CustomerPageProps) {
   const { setCurrentTab } = props;
   setCurrentTab("Kunde");
