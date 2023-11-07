@@ -1,17 +1,17 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
 import { Table, Th, Tr, Td, NumberFormat } from "@dnb/eufemia";
-import { Transaction } from "../../ignore/Models";
+import { CompanyTransaction } from "../../data/TransactionModel";
 
 export type TransactionTableProps = {
-  listOfTransactions: Transaction[];
+  listOfTransactions: CompanyTransaction[];
 };
 
 /** Task 3C */
-export function detectRiskCountry(country: String): String | undefined {
+export function detectRiskCompany(company: String): String | undefined {
 
-  if (country === "country" ){
-    return "Unknown";
+  if (company === "placeholder" ){
+    return "unknown";
   } else {
     return "Unknown";
   }
@@ -37,7 +37,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
           <thead>
             <Tr>
               <Th>Sender's name</Th>
-              <Th>Sender's country</Th>
+              <Th>Sender's Company</Th>
               <Th>Recipient's name</Th>
               {/* Task 3B  */}
               <Th>Amount</Th>
@@ -48,7 +48,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
             {listOfTransactions.map((transaction) => (
               <Tr key={transaction.id.toString()}>
                 <Td>{transaction.from.name}</Td>
-                <Td>{transaction.from.country}</Td>
+                <Td>{transaction.from.company}</Td>
                 <Td>{transaction.to.name}</Td>
                 {/*Task 3B */}
                 <Td>
@@ -57,11 +57,11 @@ export const TransactionTable = (props: TransactionTableProps) => {
                 <Td
                   style={{
                     color: setColorForHighRisk(
-                      detectRiskCountry(transaction.to.country)
+                      detectRiskCompany(transaction.to.company)
                     ),
                   }}
                 >
-                  {detectRiskCountry(transaction.to.country)}
+                  {detectRiskCompany(transaction.to.company)}
                 </Td>
               </Tr>
             ))}

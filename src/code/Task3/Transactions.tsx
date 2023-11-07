@@ -5,9 +5,9 @@ import { filterTable } from "../../ignore/codeDump";
 
 export enum Parameter {
   FROM_NAME = "Sender's name",
-  FROM_COUNTRY = "Sender's country",
+  FROM_COMPANY = "Sender's company",
   TO_NAME = "Recipient's name",
-  TO_COUNTRY = "Recipient's country",
+  TO_COMPANY = "Recipient's company",
   AMOUNT = "Amount",
   RISK = 'Risk'
 }
@@ -36,7 +36,7 @@ export default function Transactions(props: TransactionsProps) {
             <Dropdown
               data={[
                 Parameter.FROM_NAME,
-                Parameter.FROM_COUNTRY,
+                Parameter.FROM_COMPANY,
                 Parameter.TO_NAME,
                 Parameter.AMOUNT,
                 Parameter.RISK,

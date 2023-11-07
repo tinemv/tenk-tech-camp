@@ -8,8 +8,8 @@ import colorPicker from "../../ignore/Colors";
 import {
   getAllTransactions,
   countCrossBorderTransactions,
-  countTargetCountries,
   sumTransactions,
+  countTargetCompanies,
 } from "../../ignore/codeDump";
 import Provider from "@dnb/eufemia/shared/Provider";
 
@@ -27,16 +27,16 @@ export default function Dashboard(props: DashboardProps) {
         {/* Task 2A */}
         <H1 style={{ fontSize: "small" }}>Dashboard</H1>
         <div className="chart-container">
-          <div>
+          {<div>
             <PieChart
-              title={"Domestic vs. international transactions"}
+              title={"Domestic & international transactions"}
               data={pieChartData}
             />
           </div>
-
+          }
           <div>
             <BarChart
-              title={"Number of transactions sent to a country"}
+              title={"Transactions sent to companies"}
               data={barChartData}
             />
           </div>
@@ -63,23 +63,31 @@ export default function Dashboard(props: DashboardProps) {
 
 /* Task 2C */
 const barChartData = {
-  labels: ["Norway", "Sweden", "Denmark", "USA", "Spain", "Italy"],
+  labels: ["DNB", "Interflora", "Skeidar", "Equinor", "IKEA"],
   datasets: [
     {
       /* Task 2B */
       label: "?????",
       data: [
-        countTargetCountries("Norway"),
-        countTargetCountries("Sweden"),
-        countTargetCountries("Denmark"),
-        countTargetCountries("USA"),
-        countTargetCountries("Spain"),
-        countTargetCountries("Italy"),
+        countTargetCompanies("DNB"),
+        countTargetCompanies("Interflora"),
+        countTargetCompanies("Skeidar"),
+        countTargetCompanies("Equinor"),
+        countTargetCompanies("IKEA"),
       ],
-      backgroundColor: colorPicker.SuccessGreen,
-    },
-  ],
-};
+      backgroundColor: [
+        colorPicker.SuccessGreen,
+        colorPicker.MintGreen
+      ],
+
+      hoverColor: [
+        colorPicker.SuccessGreen,
+        colorPicker.MintGreen
+      ]
+    }
+  ]
+}
+
 
 const pieChartData = {
   labels: ["Domestic", "International"],
@@ -89,8 +97,8 @@ const pieChartData = {
       data: countCrossBorderTransactions(),
 
       backgroundColor: [
-        colorPicker.Indigo,
         colorPicker.Violet,
+        colorPicker.Indigo,
         colorPicker.SeaGreen,
         colorPicker.SuccessGreen,
         colorPicker.SummerGreen,

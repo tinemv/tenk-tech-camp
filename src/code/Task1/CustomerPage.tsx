@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
-import AccountTable from "../Extra/AccountTable";
+import { H1, Img, Section } from "@dnb/eufemia";
+import { useState } from "react";
 import { customer } from "../../data/customer";
-import unknown from "./ProfilePictures/Unknown.png";
+import "../../ignore/styles.css";
+import AccountTable from "../Extra/AccountTable";
+import AccountPage from "../Task5/AccountPage";
+import unknown from "./ProfilePictures/Unknown.png"
 import AdaLovelace from "./ProfilePictures/AdaLovelace.png";
 import AmalClooney from "./ProfilePictures/AmalClooney.jpg";
 import CelineDion from "./ProfilePictures/CelineDion.jpg";
@@ -11,15 +14,12 @@ import GraceHopper from "./ProfilePictures/GraceHopper.jpg";
 import MichelleObama from "./ProfilePictures/MichelleObama.jpg"
 import TaylorSwift from "./ProfilePictures/TaylorSwift.png";
 import GretaThunberg from "./ProfilePictures/GretaThunberg.png";
-import { H1, H2, Img, Section } from "@dnb/eufemia";
-import "../../ignore/styles.css";
-import AccountPage from "../../ignore/AccountPage";
+
 
 export interface CustomerPageProps {
   setCurrentTab: Function;
 }
 
-/** */
 export default function CustomerPage(props: CustomerPageProps) {
   const { setCurrentTab } = props;
   setCurrentTab("Kunde");
@@ -43,7 +43,6 @@ export default function CustomerPage(props: CustomerPageProps) {
               top
             />
             <Section style_type="lavender" spacing>
-              <H2 bottom>Accounts</H2>
               <AccountTable
                 accountList={customer.accounts}
                 setAccountClicked={setAccountClicked}

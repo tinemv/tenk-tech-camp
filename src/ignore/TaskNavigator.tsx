@@ -17,6 +17,8 @@ import { tasks_level2 } from "./tasks_level2";
 export interface TaskNavigatorProps {
   progressValue: number;
   setProgressValue: Function;
+  currentTaskLevel: string;
+  setCurrentTaskLevel: Function;
   currentTabLevel1: number;
   setCurrentTabLevel1: Function;
   checkedTasksLevel1: boolean[];
@@ -36,7 +38,7 @@ export interface Task {
     name: string;
     level: string;
     description: ReactNode;
-    hint: ReactNode;
+    hint?: ReactNode;
   }[];
 }
 
@@ -44,6 +46,8 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
   const {
     progressValue,
     setProgressValue,
+    currentTaskLevel,
+    setCurrentTaskLevel,
     currentTabLevel1,
     setCurrentTabLevel1,
     checkedTasksLevel1,
@@ -67,6 +71,10 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
         (checkedTasksLevel1.length + checkedTasksLevel2.length)
     );
   }, [checkedTasksLevel1, checkedTasksLevel2]);
+
+  useEffect(() => {
+    window.sessionStorage.setItem("currentTaskLevel", currentTaskLevel);
+  }, [currentTaskLevel]);
 
   return (
     <Drawer
@@ -96,6 +104,10 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
               key: "level_2",
             },
           ]}
+          selected_key={currentTaskLevel}
+          on_change={({ key }) => {
+            setCurrentTaskLevel(key);
+          }}
         />
       </Drawer.Header>
       <Drawer.Body>
@@ -106,6 +118,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                 <>
                   <FormRow vertical>
                     <Input
+                      bottom
                       label="Report the suspicious person here:"
                       type="text"
                       onChange={handleInputText}
@@ -120,25 +133,24 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                           }}
                           title={
                             inputText.toLowerCase().split(" ").join("") ===
-                            "jonasgahrstøre"
+                            "sindrefinnes"
                               ? "Congratulations!"
                               : "Oooops... try again!"
                           }
                         >
                           {inputText.toLowerCase().split(" ").join("") ===
-                          "jonasgahrstøre" ? (
+                          "sindrefinnes" ? (
                             <P>
-                              You solved the case and reported the right person
+                              You solved the case and reported the correct person
                               to the police.
                               <br />
                               <br />
-                              Jonas Gahr Støre, prime minister of Norway, has
-                              transferred money to Russia to support war in
-                              Ukraine.
+                              It was Sindre Finnes who transferred money 
+                              to the Evil corporation!
                               <br />
                               <br />
                               Luckily for us, you were able to use technology to
-                              effectivly track him down so he can be stopped!
+                              effectivly track him down so he can be investigated by the police!
                             </P>
                           ) : (
                             <P>
@@ -147,7 +159,7 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                               <br />
                               <br />
                               Go back and look through the transactions again to
-                              find someone suspicious.
+                              find a suspicious transaction.
                             </P>
                           )}
                         </Dialog>

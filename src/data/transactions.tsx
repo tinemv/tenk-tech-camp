@@ -3,35 +3,41 @@ export var allDNBTransactions = [
     id: "900",
     from: {
       name: "Andre Skaug Amundsen",
-      country: "Norway",
+      company: "Statnett",
+      location: "Norway",
     },
     to: {
       name: "Mathilda Djerf",
-      country: "Sweden",
+      company: "IKEA",
+      location: "Sweden"
     },
-    amount: 1133,
+    amount: 28575,
   },
   {
     id: "1000",
     from: {
       name: "Erling Fjeldberg",
-      country: "Norway",
+      company: "Tine",
+      location: "Norway",
     },
     to: {
       name: "Victoria Fritz",
-      country: "Norway",
+      company: "Mester Grønn",
+      location: "Norway",
     },
-    amount: 200,
+    amount: 500,
   },
   {
     id: "1100",
     from: {
       name: "Louise Angelica Riise",
-      country: "Norway",
+      company: "Schibsted",
+      location: "Norway",
     },
     to: {
       name: "David Eriksen",
-      country: "Norway",
+      company: "Posten",
+      location: "Norway",
     },
     amount: 823,
   },
@@ -39,11 +45,13 @@ export var allDNBTransactions = [
     id: "12",
     from: {
       name: "Therese Vinje",
-      country: "Norway",
+      company: "Equinor",
+      location: "Norway",
     },
     to: {
       name: "Martine Lunde",
-      country: "Norway",
+      company: "Vinmonopolet",
+      location: "Norway",
     },
     amount: 7210,
   },
@@ -51,11 +59,13 @@ export var allDNBTransactions = [
     id: "13",
     from: {
       name: "Sophie Elise Iscahsen",
-      country: "Norway",
+      company: "Interflora",
+      location: "USA"
     },
     to: {
       name: "Snorre Klanderud",
-      country: "Norway",
+      company: "Mester Grønn",
+      location: "Norway",
     },
     amount: 358,
   },
@@ -63,83 +73,97 @@ export var allDNBTransactions = [
     id: "14",
     from: {
       name: "Andreas Haukeland",
-      country: "Norway",
+      company: "Møllergruppen",
+      location: "Norway",
     },
     to: {
       name: "Morgan Alexander Lund",
-      country: "Norway",
+      company: "Rudskogen Motorsenter",
+      location: "Norway",
     },
-    amount: 3118,
+    amount: 190256,
   },
   {
     id: "15",
     from: {
       name: "Mikkel Christensen",
-      country: "Norway",
+      company: "Hafslund",
+      location: "Norway",
     },
     to: {
       name: "Maria Bakken",
-      country: "Norway",
+      company: "Oslo Aktivitetssenter",
+      location: "Norway",
     },
-    amount: 100103,
+    amount: 52920,
   },
   {
     id: "16",
     from: {
       name: "Sophie Karlstad",
-      country: "Norway",
+      company: "Gjensidige",
+      location: "Norway",
     },
     to: {
       name: "Kjerstin Braathen",
-      country: "Norway",
+      company: "DNB",
+      location: "Norway",
     },
-    amount: 1929,
+    amount: 15240,
   },
   {
     id: "17",
     from: {
       name: "Erle Vigdal",
-      country: "Norway",
+      company: "Storebrand",
+      location: "Norway",
     },
     to: {
       name: "Henrik von Gogg Mayer",
-      country: "Norway",
+      company: "Schibsted",
+      location: "Norway",
     },
-    amount: 8443,
+    amount: 299,
   },
   {
     id: "18",
     from: {
       name: "Olivia Rodrigo",
-      country: "USA",
+      company: "Meta",
+      location: "USA"
     },
     to: {
       name: "Kendall Jenner",
-      country: "USA",
+      company: "Meta",
+      location: "USA"
     },
-    amount: 66261,
+    amount: 125000,
   },
   {
     id: "19",
     from: {
       name: "Valeria Owren",
-      country: "Sweden",
+      company: "Systembolaget",
+      location: "Sweden"
     },
     to: {
       name: "Simen Eriksen",
-      country: "Sweden",
+      company: "IKEA",
+      location: "Sweden"
     },
-    amount: 76469,
+    amount: 3215,
   },
   {
     id: "20",
     from: {
       name: "Mille Victoria Heimdal",
-      country: "Norway",
+      company: "Posten",
+      location: "Norway",
     },
     to: {
       name: "Ingrid Martinsen",
-      country: "Norway",
+      company: "Fremtind",
+      location: "Norway",
     },
     amount: 81888,
   },
@@ -147,47 +171,55 @@ export var allDNBTransactions = [
     id: "21",
     from: {
       name: "Frida Aasen",
-      country: "Italy",
+      company: "Gucci",
+      location: "Italy"
     },
     to: {
       name: "Bella Hadid",
-      country: "USA",
+      company: "IMG Models",
+      location: "USA"
     },
-    amount: 40656,
+    amount: 480656,
   },
   {
     id: "22",
     from: {
       name: "Marius Ruud",
-      country: "Norway",
+      company: "Norsk Tipping",
+      location: "Norway",
     },
     to: {
       name: "Ingrid Alexandra",
-      country: "Norway",
+      company: "Kongehuset",
+      location: "Norway",
     },
-    amount: 98871,
+    amount: 50,
   },
   {
     id: "23",
     from: {
       name: "Håkon Maundal",
-      country: "Norway",
+      company: "Nortura",
+      location: "Norway",
     },
     to: {
       name: "Lily Rose Depp",
-      country: "USA",
+      company: "Norges Gruppen",
+      location: "Norge"
     },
-    amount: 85598,
+    amount: 599,
   },
   {
     id: "24",
     from: {
-      name: "Oskar Westerlien",
-      country: "Norway",
+      name: "Oskar Westerlin",
+      company: "Byggmaker",
+      location: "Norway",
     },
     to: {
       name: "Sophie Stray",
-      country: "USA",
+      company: "Meta",
+      location: "USA"
     },
     amount: 1799,
   },
@@ -195,11 +227,13 @@ export var allDNBTransactions = [
     id: "25",
     from: {
       name: "Augustus Wilson",
-      country: "Spain",
+      company: "Santander",
+      location: "Spain"
     },
     to: {
       name: "Lene Alexandra Øien",
-      country: "Norway",
+      company: "SATS",
+      location: "Norway",
     },
     amount: 11471,
   },
@@ -207,23 +241,27 @@ export var allDNBTransactions = [
     id: "26",
     from: {
       name: "Alexander Chase",
-      country: "Norway",
+      company: "Statsbygg",
+      location: "Norway",
     },
     to: {
       name: "Henrik Viken",
-      country: "Norway",
+      company: "Tibber",
+      location: "Norway",
     },
-    amount: 4045,
+    amount: 15045,
   },
   {
     id: "27",
     from: {
       name: "Ruby Trey",
-      country: "Denmark",
+      company: "Arla",
+      location: "Denmark"
     },
     to: {
       name: "Andreas Vister",
-      country: "Norway",
+      company: "Skeidar",
+      location: "Norway",
     },
     amount: 16184,
   },
@@ -231,84 +269,98 @@ export var allDNBTransactions = [
     id: "28",
     from: {
       name: "Victoria Fritz",
-      country: "Denmark",
+      company: "Mester Grønn",
+      location: "Norway",
     },
     to: {
       name: "Alexander Chase",
-      country: "Norway",
+      company: "Statsbygg",
+      location: "Norway",
     },
-    amount: 7394,
+    amount: 70394,
   },
   {
     id: "29",
     from: {
       name: "Josephine Baldwin",
-      country: "Norway",
+      company: "SINTEF",
+      location: "Norway",
     },
     to: {
       name: "Marius Borg Høiby",
-      country: "Norway",
+      company: "Møllergruppen",
+      location: "Norway",
     },
-    amount: 13681,
+    amount: 250000,
   },
   {
     id: "30",
     from: {
       name: "Mathilda Djerf",
-      country: "Sweden",
+      company: "IKEA",
+      location: "Sweden"
     },
     to: {
-      name: "Hailey Bieber",
-      country: "USA",
+      name: "Eminem",
+      company: "Shady Records",
+      location: "USA"
     },
-    amount: 1951,
+    amount: 12000,
   },
   {
     id: "31",
     from: {
       name: "Violet Lee",
-      country: "Norway",
+      company: "Vinmonopolet",
+      location: "Norway",
     },
     to: {
       name: "Timothee Chalamet",
-      country: "Italy",
+      company: "Prada",
+      location: "Italy"
     },
-    amount: 7043,
+    amount: 9999,
   },
   {
     id: "32",
     from: {
       name: "Charles McKinsey",
-      country: "Italy",
+      company: "Armani",
+      location: "Italy"
     },
     to: {
       name: "Tom Holland",
-      country: "USA",
+      company: "WWF",
+      location: "Switzerland"
     },
-    amount: 1000,
+    amount: 250000,
   },
   {
     id: "33",
     from: {
-      name: "Thomas Hamilton",
-      country: "Norway",
+      name: "Lewis Hamilton",
+      company: "Mercedes AMG",
+      location: "Germany"
     },
     to: {
       name: "Armie Hammer",
-      country: "USA",
+      company: "Interflora",
+      location: "USA"
     },
-    amount: 4292,
+    amount: 699,
   },
   ,
   {
     id: "34",
     from: {
       name: "Winston Harley",
-      country: "Norway",
+      company: "Fremtind",
+      location: "Norway",
     },
     to: {
       name: "Rebecca Ferguson",
-      country: "Norway",
+      company: "DNB",
+      location: "Norway",
     },
     amount: 12898,
   },
@@ -316,11 +368,13 @@ export var allDNBTransactions = [
     id: "35",
     from: {
       name: "William Larsen",
-      country: "Norway",
+      company: "Mester Grønn",
+      location: "Norway",
     },
     to: {
       name: "Austin Butler",
-      country: "USA",
+      company: "Meta",
+      location: "USA"
     },
     amount: 8440,
   },
@@ -328,11 +382,13 @@ export var allDNBTransactions = [
     id: "36",
     from: {
       name: "Sophie Stray",
-      country: "Norway",
+      company: "Meta",
+      location: "USA"
     },
     to: {
       name: "Harry Styles",
-      country: "USA",
+      company: "Avinor",
+      location: "Norway",
     },
     amount: 1000,
   },
@@ -340,23 +396,27 @@ export var allDNBTransactions = [
     id: "37",
     from: {
       name: "Øyunn Krogh",
-      country: "Norway",
+      company: "Fjordkraft",
+      location: "Norway",
     },
     to: {
       name: "Emma Watson",
-      country: "Spain",
+      company: "Zara",
+      location: "Spain"
     },
-    amount: 18905,
+    amount: 60905,
   },
   {
     id: "38",
     from: {
       name: "Elisabeth Stirling",
-      country: "USA",
+      company: "Boring Company",
+      location: "USA"
     },
     to: {
       name: "Leonardo DeCaprio ",
-      country: "USA",
+      company: "WWF",
+      location: "Switzerland"
     },
     amount: 9851,
   },
@@ -364,11 +424,13 @@ export var allDNBTransactions = [
     id: "39",
     from: {
       name: "Agneta Archibald",
-      country: "Italy",
+      company: "Fendi",
+      location: "Italy"
     },
     to: {
       name: "Vittoria Ceretti",
-      country: "Spain",
+      company: "Mango",
+      location: "Spain"
     },
     amount: 14896,
   },
@@ -376,71 +438,83 @@ export var allDNBTransactions = [
     id: "40",
     from: {
       name: "Serena Royce",
-      country: "Italy",
+      company: "Versace",
+      location: "Italy"
     },
     to: {
       name: "Jason Momoa",
-      country: "Italy",
+      company: "Diesel",
+      location: "Italy"
     },
-    amount: 12552,
+    amount: 72552,
   },
   {
     id: "41",
     from: {
       name: "Sebastian Ellingsen",
-      country: "Norway",
+      company: "Sparebank 1",
+      location: "Norway",
     },
     to: {
       name: "Erling Fjeldberg",
-      country: "Norway",
+      company: "Tine",
+      location: "Norway",
     },
-    amount: 25028,
+    amount: 5028,
   },
   {
     id: "42",
     from: {
       name: "Genevieve Engen",
-      country: "Norway",
+      company: "Kongsberg gruppen",
+      location: "Norway",
     },
     to: {
       name: "Erling Haaland",
-      country: "Norway",
+      company: "Oslo Aktivitetssenter",
+      location: "Norway",
     },
-    amount: 48,
+    amount: 4372,
   },
   {
     id: "43",
     from: {
       name: "Bella Campbell",
-      country: "Norway",
+      company: "Tide",
+      location: "Norway",
     },
     to: {
       name: "Karsten Warholm",
-      country: "Norway",
+      company: "Fjordkraft",
+      location: "Norway",
     },
-    amount: 6837,
+    amount: 837,
   },
   {
     id: "44",
     from: {
       name: "Cosmo Henriksen",
-      country: "Norway",
+      company: "Norsk Tipping",
+      location: "Norway",
     },
     to: {
       name: "Kjerstin Braathen",
-      country: "Norway",
+      company: "DNB",
+      location: "Norway",
     },
-    amount: 27804,
+    amount: 250,
   },
   {
     id: "45",
     from: {
       name: "Casper Paulsen",
-      country: "Norway",
+      company: "Meta",
+      location: "USA"
     },
     to: {
       name: "Kjerstin Braathen",
-      country: "Norway",
+      company: "DNB",
+      location: "Norway",
     },
     amount: 21991,
   },
@@ -448,60 +522,70 @@ export var allDNBTransactions = [
     id: "46",
     from: {
       name: "Edward Solheim",
-      country: "Norway",
+      company: "Ruter",
+      location: "Norway",
     },
     to: {
       name: "Kjerstin Braathen",
-      country: "Norway",
+      company: "DNB",
+      location: "Norway",
     },
-    amount: 4253,
+    amount: 40,
   },
   {
     id: "47",
     from: {
-      name: "Steven Næss",
-      country: "Norway",
+      name: "Kjerstin Braathen",
+      company: "DNB",
+      location: "Norway",
     },
     to: {
-      name: "Kjerstin Braathen",
-      country: "Norway",
+      name: "Hans Jensen",
+      company: "Interflora",
+      location: "USA"
     },
-    amount: 80101,
+    amount: 599,
   },
   {
     id: "48",
     from: {
       name: "Kristoffer Hoven",
-      country: "Norway",
+      company: "Storebrand",
+      location: "Norway",
     },
     to: {
       name: "Ane By Farstad",
-      country: "Norway",
+      company: "Ruter",
+      location: "Norway",
     },
     amount: 5175,
   },
   {
     id: "49",
     from: {
-      name: "Andreas Vister",
-      country: "Norway",
+      name: "Maria Løvold",
+      company: "DNB",
+      location: "Norway",
     },
     to: {
-      name: "Maria Løvold",
-      country: "Norway",
+      name: "Andreas Vister",
+      company: "Skeidar",
+      location: "Norway",
     },
-    amount: 90188,
+    amount: 12500,
   },
   ,
   {
     id: "50",
     from: {
       name: "Martine Lunde",
-      country: "Norway",
+      company: "Vinmonopolet",
+      location: "Norway",
     },
     to: {
       name: "Alexander Sæterstøl",
-      country: "Norway",
+      company: "TV 2",
+      location: "Norway",
     },
     amount: 1316,
   },
@@ -509,11 +593,13 @@ export var allDNBTransactions = [
     id: "51",
     from: {
       name: "Sondre Amundsen",
-      country: "Norway",
+      company: "TV 3",
+      location: "Norway",
     },
     to: {
       name: "Mats Zuccarello",
-      country: "USA",
+      company: "Minnesota Wild",
+      location: "USA"
     },
     amount: 639,
   },
@@ -521,11 +607,13 @@ export var allDNBTransactions = [
     id: "52",
     from: {
       name: "Astrid Jakobsen",
-      country: "Norway",
+      company: "DNB",
+      location: "Norway",
     },
     to: {
       name: "Therese Johaug",
-      country: "Norway",
+      company: "TV 2",
+      location: "Norway",
     },
     amount: 39574,
   },
@@ -533,11 +621,13 @@ export var allDNBTransactions = [
     id: "53",
     from: {
       name: "Mia Gundersen",
-      country: "Norway",
+      company: "TV 3",
+      location: "Norway",
     },
     to: {
       name: "Johannes Høsflot Klæbo",
-      country: "Norway",
+      company: "TV 2",
+      location: "Norway",
     },
     amount: 26,
   },
@@ -545,11 +635,13 @@ export var allDNBTransactions = [
     id: "54",
     from: {
       name: "Christine Halvorsen",
-      country: "Norway",
+      company: "NRK",
+      location: "Norway",
     },
     to: {
       name: "Henrik Kristoffersen",
-      country: "Norway",
+      company: "Interflora",
+      location: "USA"
     },
     amount: 3040,
   },
@@ -557,35 +649,41 @@ export var allDNBTransactions = [
     id: "55",
     from: {
       name: "Martin Ødegaard",
-      country: "Norway",
+      company: "Arsenal",
+      location: "UK"
     },
     to: {
       name: "Petter Northug",
-      country: "Norway",
+      company: "Northug",
+      location: "Norway",
     },
-    amount: 912820,
+    amount: 2820,
   },
   {
     id: "56",
     from: {
       name: "Simen Eriksen",
-      country: "Norway",
+      company: "IKEA",
+      location: "Sweden"
     },
     to: {
       name: "Kristin Skogly",
-      country: "Norway",
+      company: "Statkraft",
+      location: "Norway",
     },
-    amount: 74329,
+    amount: 7329,
   },
   {
     id: "57",
     from: {
       name: "Maria Bakken",
-      country: "Norway",
+      company: "Oslo Aktivitetssenter",
+      location: "Norway",
     },
     to: {
       name: "Hanna Nilsen",
-      country: "Norway",
+      company: "Tine",
+      location: "Norway",
     },
     amount: 1292,
   },
@@ -593,95 +691,111 @@ export var allDNBTransactions = [
     id: "58",
     from: {
       name: "Håvard Moe",
-      country: "Norway",
+      company: "Statnett",
+      location: "Norway",
     },
     to: {
       name: "Viktor Hovland",
-      country: "Norway",
+      company: "Statkraft",
+      location: "Norway",
     },
-    amount: 63,
+    amount: 623,
   },
   {
     id: "59",
     from: {
       name: "Line Hagen",
-      country: "Norway",
+      company: "Interflora",
+      location: "USA"
     },
     to: {
       name: "Tiril Eckhoff",
-      country: "Norway",
+      company: "TV 3",
+      location: "Norway",
     },
-    amount: 40672,
+    amount: 672,
   },
   {
     id: "60",
     from: {
       name: "Frid-Ragnhild Andersen",
-      country: "Norway",
+      company: "Schibsted",
+      location: "Norway",
     },
     to: {
       name: "Sander Sagosen",
-      country: "Norway",
+      company: "Trygg",
+      location: "Norway",
     },
-    amount: 1090913,
+    amount: 1013,
   },
   {
     id: "61",
     from: {
       name: "Steffen Dahl",
-      country: "Norway",
+      company: "Northug",
+      location: "Norway",
     },
     to: {
       name: "Magnus Carlsen",
-      country: "Norway",
+      company: "Magnus Carslen",
+      location: "Norway",
     },
-    amount: 10000,
+    amount: 100000,
   },
   {
     id: "62",
     from: {
       name: "Hanna Andreassen",
-      country: "Norway",
+      company: "NRK",
+      location: "Norway",
     },
     to: {
       name: "Nora Mørk",
-      country: "Norway",
+      company: "Team Esbjerg",
+      location: "Denmark",
     },
-    amount: 6266,
+    amount: 32066,
   },
   {
     id: "63",
     from: {
       name: "Ingrid Martinsen",
-      country: "Norway",
+      company: "Fremtind",
+      location: "Norway",
     },
     to: {
       name: "Anniken Jørgensen",
-      country: "Norway",
+      company: "Aker",
+      location: "Norway",
     },
-    amount: 1092,
+    amount: 10192,
   },
   {
     id: "64",
     from: {
       name: "Rebekka Berg",
-      country: "Norway",
+      company: "Komplett",
+      location: "Norway",
     },
     to: {
       name: "Amalie Snøløs",
-      country: "Norway",
+      company: "Escape Games",
+      location: "Norway",
     },
-    amount: 101010,
+    amount: 1900,
   },
   {
     id: "65",
     from: {
       name: "Kajsa Moen",
-      country: "Norway",
+      company: "Nordea",
+      location: "Finland",
     },
     to: {
       name: "Camilla Phil",
-      country: "Norway",
+      company: "Schibsted",
+      location: "Norway",
     },
     amount: 1,
   },
@@ -689,47 +803,55 @@ export var allDNBTransactions = [
     id: "66",
     from: {
       name: "Thea Olsen",
-      country: "Norway",
+      company: "Telia",
+      location: "Sweden"
     },
     to: {
       name: "Isabel Raad",
-      country: "Norway",
+      company: "Meta",
+      location: "USA"
     },
-    amount: 423002,
+    amount: 223002,
   },
   {
     id: "67",
     from: {
       name: "Sigbjørn Kristoffersen",
-      country: "Norway",
+      company: "Mesta",
+      location: "Norway",
     },
     to: {
       name: "Vita Mashadi",
-      country: "Norway",
+      company: "Meta",
+      location: "USA"
     },
-    amount: 0,
+    amount: 9999,
   },
   {
     id: "68",
     from: {
       name: "Erlend Semb",
-      country: "Norway",
+      company: "Gjensidige",
+      location: "Norway",
     },
     to: {
       name: "Jørgine Massa Vasstrand",
-      country: "Norway",
+      company: "Meta",
+      location: "USA"
     },
-    amount: 332,
+    amount: 329,
   },
   {
     id: "69",
     from: {
       name: "Morgan Alexander Lund",
-      country: "Norway",
+      company: "Rudskogen Motorsenter",
+      location: "Norway",
     },
     to: {
       name: "Emilie Nereng",
-      country: "Norway",
+      company: "Norges Gruppen",
+      location: "Norway",
     },
     amount: 5827,
   },
@@ -737,11 +859,13 @@ export var allDNBTransactions = [
     id: "70",
     from: {
       name: "Kevin Hansen",
-      country: "Norway",
+      company: "Sparebank 1",
+      location: "Norway",
     },
     to: {
       name: "Jørgen Øyehaug",
-      country: "Norway",
+      company: "Norsk Hydro",
+      location: "Norway",
     },
     amount: 5563,
   },
@@ -749,11 +873,13 @@ export var allDNBTransactions = [
     id: "71",
     from: {
       name: "Fredrik Svendsen",
-      country: "Norway",
+      company: "DNB",
+      location: "Norway",
     },
     to: {
       name: "Kristin Gjelsvik",
-      country: "Norway",
+      company: "Meta",
+      location: "USA"
     },
     amount: 3307,
   },
@@ -761,11 +887,13 @@ export var allDNBTransactions = [
     id: "72",
     from: {
       name: "Anniken Hoel",
-      country: "Norway",
+      company: "Storebrand",
+      location: "Norway",
     },
     to: {
       name: "Josefine West",
-      country: "Norway",
+      company: "Nordea",
+      location: "Finland"
     },
     amount: 8542,
   },
@@ -774,23 +902,27 @@ export var allDNBTransactions = [
     id: "73",
     from: {
       name: "Audun Ludvigsen",
-      country: "Norway",
+      company: "Nortura",
+      location: "Norway",
     },
     to: {
       name: "Stine Sigvartsen",
-      country: "Norway",
+      company: "Megazone",
+      location: "Norway",
     },
-    amount: 7318,
+    amount: 17389,
   },
   {
     id: "74",
     from: {
       name: "Stian Engebretsen",
-      country: "Norway",
+      company: "TV 2",
+      location: "Norway",
     },
     to: {
       name: "Markus Nordahl",
-      country: "Norway",
+      company: "Escape games",
+      location: "Norway",
     },
     amount: 25843,
   },
@@ -798,11 +930,13 @@ export var allDNBTransactions = [
     id: "75",
     from: {
       name: "Regine Moen Hansen",
-      country: "Norway",
+      company: "Avinor",
+      location: "Norway",
     },
     to: {
       name: "Alexander Nakken",
-      country: "Norway",
+      company: "Telenor",
+      location: "Norway",
     },
     amount: 2787,
   },
@@ -810,11 +944,13 @@ export var allDNBTransactions = [
     id: "76",
     from: {
       name: "Simone Solli",
-      country: "Norway",
+      company: "Vy",
+      location: "Norway",
     },
     to: {
       name: "Brage Nordheim",
-      country: "Norway",
+      company: "Tide",
+      location: "Norway",
     },
     amount: 25328,
   },
@@ -822,11 +958,13 @@ export var allDNBTransactions = [
     id: "77",
     from: {
       name: "Hans-Christian Nilssen",
-      country: "Norway",
+      company: "Trygg",
+      location: "Norway",
     },
     to: {
       name: "Kristin Skogly",
-      country: "Norway",
+      company: "Fremtind",
+      location: "Norway",
     },
     amount: 34653,
   },
@@ -834,11 +972,13 @@ export var allDNBTransactions = [
     id: "78",
     from: {
       name: "Maja Therese Øyo",
-      country: "Norway",
+      company: "Byggmaker",
+      location: "Norway",
     },
     to: {
       name: "Maren-Sofie Victoria Vogt",
-      country: "Norway",
+      company: "Hafslund",
+      location: "Norway",
     },
     amount: 6682,
   },
@@ -846,23 +986,27 @@ export var allDNBTransactions = [
     id: "79",
     from: {
       name: "Nikolai Olsen",
-      country: "Norway",
+      company: "NASA",
+      location: "USA"
     },
     to: {
       name: "Andre Nittedal",
-      country: "Norway",
+      company: "Schibsted",
+      location: "Norway",
     },
-    amount: 55270,
+    amount: 5270,
   },
   {
     id: "80",
     from: {
       name: "Julie Reitan",
-      country: "Norway",
+      company: "Reitangruppen",
+      location: "Norway",
     },
     to: {
       name: "Astrid Smeplass",
-      country: "Norway",
+      company: "Visma",
+      location: "Norway",
     },
     amount: 30903,
   },
@@ -870,23 +1014,27 @@ export var allDNBTransactions = [
     id: "81",
     from: {
       name: "Lillian Smith",
-      country: "Norway",
+      company: "Høyer",
+      location: "Norway",
     },
     to: {
       name: "Mille Victoria Heimdal",
-      country: "Norway",
+      company: "Posten",
+      location: "Norway",
     },
-    amount: 59976,
+    amount: 976,
   },
   {
     id: "82",
     from: {
       name: "Abdi Aasheim",
-      country: "Norway",
+      company: "Aker",
+      location: "Norway",
     },
     to: {
       name: "Cengiz AI",
-      country: "Norway",
+      company: "Vinmonopolet",
+      location: "Norway",
     },
     amount: 19844,
   },
@@ -894,11 +1042,13 @@ export var allDNBTransactions = [
     id: "83",
     from: {
       name: "Caroline Olafsen",
-      country: "Norway",
+      company: "Elkjøp",
+      location: "Norway",
     },
     to: {
       name: "Zara Larsson",
-      country: "Sweden",
+      company: "Visma",
+      location: "Norway",
     },
     amount: 63484,
   },
@@ -906,11 +1056,13 @@ export var allDNBTransactions = [
     id: "84",
     from: {
       name: "Kristoffer Bergheim",
-      country: "Denmark",
+      company: "Sparebank 1",
+      location: "Norway",
     },
     to: {
       name: "Shawn Mendes",
-      country: "USA",
+      company: "Space X",
+      location: "USA"
     },
     amount: 47171,
   },
@@ -918,11 +1070,13 @@ export var allDNBTransactions = [
     id: "85",
     from: {
       name: "Snorre Klanderud",
-      country: "Norway",
+      company: "Mester Grønn",
+      location: "Norway",
     },
     to: {
       name: "Emma Steinbakken",
-      country: "Norway",
+      company: "NRK",
+      location: "Norway",
     },
     amount: 74545,
   },
@@ -930,11 +1084,13 @@ export var allDNBTransactions = [
     id: "86",
     from: {
       name: "Eli Lindeberg",
-      country: "Norway",
+      company: "Hafslund",
+      location: "Norway",
     },
     to: {
       name: "Victoria Nadine",
-      country: "Norway",
+      company: "Nordea",
+      location: "Finland"
     },
     amount: 28312,
   },
@@ -942,11 +1098,13 @@ export var allDNBTransactions = [
     id: "87",
     from: {
       name: "Mai-Julie Nyborg",
-      country: "Norway",
+      company: "Posten",
+      location: "Norway",
     },
     to: {
       name: "Chirag Rashmikant Patel",
-      country: "Norway",
+      company: "Escape games",
+      location: "Norway",
     },
     amount: 1245,
   },
@@ -954,11 +1112,13 @@ export var allDNBTransactions = [
     id: "88",
     from: {
       name: "Adrian Sellevold",
-      country: "Norway",
+      company: "Mesta",
+      location: "Norway",
     },
     to: {
       name: "Pattie Mallette",
-      country: "Norway",
+      company: "Floriss",
+      location: "USA"
     },
     amount: 82,
   },
@@ -967,11 +1127,13 @@ export var allDNBTransactions = [
     id: "89",
     from: {
       name: "Helene Hima",
-      country: "Norway",
+      company: "Telenor",
+      location: "Norway",
     },
     to: {
       name: "Andre Skaug Amundsen",
-      country: "Norway",
+      company: "Statnett",
+      location: "Norway",
     },
     amount: 749,
   },
@@ -979,11 +1141,13 @@ export var allDNBTransactions = [
     id: "90",
     from: {
       name: "Ronja Endresen",
-      country: "Norway",
+      company: "Kongsberg Gruppen",
+      location: "Norway",
     },
     to: {
       name: "Elisabeth Stirling",
-      country: "Norway",
+      company: "Boring Company",
+      location: "USA"
     },
     amount: 2703,
   },
@@ -991,11 +1155,13 @@ export var allDNBTransactions = [
     id: "91",
     from: {
       name: "Henrik Viken",
-      country: "Norway",
+      company: "Tibber",
+      location: "Norway",
     },
     to: {
       name: "Sondre Amundsen",
-      country: "Norway",
+      company: "NRK",
+      location: "Norway",
     },
     amount: 5757,
   },
@@ -1003,11 +1169,13 @@ export var allDNBTransactions = [
     id: "92",
     from: {
       name: "Vetle Berthelsen",
-      country: "Norway",
+      company: "Høyer",
+      location: "Norway",
     },
     to: {
       name: "Magdi Omar Ytreeide Abdelmaguid",
-      country: "Norway",
+      company: "Statsbygg",
+      location: "Norway",
     },
     amount: 5931,
   },
@@ -1015,11 +1183,13 @@ export var allDNBTransactions = [
     id: "93",
     from: {
       name: "Maren Sørum",
-      country: "Norway",
+      company: "Orkla",
+      location: "Norway",
     },
     to: {
       name: "Håvard Moe",
-      country: "Norway",
+      company: "Statnett",
+      location: "Norway",
     },
     amount: 6217,
   },
@@ -1027,11 +1197,13 @@ export var allDNBTransactions = [
     id: "94",
     from: {
       name: "Pål Nyhus",
-      country: "Norway",
+      company: "Reitangruppen",
+      location: "Norway",
     },
     to: {
       name: "Thea Olsen",
-      country: "Norway",
+      company: "Telia",
+      location: "Sweden"
     },
     amount: 2246,
   },
@@ -1039,11 +1211,13 @@ export var allDNBTransactions = [
     id: "95",
     from: {
       name: "Kasper Fredheim",
-      country: "Norway",
+      company: "Aker",
+      location: "Norway",
     },
     to: {
       name: "Regine Moen Hansen",
-      country: "Norway",
+      company: "Avinor",
+      location: "Norway",
     },
     amount: 1370,
   },
@@ -1051,11 +1225,13 @@ export var allDNBTransactions = [
     id: "96",
     from: {
       name: "Mathias Kaspersen",
-      country: "Norway",
+      company: "Tine",
+      location: "Norway",
     },
     to: {
       name: "Amanda Foss",
-      country: "Norway",
+      company: "Orkla",
+      location: "Norway",
     },
     amount: 2215,
   },
@@ -1063,11 +1239,13 @@ export var allDNBTransactions = [
     id: "97",
     from: {
       name: "Thomas Heyes",
-      country: "Norway",
+      company: "Telenor",
+      location: "Norway",
     },
     to: {
       name: "Ariana Grande",
-      country: "USA",
+      company: "Yara",
+      location: "Norway",
     },
     amount: 1173,
   },
@@ -1075,11 +1253,13 @@ export var allDNBTransactions = [
     id: "98",
     from: {
       name: "Herman Tømmeraas",
-      country: "Norway",
+      company: "Vy",
+      location: "Norway",
     },
     to: {
       name: "Josefine Frida Pettersen",
-      country: "Norway",
+      company: "Visma",
+      location: "Norway",
     },
     amount: 561,
   },
@@ -1087,11 +1267,13 @@ export var allDNBTransactions = [
     id: "99",
     from: {
       name: "Alexandra Melby",
-      country: "Norway",
+      company: "Megazone",
+      location: "Norway",
     },
     to: {
       name: "Ulrikke Falch",
-      country: "Norway",
+      company: "NRK",
+      location: "Norway",
     },
     amount: 6200,
   },
@@ -1099,11 +1281,13 @@ export var allDNBTransactions = [
     id: "100",
     from: {
       name: "Julianne Nyland",
-      country: "Norway",
+      company: "Norsk Tipping",
+      location: "Norway",
     },
     to: {
       name: "Iselin Guttormsen",
-      country: "Norway",
+      company: "Skeidar",
+      location: "Norway",
     },
     amount: 5874,
   },
@@ -1111,23 +1295,27 @@ export var allDNBTransactions = [
     id: "101",
     from: {
       name: "Julianne Hansen",
-      country: "Norway",
+      company: "Fjordkraft",
+      location: "Norway",
     },
     to: {
       name: "Iselin Guttormsen",
-      country: "Italy",
+      company: "Skeidar",
+      location: "Norway",
     },
     amount: 58747,
   },
   {
     id: "102",
     from: {
-      name: "Jonas Gahr Støre",
-      country: "Norway",
+      name: "Sindre Finnes",
+      company: "Norsk Industri",
+      location: "Norway",
     },
     to: {
-      name: "Alexander Volenski",
-      country: "Russia",
+      name: "Kim",
+      company: "Evil Corp",
+      location: "North Korea"
     },
     amount: 10387439,
   },
@@ -1135,11 +1323,13 @@ export var allDNBTransactions = [
     id: "103",
     from: {
       name: "Mathias Jensen",
-      country: "Norway",
+      company: "Høyer",
+      location: "Norway",
     },
     to: {
       name: "Carmen Electra",
-      country: "Italy",
+      company: "Gucci",
+      location: "Italy"
     },
     amount: 5874,
   },
@@ -1147,11 +1337,13 @@ export var allDNBTransactions = [
     id: "104",
     from: {
       name: "Maren Mansen",
-      country: "Norway",
+      company: "SINTEF",
+      location: "Norway"
     },
     to: {
       name: "Josefine Melan",
-      country: "Denmark",
+      company: "Equinor",
+      location: "Norway"
     },
     amount: 744,
   },
@@ -1159,11 +1351,13 @@ export var allDNBTransactions = [
     id: "105",
     from: {
       name: "Abdullah Zalid",
-      country: "Norway",
+      company: "Gjensidige",
+      location: "Norway"
     },
     to: {
       name: "Josefine Melan",
-      country: "Denmark",
+      company: "Equinor",
+      location: "Norway"
     },
     amount: 744,
   },
@@ -1171,11 +1365,13 @@ export var allDNBTransactions = [
     id: "106",
     from: {
       name: "Hassan Hamad",
-      country: "Norway",
+      company: "Nordea",
+      location: "Finland"
     },
     to: {
       name: "Josef Hansen",
-      country: "Denmark",
+      company: "Møllergruppen",
+      location: "Norway"
     },
     amount: 200,
   },
@@ -1183,11 +1379,13 @@ export var allDNBTransactions = [
     id: "107",
     from: {
       name: "Carmen Electra",
-      country: "Italy",
+      company: "Gucci",
+      location: "Italy"
     },
     to: {
       name: "Josefine Melan",
-      country: "Italy",
+      company: "Equinor",
+      location: "Norway"
     },
     amount: 7200,
   },
@@ -1195,11 +1393,13 @@ export var allDNBTransactions = [
     id: "108",
     from: {
       name: "Zendaya",
-      country: "USA",
+      company: "NASA",
+      location: "USA"
     },
     to: {
       name: "Lizzi Minok",
-      country: "Spain",
+      company: "SpaceX",
+      location: "USA"
     },
     amount: 2050,
   },
@@ -1207,11 +1407,13 @@ export var allDNBTransactions = [
     id: "109",
     from: {
       name: "Guri Solberg",
-      country: "Norway",
+      company: "Power",
+      location: "Norway"
     },
     to: {
       name: "Carolina Sofia",
-      country: "Spain",
+      company: "Tibber",
+      location: "Norway"
     },
     amount: 455,
   },
@@ -1219,11 +1421,13 @@ export var allDNBTransactions = [
     id: "110",
     from: {
       name: "Ahmed Zahid",
-      country: "Norway",
+      company: "Aker",
+      location: "Norway"
     },
     to: {
       name: "Larsa Loren",
-      country: "Spain",
+      company: "Boring Company",
+      location: "USA"
     },
     amount: 22,
   },
@@ -1231,11 +1435,13 @@ export var allDNBTransactions = [
     id: "111",
     from: {
       name: "Mina Solberg",
-      country: "Norway",
+      company: "Gjensidige",
+      location: "Norway"
     },
     to: {
       name: "Carmen Sol",
-      country: "Spain",
+      company: "Interflora",
+      location: "USA"
     },
     amount: 2050,
   },
@@ -1243,11 +1449,13 @@ export var allDNBTransactions = [
     id: "112",
     from: {
       name: "Guri Solberg",
-      country: "Norway",
+      company: "Power",
+      location: "Norway"
     },
     to: {
       name: "Jay Z",
-      country: "USA",
+      company: "Fox News",
+      location: "USA"
     },
     amount: 20330,
   },
@@ -1255,11 +1463,13 @@ export var allDNBTransactions = [
     id: "113",
     from: {
       name: "Solveig Hansen",
-      country: "Norway",
+      company: "Aker",
+      location: "Norway"
     },
     to: {
       name: "Maddie Larsa",
-      country: "USA",
+      company: "The Sun",
+      location: "UK"
     },
     amount: 205,
   },
@@ -1267,11 +1477,13 @@ export var allDNBTransactions = [
     id: "114",
     from: {
       name: "Mads Larsen",
-      country: "Norway",
+      company: "Kongsberg Gruppen",
+      location: "Norway"
     },
     to: {
       name: "Lizzi Minok",
-      country: "Spain",
+      company: "SpaceX",
+      location: "USA"
     },
     amount: 535,
   },
@@ -1279,23 +1491,27 @@ export var allDNBTransactions = [
     id: "115",
     from: {
       name: "Lise Nilsen",
-      country: "Norway",
+      company: "Nortura",
+      location: "Norway"
     },
     to: {
       name: "John Cena",
-      country: "USA",
+      company: "Interflora",
+      location: "USA"
     },
-    amount: 2050,
+    amount: 12150,
   },
   {
     id: "116",
     from: {
       name: "John Cena",
-      country: "Norway",
+      company: "Interflora",
+      location: "USA"
     },
     to: {
       name: "Carmen Electra",
-      country: "Spain",
+      company: "Gucci",
+      location: "Italy"
     },
     amount: 2050,
   },
@@ -1303,11 +1519,13 @@ export var allDNBTransactions = [
     id: "117",
     from: {
       name: "Endre Nicolaisen",
-      country: "Norway",
+      company: "Reitangruppen",
+      location: "Norway"
     },
     to: {
       name: "Nikolai Olsen",
-      country: "Norway",
+      company: "NASA",
+      location: "USA"
     },
     amount: 1000,
   },
@@ -1315,11 +1533,13 @@ export var allDNBTransactions = [
     id: "118",
     from: {
       name: "Celestine Louise Opseth",
-      country: "Norway",
+      company: "Norges Gruppen",
+      location: "Norway"
     },
     to: {
       name: "Maja Therese Øyo",
-      country: "Norway",
+      company: "Byggmaker",
+      location: "Norway"
     },
     amount: 1000,
   },
@@ -1327,23 +1547,27 @@ export var allDNBTransactions = [
     id: "119",
     from: {
       name: "Stine Sigvartsen",
-      country: "Norway",
+      company: "Megazone",
+      location: "Norway"
     },
     to: {
       name: "Rebekka Berg",
-      country: "Norway",
+      company: "Komplett",
+      location: "Norway"
     },
-    amount: 4928702,
+    amount: 1928702,
   },
   {
     id: "120",
     from: {
       name: "Karan Singh",
-      country: "Norway",
+      company: "SINTEF",
+      location: "Norway"
     },
     to: {
       name: "Hanna Andreassen",
-      country: "Sweden",
+      company: "NRK",
+      location: "Norway"
     },
     amount: 850,
   },
@@ -1351,11 +1575,13 @@ export var allDNBTransactions = [
     id: "121",
     from: {
       name: "Maria Løvold",
-      country: "Norway",
+      company: "DNB",
+      location: "Norway"
     },
     to: {
       name: "Kjerstin Braathen",
-      country: "Sweden",
+      company: "DNB",
+      location: "Norway"
     },
     amount: 27500,
   },
@@ -1363,11 +1589,13 @@ export var allDNBTransactions = [
     id: "122",
     from: {
       name: "Markus Nordahl",
-      country: "Norway",
+      company: "Kongsberg Gruppen",
+      location: "Norway"
     },
     to: {
       name: "Thomas Heyes",
-      country: "Sweden",
+      company: "Telenor",
+      location: "Norway"
     },
     amount: 3020,
   },
@@ -1375,11 +1603,13 @@ export var allDNBTransactions = [
     id: "123",
     from: {
       name: "Emil Christoffersen",
-      country: "Norway",
+      company: "Meta",
+      location: "USA"
     },
     to: {
       name: "Martin Ødegaard",
-      country: "USA",
+      company: "Arsenal",
+      location: "UK"
     },
     amount: 40000,
   },
@@ -1387,11 +1617,13 @@ export var allDNBTransactions = [
     id: "124",
     from: {
       name: "Henrik Sundby",
-      country: "Denmark",
+      company: "Sparebank 1",
+      location: "Norway"
     },
     to: {
       name: "Erle Vigdal",
-      country: "Denmark",
+      company: "Storebrand",
+      location: "Norway"
     },
     amount: 100,
   },
