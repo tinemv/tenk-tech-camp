@@ -4,13 +4,22 @@ import { customer } from "../../data/customer";
 import "../../ignore/styles.css";
 import AccountTable from "../Extra/AccountTable";
 import AccountPage from "../Task5/AccountPage";
-import unknown from "./ProfilePictures/Unknown.png";
+import unknown from "./ProfilePictures/Unknown.png"
+import AdaLovelace from "./ProfilePictures/AdaLovelace.png";
+import AmalClooney from "./ProfilePictures/AmalClooney.jpg";
+import CelineDion from "./ProfilePictures/CelineDion.jpg";
+import ChimamandaAdichie from "./ProfilePictures/ChimamandaAdichie.jpg";
+import KamalHarris from "./ProfilePictures/KamalaHarris.png";
+import GraceHopper from "./ProfilePictures/GraceHopper.jpg";
+import MichelleObama from "./ProfilePictures/MichelleObama.jpg"
+import TaylorSwift from "./ProfilePictures/TaylorSwift.png";
+import GretaThunberg from "./ProfilePictures/GretaThunberg.png";
+
 
 export interface CustomerPageProps {
   setCurrentTab: Function;
 }
 
-/** */
 export default function CustomerPage(props: CustomerPageProps) {
   const { setCurrentTab } = props;
   setCurrentTab("Kunde");
