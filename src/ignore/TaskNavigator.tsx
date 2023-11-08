@@ -84,10 +84,8 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
     >
       <Drawer.Header>
         <FormStatus state="info">
-          <p className="dnb-p">
-            All files needed for the tasks are located in the{" "}
-            <code className="dnb-code">src/code</code>folder
-          </p>
+          All files needed for the tasks are located in the{" "}
+          <code className="dnb-code">src/code</code>folder
         </FormStatus>
 
         <Progress progressValue={progressValue} />
@@ -141,16 +139,17 @@ export default function TaskNavigator(props: TaskNavigatorProps) {
                           {inputText.toLowerCase().split(" ").join("") ===
                           "sindrefinnes" ? (
                             <P>
-                              You solved the case and reported the correct person
-                              to the police.
+                              You solved the case and reported the correct
+                              person to the police.
                               <br />
                               <br />
-                              It was Sindre Finnes who transferred money 
-                              to the Evil corporation!
+                              It was Sindre Finnes who transferred money to the
+                              Evil corporation!
                               <br />
                               <br />
                               Luckily for us, you were able to use technology to
-                              effectivly track him down so he can be investigated by the police!
+                              effectivly track him down so he can be
+                              investigated by the police!
                             </P>
                           ) : (
                             <P>

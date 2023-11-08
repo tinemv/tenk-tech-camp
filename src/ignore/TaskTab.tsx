@@ -1,13 +1,5 @@
-import React from "react";
-import {
-  Accordion,
-  Checkbox,
-  Dialog,
-  FormRow,
-  P,
-  Tabs,
-  Tag,
-} from "@dnb/eufemia";
+import { Accordion, Checkbox, Dialog, Space, Tabs, Tag } from "@dnb/eufemia";
+import FlexContainer from "@dnb/eufemia/components/flex/Container";
 import { useEffect } from "react";
 import { Task } from "./TaskNavigator";
 import "./styles.css";
@@ -64,9 +56,10 @@ export default function TaskTab(props: TaskTabProps) {
           const task: Task = tasks[key];
           return (
             <>
-              <P bottom>{task.description}</P>
-              {task.subtask.map((sub) => (
-                <div className="TaskTab">
+              <div className="dnb-p">{task.description}</div>
+              <Space bottom />
+              {task.subtask.map((subTask) => (
+                <div className="TaskTab" key={subTask.id}>
                   <Checkbox
                     style={{ flexShrink: 0 }}
                     right="x-small"
@@ -74,7 +67,7 @@ export default function TaskTab(props: TaskTabProps) {
                     on_change={({ checked }) => {
                       setCheckedTasks(
                         checkedTasks.map((task: any, i: number) => {
-                          if (i == sub.id) {
+                          if (i == subTask.id) {
                             return (task = checked);
                           } else {
                             return (task = task);
@@ -82,39 +75,49 @@ export default function TaskTab(props: TaskTabProps) {
                         })
                       );
                     }}
-                    checked={checkedTasks[sub.id]}
+                    checked={checkedTasks[subTask.id]}
                   />
                   <Accordion
                     style={{ flexShrink: 1 }}
-                    id={tabId + "_" + sub.id.toString()}
+                    id={tabId + "_" + subTask.id.toString()}
                     remember_state
                     left_component={
-                      <Tag text={sub.level} className={"tag-" + sub.level} />
+                      <Tag
+                        text={subTask.level}
+                        className={"tag-" + subTask.level}
+                      />
                     }
                   >
-                    <Accordion.Header>{sub.name}</Accordion.Header>
+                    <Accordion.Header>{subTask.name}</Accordion.Header>
                     <Accordion.Content>
-                      <FormRow direction="vertical">
-                        <P style={{ lineHeight: "1.75rem" }}>
-                          {sub.description}
-                        </P>
-                        {sub.hint ? (
-                          <FormRow top bottom direction="horizontal">
+                      <FlexContainer>
+                        <div
+                          className="dnb-p"
+                          style={{ lineHeight: "1.75rem" }}
+                        >
+                          {subTask.description}
+                        </div>
+
+                        {subTask.hint ? (
+                          <FlexContainer>
                             <Dialog
                               triggerAttributes={{
                                 text: "Hint",
                               }}
-                              title={"Hint " + sub.name}
+                              title={"Hint " + subTask.name}
                             >
-                              <P style={{ lineHeight: "1.75rem" }}>
-                                {sub.hint}
-                              </P>
+                              <div
+                                className="dnb-p"
+                                style={{ lineHeight: "1.75rem" }}
+                              >
+                                {subTask.hint}
+                              </div>
                             </Dialog>
-                          </FormRow>
+                          </FlexContainer>
                         ) : (
                           <></>
                         )}
-                      </FormRow>
+                      </FlexContainer>
                     </Accordion.Content>
                   </Accordion>
                 </div>
