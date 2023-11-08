@@ -13,26 +13,20 @@ import {
 } from "../../ignore/codeDump";
 import Provider from "@dnb/eufemia/shared/Provider";
 
-export interface DashboardProps {
-  setCurrentSubTab: Function;
-}
-
-export default function Dashboard(props: DashboardProps) {
-  const { setCurrentSubTab } = props;
-  setCurrentSubTab("Dashboard");
-
+export default function Dashboard() {
   return (
     <Provider locale="nb-NO" NumberFormat={{ currency: "NOK" }}>
       <div className="DashboardTab">
         {/* Task 2A */}
         <H1 style={{ fontSize: "small" }}>Dashboard</H1>
         <div className="chart-container">
-          {<div>
-            <PieChart
-              title={"Domestic & international transactions"}
-              data={pieChartData}
-            />
-          </div>
+          {
+            <div>
+              <PieChart
+                title={"Domestic & international transactions"}
+                data={pieChartData}
+              />
+            </div>
           }
           <div>
             <BarChart
@@ -75,19 +69,12 @@ const barChartData = {
         countTargetCompanies("Equinor"),
         countTargetCompanies("IKEA"),
       ],
-      backgroundColor: [
-        colorPicker.SuccessGreen,
-        colorPicker.MintGreen
-      ],
+      backgroundColor: [colorPicker.SuccessGreen, colorPicker.MintGreen],
 
-      hoverColor: [
-        colorPicker.SuccessGreen,
-        colorPicker.MintGreen
-      ]
-    }
-  ]
-}
-
+      hoverColor: [colorPicker.SuccessGreen, colorPicker.MintGreen],
+    },
+  ],
+};
 
 const pieChartData = {
   labels: ["Domestic", "International"],
