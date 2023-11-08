@@ -14,16 +14,10 @@ export function getAllTransactions() {
   //const allCustomerTransactions = customer.accounts.flatMap(
   //  (account) => account.transactions
   //);
-  return allDNBTransactions //.concat(allCustomerTransactions);
+  return allDNBTransactions; //.concat(allCustomerTransactions);
 }
 
-export interface TransactionsPageProps {
-  setCurrentTab: Function;
-}
-
-export function TransactionsPage(props: TransactionsPageProps) {
-  const { setCurrentTab } = props;
-  setCurrentTab("Etterforsker");
+export function TransactionsPage() {
   const [currentSubTab, setCurrentSubTab] = useState<string>(() => {
     if (window.sessionStorage.getItem("currentSubTab") != null) {
       return window.sessionStorage.getItem("currentSubTab");
@@ -39,13 +33,16 @@ export function TransactionsPage(props: TransactionsPageProps) {
     <Tabs
       left
       selected_key={currentSubTab}
+      on_change={({ selected_key }) => {
+        window.sessionStorage.setItem("currentSubTab", selected_key);
+      }}
       data={[
         {
           title: "Dashboard",
           key: "Dashboard",
           content: (
             <div className="DashboardTab">
-              <Dashboard setCurrentSubTab={setCurrentSubTab} />
+              <Dashboard />
             </div>
           ),
         },
@@ -54,7 +51,7 @@ export function TransactionsPage(props: TransactionsPageProps) {
           key: "Transaksjoner",
           content: (
             <div className="TransactionsTab">
-              <Transactions setCurrentSubTab={setCurrentSubTab} />
+              <Transactions />
             </div>
           ),
         },
@@ -63,7 +60,7 @@ export function TransactionsPage(props: TransactionsPageProps) {
           key: "CardOverview",
           content: (
             <div className="CardOverview">
-              <CardOverview setCurrentSubTab={setCurrentSubTab} />
+              <CardOverview />
             </div>
           ),
         },

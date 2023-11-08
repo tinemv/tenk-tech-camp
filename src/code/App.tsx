@@ -119,9 +119,11 @@ export default function App() {
                 key: "Etterforsker",
               },
               /* Task 7A: Add tab data here */
-              
             ]}
             selected_key={currentTab}
+            on_change={({ selected_key }) => {
+              window.sessionStorage.setItem("currentTab", selected_key);
+            }}
           />
         </LeftArea>
         <RightArea>
@@ -144,14 +146,13 @@ export default function App() {
       <Tabs.Content id="tabs">
         {({ key }) => {
           if (key == "Velkommen") {
-            return <Welcome setCurrentTab={setCurrentTab} />;
+            return <Welcome />;
           } else if (key == "Kunde") {
-            return <CustomerPage setCurrentTab={setCurrentTab} />;
+            return <CustomerPage />;
           } else if (key == "Etterforsker") {
-            return <TransactionsPage setCurrentTab={setCurrentTab} />;
+            return <TransactionsPage />;
           }
           /* Task 7A: Add tab content here */
-          
         }}
       </Tabs.Content>
     </>
