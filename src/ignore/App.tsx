@@ -3,7 +3,7 @@ import { Tabs } from "@dnb/eufemia";
 import Welcome from "../code/Intro/Welcome";
 import CustomerPage from "../code/Oppgave1/CustomerPage";
 import { TransactionsPage } from "./codeDump";
-import TaskNavigator from "./TaskNavigator";
+import InputField from "./InputField";
 import styled from "styled-components";
 import { tasks } from "./tasks";
 
@@ -75,11 +75,11 @@ export default function App() {
                 key: "Velkommen",
               },
               {
-                title: "Logg inn som kunde",
+                title: "Etterforsker profil",
                 key: "Kunde",
               },
               {
-                title: "Logg inn som etterforsker",
+                title: "Etterforsker jobb",
                 key: "Etterforsker",
               },
             ]}
@@ -87,14 +87,7 @@ export default function App() {
           />
         </LeftArea>
         <RightArea>
-          <TaskNavigator
-            currentTab={currentTaskTab}
-            setCurrentTab={setCurrentTaskTab}
-            progressValue={progressValue}
-            setProgressValue={setProgressValue}
-            checkedTasks={checkedTasks}
-            setCheckedTasks={setCheckedTasks}
-          />
+          <InputField />
         </RightArea>
       </FlexWrapper>
       <Tabs.Content id="tabs">

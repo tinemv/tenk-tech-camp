@@ -6,6 +6,7 @@
   "main": "code/index.js",
   "dependencies": {
     "@dnb/eufemia": "^10.2.0",
+    "canvas-confetti": "^1.9.3",
     "chart.js": "^4.3.0",
     "loader-utils": "3.2.1",
     "react": "^17.0.2",
