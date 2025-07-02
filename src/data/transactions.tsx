@@ -707,7 +707,7 @@ export var allDNBTransactions = [
       name: "Vita Mashadi",
       country: "Norge",
     },
-    amount: 0,
+    amount: 100,
   },
   {
     id: "68",
