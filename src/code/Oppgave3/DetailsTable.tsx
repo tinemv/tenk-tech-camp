@@ -1,11 +1,27 @@
 import React from "react";
 import Provider from "@dnb/eufemia/shared/Provider";
-import { Table, Th, Tr, Td, NumberFormat } from "@dnb/eufemia";
+import { Table, Th, Tr, Td, NumberFormat, CountryFlag } from "@dnb/eufemia";
 import { Transaction } from "../../ignore/Models";
 
 export type TransactionTableProps = {
   listOfTransactions: Transaction[];
 };
+
+  const countryCodes = new Map<string, string>();
+  countryCodes.set('Norge', 'NO');
+  countryCodes.set('Sverige', 'SE');
+  countryCodes.set('USA', 'US');
+  countryCodes.set('Italia', 'IT');
+  countryCodes.set('Spania', 'ES');
+  countryCodes.set('Danmark', 'DK');
+  countryCodes.set('Russland', 'RU');
+
+  {Array.from(countryCodes).map(([country, countryCode]) => (
+  <Tr key={country}>
+    <Td>{country}</Td>
+    <Td>{countryCode}</Td>
+  </Tr>
+))}
 
 /** OPPGAVE 3C: */
 export function detectRiskCountry(country: String): String | undefined {
@@ -23,7 +39,7 @@ function setColorForHighRisk(risk: String): any {
 }
 
 /** Transactions returnerer koden som visualiserer transaksjonstabellen mellom alle kunder. 
- * Logg inn som etterforsker og trykk på fanen hvor det står Transaksjoner for å se resultatet på denne koden */
+ * Trykk på "Detaljer" under "Transaksjoner"-fanen for å se resultatet av denne koden */
 export const TransactionTable = (props: TransactionTableProps) => {
   const { listOfTransactions } = props;
 
@@ -50,7 +66,9 @@ export const TransactionTable = (props: TransactionTableProps) => {
             {listOfTransactions.map((transaction) => (
               <Tr key={transaction.id.toString()}>
                 <Td>{transaction.from.name}</Td>
-                <Td>{transaction.from.country}</Td>
+                <Td>
+                  <CountryFlag iso={countryCodes.get(transaction.from.country.toString())} size="large" />
+                </Td>
                 <Td>{transaction.to.name}</Td>
                 {/*Oppgave 3B: legg til innhold her */}
                 <Td>
