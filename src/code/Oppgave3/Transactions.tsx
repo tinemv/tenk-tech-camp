@@ -1,6 +1,6 @@
 import React from "react";
-import { Dropdown, H1, Input, Section, P } from "@dnb/eufemia";
-import { TransactionTable } from "./TransactionTable";
+import { Dropdown, H1, Input, Section } from "@dnb/eufemia";
+import { TransactionTable } from "./DetailsTable";
 import { filterTable } from "../../ignore/codeDump";
 
 export enum Parameter {
@@ -9,7 +9,7 @@ export enum Parameter {
   TO_NAME = "Mottakers navn",
   TO_COUNTRY = "Mottakers land",
   AMOUNT = "Beløp",
-  RISK = 'Risiko'
+  RISK = "Risiko",
 }
 
 export interface TransactionsProps {
@@ -31,7 +31,7 @@ export default function Transactions(props: TransactionsProps) {
     <Section spacing="small" left right style_type="white">
       <div className="TransactionsTab">
         <H1>Oversikt over alle transaksjoner i DNB</H1>
-        {/* Oppgave 3A: legg til et paragraf her! */}
+        {/* Oppgave 3A: legg til et avsnitt her! */}
         <Section style_type="white">
           <Section spacing>
             <Dropdown

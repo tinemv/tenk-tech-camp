@@ -5,8 +5,8 @@ import { H1, H2, Section, Tabs, NumberFormat } from "@dnb/eufemia";
 import Transactions from "../code/Oppgave3/Transactions";
 import { Transaction } from "../ignore/Models";
 import { Parameter } from "../code/Oppgave3/Transactions";
-import { detectRiskCountry } from "../code/Oppgave3/TransactionTable";
-import Dashboard from "../code/Oppgave2/Dashboard";
+import { detectRiskCountry } from "../code/Oppgave3/DetailsTable";
+import Dashboard from "../code/Oppgave2/Overview";
 
 export function getAllTransactions() {
   const allCustomerTransactions = customer.accounts.flatMap(
@@ -39,7 +39,7 @@ export function TransactionsPage(props: TransactionsPageProps) {
       selected_key={currentSubTab}
       data={[
         {
-          title: "Dashboard",
+          title: "Oversikt",
           key: "Dashboard",
           content: (
             <div className="DashboardTab">
@@ -48,7 +48,7 @@ export function TransactionsPage(props: TransactionsPageProps) {
           ),
         },
         {
-          title: "Transaksjoner",
+          title: "Detaljer",
           key: "Transaksjoner",
           content: (
             <div className="TransactionsTab">
