@@ -75,11 +75,11 @@ export default function App() {
                 key: "Velkommen",
               },
               {
-                title: "Etterforsker profil",
+                title: "Min profil",
                 key: "Kunde",
               },
               {
-                title: "Etterforsker jobb",
+                title: "Transaksjoner",
                 key: "Etterforsker",
               },
             ]}
