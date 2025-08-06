@@ -1,5 +1,5 @@
 import React from "react";
-import { Dropdown, H1, Input, Section } from "@dnb/eufemia";
+import { Dropdown, H1, Input, Section, P } from "@dnb/eufemia";
 import { TransactionTable } from "./DetailsTable";
 import { filterTable } from "../../ignore/codeDump";
 

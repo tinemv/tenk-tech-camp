@@ -36,24 +36,24 @@ export default function InputField() {
             }}
             onOpen={() => {
               if (
-                inputText.toLowerCase().split(" ").join("") === "jonasgahrstøre"
+                inputText.toLowerCase().split(" ").join("") === "kongharald"
               ) {
                 triggerConfetti();
               }
             }}
             title={
-              inputText.toLowerCase().split(" ").join("") === "jonasgahrstøre"
+              inputText.toLowerCase().split(" ").join("") === "kongharald"
                 ? "Gratulerer!"
                 : "Prøv igjen!"
             }
           >
             {inputText.toLowerCase().split(" ").join("") ===
-            "jonasgahrstøre" ? (
+            "kongharald" ? (
               <P>
                 Du har løst saken!
                 <br />
                 <br />
-                Jonas Gahr Støre, statsministeren i Norge, har ulovlig overført
+                Harald, kongen av Norge, har ulovlig overført
                 penger til Russland. Heldigvis klarte du å oppdage det og
                 anmelde det til politiet.
                 <br />

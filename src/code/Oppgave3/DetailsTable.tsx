@@ -34,7 +34,7 @@ export const TransactionTable = (props: TransactionTableProps) => {
           maxHeight: "60rem",
         }}
       >
-        {/* Oppgave 3: Her kan du endre på utseendet og innholdet til transaksjoner-tabellen */}
+        {/* Her kan du endre på utseendet og innholdet til transaksjoner-tabellen */}
         <Table sticky="css-position">
           <thead>
             <Tr>
